@@ -231,7 +231,7 @@ export function CursorDetailDialog({ cursor, isOpen, onClose }: CursorDetailDial
                     <span className="text-[10px] font-black uppercase tracking-widest text-foreground">Shadcn CLI Install</span>
                   </div>
                   <button
-                    onClick={() => handleCopy(`npx shadcn@latest add https://cursor-gallery.vercel.app/registry/${cursor.id}`)}
+                    onClick={() => handleCopy(`npx shadcn@latest add https://cursor-gallery.vercel.app/registry/cursor-${cursor.id}`)}
                     className="group flex items-center gap-3 px-4 py-2.5 rounded-xl bg-[#0d0d0d] border border-white/10 hover:border-primary/50 transition-all text-left w-full shadow-xl"
                   >
                     <div className="w-8 h-8 rounded bg-white/5 flex items-center justify-center text-primary">
@@ -239,7 +239,7 @@ export function CursorDetailDialog({ cursor, isOpen, onClose }: CursorDetailDial
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="text-[11px] font-black text-white/90 uppercase tracking-wider">Quick Install</p>
-                      <p className="text-[10px] text-primary font-mono truncate">npx shadcn add {cursor.id}</p>
+                      <p className="text-[10px] text-primary font-mono truncate">npx shadcn add .../registry/cursor-{cursor.id}</p>
                     </div>
                     <Copy className="w-3.5 h-3.5 text-white/30 group-hover:text-primary transition-colors shrink-0" />
                   </button>

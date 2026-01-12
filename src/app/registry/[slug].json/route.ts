@@ -1,13 +1,13 @@
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 import fs from 'fs'
 import path from 'path'
 import { CURSORS } from '@/registry/cursors'
 
 export async function GET(
-  request: Request,
-  props: { params: Promise<{ slug: string }> }
+  request: NextRequest,
+  { params }: { params: Promise<{ slug: string }> }
 ) {
-  const { slug } = await props.params
+  const { slug } = await params
   const cursorId = slug.startsWith('cursor-') ? slug.replace('cursor-', '') : slug
   
   const cursor = CURSORS.find(c => c.id === cursorId)

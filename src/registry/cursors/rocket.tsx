@@ -11,7 +11,7 @@ export default function RocketCursor({ x, y, isStatic }: { x: number; y: number;
       setFlameId(prev => (prev + 1) % 5)
     }, 80) // Increased from 50ms to 80ms
     return () => clearInterval(interval)
-  }, [])
+  }, [isStatic])
 
   return (
     <div className="fixed top-0 left-0 pointer-events-none z-50">

@@ -117,9 +117,12 @@
   --radius-4xl: calc(var(--radius) + 16px);
 }
 
-/* Custom cursor class */
-.custom-cursor {
-  cursor: none;
+/* Custom cursor class - force hiding default cursor on all elements */
+/* Custom cursor class - force hiding default cursor on all elements */
+html.custom-cursor,
+html.custom-cursor body,
+html.custom-cursor * {
+  cursor: none !important;
 }
 
 @layer base {

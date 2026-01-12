@@ -21,7 +21,7 @@ export default function SparkleCursor({ x, y, isStatic }: { x: number; y: number
       setSparkles(prev => [...prev.slice(-5), newSparkle]) // Reduced from 8 to 5
     }, 80) // Increased from 50ms to 80ms
     return () => clearInterval(interval)
-  }, [x, y])
+  }, [x, y, isStatic])
 
   return (
     <>

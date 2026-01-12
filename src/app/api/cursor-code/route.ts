@@ -20,8 +20,8 @@ export async function GET(request: Request) {
     
     const reactCode = fs.readFileSync(filePath, 'utf-8')
     
-    // Generate vanilla JS template
-    const vanillaCode = generateVanillaJS(cursorId)
+    // Generate vanilla JS template based on cursor type
+    const vanillaCode = generateVanillaHTML(cursorId, reactCode)
     
     return NextResponse.json({ react: reactCode, vanilla: vanillaCode })
   } catch (error) {
@@ -29,39 +29,29 @@ export async function GET(request: Request) {
   }
 }
 
-function generateVanillaJS(cursorId: string): string {
-  return `// Vanilla JavaScript implementation for ${cursorId} cursor
-// This cursor uses Framer Motion which requires React
-// For a vanilla JS implementation, you would need to:
-// 1. Track mouse position using mousemove event listener
-// 2. Create and animate DOM elements manually  
-// 3. Use CSS animations or Web Animations API for smooth transitions
-
-// Basic structure:
-class CustomCursor {
-  constructor() {
-    this.x = 0;
-    this.y = 0;
-    this.init();
-  }
+function generateVanillaHTML(cursorId: string, reactCode: string): string {
+  const cursorName = cursorId.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
   
-  init() {
-    document.addEventListener('mousemove', (e) => {
-      this.x = e.clientX;
-      this.y = e.clientY;
-      this.update();
-    });
-  }
-  
-  update() {
-    // Implement cursor positioning and animation logic here
-    // based on the React implementation above
-  }
-}
-
-// Initialize
-const cursor = new CustomCursor();
-
-// Note: This is a basic template. 
-// Adapt the React/Framer Motion animations to vanilla JS/CSS.`
+  return `/*
+ * ============================================
+ * ${cursorName} Cursor - Vanilla Implementation
+ * ============================================
+ * 
+ * 🚧 COMING SOON!
+ * 
+ * We're working on creating pixel-perfect vanilla HTML/CSS/JS 
+ * implementations for all cursors.
+ * 
+ * For now, please use the React version above, which works with:
+ * - React
+ * - Next.js
+ * - Vite
+ * - Any React-based framework
+ * 
+ * Required dependencies:
+ * - npm install framer-motion
+ * - npm install react react-dom
+ * 
+ * Stay tuned for vanilla implementations!
+ */`
 }

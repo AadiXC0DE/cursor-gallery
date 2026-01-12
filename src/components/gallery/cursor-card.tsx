@@ -1,9 +1,9 @@
 "use client"
 
-import { useCursor } from "@/components/cursor/cursor-context"
+import { useCursorActions } from "@/components/cursor/cursor-context"
 import { cn } from "@/lib/utils"
 import { motion } from "framer-motion"
-import { useState, useRef, useEffect } from "react"
+import { useState, useRef, useEffect, memo, useMemo, useCallback } from "react"
 import { CURSORS } from "@/registry/cursors"
 
 interface CursorCardProps {
@@ -15,14 +15,28 @@ interface CursorCardProps {
   onClick?: () => void
 }
 
-export function CursorCard({ id, name, description, tags, className, onClick }: CursorCardProps) {
-  const { setCursor, resetCursor } = useCursor()
+export const CursorCard = memo(function CursorCard({ id, name, description, tags, className, onClick }: CursorCardProps) {
+  const { setCursor, resetCursor } = useCursorActions()
   const [isHovered, setIsHovered] = useState(false)
   const [isInViewport, setIsInViewport] = useState(false)
   const cardRef = useRef<HTMLDivElement>(null)
   
-  const cursorDef = CURSORS.find(c => c.id === id)
-  const CursorComponent = cursorDef?.component
+  // Memoize cursor component lookup to prevent re-renders
+  const CursorComponent = useMemo(() => {
+    const cursorDef = CURSORS.find(c => c.id === id)
+    return cursorDef?.component
+  }, [id])
+
+  // Stable callbacks to prevent re-renders
+  const handleMouseEnter = useCallback(() => {
+    setCursor(id)
+    setIsHovered(true)
+  }, [id, setCursor])
+
+  const handleMouseLeave = useCallback(() => {
+    resetCursor()
+    setIsHovered(false)
+  }, [resetCursor])
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -43,14 +57,8 @@ export function CursorCard({ id, name, description, tags, className, onClick }: 
         className
       )}
       onClick={onClick}
-      onMouseEnter={() => {
-        setCursor(id)
-        setIsHovered(true)
-      }}
-      onMouseLeave={() => {
-        resetCursor()
-        setIsHovered(false)
-      }}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       {/* Preview Area */}
       <div className="absolute inset-0 flex items-center justify-center bg-muted/30">
@@ -118,4 +126,4 @@ export function CursorCard({ id, name, description, tags, className, onClick }: 
       </div>
     </motion.div>
   )
-}
+})

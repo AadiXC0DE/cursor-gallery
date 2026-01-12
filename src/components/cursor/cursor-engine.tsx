@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect, useState, useMemo, memo } from "react"
+import React, { useEffect, useState, useMemo, memo, useRef, useCallback } from "react"
 import { useCursor } from "@/components/cursor/cursor-context"
 import { CURSORS } from "@/registry/cursors"
 
@@ -8,19 +8,22 @@ import { CURSORS } from "@/registry/cursors"
 const CursorRenderer = memo(({ 
   Component, 
   x, 
-  y 
+  y,
+  isHovering
 }: { 
-  Component: React.ComponentType<{ x: number; y: number }>
+  Component: React.ComponentType<{ x: number; y: number; isHovering?: boolean }>
   x: number
   y: number
+  isHovering: boolean
 }) => {
-  return <Component x={x} y={y} />
+  return <Component x={x} y={y} isHovering={isHovering} />
 }, (prev, next) => {
-  // Only re-render if position changed significantly (> 1px) or component changed
+  // Only re-render if position changed significantly (> 2px) or component/hover changed
   return (
     prev.Component === next.Component &&
-    Math.abs(prev.x - next.x) < 1 &&
-    Math.abs(prev.y - next.y) < 1
+    prev.isHovering === next.isHovering &&
+    Math.abs(prev.x - next.x) < 2 &&
+    Math.abs(prev.y - next.y) < 2
   )
 })
 
@@ -30,6 +33,13 @@ export function CursorEngine() {
   const { cursorStyle, isCursorVisible } = useCursor()
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [hasMoved, setHasMoved] = useState(false)
+  const [isHovering, setIsHovering] = useState(false)
+  
+  // Use refs to track position without triggering re-renders
+  const positionRef = useRef({ x: 0, y: 0 })
+  const rafIdRef = useRef<number | null>(null)
+  const lastUpdateRef = useRef(0)
+  const hasMovedRef = useRef(false)
 
   // Build cursor map from registry - memoized
   const CURSOR_MAP = useMemo(() => {
@@ -41,32 +51,42 @@ export function CursorEngine() {
     return CURSOR_MAP[cursorStyle] || CURSOR_MAP["default"] || CURSORS[0]?.component
   }, [cursorStyle, CURSOR_MAP])
 
-  useEffect(() => {
-    let rafId: number | null = null
-    let lastUpdate = 0
+  // Stable mouse move handler using refs
+  const handleMouseMove = useCallback((e: MouseEvent) => {
+    // Update ref immediately (no re-render)
+    positionRef.current = { x: e.clientX, y: e.clientY }
     
-    const updateMousePosition = (e: MouseEvent) => {
-      if (!hasMoved) setHasMoved(true)
-      
-      // Throttle to ~60fps max
-      const now = performance.now()
-      if (now - lastUpdate < 16) return
-      
-      if (rafId) cancelAnimationFrame(rafId)
-      
-      rafId = requestAnimationFrame(() => {
-        setMousePosition({ x: e.clientX, y: e.clientY })
-        lastUpdate = now
-        rafId = null
-      })
+    if (!hasMovedRef.current) {
+      hasMovedRef.current = true
+      setHasMoved(true)
     }
+    
+    // Check for interactive elements
+    const target = e.target as HTMLElement
+    // Expand detection to include common interactive elements
+    const interactive = !!target.closest('button, a, input, [role="button"], label, select, textarea, .cursor-pointer')
+    setIsHovering(interactive)
+    
+    // Throttle React state updates to ~60fps
+    const now = performance.now()
+    if (now - lastUpdateRef.current < 16) return
+    
+    if (rafIdRef.current) cancelAnimationFrame(rafIdRef.current)
+    
+    rafIdRef.current = requestAnimationFrame(() => {
+      setMousePosition({ x: positionRef.current.x, y: positionRef.current.y })
+      lastUpdateRef.current = now
+      rafIdRef.current = null
+    })
+  }, [])
 
-    window.addEventListener("mousemove", updateMousePosition, { passive: true })
+  useEffect(() => {
+    window.addEventListener("mousemove", handleMouseMove, { passive: true })
     return () => {
-      window.removeEventListener("mousemove", updateMousePosition)
-      if (rafId) cancelAnimationFrame(rafId)
+      window.removeEventListener("mousemove", handleMouseMove)
+      if (rafIdRef.current) cancelAnimationFrame(rafIdRef.current)
     }
-  }, [hasMoved])
+  }, [handleMouseMove])
 
   if (!isCursorVisible || !hasMoved || !CursorComponent) return null
 
@@ -76,6 +96,7 @@ export function CursorEngine() {
         Component={CursorComponent} 
         x={mousePosition.x} 
         y={mousePosition.y} 
+        isHovering={isHovering}
       />
     </div>
   )

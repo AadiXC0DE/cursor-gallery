@@ -5,9 +5,7 @@ import { CursorCard } from "./cursor-card"
 import { CursorDetailDialog } from "./cursor-detail-dialog"
 import { CURSORS, CursorDefinition } from "@/registry/cursors"
 import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
-import { useCursor } from "@/components/cursor/cursor-context"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 import { Search } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -116,25 +114,23 @@ export function CursorGrid({ onlyFeatured = false }: { onlyFeatured?: boolean })
       </div>
 
       {/* Grid */}
-      <AnimatePresence mode="popLayout">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {paginatedCursors.map((cursor, idx) => (
-            <motion.div
-                key={cursor.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.3, delay: Math.min((idx % 4) * 0.03, 0.15) }}
-                ref={idx === paginatedCursors.length - 1 ? lastElementRef : null}
-            >
-                <CursorCard 
-                    {...cursor} 
-                    onClick={() => handleCardClick(cursor)}
-                />
-            </motion.div>
-            ))}
-        </div>
-      </AnimatePresence>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {paginatedCursors.map((cursor, idx) => (
+          <motion.div
+              key={cursor.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: Math.min((idx % 4) * 0.03, 0.15) }}
+              ref={idx === paginatedCursors.length - 1 ? lastElementRef : null}
+              layout="position"
+          >
+              <CursorCard 
+                  {...cursor} 
+                  onClick={() => handleCardClick(cursor)}
+              />
+          </motion.div>
+          ))}
+      </div>
       
       {filteredCursors.length === 0 && (
         <div className="text-center py-32 border border-dashed border-border/50 rounded-3xl bg-muted/5">

@@ -9,11 +9,12 @@ interface Spark {
   color: string
 }
 
-export default function FireworkCursor({ x, y }: { x: number; y: number }) {
+export default function FireworkCursor({ x, y, isStatic }: { x: number; y: number; isStatic?: boolean }) {
   const [sparks, setSparks] = useState<Spark[]>([])
   const idCounter = useRef(0)
 
   useEffect(() => {
+    if (isStatic) return;
     const triggerFirework = () => {
       const colors = ["#ff0000", "#00ff00", "#0000ff", "#ffff00", "#ff00ff", "#00ffff"]
       const color = colors[Math.floor(Math.random() * colors.length)]
@@ -29,7 +30,7 @@ export default function FireworkCursor({ x, y }: { x: number; y: number }) {
     const interval = setInterval(triggerFirework, 2000) // Increased from 1500ms to 2000ms
     triggerFirework()
     return () => clearInterval(interval)
-  }, [])
+  }, [isStatic])
 
   return (
     <motion.div

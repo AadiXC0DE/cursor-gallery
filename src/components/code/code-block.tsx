@@ -42,9 +42,9 @@ export function CodeBlock({ code, language, className }: CodeBlockProps) {
   }
 
   return (
-    <div className={cn("relative group overflow-hidden", className)}>
+    <div className={cn("relative group", className)}>
       <div 
-        className="p-6 text-xs md:text-sm overflow-x-auto [&>pre]:!bg-transparent [&>pre]:!m-0 custom-scrollbar"
+        className="p-6 text-xs md:text-sm overflow-auto [&>pre]:!bg-transparent [&>pre]:!m-0 no-scrollbar max-h-[inherit]"
         dangerouslySetInnerHTML={{ __html: html }} 
       />
     </div>

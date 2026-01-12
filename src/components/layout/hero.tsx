@@ -11,7 +11,7 @@ export function Hero() {
   }
 
   return (
-    <section className="relative pt-32 pb-20 md:pt-48 md:pb-40 overflow-hidden bg-background">
+    <section className="relative pt-32 pb-20 md:pt-40 md:pb-40 overflow-hidden bg-background">
       {/* Background elements */}
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_0%,rgba(0,0,0,0.03)_0%,transparent_50%)] dark:bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.05)_0%,transparent_50%)]" />
 

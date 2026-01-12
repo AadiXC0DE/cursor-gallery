@@ -27,7 +27,7 @@ export default function FlameCursor({ x, y, isStatic }: { x: number; y: number; 
       setParticles(prev => [...prev.slice(-8), newParticle]) // Reduced from 12 to 8
     }, 70) // Increased from 50ms to 70ms
     return () => clearInterval(interval)
-  }, [x, y])
+  }, [x, y, isStatic])
 
   return (
     <>

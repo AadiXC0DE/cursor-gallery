@@ -15,7 +15,7 @@ export default function SmokeCursor({ x, y, isStatic }: { x: number; y: number; 
       ])
     }, 150) // Increased from 120ms to 150ms (slower emission)
     return () => clearInterval(interval)
-  }, [x, y])
+  }, [x, y, isStatic])
 
   return (
     <div className="fixed top-0 left-0 pointer-events-none z-50">

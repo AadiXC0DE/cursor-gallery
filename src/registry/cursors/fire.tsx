@@ -20,7 +20,7 @@ export default function FireCursor({ x, y, isStatic }: { x: number; y: number; i
       setFlames(prev => [...prev.slice(-6), newFlame]) // Reduced from 10 to 6
     }, 60) // Increased from 40ms to 60ms
     return () => clearInterval(interval)
-  }, [x, y])
+  }, [x, y, isStatic])
 
   return (
     <>

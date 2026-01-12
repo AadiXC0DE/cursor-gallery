@@ -28,7 +28,7 @@ export default function ElectricCursor({ x, y, isStatic }: { x: number; y: numbe
 
     const interval = setInterval(triggerBolt, 200) // Increased from 150ms to 200ms
     return () => clearInterval(interval)
-  }, [])
+  }, [isStatic])
 
   return (
     <div className="fixed top-0 left-0 pointer-events-none z-50 overflow-visible">

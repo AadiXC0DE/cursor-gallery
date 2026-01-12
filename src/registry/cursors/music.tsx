@@ -18,7 +18,7 @@ export default function MusicCursor({ x, y, isStatic }: { x: number; y: number; 
       setNotes(prev => [...prev.slice(-3), newNote])
     }, 600)
     return () => clearInterval(interval)
-  }, [])
+  }, [isStatic])
 
   return (
     <motion.div

@@ -38,8 +38,8 @@ Example: `my-cursor.tsx`
 Your component must accept `x` and `y` props (cursor coordinates).
 
 ```tsx
-"use client"
-import { motion } from "framer-motion"
+"use client";
+import { motion } from "framer-motion";
 
 export default function MyCursor({ x, y }: { x: number; y: number }) {
   return (
@@ -49,7 +49,7 @@ export default function MyCursor({ x, y }: { x: number; y: number }) {
     >
       {/* Your cursor content */}
     </motion.div>
-  )
+  );
 }
 ```
 
@@ -81,10 +81,10 @@ Add a new entry to the `CURSORS` array:
 
 Make sure:
 
-* `id` is unique
-* `name` is readable
-* `description` is short and clear
-* `tags` are relevant
+- `id` is unique
+- `name` is readable
+- `description` is short and clear
+- `tags` are relevant
 
 ---
 
@@ -98,16 +98,16 @@ npm run dev
 
 Check that:
 
-* Your cursor appears in the gallery
-* It follows the mouse correctly
-* No console errors occur
+- Your cursor appears in the gallery
+- It follows the mouse correctly
+- No console errors occur
 
 ---
 
 ## Code Style
 
-* We use **ESLint** and **Prettier**
-* Before committing, run:
+- We use **ESLint** and **Prettier**
+- Before committing, run:
 
 ```bash
 npm run lint
@@ -119,20 +119,19 @@ Fix any lint or formatting issues.
 
 ## Pull Request Guidelines
 
-* One feature or fix per PR
-* Describe what you changed and why
-* Make sure:
-
-  * Build works
-  * Lint passes
-  * App runs locally
+- One feature or fix per PR
+- Describe what you changed and why
+- Make sure:
+  - Build works
+  - Lint passes
+  - App runs locally
 
 ---
 
 ## Notes
 
-* No direct pushes to `main`
-* All changes must go through Pull Requests
-* Be respectful and constructive in reviews
+- No direct pushes to `main`
+- All changes must go through Pull Requests
+- Be respectful and constructive in reviews
 
 Happy hacking! 🚀

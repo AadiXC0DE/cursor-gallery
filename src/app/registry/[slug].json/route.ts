@@ -5,9 +5,9 @@ import { CURSORS } from '@/registry/cursors'
 
 export async function GET(
   request: Request,
-  { params }: { params: { slug: string } }
+  props: { params: Promise<{ slug: string }> }
 ) {
-  const slug = params.slug
+  const { slug } = await props.params
   const cursorId = slug.startsWith('cursor-') ? slug.replace('cursor-', '') : slug
   
   const cursor = CURSORS.find(c => c.id === cursorId)

@@ -42,3 +42,4 @@
 ## License
 
 MIT © [Your Name]
+# cursor-gallery

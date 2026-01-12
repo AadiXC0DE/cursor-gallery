@@ -1,22 +1,34 @@
 # Cursor Gallery
 
-> **itshover.com for cursors** — A beautiful gallery of animated cursor pointers with instant copy-paste for React and vanilla JS.
+> **The ultimate cursor registry for Shadcn/UI** — A curated collection of 100+ high-end animated cursors. Engineered with Motion, designed for impact.
 
-![Project Preview](/opengraph-image)
+![Project Preview](https://cursor-gallery.vercel.app/opengraph-image)
+
+## 🚀 Quick Install (Shadcn CLI)
+
+You can now install any cursor directly into your project using the Shadcn CLI:
+
+```bash
+# Browse and install any cursor
+npx shadcn@latest add https://cursor-gallery.vercel.app/registry/index.json
+
+# Or install a specific cursor (e.g., dot-ring)
+npx shadcn@latest add https://cursor-gallery.vercel.app/registry/dot-ring.json
+```
 
 ## Features
 
-- **Visual-First Browsing**: 10+ High-quality cursor styles (Glow, Dot, Glitch, etc.)
-- **Copy-Paste Ready**: Get React (Framer Motion) or Vanilla JS code instantly.
-- **Zero Config**: Drop into any Next.js or React project.
-- **Theme Aware**: Built for Dark and Light modes.
-- **Open Source**: Free to use and contribute.
+- **Visual-First Browsing**: 100+ High-quality cursor styles.
+- **Shadcn CLI Support**: Install components directly into your codebase.
+- **Copy-Paste Ready**: Get React (Motion) or Vanilla JS code instantly.
+- **Theme Aware**: Built for Dark and Light modes out of the box.
+- **Open Source**: Free to use and contribute. MIT Licensed.
 
-## Quick Start
+## Getting Started
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/cursor-gallery.git
+   git clone https://github.com/AadiXC0DE/cursor-gallery.git
    cd cursor-gallery
    ```
 
@@ -36,10 +48,9 @@
 
 - **Framework**: Next.js 16 (App Router)
 - **Styling**: Tailwind CSS v4, Shadcn/UI
-- **Animation**: Framer Motion
+- **Animation**: Motion (Framer Motion)
 - **Code Highlighting**: Shiki
 
 ## License
 
-MIT © [Your Name]
-# cursor-gallery
+MIT © [Aadi Chowdhury](https://x.com/AadiChowdhury7)

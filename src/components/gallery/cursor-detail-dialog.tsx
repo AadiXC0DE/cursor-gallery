@@ -7,7 +7,7 @@ import { useCursorActions } from "@/components/cursor/cursor-context"
 import { CodeBlock } from "@/components/code/code-block"
 import { Button } from "@/components/ui/button"
 import { useEffect, useState } from "react"
-import { Check, Copy, Code2, Zap, FileCode, Layers, MousePointer2 } from "lucide-react"
+import { Check, Copy, Code2, Zap, FileCode, Layers, MousePointer2, Terminal } from "lucide-react"
 
 interface CursorDetailDialogProps {
   cursor: CursorDefinition | null
@@ -224,33 +224,64 @@ export function CursorDetailDialog({ cursor, isOpen, onClose }: CursorDetailDial
                 <p className="text-[10px] text-muted-foreground italic">Click to copy install command</p>
               </div>
               
-              <div className="flex flex-wrap gap-2 flex-1">
-                {/* Framer Motion */}
-                <button
-                  onClick={() => handleCopy("npm install framer-motion")}
-                  className="group flex items-center gap-3 px-4 py-2.5 rounded-xl bg-background border border-border/50 hover:border-primary/50 transition-all text-left flex-1 min-w-[180px]"
-                >
-                  <div className="w-8 h-8 rounded bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white text-[12px] font-black">F</div>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-[11px] font-black text-foreground uppercase tracking-wider">Framer Motion</p>
-                    <p className="text-[10px] text-muted-foreground font-mono truncate">npm i framer-motion</p>
+                {/* Shadcn CLI */}
+                <div className="flex-1 min-w-[280px]">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                    <span className="text-[10px] font-black uppercase tracking-widest text-foreground">Shadcn CLI Install</span>
                   </div>
-                  <Copy className="w-3.5 h-3.5 text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
-                </button>
-                
-                {/* Tailwind CSS */}
-                <button
-                  onClick={() => handleCopy("npm install -D tailwindcss postcss autoprefixer && npx tailwindcss init -p")}
-                  className="group flex items-center gap-3 px-4 py-2.5 rounded-xl bg-background border border-border/50 hover:border-primary/50 transition-all text-left flex-1 min-w-[180px]"
-                >
-                  <div className="w-8 h-8 rounded bg-gradient-to-br from-teal-400 to-cyan-500 flex items-center justify-center text-white text-[12px] font-black">T</div>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-[11px] font-black text-foreground uppercase tracking-wider">Tailwind CSS</p>
-                    <p className="text-[10px] text-muted-foreground font-mono truncate">npm i -D tailwindcss</p>
-                  </div>
-                  <Copy className="w-3.5 h-3.5 text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
-                </button>
-              </div>
+                  <button
+                    onClick={() => handleCopy(`npx shadcn@latest add https://cursor-gallery.vercel.app/registry/${cursor.id}.json`)}
+                    className="group flex items-center gap-3 px-4 py-2.5 rounded-xl bg-[#0d0d0d] border border-white/10 hover:border-primary/50 transition-all text-left w-full shadow-xl"
+                  >
+                    <div className="w-8 h-8 rounded bg-white/5 flex items-center justify-center text-primary">
+                      <Terminal className="w-4 h-4" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-[11px] font-black text-white/90 uppercase tracking-wider">Quick Install</p>
+                      <p className="text-[10px] text-primary font-mono truncate">npx shadcn add {cursor.id}</p>
+                    </div>
+                    <Copy className="w-3.5 h-3.5 text-white/30 group-hover:text-primary transition-colors shrink-0" />
+                  </button>
+                </div>
+
+                <div className="flex flex-wrap gap-2 flex-1">
+                  {/* Motion */}
+                  <button
+                    onClick={() => handleCopy("npm install framer-motion")}
+                    className="group flex items-center gap-3 px-4 py-2.5 rounded-xl bg-background border border-border/50 hover:border-primary/50 transition-all text-left flex-1 min-w-[180px]"
+                  >
+                    <div className="w-8 h-8 rounded bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white text-[12px] font-black">M</div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-1">
+                        <p className="text-[11px] font-black text-foreground uppercase tracking-wider">Motion</p>
+                        <a 
+                          href="https://motion.dev" 
+                          target="_blank" 
+                          onClick={(e) => e.stopPropagation()} 
+                          className="text-[9px] text-primary hover:underline font-bold"
+                        >
+                          (motion.dev)
+                        </a>
+                      </div>
+                      <p className="text-[10px] text-muted-foreground font-mono truncate">npm i framer-motion</p>
+                    </div>
+                    <Copy className="w-3.5 h-3.5 text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
+                  </button>
+                  
+                  {/* Tailwind CSS */}
+                  <button
+                    onClick={() => handleCopy("npm install -D tailwindcss postcss autoprefixer && npx tailwindcss init -p")}
+                    className="group flex items-center gap-3 px-4 py-2.5 rounded-xl bg-background border border-border/50 hover:border-primary/50 transition-all text-left flex-1 min-w-[180px]"
+                  >
+                    <div className="w-8 h-8 rounded bg-gradient-to-br from-teal-400 to-cyan-500 flex items-center justify-center text-white text-[12px] font-black">T</div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-[11px] font-black text-foreground uppercase tracking-wider">Tailwind CSS</p>
+                      <p className="text-[10px] text-muted-foreground font-mono truncate">npm i -D tailwindcss</p>
+                    </div>
+                    <Copy className="w-3.5 h-3.5 text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
+                  </button>
+                </div>
             </div>
           </div>
         </div>

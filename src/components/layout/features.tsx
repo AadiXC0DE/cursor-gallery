@@ -11,7 +11,11 @@ const FEATURES = [
   {
     icon: Code2,
     title: "React & JS Ready",
-    description: "Copy-paste components for React (Framer Motion) or vanilla JavaScript."
+    description: (
+      <>
+        Copy-paste components for React (<a href="https://motion.dev" target="_blank" className="underline decoration-primary/30 hover:text-primary transition-colors">Motion</a>) or vanilla JavaScript.
+      </>
+    )
   },
   {
     icon: Zap,
@@ -20,8 +24,8 @@ const FEATURES = [
   },
   {
     icon: Palette,
-    title: "Theme Aware",
-    description: "All cursors support dark and light modes out of the box."
+    title: "Shadcn/UI Ready",
+    description: "Designed to look and feel like part of the Shadcn ecosystem. Seamless integration."
   },
   {
     icon: Component,

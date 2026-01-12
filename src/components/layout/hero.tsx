@@ -2,13 +2,10 @@
 
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
-import { ArrowRight, Copy, Terminal } from "lucide-react"
+import { ArrowRight, Github } from "lucide-react"
 import Link from "next/link"
 
 export function Hero() {
-  const handleCopyInstall = () => {
-    navigator.clipboard.writeText("npx cursors init")
-  }
 
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-40 overflow-hidden bg-background">
@@ -23,11 +20,14 @@ export function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-muted border border-border mb-8"
+            className="flex flex-col items-center gap-4 mb-8"
           >
-            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-muted-foreground px-1">
-              New: Version 2.0 is out
-            </span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
+              <div className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" />
+              <span className="text-[10px] font-black uppercase tracking-[0.2em] text-primary">
+                Fully Compatible with Shadcn/UI CLI
+              </span>
+            </div>
           </motion.div>
 
           {/* Main Headline */}
@@ -37,8 +37,8 @@ export function Hero() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
             <h1 className="text-5xl md:text-8xl lg:text-9xl font-black tracking-tighter text-foreground mb-8 uppercase italic leading-[0.9]">
-              Elevate Your <br />
-              <span className="text-primary/60">Digital Experience</span>
+              Cursors That <br />
+              <span className="text-primary/60">Command Attention</span>
             </h1>
           </motion.div>
 
@@ -49,8 +49,9 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto font-medium leading-relaxed"
           >
-            Enhance your website's interactivity with this curated collection of 100+ 
-            high-end animated cursors. <span className="text-foreground">Copy, paste, and ship.</span>
+            The ultimate collection of 100+ premium animated cursors for the modern web. 
+            Engineered with <Link href="https://motion.dev" target="_blank" className="text-foreground hover:text-primary underline decoration-primary/30 underline-offset-4 transition-colors">Motion</Link>, 
+            optimized for performance. <span className="text-foreground">Copy, paste, and ship.</span>
           </motion.p>
 
           {/* CTAs */}
@@ -61,23 +62,25 @@ export function Hero() {
             className="flex flex-col sm:flex-row items-center justify-center gap-6"
           >
             <Link href="/cursors">
-                <Button 
+              <Button 
                 size="lg" 
                 className="h-14 px-10 text-xs font-black uppercase tracking-[0.2em] bg-foreground text-background hover:bg-foreground/90 rounded-none shadow-xl transition-all hover:scale-[1.02]"
-                >
+              >
                 Explore Collection
                 <ArrowRight className="ml-3 w-4 h-4" />
-                </Button>
+              </Button>
             </Link>
             
-            <button 
-              className="group flex items-center gap-4 px-6 h-14 bg-muted border border-border hover:border-primary/50 transition-all text-xs font-bold uppercase tracking-widest text-foreground"
-              onClick={handleCopyInstall}
-            >
-              <Terminal className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors" />
-              <span>npx cursors init</span>
-              <Copy className="ml-4 w-3.5 h-3.5 opacity-30 group-hover:opacity-100 transition-opacity" />
-            </button>
+            <Link href="https://github.com/AadiXC0DE/cursor-gallery" target="_blank">
+              <Button 
+                variant="outline"
+                size="lg" 
+                className="h-14 px-10 text-xs font-black uppercase tracking-[0.2em] rounded-none border-2 hover:bg-muted transition-all"
+              >
+                <Github className="mr-3 w-4 h-4" />
+                Star on GitHub
+              </Button>
+            </Link>
           </motion.div>
 
           {/* Trust badges / stats */}
@@ -89,8 +92,8 @@ export function Hero() {
           >
             {[
                 { label: "CURSORS", value: "100+" },
-                { label: "FRAMEWORK", value: "REACT" },
-                { label: "STYLING", value: "TAILWIND" },
+                { label: "ENGINE", value: "MOTION" },
+                { label: "LIBRARY", value: "SHADCN" },
                 { label: "LICENSE", value: "MIT" }
             ].map((stat, i) => (
                 <div key={i} className="text-center group cursor-default">

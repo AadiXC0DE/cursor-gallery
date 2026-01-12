@@ -231,7 +231,7 @@ export function CursorDetailDialog({ cursor, isOpen, onClose }: CursorDetailDial
                     <span className="text-[10px] font-black uppercase tracking-widest text-foreground">Shadcn CLI Install</span>
                   </div>
                   <button
-                    onClick={() => handleCopy(`npx shadcn@latest add https://cursor-gallery.vercel.app/registry/${cursor.id}.json`)}
+                    onClick={() => handleCopy(`npx shadcn@latest add https://cursor-gallery.vercel.app/registry/${cursor.id}`)}
                     className="group flex items-center gap-3 px-4 py-2.5 rounded-xl bg-[#0d0d0d] border border-white/10 hover:border-primary/50 transition-all text-left w-full shadow-xl"
                   >
                     <div className="w-8 h-8 rounded bg-white/5 flex items-center justify-center text-primary">

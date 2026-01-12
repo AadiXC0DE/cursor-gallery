@@ -82,7 +82,7 @@ export default function Home() {
                                         </span>
                                         <div className="space-y-4">
                                             <p className="text-white/90 leading-relaxed font-bold">
-                                                npx shadcn@latest add <span className="text-primary">https://cursor-gallery.vercel.app/registry/index.json</span>
+                                                npx shadcn@latest add <span className="text-primary">https://cursor-gallery.vercel.app/registry</span>
                                             </p>
                                             <div className="space-y-1">
                                                 <p className="text-white/40 text-xs italic"># Fetches 100+ premium animated cursors</p>

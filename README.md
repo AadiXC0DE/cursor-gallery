@@ -10,10 +10,10 @@ You can now install any cursor directly into your project using the Shadcn CLI:
 
 ```bash
 # Browse and install any cursor
-npx shadcn@latest add https://cursor-gallery.vercel.app/registry/index.json
+npx shadcn@latest add https://cursor-gallery.vercel.app/registry
 
 # Or install a specific cursor (e.g., dot-ring)
-npx shadcn@latest add https://cursor-gallery.vercel.app/registry/dot-ring.json
+npx shadcn@latest add https://cursor-gallery.vercel.app/registry/dot-ring
 ```
 
 ## Features

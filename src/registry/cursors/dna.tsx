@@ -2,22 +2,67 @@
 import { motion } from "framer-motion"
 
 export default function DNACursor({ x, y }: { x: number; y: number }) {
+  const strandPoints = 6
+  
   return (
     <motion.div
-      className="fixed top-0 left-0 pointer-events-none z-50"
+      className="fixed top-0 left-0 pointer-events-none z-50 flex items-center justify-center p-4 h-24"
       style={{ x, y, translateX: "-50%", translateY: "-50%" }}
-      animate={{ rotateY: 360 }}
-      transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
     >
-      <svg width="16" height="32" viewBox="0 0 16 32">
-        {[0, 8, 16, 24].map((y, i) => (
-          <g key={i}>
-            <circle cx={i % 2 === 0 ? 2 : 14} cy={y + 4} r="2" fill="#ec4899"/>
-            <circle cx={i % 2 === 0 ? 14 : 2} cy={y + 4} r="2" fill="#06b6d4"/>
-            <line x1="4" y1={y + 4} x2="12" y2={y + 4} stroke="#8b5cf6" strokeWidth="1"/>
-          </g>
+      <div className="relative w-8 h-20 flex flex-col justify-between">
+        {[...Array(strandPoints)].map((_, i) => (
+          <div key={i} className="relative w-full h-4">
+            {/* Connecting Bridge */}
+            <motion.div
+              className="absolute top-1/2 left-0 right-0 h-[2px] bg-slate-400/30"
+              animate={{ 
+                scaleX: [1, 0, 1],
+                opacity: [0.5, 0.2, 0.5]
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: i * 0.3
+              }}
+            />
+            
+            {/* Left Strand Node */}
+            <motion.div
+              className="absolute top-1/2 w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#22d3ee] z-10"
+              animate={{
+                x: ["0%", "100%", "0%"],
+                scale: [1, 0.7, 1],
+                z: [0, -10, 0]
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: i * 0.3
+              }}
+              style={{ left: "-5%" }}
+            />
+
+            {/* Right Strand Node */}
+            <motion.div
+              className="absolute top-1/2 w-2.5 h-2.5 rounded-full bg-pink-500 shadow-[0_0_8px_#ec4899] z-10"
+              animate={{
+                x: ["100%", "0%", "100%"],
+                scale: [0.7, 1, 0.7],
+                z: [-10, 0, -10]
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: i * 0.3
+              }}
+              style={{ right: "-5%" }}
+            />
+          </div>
         ))}
-      </svg>
+      </div>
     </motion.div>
   )
 }

@@ -6,6 +6,10 @@ import DotRingCursor from "./dot-ring"
 import GlowCursor from "./glow"
 import GlitchCursor from "./glitch"
 import GradientBlobCursor from "./gradient-blob"
+import LiquidMercuryCursor from "./liquid-mercury"
+import ParticleSwarmCursor from "./particle-swarm"
+import CyberScannerCursor from "./cyber-scanner"
+
 
 // Minimal cursors
 import CircleCursor from "./circle"
@@ -48,7 +52,6 @@ import OrbitCursor from "./orbit"
 import FloatCursor from "./float"
 
 // Creative cursors
-import EmojiCursor from "./emoji"
 import TextCursor from "./text"
 import PixelCursor from "./pixel"
 import RainbowCursor from "./rainbow"
@@ -56,8 +59,8 @@ import GlassCursor from "./glass"
 import MagnetCursor from "./magnet"
 import TargetCursor from "./target"
 import EyeCursor from "./eye"
-import HandCursor from "./hand"
 import WandCursor from "./wand"
+
 
 // Character cursors
 import LightningCursor from "./lightning"
@@ -69,39 +72,18 @@ import DnaCursor from "./dna"
 
 // Emoji cursors
 import GamepadCursor from "./gamepad"
-import PaintbrushCursor from "./paintbrush"
 import CoffeeCursor from "./coffee"
+
 import MusicCursor from "./music"
 import CrownCursor from "./crown"
 import GemCursor from "./gem"
 import SkullCursor from "./skull"
-import UnicornCursor from "./unicorn"
 import CatCursor from "./cat"
+
 import DogCursor from "./dog"
 import PizzaCursor from "./pizza"
 import FireworkCursor from "./firework"
-import ButterflyCursor from "./butterfly"
-import CrystalCursor from "./crystal"
-import ThunderCursor from "./thunder"
-import PeaceCursor from "./peace"
-import AlienCursor from "./alien"
-import BombCursor from "./bomb"
-import DragonCursor from "./dragon"
-import SwordCursor from "./sword"
-import MagicCursor from "./magic"
-import RoseCursor from "./rose"
-import BeeCursor from "./bee"
-import IceCursor from "./ice"
-import BalloonCursor from "./balloon"
-import DropletCursor from "./droplet"
-import ShieldCursor from "./shield"
-import DinoCursor from "./dino"
-import AvocadoCursor from "./avocado"
-import CookieCursor from "./cookie"
-import TacoCursor from "./taco"
-import DonutCursor from "./donut"
 import RobotCursor from "./robot"
-import OctopusCursor from "./octopus"
 import BrowserCursor from "./browser"
 import KeyCursor from "./key"
 import CameraCursor from "./camera"
@@ -109,24 +91,15 @@ import IdeaCursor from "./idea"
 import LockCursor from "./lock"
 import ZapCursor from "./zap"
 import FlameCursor from "./flame"
-import WaveCursor from "./wave"
-import SoccerCursor from "./soccer"
-import KissCursor from "./kiss"
-import CloverCursor from "./clover"
 import TreeCursor from "./tree"
-import FishCursor from "./fish"
-import BirdCursor from "./bird"
-import CherryCursor from "./cherry"
-import ToolCursor from "./tool"
-import NinjaCursor from "./ninja"
-import AnchorCursor from "./anchor"
+
 
 export interface CursorDefinition {
   id: string
   name: string
   description: string
   tags: string[]
-  component: ComponentType<{ x: number; y: number }>
+  component: ComponentType<{ x: number; y: number; isStatic?: boolean }>
   featured?: boolean
   code: {
     react: string
@@ -159,6 +132,10 @@ export const CURSORS: CursorDefinition[] = [
   { id: "electric", name: "Electric", description: "Lightning bolt animation", tags: ["effect", "energy"], component: ElectricCursor, code: { react: `// Electric cursor`, vanilla: `// Pending` } },
   { id: "smoke", name: "Smoke", description: "Rising vapor effect", tags: ["effect", "particles"], component: SmokeCursor, code: { react: `// Smoke cursor`, vanilla: `// Pending` } },
   { id: "glitch", name: "Cyber Glitch", description: "Digital interference effect", tags: ["effect", "cyberpunk"], component: GlitchCursor, featured: true, code: { react: `// Glitch cursor`, vanilla: `// Pending` } },
+  { id: "liquid-mercury", name: "Liquid Mercury", description: "Fluid metallic motion", tags: ["effect", "premium", "metallic"], component: LiquidMercuryCursor, featured: true, code: { react: `// Liquid Mercury cursor`, vanilla: `// Pending` } },
+  { id: "particle-swarm", name: "Particle Swarm", description: "Dynamic orbiting particles", tags: ["effect", "particles", "premium"], component: ParticleSwarmCursor, featured: true, code: { react: `// Particle Swarm cursor`, vanilla: `// Pending` } },
+  { id: "cyber-scanner", name: "Cyber Scanner", description: "Futuristic tech interface", tags: ["effect", "cyberpunk", "premium"], component: CyberScannerCursor, featured: true, code: { react: `// Cyber Scanner cursor`, vanilla: `// Pending` } },
+
 
   // === SHAPE CATEGORY ===
   { id: "gradient-blob", name: "Gradient Blob", description: "Fluid organic shape", tags: ["shape", "gradient", "abstract"], component: GradientBlobCursor, featured: true, code: { react: `// Gradient Blob cursor`, vanilla: `// Pending` } },
@@ -187,7 +164,6 @@ export const CURSORS: CursorDefinition[] = [
 
 
   // === CREATIVE CATEGORY ===
-  { id: "emoji", name: "Emoji Pointer", description: "Pointing finger emoji", tags: ["creative", "emoji"], component: EmojiCursor, code: { react: `// Emoji cursor`, vanilla: `// Pending` } },
   { id: "text", name: "Text", description: "Click text cursor", tags: ["creative", "typography"], component: TextCursor, code: { react: `// Text cursor`, vanilla: `// Pending` } },
   { id: "pixel", name: "Pixel", description: "Retro pixel art style", tags: ["creative", "retro"], component: PixelCursor, code: { react: `// Pixel cursor`, vanilla: `// Pending` } },
   { id: "rainbow", name: "Rainbow", description: "Spinning rainbow colors", tags: ["creative", "colorful"], component: RainbowCursor, code: { react: `// Rainbow cursor`, vanilla: `// Pending` } },
@@ -195,8 +171,8 @@ export const CURSORS: CursorDefinition[] = [
   { id: "magnet", name: "Magnet", description: "Magnetic poles cursor", tags: ["creative", "science"], component: MagnetCursor, code: { react: `// Magnet cursor`, vanilla: `// Pending` } },
   { id: "target", name: "Target", description: "Bullseye target rings", tags: ["creative", "precision"], component: TargetCursor, code: { react: `// Target cursor`, vanilla: `// Pending` } },
   { id: "eye", name: "Eye", description: "Watching eye cursor", tags: ["creative", "unique"], component: EyeCursor, code: { react: `// Eye cursor`, vanilla: `// Pending` } },
-  { id: "hand", name: "Hand", description: "Open hand emoji", tags: ["creative", "emoji"], component: HandCursor, code: { react: `// Hand cursor`, vanilla: `// Pending` } },
   { id: "wand", name: "Wand", description: "Magic wand sparkles", tags: ["creative", "magical"], component: WandCursor, code: { react: `// Wand cursor`, vanilla: `// Pending` } },
+
 
   // === SCIENCE CATEGORY ===
   { id: "planet", name: "Planet", description: "Saturn-like ringed planet", tags: ["science", "space"], component: PlanetCursor, code: { react: `// Planet cursor`, vanilla: `// Pending` } },
@@ -204,62 +180,32 @@ export const CURSORS: CursorDefinition[] = [
   { id: "dna", name: "DNA", description: "Rotating helix strand", tags: ["science", "biology"], component: DnaCursor, code: { react: `// DNA cursor`, vanilla: `// Pending` } },
 
   // === EMOJI FUN CATEGORY ===
-  { id: "gamepad", name: "Gamepad", description: "Gaming controller", tags: ["emoji", "gaming"], component: GamepadCursor, code: { react: `// Gamepad cursor`, vanilla: `// Pending` } },
-  { id: "paintbrush", name: "Paintbrush", description: "Artist's brush", tags: ["emoji", "art"], component: PaintbrushCursor, code: { react: `// Paintbrush cursor`, vanilla: `// Pending` } },
-  { id: "coffee", name: "Coffee", description: "Hot coffee cup", tags: ["emoji", "food"], component: CoffeeCursor, code: { react: `// Coffee cursor`, vanilla: `// Pending` } },
-  { id: "music", name: "Music", description: "Dancing music note", tags: ["emoji", "music"], component: MusicCursor, code: { react: `// Music cursor`, vanilla: `// Pending` } },
-  { id: "crown", name: "Crown", description: "Royal crown", tags: ["emoji", "royal"], component: CrownCursor, code: { react: `// Crown cursor`, vanilla: `// Pending` } },
-  { id: "gem", name: "Gem", description: "Spinning gemstone", tags: ["emoji", "luxury"], component: GemCursor, code: { react: `// Gem cursor`, vanilla: `// Pending` } },
-  { id: "skull", name: "Skull", description: "Spooky skull", tags: ["emoji", "dark"], component: SkullCursor, code: { react: `// Skull cursor`, vanilla: `// Pending` } },
-  { id: "unicorn", name: "Unicorn", description: "Magical unicorn", tags: ["emoji", "magical"], component: UnicornCursor, code: { react: `// Unicorn cursor`, vanilla: `// Pending` } },
-  { id: "cat", name: "Cat", description: "Cute cat face", tags: ["emoji", "animals"], component: CatCursor, code: { react: `// Cat cursor`, vanilla: `// Pending` } },
-  { id: "dog", name: "Dog", description: "Friendly dog face", tags: ["emoji", "animals"], component: DogCursor, code: { react: `// Dog cursor`, vanilla: `// Pending` } },
+  { id: "gamepad", name: "Gamepad", description: "Interactive controller", tags: ["animated", "gaming"], component: GamepadCursor, code: { react: `// Gamepad cursor`, vanilla: `// Pending` } },
+  { id: "coffee", name: "Coffee", description: "Steaming hot coffee", tags: ["animated", "food"], component: CoffeeCursor, code: { react: `// Coffee cursor`, vanilla: `// Pending` } },
+
+  { id: "music", name: "Music", description: "Floating musical notes", tags: ["animated", "music"], component: MusicCursor, code: { react: `// Music cursor`, vanilla: `// Pending` } },
+  { id: "crown", name: "Crown", description: "Royal golden crown", tags: ["animated", "royal"], component: CrownCursor, code: { react: `// Crown cursor`, vanilla: `// Pending` } },
+  { id: "gem", name: "Gem", description: "Sparkling diamond", tags: ["animated", "luxury"], component: GemCursor, code: { react: `// Gem cursor`, vanilla: `// Pending` } },
+  { id: "skull", name: "Skull", description: "Glowing eyes skull", tags: ["animated", "dark"], component: SkullCursor, code: { react: `// Skull cursor`, vanilla: `// Pending` } },
+  { id: "cat", name: "Cat", description: "Cute blinking cat", tags: ["animated", "animals"], component: CatCursor, code: { react: `// Cat cursor`, vanilla: `// Pending` } },
+
+  { id: "dog", name: "Dog", description: "Wagging tongue dog", tags: ["animated", "animals"], component: DogCursor, code: { react: `// Dog cursor`, vanilla: `// Pending` } },
 
   // === FOOD CATEGORY ===
-  { id: "pizza", name: "Pizza", description: "Delicious pizza slice", tags: ["emoji", "food"], component: PizzaCursor, code: { react: `// Pizza cursor`, vanilla: `// Pending` } },
-  { id: "taco", name: "Taco", description: "Tasty taco", tags: ["emoji", "food"], component: TacoCursor, code: { react: `// Taco cursor`, vanilla: `// Pending` } },
-  { id: "donut", name: "Donut", description: "Spinning donut", tags: ["emoji", "food"], component: DonutCursor, code: { react: `// Donut cursor`, vanilla: `// Pending` } },
-  { id: "avocado", name: "Avocado", description: "Fresh avocado", tags: ["emoji", "food"], component: AvocadoCursor, code: { react: `// Avocado cursor`, vanilla: `// Pending` } },
-  { id: "cookie", name: "Cookie", description: "Chocolate chip cookie", tags: ["emoji", "food"], component: CookieCursor, code: { react: `// Cookie cursor`, vanilla: `// Pending` } },
-  { id: "cherry", name: "Cherry", description: "Swinging cherries", tags: ["emoji", "food"], component: CherryCursor, code: { react: `// Cherry cursor`, vanilla: `// Pending` } },
+  { id: "pizza", name: "Pizza", description: "Steaming hot pizza slice", tags: ["animated", "food"], component: PizzaCursor, code: { react: `// Pizza cursor`, vanilla: `// Pending` } },
 
   // === NATURE CATEGORY ===
-  { id: "butterfly", name: "Butterfly", description: "Floating butterfly", tags: ["emoji", "nature"], component: ButterflyCursor, code: { react: `// Butterfly cursor`, vanilla: `// Pending` } },
-  { id: "bee", name: "Bee", description: "Buzzing bee", tags: ["emoji", "nature"], component: BeeCursor, code: { react: `// Bee cursor`, vanilla: `// Pending` } },
-  { id: "bird", name: "Bird", description: "Flying bird", tags: ["emoji", "nature"], component: BirdCursor, code: { react: `// Bird cursor`, vanilla: `// Pending` } },
-  { id: "fish", name: "Fish", description: "Swimming fish", tags: ["emoji", "nature"], component: FishCursor, code: { react: `// Fish cursor`, vanilla: `// Pending` } },
-  { id: "octopus", name: "Octopus", description: "Waving octopus", tags: ["emoji", "nature"], component: OctopusCursor, code: { react: `// Octopus cursor`, vanilla: `// Pending` } },
-  { id: "dino", name: "Dinosaur", description: "T-Rex dinosaur", tags: ["emoji", "animals"], component: DinoCursor, code: { react: `// Dino cursor`, vanilla: `// Pending` } },
-  { id: "dragon", name: "Dragon", description: "Mighty dragon", tags: ["emoji", "fantasy"], component: DragonCursor, code: { react: `// Dragon cursor`, vanilla: `// Pending` } },
-  { id: "tree", name: "Tree", description: "Evergreen tree", tags: ["emoji", "nature"], component: TreeCursor, code: { react: `// Tree cursor`, vanilla: `// Pending` } },
-  { id: "clover", name: "Clover", description: "Lucky four-leaf", tags: ["emoji", "nature"], component: CloverCursor, code: { react: `// Clover cursor`, vanilla: `// Pending` } },
-  { id: "rose", name: "Rose", description: "Beautiful rose", tags: ["emoji", "nature"], component: RoseCursor, code: { react: `// Rose cursor`, vanilla: `// Pending` } },
+  { id: "tree", name: "Tree", description: "Swaying nature pine", tags: ["animated", "nature"], component: TreeCursor, code: { react: `// Tree cursor`, vanilla: `// Pending` } },
 
   // === OBJECTS CATEGORY ===
-  { id: "firework", name: "Firework", description: "Exploding firework", tags: ["emoji", "celebration"], component: FireworkCursor, code: { react: `// Firework cursor`, vanilla: `// Pending` } },
-  { id: "crystal", name: "Crystal Ball", description: "Magic crystal ball", tags: ["emoji", "magical"], component: CrystalCursor, code: { react: `// Crystal cursor`, vanilla: `// Pending` } },
-  { id: "thunder", name: "Thunder", description: "Flashing thunder", tags: ["emoji", "weather"], component: ThunderCursor, code: { react: `// Thunder cursor`, vanilla: `// Pending` } },
-  { id: "peace", name: "Peace", description: "Peace sign hand", tags: ["emoji", "gestures"], component: PeaceCursor, code: { react: `// Peace cursor`, vanilla: `// Pending` } },
-  { id: "wave", name: "Wave", description: "Waving hand", tags: ["emoji", "gestures"], component: WaveCursor, code: { react: `// Wave cursor`, vanilla: `// Pending` } },
-  { id: "kiss", name: "Kiss", description: "Kissing lips", tags: ["emoji", "love"], component: KissCursor, code: { react: `// Kiss cursor`, vanilla: `// Pending` } },
-  { id: "alien", name: "Alien", description: "Extraterrestrial", tags: ["emoji", "space"], component: AlienCursor, code: { react: `// Alien cursor`, vanilla: `// Pending` } },
-  { id: "bomb", name: "Bomb", description: "Ticking bomb", tags: ["emoji", "danger"], component: BombCursor, code: { react: `// Bomb cursor`, vanilla: `// Pending` } },
-  { id: "sword", name: "Sword", description: "Crossed swords", tags: ["emoji", "fantasy"], component: SwordCursor, code: { react: `// Sword cursor`, vanilla: `// Pending` } },
-  { id: "magic", name: "Magic Sparkle", description: "Magical sparkles", tags: ["emoji", "magical"], component: MagicCursor, code: { react: `// Magic cursor`, vanilla: `// Pending` } },
-  { id: "ice", name: "Ice", description: "Cool ice cube", tags: ["emoji", "cold"], component: IceCursor, code: { react: `// Ice cursor`, vanilla: `// Pending` } },
-  { id: "balloon", name: "Balloon", description: "Floating balloon", tags: ["emoji", "celebration"], component: BalloonCursor, code: { react: `// Balloon cursor`, vanilla: `// Pending` } },
-  { id: "droplet", name: "Droplet", description: "Water droplet", tags: ["emoji", "water"], component: DropletCursor, code: { react: `// Droplet cursor`, vanilla: `// Pending` } },
-  { id: "shield", name: "Shield", description: "Protective shield", tags: ["emoji", "protection"], component: ShieldCursor, code: { react: `// Shield cursor`, vanilla: `// Pending` } },
-  { id: "robot", name: "Robot", description: "Friendly robot", tags: ["emoji", "tech"], component: RobotCursor, code: { react: `// Robot cursor`, vanilla: `// Pending` } },
-  { id: "browser", name: "Globe", description: "World wide web", tags: ["emoji", "tech"], component: BrowserCursor, code: { react: `// Browser cursor`, vanilla: `// Pending` } },
-  { id: "key", name: "Key", description: "Golden key", tags: ["emoji", "security"], component: KeyCursor, code: { react: `// Key cursor`, vanilla: `// Pending` } },
-  { id: "camera", name: "Camera", description: "Photo camera", tags: ["emoji", "media"], component: CameraCursor, code: { react: `// Camera cursor`, vanilla: `// Pending` } },
-  { id: "idea", name: "Idea", description: "Glowing lightbulb", tags: ["emoji", "creative"], component: IdeaCursor, code: { react: `// Idea cursor`, vanilla: `// Pending` } },
-  { id: "lock", name: "Lock", description: "Secure padlock", tags: ["emoji", "security"], component: LockCursor, code: { react: `// Lock cursor`, vanilla: `// Pending` } },
-  { id: "zap", name: "Zap", description: "Electric zap", tags: ["emoji", "energy"], component: ZapCursor, code: { react: `// Zap cursor`, vanilla: `// Pending` } },
-  { id: "flame", name: "Flame", description: "Hot flame", tags: ["emoji", "fire"], component: FlameCursor, code: { react: `// Flame cursor`, vanilla: `// Pending` } },
-  { id: "soccer", name: "Soccer", description: "Rolling soccer ball", tags: ["emoji", "sports"], component: SoccerCursor, code: { react: `// Soccer cursor`, vanilla: `// Pending` } },
-  { id: "tool", name: "Tool", description: "Repair wrench", tags: ["emoji", "tools"], component: ToolCursor, code: { react: `// Tool cursor`, vanilla: `// Pending` } },
-  { id: "ninja", name: "Ninja", description: "Stealthy ninja", tags: ["emoji", "warrior"], component: NinjaCursor, code: { react: `// Ninja cursor`, vanilla: `// Pending` } },
-  { id: "anchor", name: "Anchor", description: "Ship anchor", tags: ["emoji", "nautical"], component: AnchorCursor, code: { react: `// Anchor cursor`, vanilla: `// Pending` } },
+  { id: "firework", name: "Firework", description: "Exploding celebration", tags: ["animated", "celebration"], component: FireworkCursor, code: { react: `// Firework cursor`, vanilla: `// Pending` } },
+  { id: "robot", name: "Robot", description: "Futuristic bot face", tags: ["animated", "tech"], component: RobotCursor, code: { react: `// Robot cursor`, vanilla: `// Pending` } },
+  { id: "browser", name: "Globe", description: "Spinning web globe", tags: ["animated", "tech"], component: BrowserCursor, code: { react: `// Browser cursor`, vanilla: `// Pending` } },
+  { id: "key", name: "Key", description: "Shimmering golden key", tags: ["animated", "security"], component: KeyCursor, code: { react: `// Key cursor`, vanilla: `// Pending` } },
+  { id: "camera", name: "Camera", description: "Professional lens focus", tags: ["animated", "media"], component: CameraCursor, code: { react: `// Camera cursor`, vanilla: `// Pending` } },
+  { id: "idea", name: "Idea", description: "Glowing inspiration", tags: ["animated", "creative"], component: IdeaCursor, code: { react: `// Idea cursor`, vanilla: `// Pending` } },
+  { id: "lock", name: "Lock", description: "Secure animated padlock", tags: ["animated", "security"], component: LockCursor, code: { react: `// Lock cursor`, vanilla: `// Pending` } },
+  { id: "zap", name: "Zap", description: "Electric energy bolt", tags: ["animated", "energy"], component: ZapCursor, code: { react: `// Zap cursor`, vanilla: `// Pending` } },
+  { id: "flame", name: "Flame", description: "Animated fire particles", tags: ["animated", "fire"], component: FlameCursor, code: { react: `// Flame cursor`, vanilla: `// Pending` } },
+
 ]

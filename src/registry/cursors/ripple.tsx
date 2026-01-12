@@ -1,17 +1,18 @@
 "use client"
 import { motion } from "framer-motion"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 
 interface Ripple { id: number; x: number; y: number }
 
 export default function RippleCursor({ x, y }: { x: number; y: number }) {
   const [ripples, setRipples] = useState<Ripple[]>([])
   const [lastPos, setLastPos] = useState({ x: 0, y: 0 })
+  const idCounter = useRef(0)
 
   useEffect(() => {
     const dist = Math.sqrt((x - lastPos.x) ** 2 + (y - lastPos.y) ** 2)
     if (dist > 30) {
-      setRipples(prev => [...prev.slice(-5), { id: Date.now(), x, y }])
+      setRipples(prev => [...prev.slice(-5), { id: idCounter.current++, x, y }])
       setLastPos({ x, y })
     }
   }, [x, y, lastPos])

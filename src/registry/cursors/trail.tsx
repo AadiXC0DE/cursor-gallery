@@ -1,15 +1,16 @@
 "use client"
 import { motion } from "framer-motion"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 
 interface Point { x: number; y: number; id: number }
 
 export default function TrailCursor({ x, y }: { x: number; y: number }) {
   const [trail, setTrail] = useState<Point[]>([])
+  const idCounter = useRef(0)
 
   useEffect(() => {
     setTrail(prev => {
-      const newTrail = [...prev, { x, y, id: Date.now() }]
+      const newTrail = [...prev, { x, y, id: idCounter.current++ }]
       return newTrail.slice(-12)
     })
   }, [x, y])

@@ -130,6 +130,17 @@
     @apply bg-background text-foreground antialiased selection:bg-primary/10;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
   }
+  
+  /* Performance optimizations */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Force GPU acceleration for transforms */
+  [class*="motion-"] {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
 }
 
 /* Premium Card Style */

@@ -18,12 +18,32 @@ interface CursorDetailDialogProps {
 export function CursorDetailDialog({ cursor, isOpen, onClose }: CursorDetailDialogProps) {
   const { setCursor, resetCursor } = useCursor()
   const [copied, setCopied] = useState(false)
+  const [actualCode, setActualCode] = useState<{ react: string; vanilla: string } | null>(null)
+  const [isLoadingCode, setIsLoadingCode] = useState(false)
 
   useEffect(() => {
     if (!isOpen) {
       resetCursor()
     }
   }, [isOpen, resetCursor])
+
+  useEffect(() => {
+    if (cursor && isOpen) {
+      setIsLoadingCode(true)
+      fetch(`/api/cursor-code?id=${cursor.id}`)
+        .then(res => res.json())
+        .then(data => {
+          setActualCode(data)
+          setIsLoadingCode(false)
+        })
+        .catch(err => {
+          console.error('Failed to load cursor code:', err)
+          setIsLoadingCode(false)
+          // Fallback to placeholder code
+          setActualCode({ react: cursor.code.react, vanilla: cursor.code.vanilla })
+        })
+    }
+  }, [cursor, isOpen])
 
   const handleCopy = (text: string) => {
     navigator.clipboard.writeText(text)
@@ -102,14 +122,24 @@ export function CursorDetailDialog({ cursor, isOpen, onClose }: CursorDetailDial
                           variant="secondary" 
                           size="sm" 
                           className="h-8 px-3 text-[10px] font-bold uppercase tracking-widest shadow-md active:scale-95 transition-all bg-background/80 backdrop-blur hover:bg-background"
-                          onClick={() => handleCopy(cursor.code.react)}
+                          onClick={() => handleCopy(actualCode?.react || '// Loading...')}
+                          disabled={isLoadingCode}
                         >
                           {copied ? <Check className="w-3 h-3 mr-1.5" /> : <Copy className="w-3 h-3 mr-1.5" />}
                           {copied ? "Copied" : "Copy Source"}
                         </Button>
                       </div>
                       <div className="rounded-xl overflow-hidden border border-border/50 bg-[#0d0d0d] shadow-inner">
-                        <CodeBlock code={cursor.code.react} language="tsx" className="max-h-[400px]" />
+                        {isLoadingCode ? (
+                          <div className="flex items-center justify-center h-[400px] text-muted-foreground">
+                            <div className="flex items-center gap-2">
+                              <div className="w-4 h-4 border-2 border-primary border-t-transparent rounded-full animate-spin" />
+                              <span className="text-sm font-medium">Loading source code...</span>
+                            </div>
+                          </div>
+                        ) : (
+                          <CodeBlock code={actualCode?.react || cursor.code.react} language="tsx" className="max-h-[400px]" />
+                        )}
                       </div>
                     </div>
                   </TabsContent>
@@ -121,14 +151,24 @@ export function CursorDetailDialog({ cursor, isOpen, onClose }: CursorDetailDial
                           variant="secondary" 
                           size="sm" 
                           className="h-8 px-3 text-[10px] font-bold uppercase tracking-widest shadow-md active:scale-95 transition-all bg-background/80 backdrop-blur hover:bg-background"
-                          onClick={() => handleCopy(cursor.code.vanilla)}
+                          onClick={() => handleCopy(actualCode?.vanilla || '// Loading...')}
+                          disabled={isLoadingCode}
                         >
                           {copied ? <Check className="w-3 h-3 mr-1.5" /> : <Copy className="w-3 h-3 mr-1.5" />}
                           {copied ? "Copied" : "Copy Source"}
                         </Button>
                       </div>
                       <div className="rounded-xl overflow-hidden border border-border/50 bg-[#0d0d0d] shadow-inner">
-                        <CodeBlock code={cursor.code.vanilla} language="javascript" className="max-h-[400px]" />
+                        {isLoadingCode ? (
+                          <div className="flex items-center justify-center h-[400px] text-muted-foreground">
+                            <div className="flex items-center gap-2">
+                              <div className="w-4 h-4 border-2 border-primary border-t-transparent rounded-full animate-spin" />
+                              <span className="text-sm font-medium">Loading source code...</span>
+                            </div>
+                          </div>
+                        ) : (
+                          <CodeBlock code={actualCode?.vanilla || cursor.code.vanilla} language="javascript" className="max-h-[400px]" />
+                        )}
                       </div>
                     </div>
                   </TabsContent>

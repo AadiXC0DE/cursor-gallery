@@ -51,17 +51,35 @@ export function CursorGrid({ onlyFeatured = false }: { onlyFeatured?: boolean })
   const paginatedCursors = useMemo(() => filteredCursors.slice(0, visibleCount), [filteredCursors, visibleCount])
 
   // Infinite Scroll Logic
+  const observerRef = React.useRef<IntersectionObserver | null>(null)
+  
   const lastElementRef = useCallback((node: HTMLDivElement | null) => {
     if (onlyFeatured) return
     
-    const observer = new IntersectionObserver((entries) => {
+    // Cleanup previous observer
+    if (observerRef.current) {
+      observerRef.current.disconnect()
+    }
+    
+    if (!node) return
+    
+    observerRef.current = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting && visibleCount < filteredCursors.length) {
         setVisibleCount((prev: number) => prev + 12)
       }
     }, { threshold: 0.5 })
 
-    if (node) observer.observe(node)
+    observerRef.current.observe(node)
   }, [onlyFeatured, visibleCount, filteredCursors.length])
+  
+  // Cleanup on unmount
+  React.useEffect(() => {
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect()
+      }
+    }
+  }, [])
 
 
   return (
@@ -103,11 +121,10 @@ export function CursorGrid({ onlyFeatured = false }: { onlyFeatured?: boolean })
             {paginatedCursors.map((cursor, idx) => (
             <motion.div
                 key={cursor.id}
-                layout
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.4, delay: (idx % 4) * 0.05, ease: [0.23, 1, 0.32, 1] }}
+                transition={{ duration: 0.3, delay: Math.min((idx % 4) * 0.03, 0.15) }}
                 ref={idx === paginatedCursors.length - 1 ? lastElementRef : null}
             >
                 <CursorCard 

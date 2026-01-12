@@ -1,43 +1,52 @@
 "use client"
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
+import { useState, useEffect, useRef } from "react"
 
-export default function SmokeCursor({ x, y }: { x: number; y: number }) {
+export default function SmokeCursor({ x, y, isStatic }: { x: number; y: number; isStatic?: boolean }) {
+  const [puffs, setPuffs] = useState<{ id: number; x: number; y: number; size: number }[]>([])
+  const idCounter = useRef(0)
+
+  useEffect(() => {
+    if (isStatic) return;
+    const interval = setInterval(() => {
+      setPuffs(prev => [
+        ...prev.slice(-8), // Reduced from 12 to 8 particles max
+        { id: idCounter.current++, x, y, size: 10 + Math.random() * 20 }
+      ])
+    }, 150) // Increased from 120ms to 150ms (slower emission)
+    return () => clearInterval(interval)
+  }, [x, y])
+
   return (
-    <>
-      {[...Array(3)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="fixed top-0 left-0 rounded-full pointer-events-none"
-          style={{
-            width: 20 + i * 15,
-            height: 20 + i * 15,
-            x, y,
-            translateX: "-50%",
-            translateY: "-50%",
-            background: `radial-gradient(circle, rgba(100,100,100,${0.3 - i * 0.08}) 0%, transparent 70%)`,
-            filter: "blur(8px)",
-          }}
-          animate={{ 
-            y: [y, y - 30 - i * 20],
-            opacity: [0.4, 0],
-            scale: [1, 1.5 + i * 0.3],
-          }}
-          transition={{ 
-            duration: 1 + i * 0.3,
-            repeat: Infinity,
-            ease: "easeOut",
-            delay: i * 0.15,
-          }}
-        />
-      ))}
+    <div className="fixed top-0 left-0 pointer-events-none z-50">
+      <AnimatePresence>
+        {puffs.map(p => (
+          <motion.div
+            key={p.id}
+            initial={{ opacity: 0.6, scale: 0.5, x: p.x, y: p.y }}
+            animate={{ 
+              opacity: 0, 
+              scale: [0.5, 2.5], 
+              y: p.y - 60 - Math.random() * 40,
+              x: p.x + (Math.random() - 0.5) * 30
+            }}
+            transition={{ duration: 2, ease: "easeOut" }}
+            style={{ 
+              width: p.size, 
+              height: p.size,
+              translateX: "-50%",
+              translateY: "-50%"
+            }}
+            className="absolute rounded-full bg-gradient-to-b from-gray-400/40 via-gray-500/20 to-transparent blur-[6px]"
+          />
+        ))}
+      </AnimatePresence>
+      
+      {/* Small Core */}
       <motion.div
-        className="fixed top-0 left-0 w-3 h-3 rounded-full pointer-events-none z-50"
-        style={{
-          x, y, translateX: "-50%", translateY: "-50%",
-          background: "#666",
-          boxShadow: "0 0 10px rgba(100,100,100,0.5)"
-        }}
+        className="w-3 h-3 rounded-full bg-gray-500/50 shadow-lg blur-[1px]"
+        style={{ x, y, translateX: "-50%", translateY: "-50%" }}
       />
-    </>
+    </div>
   )
 }

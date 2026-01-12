@@ -1,23 +1,25 @@
 "use client"
 import { motion } from "framer-motion"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 
 interface Sparkle { id: number; x: number; y: number; size: number; rotation: number }
 
-export default function SparkleCursor({ x, y }: { x: number; y: number }) {
+export default function SparkleCursor({ x, y, isStatic }: { x: number; y: number; isStatic?: boolean }) {
   const [sparkles, setSparkles] = useState<Sparkle[]>([])
+  const idCounter = useRef(0)
 
   useEffect(() => {
+    if (isStatic) return;
     const interval = setInterval(() => {
       const newSparkle = {
-        id: Date.now(),
+        id: idCounter.current++,
         x: x + (Math.random() - 0.5) * 30,
         y: y + (Math.random() - 0.5) * 30,
         size: Math.random() * 8 + 4,
         rotation: Math.random() * 360,
       }
-      setSparkles(prev => [...prev.slice(-8), newSparkle])
-    }, 50)
+      setSparkles(prev => [...prev.slice(-5), newSparkle]) // Reduced from 8 to 5
+    }, 80) // Increased from 50ms to 80ms
     return () => clearInterval(interval)
   }, [x, y])
 

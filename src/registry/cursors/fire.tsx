@@ -1,22 +1,24 @@
 "use client"
 import { motion } from "framer-motion"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 
 interface Flame { id: number; x: number; y: number; size: number }
 
-export default function FireCursor({ x, y }: { x: number; y: number }) {
+export default function FireCursor({ x, y, isStatic }: { x: number; y: number; isStatic?: boolean }) {
   const [flames, setFlames] = useState<Flame[]>([])
+  const idCounter = useRef(0)
 
   useEffect(() => {
+    if (isStatic) return;
     const interval = setInterval(() => {
       const newFlame = {
-        id: Date.now(),
+        id: idCounter.current++,
         x: x + (Math.random() - 0.5) * 16,
         y: y,
         size: Math.random() * 12 + 6,
       }
-      setFlames(prev => [...prev.slice(-10), newFlame])
-    }, 40)
+      setFlames(prev => [...prev.slice(-6), newFlame]) // Reduced from 10 to 6
+    }, 60) // Increased from 40ms to 60ms
     return () => clearInterval(interval)
   }, [x, y])
 

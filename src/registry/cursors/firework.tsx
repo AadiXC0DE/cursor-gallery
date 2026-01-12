@@ -1,36 +1,52 @@
-"use client"
-import { motion, AnimatePresence } from "framer-motion"
-import { useState, useEffect, useRef } from "react"
+"use client";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
 
 interface Spark {
-  id: number
-  angle: number
-  distance: number
-  color: string
+  id: number;
+  angle: number;
+  distance: number;
+  color: string;
 }
 
-export default function FireworkCursor({ x, y, isStatic }: { x: number; y: number; isStatic?: boolean }) {
-  const [sparks, setSparks] = useState<Spark[]>([])
-  const idCounter = useRef(0)
+export default function FireworkCursor({
+  x,
+  y,
+  isStatic,
+}: {
+  x: number;
+  y: number;
+  isStatic?: boolean;
+}) {
+  const [sparks, setSparks] = useState<Spark[]>([]);
+  const idCounter = useRef(0);
 
   useEffect(() => {
     if (isStatic) return;
     const triggerFirework = () => {
-      const colors = ["#ff0000", "#00ff00", "#0000ff", "#ffff00", "#ff00ff", "#00ffff"]
-      const color = colors[Math.floor(Math.random() * colors.length)]
-      const newSparks = Array.from({ length: 8 }).map((_, i) => ({ // Reduced from 12 to 8
+      const colors = [
+        "#ff0000",
+        "#00ff00",
+        "#0000ff",
+        "#ffff00",
+        "#ff00ff",
+        "#00ffff",
+      ];
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      const newSparks = Array.from({ length: 8 }).map((_, i) => ({
+        // Reduced from 12 to 8
         id: idCounter.current++,
         angle: (i * 360) / 8,
         distance: Math.random() * 40 + 20,
         color,
-      }))
-      setSparks(newSparks)
-    }
+      }));
+      setSparks(newSparks);
+    };
 
-    const interval = setInterval(triggerFirework, 2000) // Increased from 1500ms to 2000ms
-    triggerFirework()
-    return () => clearInterval(interval)
-  }, [isStatic])
+    const interval = setInterval(triggerFirework, 2000); // Increased from 1500ms to 2000ms
+    triggerFirework();
+    return () => clearInterval(interval);
+  }, [isStatic]);
 
   return (
     <motion.div
@@ -38,7 +54,7 @@ export default function FireworkCursor({ x, y, isStatic }: { x: number; y: numbe
       style={{ x, y, translateX: "-50%", translateY: "-50%" }}
     >
       <AnimatePresence>
-        {sparks.map(s => (
+        {sparks.map((s) => (
           <motion.div
             key={s.id}
             className="absolute w-1 h-1 rounded-full shadow-[0_0_4px_currentColor]"
@@ -60,5 +76,5 @@ export default function FireworkCursor({ x, y, isStatic }: { x: number; y: numbe
         transition={{ duration: 0.5, repeat: Infinity }}
       />
     </motion.div>
-  )
+  );
 }

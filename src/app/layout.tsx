@@ -19,15 +19,24 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Cursor Gallery - Animated Cursors for React",
-  description: "A beautiful collection of animated cursor pointers. Copy-paste ready for React, Next.js, and Vanilla JS.",
-  keywords: ["react", "cursor", "animation", "framer motion", "ui design", "frontend"],
+  description:
+    "A beautiful collection of animated cursor pointers. Copy-paste ready for React, Next.js, and Vanilla JS.",
+  keywords: [
+    "react",
+    "cursor",
+    "animation",
+    "framer motion",
+    "ui design",
+    "frontend",
+  ],
   authors: [{ name: "Cursor Gallery" }],
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://cursor-gallery.vercel.app",
     title: "Cursor Gallery - Animated Cursors",
-    description: "Beautiful animated cursors, copy-paste ready for your next project.",
+    description:
+      "Beautiful animated cursors, copy-paste ready for your next project.",
     siteName: "Cursor Gallery",
   },
 };
@@ -43,17 +52,17 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
       >
         <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <CursorProvider>
-                <CursorEngine />
-                {children}
-                <Analytics />
-            </CursorProvider>
-          </ThemeProvider>
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <CursorProvider>
+            <CursorEngine />
+            {children}
+            <Analytics />
+          </CursorProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

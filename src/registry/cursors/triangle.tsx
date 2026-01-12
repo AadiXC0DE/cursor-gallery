@@ -1,5 +1,5 @@
-"use client"
-import { motion } from "framer-motion"
+"use client";
+import { motion } from "framer-motion";
 
 export default function TriangleCursor({ x, y }: { x: number; y: number }) {
   return (
@@ -12,11 +12,11 @@ export default function TriangleCursor({ x, y }: { x: number; y: number }) {
         <polygon points="10,0 20,20 0,20" fill="url(#triGrad)" />
         <defs>
           <linearGradient id="triGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#8b5cf6"/>
-            <stop offset="100%" stopColor="#d946ef"/>
+            <stop offset="0%" stopColor="#8b5cf6" />
+            <stop offset="100%" stopColor="#d946ef" />
           </linearGradient>
         </defs>
       </svg>
     </motion.div>
-  )
+  );
 }

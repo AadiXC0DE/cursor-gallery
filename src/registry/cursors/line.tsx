@@ -1,5 +1,5 @@
-"use client"
-import { motion } from "framer-motion"
+"use client";
+import { motion } from "framer-motion";
 
 export default function LineCursor({ x, y }: { x: number; y: number }) {
   return (
@@ -8,5 +8,5 @@ export default function LineCursor({ x, y }: { x: number; y: number }) {
       style={{ x, y, translateX: "-50%", translateY: "-50%" }}
       transition={{ type: "spring", stiffness: 500, damping: 28 }}
     />
-  )
+  );
 }

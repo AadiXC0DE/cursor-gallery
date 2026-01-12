@@ -1,18 +1,16 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { motion } from "framer-motion"
-import { ArrowRight, Github } from "lucide-react"
-import Link from "next/link"
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { ArrowRight, Github } from "lucide-react";
+import Link from "next/link";
 
 export function Hero() {
-
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-40 overflow-hidden bg-background">
       {/* Background elements */}
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_0%,rgba(0,0,0,0.03)_0%,transparent_50%)] dark:bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.05)_0%,transparent_50%)]" />
 
-      
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
           {/* Badge */}
@@ -49,9 +47,17 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto font-medium leading-relaxed"
           >
-            The ultimate collection of 100+ premium animated cursors for the modern web. 
-            Engineered with <Link href="https://motion.dev" target="_blank" className="text-foreground hover:text-primary underline decoration-primary/30 underline-offset-4 transition-colors">Motion</Link>, 
-            optimized for performance. <span className="text-foreground">Copy, paste, and ship.</span>
+            The ultimate collection of 100+ premium animated cursors for the
+            modern web. Engineered with{" "}
+            <Link
+              href="https://motion.dev"
+              target="_blank"
+              className="text-foreground hover:text-primary underline decoration-primary/30 underline-offset-4 transition-colors"
+            >
+              Motion
+            </Link>
+            , optimized for performance.{" "}
+            <span className="text-foreground">Copy, paste, and ship.</span>
           </motion.p>
 
           {/* CTAs */}
@@ -62,19 +68,22 @@ export function Hero() {
             className="flex flex-col sm:flex-row items-center justify-center gap-6"
           >
             <Link href="/cursors">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="h-14 px-10 text-xs font-black uppercase tracking-[0.2em] bg-foreground text-background hover:bg-foreground/90 rounded-none shadow-xl transition-all hover:scale-[1.02]"
               >
                 Explore Collection
                 <ArrowRight className="ml-3 w-4 h-4" />
               </Button>
             </Link>
-            
-            <Link href="https://github.com/AadiXC0DE/cursor-gallery" target="_blank">
-              <Button 
+
+            <Link
+              href="https://github.com/AadiXC0DE/cursor-gallery"
+              target="_blank"
+            >
+              <Button
                 variant="outline"
-                size="lg" 
+                size="lg"
                 className="h-14 px-10 text-xs font-black uppercase tracking-[0.2em] rounded-none border-2 hover:bg-muted transition-all"
               >
                 <Github className="mr-3 w-4 h-4" />
@@ -91,20 +100,23 @@ export function Hero() {
             className="mt-24 pt-12 border-t border-border flex flex-wrap justify-center items-center gap-12"
           >
             {[
-                { label: "CURSORS", value: "100+" },
-                { label: "ENGINE", value: "MOTION" },
-                { label: "LIBRARY", value: "SHADCN" },
-                { label: "LICENSE", value: "MIT" }
+              { label: "CURSORS", value: "100+" },
+              { label: "ENGINE", value: "MOTION" },
+              { label: "LIBRARY", value: "SHADCN" },
+              { label: "LICENSE", value: "MIT" },
             ].map((stat, i) => (
-                <div key={i} className="text-center group cursor-default">
-                    <p className="text-[10px] font-black tracking-[0.2em] text-muted-foreground/50 group-hover:text-muted-foreground transition-colors mb-1">{stat.label}</p>
-                    <p className="text-lg font-black text-foreground/60 group-hover:text-foreground transition-colors tracking-tighter italic uppercase">{stat.value}</p>
-                </div>
+              <div key={i} className="text-center group cursor-default">
+                <p className="text-[10px] font-black tracking-[0.2em] text-muted-foreground/50 group-hover:text-muted-foreground transition-colors mb-1">
+                  {stat.label}
+                </p>
+                <p className="text-lg font-black text-foreground/60 group-hover:text-foreground transition-colors tracking-tighter italic uppercase">
+                  {stat.value}
+                </p>
+              </div>
             ))}
           </motion.div>
-
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -1,5 +1,5 @@
-"use client"
-import { motion } from "framer-motion"
+"use client";
+import { motion } from "framer-motion";
 
 export default function OrbitCursor({ x, y }: { x: number; y: number }) {
   return (
@@ -15,9 +15,14 @@ export default function OrbitCursor({ x, y }: { x: number; y: number }) {
           key={i}
           className="absolute top-1/2 left-1/2 w-2 h-2 -translate-x-1/2 -translate-y-1/2"
           animate={{ rotate: 360 }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: "linear", delay: i * 0.5 }}
+          transition={{
+            duration: 1.5,
+            repeat: Infinity,
+            ease: "linear",
+            delay: i * 0.5,
+          }}
         >
-          <div 
+          <div
             className="absolute rounded-full"
             style={{
               width: 4,
@@ -29,5 +34,5 @@ export default function OrbitCursor({ x, y }: { x: number; y: number }) {
         </motion.div>
       ))}
     </motion.div>
-  )
+  );
 }

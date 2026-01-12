@@ -1,5 +1,5 @@
-"use client"
-import { motion } from "framer-motion"
+"use client";
+import { motion } from "framer-motion";
 
 export default function CoffeeCursor({ x, y }: { x: number; y: number }) {
   return (
@@ -9,16 +9,27 @@ export default function CoffeeCursor({ x, y }: { x: number; y: number }) {
     >
       <div className="relative">
         <div className="absolute -top-4 w-full flex justify-center space-x-1">
-          {[0, 1, 2].map(i => (
+          {[0, 1, 2].map((i) => (
             <motion.div
               key={i}
               className="w-1 h-3 bg-white/30 rounded-full blur-[1px]"
               animate={{ y: [-2, -10], opacity: [0, 0.6, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity, delay: i * 0.4, ease: "easeOut" }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                delay: i * 0.4,
+                ease: "easeOut",
+              }}
             />
           ))}
         </div>
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg
+          width="28"
+          height="28"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <path
             d="M5 8H19V11C19 15.4183 15.4183 19 11 19V19C6.58172 19 3 15.4183 3 11V10H5V8Z"
             fill="#78350f"
@@ -31,9 +42,14 @@ export default function CoffeeCursor({ x, y }: { x: number; y: number }) {
             strokeWidth="2"
             strokeLinecap="round"
           />
-          <path d="M7 19H17" stroke="#92400e" strokeWidth="2" strokeLinecap="round" />
+          <path
+            d="M7 19H17"
+            stroke="#92400e"
+            strokeWidth="2"
+            strokeLinecap="round"
+          />
         </svg>
       </div>
     </motion.div>
-  )
+  );
 }

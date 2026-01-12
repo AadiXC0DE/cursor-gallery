@@ -1,12 +1,13 @@
-"use client"
-import { motion } from "framer-motion"
+"use client";
+import { motion } from "framer-motion";
 
 export default function GlassCursor({ x, y }: { x: number; y: number }) {
   return (
     <motion.div
       className="fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none z-50"
       style={{
-        x, y,
+        x,
+        y,
         translateX: "-50%",
         translateY: "-50%",
         background: "rgba(255, 255, 255, 0.1)",
@@ -16,5 +17,5 @@ export default function GlassCursor({ x, y }: { x: number; y: number }) {
       }}
       transition={{ type: "spring", stiffness: 500, damping: 28 }}
     />
-  )
+  );
 }

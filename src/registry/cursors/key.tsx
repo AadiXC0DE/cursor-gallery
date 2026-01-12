@@ -1,5 +1,5 @@
-"use client"
-import { motion } from "framer-motion"
+"use client";
+import { motion } from "framer-motion";
 
 export default function KeyCursor({ x, y }: { x: number; y: number }) {
   return (
@@ -12,7 +12,13 @@ export default function KeyCursor({ x, y }: { x: number; y: number }) {
         animate={{ rotate: [-5, 5, -5] }}
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
       >
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg
+          width="40"
+          height="40"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <defs>
             <linearGradient id="gold-gradient" x1="0" y1="0" x2="1" y2="1">
               <stop offset="0%" stopColor="#fcd34d" />
@@ -29,7 +35,9 @@ export default function KeyCursor({ x, y }: { x: number; y: number }) {
             fill="rgba(251, 191, 36, 0.1)"
           />
           <motion.circle
-            cx="7" cy="12" r="1.5"
+            cx="7"
+            cy="12"
+            r="1.5"
             fill="#fff"
             animate={{ opacity: [0, 1, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
@@ -42,5 +50,5 @@ export default function KeyCursor({ x, y }: { x: number; y: number }) {
         />
       </motion.div>
     </motion.div>
-  )
+  );
 }

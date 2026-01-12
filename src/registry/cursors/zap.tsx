@@ -1,7 +1,10 @@
-"use client"
-import { motion } from "framer-motion"
+"use client";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
 export default function ZapCursor({ x, y }: { x: number; y: number }) {
+  const [repeatDelay] = useState(() => Math.random());
+
   return (
     <motion.div
       className="fixed top-0 left-0 pointer-events-none z-50 flex items-center justify-center"
@@ -19,7 +22,11 @@ export default function ZapCursor({ x, y }: { x: number; y: number }) {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         animate={{ scale: [1, 1.1, 1] }}
-        transition={{ duration: 0.1, repeat: Infinity, repeatDelay: Math.random() }}
+        transition={{
+          duration: 0.1,
+          repeat: Infinity,
+          repeatDelay,
+        }}
       >
         <path
           d="M13 2L3 14H12L11 22L21 10H12L13 2Z"
@@ -30,5 +37,5 @@ export default function ZapCursor({ x, y }: { x: number; y: number }) {
         />
       </motion.svg>
     </motion.div>
-  )
+  );
 }

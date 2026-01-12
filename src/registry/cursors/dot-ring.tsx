@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
 export default function DotRingCursor({
   x,
   y,
-  isHovering
+  isHovering,
 }: {
-  x: number
-  y: number
-  isHovering?: boolean
+  x: number;
+  y: number;
+  isHovering?: boolean;
 }) {
   return (
     <>
@@ -47,5 +47,5 @@ export default function DotRingCursor({
         }}
       />
     </>
-  )
+  );
 }

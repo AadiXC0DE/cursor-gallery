@@ -1,10 +1,20 @@
-"use client"
-import { motion, AnimatePresence } from "framer-motion"
-import { useState, useEffect, useRef } from "react"
+"use client";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
 
-export default function MusicCursor({ x, y, isStatic }: { x: number; y: number; isStatic?: boolean }) {
-  const [notes, setNotes] = useState<{ id: number; x: number; y: number; rotate: number }[]>([])
-  const idCounter = useRef(0)
+export default function MusicCursor({
+  x,
+  y,
+  isStatic,
+}: {
+  x: number;
+  y: number;
+  isStatic?: boolean;
+}) {
+  const [notes, setNotes] = useState<
+    { id: number; x: number; y: number; rotate: number }[]
+  >([]);
+  const idCounter = useRef(0);
 
   useEffect(() => {
     if (isStatic) return;
@@ -14,11 +24,11 @@ export default function MusicCursor({ x, y, isStatic }: { x: number; y: number; 
         x: (Math.random() - 0.5) * 30,
         y: (Math.random() - 0.5) * 10,
         rotate: (Math.random() - 0.5) * 45,
-      }
-      setNotes(prev => [...prev.slice(-3), newNote])
-    }, 600)
-    return () => clearInterval(interval)
-  }, [isStatic])
+      };
+      setNotes((prev) => [...prev.slice(-3), newNote]);
+    }, 600);
+    return () => clearInterval(interval);
+  }, [isStatic]);
 
   return (
     <motion.div
@@ -27,7 +37,7 @@ export default function MusicCursor({ x, y, isStatic }: { x: number; y: number; 
     >
       {/* Floating small notes */}
       <AnimatePresence>
-        {notes.map(note => (
+        {notes.map((note) => (
           <motion.div
             key={note.id}
             className="absolute text-pink-500 font-bold text-xs"
@@ -46,7 +56,13 @@ export default function MusicCursor({ x, y, isStatic }: { x: number; y: number; 
         animate={{ scale: [1, 1.1, 1], rotate: [-5, 5, -5] }}
         transition={{ duration: 0.8, repeat: Infinity, ease: "easeInOut" }}
       >
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <path
             d="M9 18V5L21 3V16"
             stroke="#ec4899"
@@ -56,9 +72,14 @@ export default function MusicCursor({ x, y, isStatic }: { x: number; y: number; 
           />
           <circle cx="6" cy="18" r="3" fill="#ec4899" />
           <circle cx="18" cy="16" r="3" fill="#ec4899" />
-          <path d="M9 5L21 3" stroke="#ec4899" strokeWidth="2" strokeLinecap="round" />
+          <path
+            d="M9 5L21 3"
+            stroke="#ec4899"
+            strokeWidth="2"
+            strokeLinecap="round"
+          />
         </svg>
       </motion.div>
     </motion.div>
-  )
+  );
 }

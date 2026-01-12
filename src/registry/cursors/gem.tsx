@@ -1,5 +1,5 @@
-"use client"
-import { motion } from "framer-motion"
+"use client";
+import { motion } from "framer-motion";
 
 export default function GemCursor({ x, y }: { x: number; y: number }) {
   return (
@@ -8,7 +8,13 @@ export default function GemCursor({ x, y }: { x: number; y: number }) {
       style={{ x, y, translateX: "-50%", translateY: "-50%" }}
     >
       <div className="relative">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg
+          width="40"
+          height="40"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <path
             d="M6 9L12 2L18 9L12 22L6 9Z"
             fill="url(#gem-gradient)"
@@ -17,11 +23,33 @@ export default function GemCursor({ x, y }: { x: number; y: number }) {
             strokeLinejoin="round"
           />
           <path d="M6 9H18" stroke="#60a5fa" strokeWidth="1" />
-          <path d="M12 2L12 22" stroke="#60a5fa" strokeWidth="1" opacity="0.5" />
-          <path d="M9 5.5L15 5.5" stroke="#60a5fa" strokeWidth="1" opacity="0.5" />
-          <path d="M9 13L15 13" stroke="#60a5fa" strokeWidth="1" opacity="0.5" />
+          <path
+            d="M12 2L12 22"
+            stroke="#60a5fa"
+            strokeWidth="1"
+            opacity="0.5"
+          />
+          <path
+            d="M9 5.5L15 5.5"
+            stroke="#60a5fa"
+            strokeWidth="1"
+            opacity="0.5"
+          />
+          <path
+            d="M9 13L15 13"
+            stroke="#60a5fa"
+            strokeWidth="1"
+            opacity="0.5"
+          />
           <defs>
-            <linearGradient id="gem-gradient" x1="6" y1="2" x2="18" y2="22" gradientUnits="userSpaceOnUse">
+            <linearGradient
+              id="gem-gradient"
+              x1="6"
+              y1="2"
+              x2="18"
+              y2="22"
+              gradientUnits="userSpaceOnUse"
+            >
               <stop stopColor="#93c5fd" />
               <stop offset="0.5" stopColor="#3b82f6" />
               <stop offset="1" stopColor="#1d4ed8" />
@@ -49,5 +77,5 @@ export default function GemCursor({ x, y }: { x: number; y: number }) {
         </motion.div>
       </div>
     </motion.div>
-  )
+  );
 }

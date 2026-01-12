@@ -1,5 +1,5 @@
-"use client"
-import { motion } from "framer-motion"
+"use client";
+import { motion } from "framer-motion";
 
 export default function FlowerCursor({ x, y }: { x: number; y: number }) {
   return (
@@ -21,8 +21,8 @@ export default function FlowerCursor({ x, y }: { x: number; y: number }) {
             transform={`rotate(${angle} 12 12)`}
           />
         ))}
-        <circle cx="12" cy="12" r="4" fill="#fbbf24"/>
+        <circle cx="12" cy="12" r="4" fill="#fbbf24" />
       </svg>
     </motion.div>
-  )
+  );
 }

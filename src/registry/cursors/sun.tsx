@@ -1,5 +1,5 @@
-"use client"
-import { motion } from "framer-motion"
+"use client";
+import { motion } from "framer-motion";
 
 export default function SunCursor({ x, y }: { x: number; y: number }) {
   return (
@@ -10,14 +10,14 @@ export default function SunCursor({ x, y }: { x: number; y: number }) {
       transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
     >
       <svg width="28" height="28" viewBox="0 0 28 28">
-        <circle cx="14" cy="14" r="6" fill="#fbbf24"/>
+        <circle cx="14" cy="14" r="6" fill="#fbbf24" />
         {[0, 45, 90, 135, 180, 225, 270, 315].map((angle) => (
           <line
             key={angle}
             x1="14"
             y1="14"
-            x2={14 + Math.cos(angle * Math.PI / 180) * 12}
-            y2={14 + Math.sin(angle * Math.PI / 180) * 12}
+            x2={14 + Math.cos((angle * Math.PI) / 180) * 12}
+            y2={14 + Math.sin((angle * Math.PI) / 180) * 12}
             stroke="#fbbf24"
             strokeWidth="2"
             strokeLinecap="round"
@@ -25,5 +25,5 @@ export default function SunCursor({ x, y }: { x: number; y: number }) {
         ))}
       </svg>
     </motion.div>
-  )
+  );
 }

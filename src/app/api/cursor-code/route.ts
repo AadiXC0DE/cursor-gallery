@@ -1,37 +1,51 @@
 // API route to fetch cursor source code
-import { NextResponse } from 'next/server'
-import fs from 'fs'
-import path from 'path'
+import { NextResponse } from "next/server";
+import fs from "fs";
+import path from "path";
 
 export async function GET(request: Request) {
-  const { searchParams } = new URL(request.url)
-  const cursorId = searchParams.get('id')
-  
+  const { searchParams } = new URL(request.url);
+  const cursorId = searchParams.get("id");
+
   if (!cursorId) {
-    return NextResponse.json({ error: 'Cursor ID required' }, { status: 400 })
+    return NextResponse.json({ error: "Cursor ID required" }, { status: 400 });
   }
-  
+
   try {
-    const filePath = path.join(process.cwd(), 'src', 'registry', 'cursors', `${cursorId}.tsx`)
-    
+    const filePath = path.join(
+      process.cwd(),
+      "src",
+      "registry",
+      "cursors",
+      `${cursorId}.tsx`
+    );
+
     if (!fs.existsSync(filePath)) {
-      return NextResponse.json({ error: 'Cursor file not found' }, { status: 404 })
+      return NextResponse.json(
+        { error: "Cursor file not found" },
+        { status: 404 }
+      );
     }
-    
-    const reactCode = fs.readFileSync(filePath, 'utf-8')
-    
+
+    const reactCode = fs.readFileSync(filePath, "utf-8");
+
     // Generate vanilla JS template based on cursor type
-    const vanillaCode = generateVanillaHTML(cursorId, reactCode)
-    
-    return NextResponse.json({ react: reactCode, vanilla: vanillaCode })
-  } catch (error) {
-    return NextResponse.json({ error: 'Failed to read cursor code' }, { status: 500 })
+    const vanillaCode = generateVanillaHTML(cursorId);
+
+    return NextResponse.json({ react: reactCode, vanilla: vanillaCode });
+  } catch {
+    return NextResponse.json(
+      { error: "Failed to read cursor code" },
+      { status: 500 }
+    );
   }
 }
 
-function generateVanillaHTML(cursorId: string, reactCode: string): string {
-  const cursorName = cursorId.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
-  
+function generateVanillaHTML(cursorId: string): string {
+  const cursorName = cursorId
+    .replace(/-/g, " ")
+    .replace(/\b\w/g, (l) => l.toUpperCase());
+
   return `/*
  * ============================================
  * ${cursorName} Cursor - Vanilla Implementation
@@ -53,5 +67,5 @@ function generateVanillaHTML(cursorId: string, reactCode: string): string {
  * - npm install react react-dom
  * 
  * Stay tuned for vanilla implementations!
- */`
+ */`;
 }

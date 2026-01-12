@@ -1,5 +1,5 @@
-"use client"
-import { motion } from "framer-motion"
+"use client";
+import { motion } from "framer-motion";
 
 export default function RotateCursor({ x, y }: { x: number; y: number }) {
   return (
@@ -14,5 +14,5 @@ export default function RotateCursor({ x, y }: { x: number; y: number }) {
         <div className="absolute inset-1 bg-gradient-to-br from-violet-500/30 to-fuchsia-500/30 rounded-sm" />
       </div>
     </motion.div>
-  )
+  );
 }

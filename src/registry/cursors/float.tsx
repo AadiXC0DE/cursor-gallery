@@ -1,5 +1,5 @@
-"use client"
-import { motion } from "framer-motion"
+"use client";
+import { motion } from "framer-motion";
 
 export default function FloatCursor({ x, y }: { x: number; y: number }) {
   return (
@@ -8,13 +8,13 @@ export default function FloatCursor({ x, y }: { x: number; y: number }) {
       style={{
         translateX: "-50%",
         background: "linear-gradient(135deg, #06b6d4, #0891b2)",
-        boxShadow: "0 0 20px rgba(6, 182, 212, 0.4)"
+        boxShadow: "0 0 20px rgba(6, 182, 212, 0.4)",
       }}
-      animate={{ 
+      animate={{
         x: [x - 3, x + 3, x - 3],
         y: [y - 3, y + 3, y - 3],
       }}
       transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
     />
-  )
+  );
 }

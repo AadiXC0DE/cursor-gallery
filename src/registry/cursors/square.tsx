@@ -1,5 +1,5 @@
-"use client"
-import { motion } from "framer-motion"
+"use client";
+import { motion } from "framer-motion";
 
 export default function SquareCursor({ x, y }: { x: number; y: number }) {
   return (
@@ -9,5 +9,5 @@ export default function SquareCursor({ x, y }: { x: number; y: number }) {
       whileHover={{ borderRadius: "4px" }}
       transition={{ type: "spring", stiffness: 500, damping: 28 }}
     />
-  )
+  );
 }

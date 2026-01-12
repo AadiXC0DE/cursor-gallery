@@ -1,5 +1,5 @@
-"use client"
-import { motion } from "framer-motion"
+"use client";
+import { motion } from "framer-motion";
 
 export default function PlusCursor({ x, y }: { x: number; y: number }) {
   return (
@@ -13,5 +13,5 @@ export default function PlusCursor({ x, y }: { x: number; y: number }) {
         <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-violet-500 to-fuchsia-500 -translate-x-1/2" />
       </div>
     </motion.div>
-  )
+  );
 }

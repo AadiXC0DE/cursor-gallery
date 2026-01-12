@@ -1,5 +1,5 @@
-"use client"
-import { motion } from "framer-motion"
+"use client";
+import { motion } from "framer-motion";
 
 export default function LockCursor({ x, y }: { x: number; y: number }) {
   return (
@@ -13,8 +13,22 @@ export default function LockCursor({ x, y }: { x: number; y: number }) {
           animate={{ scale: [1, 1.3, 1] }}
           transition={{ duration: 3, repeat: Infinity }}
         />
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="5" y="11" width="14" height="10" rx="2" stroke="currentColor" strokeWidth="2" />
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            x="5"
+            y="11"
+            width="14"
+            height="10"
+            rx="2"
+            stroke="currentColor"
+            strokeWidth="2"
+          />
           <motion.path
             d="M7 11V7C7 4.23858 9.23858 2 12 2C14.7614 2 17 4.23858 17 7V11"
             stroke="currentColor"
@@ -28,5 +42,5 @@ export default function LockCursor({ x, y }: { x: number; y: number }) {
         </svg>
       </div>
     </motion.div>
-  )
+  );
 }

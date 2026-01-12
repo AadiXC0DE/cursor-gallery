@@ -1,19 +1,23 @@
-"use client"
-import { motion } from "framer-motion"
-import { useState, useEffect, useRef } from "react"
+"use client";
+import { motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
 
-interface Point { x: number; y: number; id: number }
+interface Point {
+  x: number;
+  y: number;
+  id: number;
+}
 
 export default function TrailCursor({ x, y }: { x: number; y: number }) {
-  const [trail, setTrail] = useState<Point[]>([])
-  const idCounter = useRef(0)
+  const [trail, setTrail] = useState<Point[]>([]);
+  const idCounter = useRef(0);
 
   useEffect(() => {
-    setTrail(prev => {
-      const newTrail = [...prev, { x, y, id: idCounter.current++ }]
-      return newTrail.slice(-12)
-    })
-  }, [x, y])
+    setTrail((prev) => {
+      const newTrail = [...prev, { x, y, id: idCounter.current++ }];
+      return newTrail.slice(-12);
+    });
+  }, [x, y]);
 
   return (
     <>
@@ -38,13 +42,14 @@ export default function TrailCursor({ x, y }: { x: number; y: number }) {
       <motion.div
         className="fixed top-0 left-0 w-5 h-5 rounded-full pointer-events-none z-50"
         style={{
-          x, y,
+          x,
+          y,
           translateX: "-50%",
           translateY: "-50%",
           background: "linear-gradient(135deg, #8b5cf6, #d946ef)",
-          boxShadow: "0 0 15px rgba(139, 92, 246, 0.5)"
+          boxShadow: "0 0 15px rgba(139, 92, 246, 0.5)",
         }}
       />
     </>
-  )
+  );
 }

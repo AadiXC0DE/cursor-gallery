@@ -1,5 +1,5 @@
-"use client"
-import { motion } from "framer-motion"
+"use client";
+import { motion } from "framer-motion";
 
 export default function TargetCursor({ x, y }: { x: number; y: number }) {
   return (
@@ -8,11 +8,32 @@ export default function TargetCursor({ x, y }: { x: number; y: number }) {
       style={{ x, y, translateX: "-50%", translateY: "-50%" }}
     >
       <svg width="28" height="28" viewBox="0 0 28 28">
-        <circle cx="14" cy="14" r="12" fill="none" stroke="#ef4444" strokeWidth="1.5"/>
-        <circle cx="14" cy="14" r="8" fill="none" stroke="#ef4444" strokeWidth="1.5"/>
-        <circle cx="14" cy="14" r="4" fill="none" stroke="#ef4444" strokeWidth="1.5"/>
-        <circle cx="14" cy="14" r="2" fill="#ef4444"/>
+        <circle
+          cx="14"
+          cy="14"
+          r="12"
+          fill="none"
+          stroke="#ef4444"
+          strokeWidth="1.5"
+        />
+        <circle
+          cx="14"
+          cy="14"
+          r="8"
+          fill="none"
+          stroke="#ef4444"
+          strokeWidth="1.5"
+        />
+        <circle
+          cx="14"
+          cy="14"
+          r="4"
+          fill="none"
+          stroke="#ef4444"
+          strokeWidth="1.5"
+        />
+        <circle cx="14" cy="14" r="2" fill="#ef4444" />
       </svg>
     </motion.div>
-  )
+  );
 }

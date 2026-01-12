@@ -1,5 +1,5 @@
-"use client"
-import { motion } from "framer-motion"
+"use client";
+import { motion } from "framer-motion";
 
 export default function CyberScannerCursor({ x, y }: { x: number; y: number }) {
   return (
@@ -21,7 +21,7 @@ export default function CyberScannerCursor({ x, y }: { x: number; y: number }) {
             ease: "linear",
           }}
         />
-        
+
         {/* Scanning Line */}
         <motion.div
           className="absolute left-0 right-0 h-[2px] bg-cyan-400 shadow-[0_0_8px_#22d3ee]"
@@ -38,7 +38,7 @@ export default function CyberScannerCursor({ x, y }: { x: number; y: number }) {
 
         {/* Center Target */}
         <div className="absolute inset-[30%] border border-cyan-400/80 rounded-sm" />
-        
+
         {/* Data Bits */}
         <motion.div
           className="absolute -right-8 top-0 text-[10px] font-mono text-cyan-400 overflow-hidden"
@@ -53,5 +53,5 @@ export default function CyberScannerCursor({ x, y }: { x: number; y: number }) {
         </motion.div>
       </div>
     </motion.div>
-  )
+  );
 }

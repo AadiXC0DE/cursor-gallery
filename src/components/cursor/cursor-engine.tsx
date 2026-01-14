@@ -106,7 +106,22 @@ export function CursorEngine() {
     };
   }, [handleMouseMove]);
 
-  if (!isCursorVisible || !hasMoved || !CursorComponent) return null;
+  // Check if we are on a mobile/touch device
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const checkMobile = () => {
+      const isTouch = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+      const isMobileWidth = window.innerWidth <= 768;
+      setIsMobile(isTouch || isMobileWidth);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  if (isMobile || !isCursorVisible || !hasMoved || !CursorComponent)
+    return null;
 
   return (
     <div className="pointer-events-none fixed inset-0 z-[9999] overflow-hidden">

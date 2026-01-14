@@ -16,7 +16,10 @@ import {
   Layers,
   MousePointer2,
   Terminal,
+  Loader2,
 } from "lucide-react";
+import { Skeleton } from "../ui/skeleton";
+import { motion } from "framer-motion";
 
 interface CursorDetailDialogProps {
   cursor: CursorDefinition | null;
@@ -179,51 +182,87 @@ export function CursorDetailDialog({
                   {copied ? "Copied" : "Copy Content"}
                 </Button>
               </div>
-              <div className="relative">
-                <TabsContent value="react" className="mt-0 outline-none">
-                  <div className="rounded-xl overflow-hidden border border-border/50 bg-[#0d0d0d] shadow-xl">
+              <div className="relative min-h-[380px] flex flex-col">
+                <TabsContent
+                  value="react"
+                  className="mt-0 outline-none flex-1 flex flex-col"
+                >
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.2 }}
+                    className="flex-1 rounded-xl overflow-hidden border border-border/50 bg-[#0d0d0d] shadow-xl relative min-h-[300px]"
+                  >
                     {isLoadingCode ? (
-                      <div className="flex items-center justify-center h-[250px] text-muted-foreground">
-                        <div className="flex items-center gap-3">
-                          <div className="w-5 h-5 border-2 border-primary border-t-transparent rounded-full animate-spin" />
-                          <span className="text-sm font-bold uppercase tracking-widest">
-                            Loading Source...
-                          </span>
+                      <div className="absolute inset-0 p-6 space-y-4">
+                        <Skeleton className="h-4 w-[60%] bg-white/5" />
+                        <Skeleton className="h-4 w-[80%] bg-white/5" />
+                        <Skeleton className="h-4 w-[40%] bg-white/5" />
+                        <Skeleton className="h-4 w-[70%] bg-white/5" />
+                        <Skeleton className="h-4 w-[50%] bg-white/5" />
+                        <div className="absolute inset-0 flex items-center justify-center bg-black/20 backdrop-blur-[1px]">
+                          <div className="flex items-center gap-3 bg-background/80 px-4 py-2 rounded-full border border-border/50 shadow-2xl">
+                            <Loader2 className="w-4 h-4 animate-spin text-primary" />
+                            <span className="text-[10px] font-black uppercase tracking-widest text-foreground">
+                              Syncing Source
+                            </span>
+                          </div>
                         </div>
                       </div>
                     ) : (
                       <CodeBlock
                         code={actualCode?.react || cursor.code.react}
                         language="tsx"
-                        className="max-h-[250px]"
+                        className="h-full max-h-[350px]"
                       />
                     )}
-                  </div>
+                  </motion.div>
                 </TabsContent>
 
-                <TabsContent value="vanilla" className="mt-0 outline-none">
-                  <div className="rounded-xl overflow-hidden border border-border/50 bg-[#0d0d0d] shadow-xl">
+                <TabsContent
+                  value="vanilla"
+                  className="mt-0 outline-none flex-1 flex flex-col"
+                >
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.2 }}
+                    className="flex-1 rounded-xl overflow-hidden border border-border/50 bg-[#0d0d0d] shadow-xl relative min-h-[300px]"
+                  >
                     {isLoadingCode ? (
-                      <div className="flex items-center justify-center h-[250px] text-muted-foreground">
-                        <div className="flex items-center gap-3">
-                          <div className="w-5 h-5 border-2 border-primary border-t-transparent rounded-full animate-spin" />
-                          <span className="text-sm font-bold uppercase tracking-widest">
-                            Loading Source...
-                          </span>
+                      <div className="absolute inset-0 p-6 space-y-4">
+                        <Skeleton className="h-4 w-[70%] bg-white/5" />
+                        <Skeleton className="h-4 w-[50%] bg-white/5" />
+                        <Skeleton className="h-4 w-[90%] bg-white/5" />
+                        <Skeleton className="h-4 w-[30%] bg-white/5" />
+                        <div className="absolute inset-0 flex items-center justify-center bg-black/20 backdrop-blur-[1px]">
+                          <div className="flex items-center gap-3 bg-background/80 px-4 py-2 rounded-full border border-border/50 shadow-2xl">
+                            <Loader2 className="w-4 h-4 animate-spin text-primary" />
+                            <span className="text-[10px] font-black uppercase tracking-widest text-foreground">
+                              Syncing Source
+                            </span>
+                          </div>
                         </div>
                       </div>
                     ) : (
                       <CodeBlock
                         code={actualCode?.vanilla || cursor.code.vanilla}
                         language="javascript"
-                        className="max-h-[250px]"
+                        className="h-full max-h-[350px]"
                       />
                     )}
-                  </div>
+                  </motion.div>
                 </TabsContent>
 
-                <TabsContent value="steps" className="mt-0 outline-none">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-4">
+                <TabsContent value="steps" className="mt-0 outline-none flex-1">
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.98 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.2 }}
+                    className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-4 min-h-[300px]"
+                  >
                     <div className="space-y-6">
                       <div className="space-y-3">
                         <div className="flex items-center gap-2">
@@ -292,7 +331,7 @@ export function CursorDetailDialog({
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 </TabsContent>
               </div>
             </Tabs>

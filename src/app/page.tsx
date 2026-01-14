@@ -4,6 +4,7 @@ import { CursorGrid } from "@/components/gallery/cursor-grid";
 import { Features } from "@/components/layout/features";
 import { Footer } from "@/components/layout/footer";
 import { Button } from "@/components/ui/button";
+import { CLISection } from "@/components/layout/cli-section";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
@@ -73,56 +74,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="w-full max-w-2xl">
-                <div className="relative group">
-                  <div className="absolute -inset-1 bg-gradient-to-r from-primary to-purple-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200" />
-                  <div className="relative bg-[#0d0d0d] rounded-xl border border-white/10 overflow-hidden shadow-2xl">
-                    <div className="flex items-center gap-2 px-4 py-3 border-b border-white/5 bg-white/5">
-                      <div className="flex gap-1.5">
-                        <div className="w-3 h-3 rounded-full bg-red-500/20 border border-red-500/40" />
-                        <div className="w-3 h-3 rounded-full bg-amber-500/20 border border-amber-500/40" />
-                        <div className="w-3 h-3 rounded-full bg-emerald-500/20 border border-emerald-500/40" />
-                      </div>
-                      <div className="flex-1 text-center">
-                        <span className="text-[10px] font-black text-white/30 uppercase tracking-[0.2em]">
-                          Terminal
-                        </span>
-                      </div>
-                    </div>
-                    <div className="p-6 md:p-8 font-mono text-sm md:text-base">
-                      <div className="flex items-start gap-4">
-                        <span className="text-primary mt-1 shrink-0">
-                          <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="3"
-                            className="w-4 h-4"
-                          >
-                            <polyline points="9 18 15 12 9 6" />
-                          </svg>
-                        </span>
-                        <div className="space-y-4">
-                          <p className="text-white/90 leading-relaxed font-bold break-all">
-                            npx shadcn@latest add{" "}
-                            <span className="text-primary">
-                              https://cursor-gallery.vercel.app/registry/cursor-float
-                            </span>
-                          </p>
-                          <div className="space-y-1">
-                            <p className="text-white/40 text-xs italic">
-                              # Fetches 70+ premium animated cursors
-                            </p>
-                            <p className="text-white/40 text-xs italic">
-                              # Dependencies installed automatically
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <CLISection />
             </div>
           </div>
         </section>

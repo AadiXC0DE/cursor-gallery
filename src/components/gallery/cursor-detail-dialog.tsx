@@ -95,21 +95,21 @@ export function CursorDetailDialog({
       <DialogContent className="sm:max-w-4xl w-[95vw] md:w-[65vw] max-h-[90vh] p-0 overflow-hidden border border-border/50 bg-background shadow-2xl flex flex-col">
         <div className="flex-1 flex flex-col min-h-0 bg-background relative overflow-hidden">
           {/* Header */}
-          <div className="p-6 md:p-8 border-b bg-muted/10">
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-              <div className="space-y-3">
-                <div className="flex flex-wrap items-center gap-3">
-                  <DialogTitle className="text-3xl md:text-4xl font-black tracking-tighter uppercase italic text-foreground">
+          <div className="p-4 md:p-8 border-b bg-muted/10 shrink-0">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+              <div className="space-y-2">
+                <div className="flex flex-wrap items-center gap-2">
+                  <DialogTitle className="text-2xl md:text-4xl font-black tracking-tighter uppercase italic text-foreground">
                     {cursor.name}
                   </DialogTitle>
-                  <span className="px-2 py-1 rounded bg-primary/10 text-primary text-[10px] font-black uppercase tracking-widest border border-primary/20">
+                  <span className="px-2 py-0.5 rounded bg-primary/10 text-primary text-[9px] md:text-[10px] font-black uppercase tracking-widest border border-primary/20">
                     {cursor.tags[0]}
                   </span>
                 </div>
-                <p className="text-muted-foreground text-sm font-medium leading-relaxed max-w-xl">
+                <p className="text-muted-foreground text-xs md:text-sm font-medium leading-relaxed max-w-xl">
                   {cursor.description}
                 </p>
-                <div className="flex flex-wrap gap-2">
+                <div className="hidden md:flex flex-wrap gap-2 mt-4">
                   {cursor.tags.map((tag) => (
                     <span
                       key={tag}
@@ -124,41 +124,44 @@ export function CursorDetailDialog({
           </div>
 
           {/* Main Content Area */}
-          <div className="flex-1 overflow-y-auto no-scrollbar p-6">
+          <div className="flex-1 overflow-y-auto no-scrollbar p-4 md:p-8">
             <Tabs
               value={activeTab}
               onValueChange={setActiveTab}
               className="w-full"
             >
               <div className="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
-                <TabsList className="bg-muted p-1 rounded-lg border border-border/50 h-10 w-full md:w-auto">
+                <TabsList className="bg-muted p-1 rounded-xl border border-border/50 h-auto md:h-11 w-full md:w-auto flex flex-wrap md:flex-nowrap justify-start md:justify-center gap-1">
                   <TabsTrigger
                     value="react"
-                    className="gap-2 px-4 h-full text-xs font-bold uppercase tracking-wider data-[state=active]:bg-background data-[state=active]:shadow-sm"
+                    className="gap-2 px-3 md:px-6 py-2 md:py-0 h-10 md:h-full text-[10px] md:text-xs font-bold uppercase tracking-wider data-[state=active]:bg-background data-[state=active]:shadow-sm flex-1 md:flex-initial whitespace-nowrap"
                   >
                     <Code2 className="w-3.5 h-3.5" />
-                    React
+                    <span className="md:hidden">React</span>
+                    <span className="hidden md:inline">React/Next.js</span>
                   </TabsTrigger>
                   <TabsTrigger
                     value="vanilla"
-                    className="gap-2 px-4 h-full text-xs font-bold uppercase tracking-wider data-[state=active]:bg-background data-[state=active]:shadow-sm"
+                    className="gap-2 px-3 md:px-6 py-2 md:py-0 h-10 md:h-full text-[10px] md:text-xs font-bold uppercase tracking-wider data-[state=active]:bg-background data-[state=active]:shadow-sm flex-1 md:flex-initial whitespace-nowrap"
                   >
                     <Zap className="w-3.5 h-3.5" />
-                    Vanilla
+                    <span className="md:hidden">Vanilla</span>
+                    <span className="hidden md:inline">Vanilla JS</span>
                   </TabsTrigger>
                   <TabsTrigger
                     value="steps"
-                    className="gap-2 px-4 h-full text-xs font-bold uppercase tracking-wider data-[state=active]:bg-background data-[state=active]:shadow-sm"
+                    className="gap-2 px-3 md:px-6 py-2 md:py-0 h-10 md:h-full text-[10px] md:text-xs font-bold uppercase tracking-wider data-[state=active]:bg-background data-[state=active]:shadow-sm flex-1 md:flex-initial whitespace-nowrap"
                   >
                     <Layers className="w-3.5 h-3.5" />
-                    Setup Steps
+                    <span className="md:hidden">Setup</span>
+                    <span className="hidden md:inline">Setup Steps</span>
                   </TabsTrigger>
                 </TabsList>
 
                 <Button
                   variant="secondary"
                   size="sm"
-                  className="h-9 px-4 text-[10px] font-bold uppercase tracking-widest shadow-sm active:scale-95 transition-all bg-background border border-border/50 hover:border-primary/50"
+                  className="h-11 md:h-9 px-4 w-full md:w-auto text-[10px] font-bold uppercase tracking-widest shadow-sm active:scale-95 transition-all bg-background border border-border/50 hover:border-primary/50"
                   onClick={() => {
                     if (activeTab === "steps") {
                       handleCopy(
@@ -335,11 +338,85 @@ export function CursorDetailDialog({
                 </TabsContent>
               </div>
             </Tabs>
+
+            {/* Dependencies Section - Mobile Only (End of scroll) */}
+            <div className="md:hidden mt-12 pt-8 border-t border-border/50">
+              <div className="flex flex-col gap-6">
+                <div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                    <span className="text-[10px] font-black uppercase tracking-widest text-foreground">
+                      Required Dependencies
+                    </span>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 gap-4">
+                  <div className="space-y-2">
+                    <p className="text-[9px] font-bold text-muted-foreground uppercase tracking-widest">
+                      Quick Install (Shadcn CLI)
+                    </p>
+                    <button
+                      onClick={() =>
+                        handleCopy(
+                          `npx shadcn@latest add https://cursor-gallery.vercel.app/registry/cursor-${cursor.id}`
+                        )
+                      }
+                      className="group flex items-center gap-3 px-4 py-3 rounded-xl bg-[#0d0d0d] border border-white/10 hover:border-primary/50 transition-all text-left w-full shadow-lg"
+                    >
+                      <Terminal className="w-4 h-4 text-primary shrink-0" />
+                      <div className="flex-1 min-w-0">
+                        <p className="text-[10px] text-primary font-mono truncate">
+                          npx shadcn add .../cursor-{cursor.id}
+                        </p>
+                      </div>
+                      <Copy className="w-3 h-3 text-white/30 group-hover:text-primary transition-colors shrink-0" />
+                    </button>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-3">
+                    <button
+                      onClick={() => handleCopy("npm install framer-motion")}
+                      className="group flex items-center gap-3 px-3 py-3 rounded-xl bg-muted/50 border border-border/50 hover:border-primary/50 transition-all text-left"
+                    >
+                      <div className="w-6 h-6 rounded bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white text-[10px] font-black shrink-0">
+                        M
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-[10px] font-black text-foreground uppercase tracking-tight">
+                          Motion
+                        </p>
+                      </div>
+                      <Copy className="w-3 h-3 text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
+                    </button>
+
+                    <button
+                      onClick={() =>
+                        handleCopy(
+                          "npm install -D tailwindcss postcss autoprefixer && npx tailwindcss init -p"
+                        )
+                      }
+                      className="group flex items-center gap-3 px-3 py-3 rounded-xl bg-muted/50 border border-border/50 hover:border-primary/50 transition-all text-left"
+                    >
+                      <div className="w-6 h-6 rounded bg-gradient-to-br from-teal-400 to-cyan-500 flex items-center justify-center text-white text-[10px] font-black shrink-0">
+                        T
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-[10px] font-black text-foreground uppercase tracking-tight">
+                          Tailwind
+                        </p>
+                      </div>
+                      <Copy className="w-3 h-3 text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* Dependencies Section */}
-          <div className="px-6 md:px-8 py-6 border-t bg-muted/30">
-            <div className="flex flex-col md:flex-row md:items-center gap-6">
+          {/* Dependencies Section - Desktop Only (Fixed Footer) */}
+          <div className="hidden md:block px-8 py-6 border-t bg-muted/30 shrink-0">
+            <div className="flex flex-row items-center gap-6">
               <div className="shrink-0">
                 <div className="flex items-center gap-2 mb-2">
                   <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
@@ -387,25 +464,15 @@ export function CursorDetailDialog({
                 {/* Motion */}
                 <button
                   onClick={() => handleCopy("npm install framer-motion")}
-                  className="group flex items-center gap-3 px-4 py-2.5 rounded-xl bg-background border border-border/50 hover:border-primary/50 transition-all text-left flex-1 min-w-[180px]"
+                  className="group flex items-center gap-3 px-4 py-2.5 rounded-xl bg-background border border-border/50 hover:border-primary/50 transition-all text-left flex-1"
                 >
                   <div className="w-8 h-8 rounded bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white text-[12px] font-black">
                     M
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-1">
-                      <p className="text-[11px] font-black text-foreground uppercase tracking-wider">
-                        Motion
-                      </p>
-                      <a
-                        href="https://motion.dev"
-                        target="_blank"
-                        onClick={(e) => e.stopPropagation()}
-                        className="text-[9px] text-primary hover:underline font-bold"
-                      >
-                        (motion.dev)
-                      </a>
-                    </div>
+                    <p className="text-[11px] font-black text-foreground uppercase tracking-wider">
+                      Motion
+                    </p>
                     <p className="text-[10px] text-muted-foreground font-mono truncate">
                       npm i framer-motion
                     </p>
@@ -420,7 +487,7 @@ export function CursorDetailDialog({
                       "npm install -D tailwindcss postcss autoprefixer && npx tailwindcss init -p"
                     )
                   }
-                  className="group flex items-center gap-3 px-4 py-2.5 rounded-xl bg-background border border-border/50 hover:border-primary/50 transition-all text-left flex-1 min-w-[180px]"
+                  className="group flex items-center gap-3 px-4 py-2.5 rounded-xl bg-background border border-border/50 hover:border-primary/50 transition-all text-left flex-1"
                 >
                   <div className="w-8 h-8 rounded bg-gradient-to-br from-teal-400 to-cyan-500 flex items-center justify-center text-white text-[12px] font-black">
                     T

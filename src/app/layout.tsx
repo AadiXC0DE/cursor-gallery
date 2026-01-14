@@ -18,9 +18,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Cursor Gallery - Animated Cursors for React",
+  metadataBase: new URL("https://cursor-gallery.vercel.app"),
+  title: "Cursor Gallery -Premium Animated Cursors for React",
   description:
-    "A beautiful collection of animated cursor pointers. Copy-paste ready for React, Next.js, and Vanilla JS.",
+    "A curated collection of high-end animated cursors. Engineered for performance, designed for impact. Copy-paste ready for React, Next.js, and Vanilla JS.",
   keywords: [
     "react",
     "cursor",
@@ -28,16 +29,25 @@ export const metadata: Metadata = {
     "framer motion",
     "ui design",
     "frontend",
+    "animated cursors",
+    "custom pointer",
+    "web design",
   ],
-  authors: [{ name: "Cursor Gallery" }],
+  authors: [{ name: "Aadi Chowdhury" }],
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://cursor-gallery.vercel.app",
-    title: "Cursor Gallery - Animated Cursors",
+    title: "Cursor Gallery - Premium Animated Cursors",
     description:
-      "Beautiful animated cursors, copy-paste ready for your next project.",
+      "Elevate your web UX with beautiful animated cursors, copy-paste ready for your next project.",
     siteName: "Cursor Gallery",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cursor Gallery - Premium Animated Cursors",
+    description: "Elevate your web UX with beautiful animated cursors, copy-paste ready for your next project.",
+    creator: "@AadiChowdhury7",
   },
 };
 

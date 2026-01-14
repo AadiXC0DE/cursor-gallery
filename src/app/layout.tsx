@@ -46,7 +46,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Cursor Gallery - Premium Animated Cursors",
-    description: "Elevate your web UX with beautiful animated cursors, copy-paste ready for your next project.",
+    description:
+      "Elevate your web UX with beautiful animated cursors, copy-paste ready for your next project.",
     creator: "@AadiChowdhury7",
   },
 };

@@ -15,7 +15,8 @@ export function CLISection() {
   const [activePm, setActivePm] = useState("npm");
   const [copied, setCopied] = useState(false);
 
-  const currentPm = PACKAGE_MANAGERS.find((pm) => pm.name === activePm) || PACKAGE_MANAGERS[0];
+  const currentPm =
+    PACKAGE_MANAGERS.find((pm) => pm.name === activePm) || PACKAGE_MANAGERS[0];
   const fullCommand = `${currentPm.command} shadcn@latest add https://cursor-gallery.vercel.app/registry/cursor-float`;
 
   const handleCopy = async () => {
@@ -44,7 +45,7 @@ export function CLISection() {
                 Terminal
               </span>
             </div>
-            
+
             <div className="flex p-0.5 bg-white/5 rounded-lg border border-white/10">
               {PACKAGE_MANAGERS.map((pm) => (
                 <button

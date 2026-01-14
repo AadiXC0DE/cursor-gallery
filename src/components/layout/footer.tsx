@@ -86,9 +86,9 @@ export function Footer() {
               >
                 Sponsor Project
               </Link>
-              <a 
-                href="https://www.buymeacoffee.com/AadiChowdhury7" 
-                target="_blank" 
+              <a
+                href="https://www.buymeacoffee.com/AadiChowdhury7"
+                target="_blank"
                 className="hover:text-primary transition-colors flex items-center gap-2"
               >
                 <Coffee className="w-3.5 h-3.5" />

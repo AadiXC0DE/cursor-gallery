@@ -138,68 +138,129 @@ export function Header() {
 
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="w-10 h-10 hover:bg-accent/50 transition-all">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="w-10 h-10 hover:bg-accent/50 transition-all"
+              >
                 <Menu className="w-5 h-5" />
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="p-0 border-l border-border/50 bg-background/95 backdrop-blur-xl w-[280px]">
+            <SheetContent
+              side="right"
+              className="p-0 border-l border-border/50 bg-background/95 backdrop-blur-xl w-[280px]"
+            >
               <div className="flex flex-col h-full overflow-hidden">
                 <SheetHeader className="p-6 border-b border-border/50 text-left">
                   <SheetTitle>
-                    <span className="font-bold text-lg tracking-tight">Menu</span>
+                    <span className="font-bold text-lg tracking-tight">
+                      Menu
+                    </span>
                   </SheetTitle>
                 </SheetHeader>
-                
+
                 <div className="flex-1 px-6 py-6 flex flex-col gap-8 overflow-y-auto">
                   <div className="flex flex-col gap-3">
-                    <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground/40 ml-1">Main</p>
+                    <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground/40 ml-1">
+                      Main
+                    </p>
                     <nav className="flex flex-col gap-1">
-                      <Link 
-                        href="/#features" 
+                      <Link
+                        href="/#features"
                         className="text-xl font-semibold hover:text-primary transition-all py-2.5 flex items-center justify-between group rounded-lg px-2 hover:bg-accent/50"
                       >
                         Features
-                        <span className="text-muted-foreground/20 text-xs font-medium">01</span>
+                        <span className="text-muted-foreground/20 text-xs font-medium">
+                          01
+                        </span>
                       </Link>
-                      <Link 
-                        href="/sponsor" 
+                      <Link
+                        href="/sponsor"
                         className="text-xl font-semibold hover:text-primary transition-all py-2.5 flex items-center justify-between group rounded-lg px-2 hover:bg-accent/50"
                       >
                         Sponsor
-                        <span className="text-muted-foreground/20 text-xs font-medium">02</span>
+                        <span className="text-muted-foreground/20 text-xs font-medium">
+                          02
+                        </span>
                       </Link>
-                      <Link 
-                        href="/cursors" 
+                      <Link
+                        href="/cursors"
                         className="text-xl font-semibold hover:text-primary transition-all py-2.5 flex items-center justify-between group rounded-lg px-2 hover:bg-accent/50"
                       >
                         Gallery
-                        <span className="text-muted-foreground/20 text-xs font-medium">03</span>
+                        <span className="text-muted-foreground/20 text-xs font-medium">
+                          03
+                        </span>
                       </Link>
                     </nav>
                   </div>
 
                   <div className="flex flex-col gap-4">
-                    <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground/40 ml-1">Connect</p>
+                    <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground/40 ml-1">
+                      Connect
+                    </p>
                     <div className="flex flex-col gap-2">
-                      <Button variant="outline" size="sm" className="w-full h-11 justify-start gap-3 rounded-xl border-border/50 hover:bg-accent/50 transition-all font-medium px-4" asChild>
-                        <Link href="https://github.com/AadiXC0DE/cursor-gallery" target="_blank">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="w-full h-11 justify-start gap-3 rounded-xl border-border/50 hover:bg-accent/50 transition-all font-medium px-4"
+                        asChild
+                      >
+                        <Link
+                          href="https://github.com/AadiXC0DE/cursor-gallery"
+                          target="_blank"
+                        >
                           <Github className="w-4 h-4 text-muted-foreground" />
                           <span>GitHub</span>
                         </Link>
                       </Button>
-                      <Button variant="outline" size="sm" className="w-full h-11 justify-start gap-3 rounded-xl border-border/50 hover:bg-accent/50 transition-all font-medium px-4" asChild>
-                        <Link href="https://x.com/AadiChowdhury7" target="_blank">
-                          <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 text-muted-foreground">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="w-full h-11 justify-start gap-3 rounded-xl border-border/50 hover:bg-accent/50 transition-all font-medium px-4"
+                        asChild
+                      >
+                        <Link
+                          href="https://x.com/AadiChowdhury7"
+                          target="_blank"
+                        >
+                          <svg
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            className="w-3.5 h-3.5 text-muted-foreground"
+                          >
                             <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                           </svg>
                           <span>Twitter</span>
                         </Link>
                       </Button>
-                      <Button variant="outline" size="sm" className="w-full h-11 justify-start gap-3 rounded-xl border-border/50 hover:bg-accent/50 transition-all font-medium px-4" asChild>
-                        <Link href="https://www.buymeacoffee.com/AadiChowdhury7" target="_blank">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="w-full h-11 justify-start gap-3 rounded-xl border-border/50 hover:bg-accent/50 transition-all font-medium px-4"
+                        asChild
+                      >
+                        <Link
+                          href="https://www.buymeacoffee.com/AadiChowdhury7"
+                          target="_blank"
+                        >
                           <div className="w-4 h-4 text-muted-foreground flex items-center justify-center">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-coffee"><path d="M10 2v2"/><path d="M14 2v2"/><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h12Z"/><path d="M17 12h2a2 2 0 0 1 0 4h-2"/><path d="M6 2v2"/></svg>
+                            <svg
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              className="lucide lucide-coffee"
+                            >
+                              <path d="M10 2v2" />
+                              <path d="M14 2v2" />
+                              <path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h12Z" />
+                              <path d="M17 12h2a2 2 0 0 1 0 4h-2" />
+                              <path d="M6 2v2" />
+                            </svg>
                           </div>
                           <span>Buy me a coffee</span>
                         </Link>
@@ -209,7 +270,11 @@ export function Header() {
                 </div>
 
                 <div className="p-6 border-t border-border/50 bg-background/50 mt-auto">
-                  <Button size="sm" className="w-full rounded-xl font-bold h-12 shadow-lg shadow-primary/5 hover:shadow-primary/10 transition-all active:scale-[0.98]" asChild>
+                  <Button
+                    size="sm"
+                    className="w-full rounded-xl font-bold h-12 shadow-lg shadow-primary/5 hover:shadow-primary/10 transition-all active:scale-[0.98]"
+                    asChild
+                  >
                     <Link href="/cursors">Browse All Cursors</Link>
                   </Button>
                 </div>

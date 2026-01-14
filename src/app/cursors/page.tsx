@@ -19,7 +19,7 @@ export default function CursorsPage() {
             All Cursors
           </h1>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Explore our growing library of 100+ high-quality animated cursors.
+            Explore our growing library of 70+ high-quality animated cursors.
             Optimized for performance and easy to integrate.
           </p>
         </div>

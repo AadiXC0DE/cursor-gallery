@@ -55,6 +55,15 @@ export function CursorProvider({ children }: { children: React.ReactNode }) {
     const root = document.documentElement;
 
     const enableCustomCursor = () => {
+      // Don't enable custom cursor on mobile/touch
+      const isTouch = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+      const isMobileWidth = window.innerWidth <= 768;
+
+      if (isTouch || isMobileWidth) {
+        root.classList.remove("custom-cursor");
+        return;
+      }
+
       root.classList.add("custom-cursor");
       // Force a reflow to ensure the cursor is updated
       void root.offsetHeight;
@@ -64,11 +73,13 @@ export function CursorProvider({ children }: { children: React.ReactNode }) {
 
     window.addEventListener("focus", enableCustomCursor);
     window.addEventListener("mouseenter", enableCustomCursor);
+    window.addEventListener("resize", enableCustomCursor);
 
     return () => {
       root.classList.remove("custom-cursor");
       window.removeEventListener("focus", enableCustomCursor);
       window.removeEventListener("mouseenter", enableCustomCursor);
+      window.removeEventListener("resize", enableCustomCursor);
     };
   }, []);
 

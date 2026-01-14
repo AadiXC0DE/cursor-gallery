@@ -558,6 +558,7 @@ export const CURSORS: CursorDefinition[] = [
     description: "Orbiting electrons",
     tags: ["science", "physics"],
     component: AtomCursor,
+    featured: true,
     code: { react: `// Atom cursor`, vanilla: `// Pending` },
   },
   {
@@ -593,6 +594,7 @@ export const CURSORS: CursorDefinition[] = [
     description: "Floating musical notes",
     tags: ["animated", "music"],
     component: MusicCursor,
+    featured: true,
     code: { react: `// Music cursor`, vanilla: `// Pending` },
   },
   {

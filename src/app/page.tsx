@@ -111,7 +111,7 @@ export default function Home() {
                           </p>
                           <div className="space-y-1">
                             <p className="text-white/40 text-xs italic">
-                              # Fetches 100+ premium animated cursors
+                              # Fetches 70+ premium animated cursors
                             </p>
                             <p className="text-white/40 text-xs italic">
                               # Dependencies installed automatically

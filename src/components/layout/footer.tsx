@@ -10,7 +10,7 @@ export function Footer() {
             Cursor Gallery
           </span>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            A curated collection of 100+ high-end animated cursors. Engineered
+            A curated collection of 70+ high-end animated cursors. Engineered
             for performance, designed for impact. Free and open-source for the
             modern web.
           </p>

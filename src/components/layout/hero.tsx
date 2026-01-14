@@ -47,7 +47,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto font-medium leading-relaxed"
           >
-            The ultimate collection of 100+ premium animated cursors for the
+            The ultimate collection of 70+ premium animated cursors for the
             modern web. Engineered with{" "}
             <Link
               href="https://motion.dev"
@@ -100,7 +100,7 @@ export function Hero() {
             className="mt-24 pt-12 border-t border-border flex flex-wrap justify-center items-center gap-12"
           >
             {[
-              { label: "CURSORS", value: "100+" },
+              { label: "CURSORS", value: "70+" },
               { label: "ENGINE", value: "MOTION" },
               { label: "LIBRARY", value: "SHADCN" },
               { label: "LICENSE", value: "MIT" },

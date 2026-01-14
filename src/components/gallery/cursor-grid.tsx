@@ -110,7 +110,7 @@ export function CursorGrid({
         <div className="relative w-full md:w-96">
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
           <Input
-            placeholder="Search cursors..."
+            placeholder={`Search ${CURSORS.length}+ icons...`}
             className="pl-11 h-12 bg-muted/20 border-border/50 rounded-xl"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}

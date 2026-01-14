@@ -21,9 +21,8 @@ export function Hero() {
             className="flex flex-col items-center gap-4 mb-8"
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
-              <div className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" />
               <span className="text-[10px] font-black uppercase tracking-[0.2em] text-primary">
-                Fully Compatible with Shadcn/UI CLI
+                Fully Compatible with Shadcn CLI
               </span>
             </div>
           </motion.div>

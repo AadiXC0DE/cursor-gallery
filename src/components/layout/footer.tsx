@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Github, Twitter, Coffee, PlusCircle } from "lucide-react";
+import { CURSORS } from "@/registry/cursors";
 
 export function Footer() {
   return (
@@ -11,9 +12,9 @@ export function Footer() {
             Cursor Gallery
           </span>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            A curated collection of 70+ high-end animated cursors. Engineered
-            for performance, designed for impact. Free and open-source for the
-            modern web.
+            A curated collection of {CURSORS.length}+ high-end animated cursors.
+            Engineered for performance, designed for impact. Free and
+            open-source for the modern web.
           </p>
         </div>
 

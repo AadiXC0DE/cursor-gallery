@@ -1,11 +1,14 @@
 import { Header } from "@/components/layout/header";
 import { CursorGrid } from "@/components/gallery/cursor-grid";
 import { Footer } from "@/components/layout/footer";
+import { CURSORS } from "@/registry/cursors";
 
 export const metadata = {
-  title: "All Cursors | Custom Animated Cursors",
-  description:
-    "Browse our full collection of custom animated cursors for your web projects.",
+  title: "All Cursors",
+  description: `Browse the full collection of ${CURSORS.length}+ custom animated cursors for React, Next.js, and Vanilla JS. Optimized for performance, installable via the Shadcn CLI.`,
+  alternates: {
+    canonical: "/cursors",
+  },
 };
 
 export default function CursorsPage() {
@@ -19,8 +22,8 @@ export default function CursorsPage() {
             All Cursors
           </h1>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Explore our growing library of 70+ high-quality animated cursors.
-            Optimized for performance and easy to integrate.
+            Explore our growing library of {CURSORS.length}+ high-quality
+            animated cursors. Optimized for performance and easy to integrate.
           </p>
         </div>
         <CursorGrid />

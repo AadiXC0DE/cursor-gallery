@@ -11,7 +11,9 @@ import React, {
 import { useCursor } from "@/components/cursor/cursor-context";
 import { CURSORS } from "@/registry/cursors";
 
-// Memoized cursor renderer to prevent unnecessary re-renders
+// Memoized cursor renderer. Re-renders only when the component, hover state,
+// or actual position changes — no dead-zone, so precise slow movements stay
+// pixel-perfect and never feel "stuck".
 const CursorRenderer = memo(
   ({
     Component,
@@ -31,12 +33,11 @@ const CursorRenderer = memo(
     return <Component x={x} y={y} isHovering={isHovering} />;
   },
   (prev, next) => {
-    // Only re-render if position changed significantly (> 2px) or component/hover changed
     return (
       prev.Component === next.Component &&
       prev.isHovering === next.isHovering &&
-      Math.abs(prev.x - next.x) < 2 &&
-      Math.abs(prev.y - next.y) < 2
+      prev.x === next.x &&
+      prev.y === next.y
     );
   }
 );
@@ -49,11 +50,11 @@ export function CursorEngine() {
   const [hasMoved, setHasMoved] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
 
-  // Use refs to track position without triggering re-renders
+  // Refs keep the mousemove handler free of re-renders
   const positionRef = useRef({ x: 0, y: 0 });
-  const rafIdRef = useRef<number | null>(null);
-  const lastUpdateRef = useRef(0);
+  const frameRef = useRef<number | null>(null);
   const hasMovedRef = useRef(false);
+  const isHoveringRef = useRef(false);
 
   // Build cursor map from registry - memoized
   const CURSOR_MAP = useMemo(() => {
@@ -67,42 +68,44 @@ export function CursorEngine() {
     );
   }, [cursorStyle, CURSOR_MAP]);
 
-  // Stable mouse move handler using refs
+  // Stable mouse move handler. Schedules at most ONE state update per frame —
+  // never cancels/reschedules, so high-polling-rate mice (120Hz+) can't starve
+  // the animation frame and freeze the cursor mid-movement.
   const handleMouseMove = useCallback((e: MouseEvent) => {
-    // Update ref immediately (no re-render)
-    positionRef.current = { x: e.clientX, y: e.clientY };
+    positionRef.current.x = e.clientX;
+    positionRef.current.y = e.clientY;
 
     if (!hasMovedRef.current) {
       hasMovedRef.current = true;
       setHasMoved(true);
     }
 
-    // Check for interactive elements
+    // Interactive-element detection (only set state on actual change)
     const target = e.target as HTMLElement;
-    // Expand detection to include common interactive elements
     const interactive = !!target.closest(
       'button, a, input, [role="button"], label, select, textarea, .cursor-pointer'
     );
-    setIsHovering(interactive);
+    if (isHoveringRef.current !== interactive) {
+      isHoveringRef.current = interactive;
+      setIsHovering(interactive);
+    }
 
-    // Throttle React state updates to ~60fps
-    const now = performance.now();
-    if (now - lastUpdateRef.current < 16) return;
-
-    if (rafIdRef.current) cancelAnimationFrame(rafIdRef.current);
-
-    rafIdRef.current = requestAnimationFrame(() => {
-      setMousePosition({ x: positionRef.current.x, y: positionRef.current.y });
-      lastUpdateRef.current = now;
-      rafIdRef.current = null;
-    });
+    if (frameRef.current === null) {
+      frameRef.current = requestAnimationFrame(() => {
+        frameRef.current = null;
+        setMousePosition({
+          x: positionRef.current.x,
+          y: positionRef.current.y,
+        });
+      });
+    }
   }, []);
 
   useEffect(() => {
     window.addEventListener("mousemove", handleMouseMove, { passive: true });
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
-      if (rafIdRef.current) cancelAnimationFrame(rafIdRef.current);
+      if (frameRef.current !== null) cancelAnimationFrame(frameRef.current);
     };
   }, [handleMouseMove]);
 

@@ -37,6 +37,9 @@ import EclipseCursor from "./eclipse";
 import PotionCursor from "./potion";
 import RibbonCursor from "./ribbon";
 import PlasmaCursor from "./plasma";
+import StardustCursor from "./stardust";
+import FeatherCursor from "./feather";
+import BokehCursor from "./bokeh";
 
 // Minimal cursors
 import CircleCursor from "./circle";
@@ -434,6 +437,22 @@ export const CURSORS: CursorDefinition[] = [
     code: { react: `// Plasma cursor`, vanilla: `// Pending` },
   },
   {
+    id: "stardust",
+    name: "Stardust",
+    description: "Golden stars that tumble in your wake",
+    tags: ["effect", "particles", "magical"],
+    component: StardustCursor,
+    code: { react: `// Stardust cursor`, vanilla: `// Pending` },
+  },
+  {
+    id: "bokeh",
+    name: "Bokeh",
+    description: "Soft out-of-focus light orbs drifting behind",
+    tags: ["effect", "light", "calm"],
+    component: BokehCursor,
+    code: { react: `// Bokeh cursor`, vanilla: `// Pending` },
+  },
+  {
     id: "sakura",
     name: "Sakura",
     description: "Drifting cherry-blossom petals",
@@ -483,7 +502,7 @@ export const CURSORS: CursorDefinition[] = [
   {
     id: "moon",
     name: "Moon",
-    description: "Gentle swaying crescent",
+    description: "Cratered crescent with twinkling stars",
     tags: ["shape", "space"],
     component: MoonCursor,
     featured: true,
@@ -500,7 +519,7 @@ export const CURSORS: CursorDefinition[] = [
   {
     id: "cloud",
     name: "Cloud",
-    description: "Floating fluffy cloud",
+    description: "Soft drifting cumulus",
     tags: ["shape", "nature"],
     component: CloudCursor,
     code: { react: `// Cloud cursor`, vanilla: `// Pending` },
@@ -670,6 +689,14 @@ export const CURSORS: CursorDefinition[] = [
     tags: ["animated", "magical", "fun"],
     component: PotionCursor,
     code: { react: `// Potion cursor`, vanilla: `// Pending` },
+  },
+  {
+    id: "feather",
+    name: "Feather",
+    description: "Weightless quill drifting on air",
+    tags: ["animated", "calm", "elegant"],
+    component: FeatherCursor,
+    code: { react: `// Feather cursor`, vanilla: `// Pending` },
   },
 
   // === CREATIVE CATEGORY ===
@@ -940,7 +967,7 @@ export const CURSORS: CursorDefinition[] = [
   {
     id: "browser",
     name: "Globe",
-    description: "Spinning web globe",
+    description: "Blue marble with orbiting satellite",
     tags: ["animated", "tech"],
     component: BrowserCursor,
     code: { react: `// Browser cursor`, vanilla: `// Pending` },

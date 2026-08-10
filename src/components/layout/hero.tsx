@@ -2,8 +2,9 @@
 
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { ArrowRight, Github } from "lucide-react";
+import { ArrowRight, Github, Sparkles } from "lucide-react";
 import Link from "next/link";
+import { CURSORS } from "@/registry/cursors";
 
 export function Hero() {
   return (
@@ -25,6 +26,32 @@ export function Hero() {
                 Fully Compatible with Shadcn CLI
               </span>
             </div>
+
+            {/* Fresh drop pill */}
+            <Link href="/cursors" className="group">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.35 }}
+                className="relative inline-flex items-center gap-2.5 overflow-hidden rounded-full border border-border/70 bg-muted/40 px-4 py-1.5 transition-colors group-hover:border-primary/40 group-hover:bg-primary/5"
+              >
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/15 to-transparent"
+                  animate={{ x: ["-100%", "200%"] }}
+                  transition={{
+                    duration: 2.6,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    repeatDelay: 1.4,
+                  }}
+                />
+                <Sparkles className="relative w-3 h-3 text-primary" />
+                <span className="relative text-[10px] font-black uppercase tracking-[0.2em] text-muted-foreground transition-colors group-hover:text-foreground">
+                  31 New Cursors Just Dropped
+                </span>
+                <ArrowRight className="relative w-3 h-3 text-primary transition-transform group-hover:translate-x-0.5" />
+              </motion.div>
+            </Link>
           </motion.div>
 
           {/* Main Headline */}
@@ -99,7 +126,7 @@ export function Hero() {
             className="mt-24 pt-12 border-t border-border flex flex-wrap justify-center items-center gap-12"
           >
             {[
-              { label: "CURSORS", value: "70+" },
+              { label: "CURSORS", value: `${CURSORS.length}+` },
               { label: "ENGINE", value: "MOTION" },
               { label: "LIBRARY", value: "SHADCN" },
               { label: "LICENSE", value: "MIT" },

@@ -89,11 +89,14 @@ export const CursorCard = memo(function CursorCard({
               )}
             >
               <div className="flex items-center justify-center w-0 h-0 text-foreground">
-                {/* 
-                          We pass isStatic={true} to the component. 
-                          The component will render its core shape but skip the heavy animations/intervals.
+                {/*
+                          Always rendered in static mode: the live, fully animated
+                          instance already follows the real mouse via CursorEngine,
+                          so mounting a second animated instance here on hover would
+                          double the work (intervals, springs) for a backdrop that is
+                          blurred down to 20% opacity anyway.
                         */}
-                <CursorComponent x={0} y={0} isStatic={!isHovered} />
+                <CursorComponent x={0} y={0} isStatic={true} />
               </div>
             </div>
           )}

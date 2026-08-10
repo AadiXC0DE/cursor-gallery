@@ -9,6 +9,34 @@ import GradientBlobCursor from "./gradient-blob";
 import LiquidMercuryCursor from "./liquid-mercury";
 import ParticleSwarmCursor from "./particle-swarm";
 import CyberScannerCursor from "./cyber-scanner";
+import AuroraCursor from "./aurora";
+import HaloCursor from "./halo";
+import CometCursor from "./comet";
+import SpotlightCursor from "./spotlight";
+import ChromaticCursor from "./chromatic";
+import LaserCursor from "./laser";
+import TerminalCursor from "./terminal";
+import GooCursor from "./goo";
+import FirefliesCursor from "./fireflies";
+import RadarCursor from "./radar";
+import ApertureCursor from "./aperture";
+import VortexCursor from "./vortex";
+import ConstellationCursor from "./constellation";
+import PaperPlaneCursor from "./paper-plane";
+import UfoCursor from "./ufo";
+import ButterflyCursor from "./butterfly";
+import MatrixCursor from "./matrix";
+import PrismCursor from "./prism";
+import GalaxyCursor from "./galaxy";
+import SaberCursor from "./saber";
+import InkCursor from "./ink";
+import VinylCursor from "./vinyl";
+import SakuraCursor from "./sakura";
+import LanternCursor from "./lantern";
+import EclipseCursor from "./eclipse";
+import PotionCursor from "./potion";
+import RibbonCursor from "./ribbon";
+import PlasmaCursor from "./plasma";
 
 // Minimal cursors
 import CircleCursor from "./circle";
@@ -190,6 +218,15 @@ export const CURSORS: CursorDefinition[] = [
     featured: true,
     code: { react: `// DotRing cursor`, vanilla: `// Pending` },
   },
+  {
+    id: "halo",
+    name: "Halo",
+    description: "Elegant lagging ring with precise dot",
+    tags: ["minimal", "premium"],
+    component: HaloCursor,
+    featured: true,
+    code: { react: `// Halo cursor`, vanilla: `// Pending` },
+  },
 
   // === EFFECT CATEGORY ===
   {
@@ -303,6 +340,107 @@ export const CURSORS: CursorDefinition[] = [
     component: CyberScannerCursor,
     featured: true,
     code: { react: `// Cyber Scanner cursor`, vanilla: `// Pending` },
+  },
+  {
+    id: "aurora",
+    name: "Aurora",
+    description: "Flowing northern-lights gradient wash",
+    tags: ["effect", "premium", "gradient", "dark-mode"],
+    component: AuroraCursor,
+    featured: true,
+    code: { react: `// Aurora cursor`, vanilla: `// Pending` },
+  },
+  {
+    id: "comet",
+    name: "Comet",
+    description: "Velocity-driven tail that follows your motion",
+    tags: ["effect", "motion", "premium"],
+    component: CometCursor,
+    featured: true,
+    code: { react: `// Comet cursor`, vanilla: `// Pending` },
+  },
+  {
+    id: "spotlight",
+    name: "Spotlight",
+    description: "Soft flashlight pool for dark interfaces",
+    tags: ["effect", "light", "dark-mode"],
+    component: SpotlightCursor,
+    featured: true,
+    code: { react: `// Spotlight cursor`, vanilla: `// Pending` },
+  },
+  {
+    id: "fireflies",
+    name: "Fireflies",
+    description: "Drifting glowing swarm with natural lag",
+    tags: ["effect", "nature", "particles"],
+    component: FirefliesCursor,
+    code: { react: `// Fireflies cursor`, vanilla: `// Pending` },
+  },
+  {
+    id: "radar",
+    name: "Radar",
+    description: "Sweeping sonar dish with ping rings",
+    tags: ["effect", "tech"],
+    component: RadarCursor,
+    code: { react: `// Radar cursor`, vanilla: `// Pending` },
+  },
+  {
+    id: "vortex",
+    name: "Vortex",
+    description: "Spinning two-tone energy swirl",
+    tags: ["effect", "abstract"],
+    component: VortexCursor,
+    code: { react: `// Vortex cursor`, vanilla: `// Pending` },
+  },
+  {
+    id: "constellation",
+    name: "Constellation",
+    description: "Connected star trail across the night sky",
+    tags: ["effect", "space"],
+    component: ConstellationCursor,
+    code: { react: `// Constellation cursor`, vanilla: `// Pending` },
+  },
+  {
+    id: "galaxy",
+    name: "Galaxy",
+    description: "Slow-spinning spiral star system",
+    tags: ["effect", "space", "premium"],
+    component: GalaxyCursor,
+    featured: true,
+    code: { react: `// Galaxy cursor`, vanilla: `// Pending` },
+  },
+  {
+    id: "eclipse",
+    name: "Eclipse",
+    description: "Solar corona ring around a dark disc",
+    tags: ["effect", "space", "dark-mode"],
+    component: EclipseCursor,
+    code: { react: `// Eclipse cursor`, vanilla: `// Pending` },
+  },
+  {
+    id: "ribbon",
+    name: "Ribbon",
+    description: "Flowing silk gradient trail",
+    tags: ["effect", "gradient", "colorful"],
+    component: RibbonCursor,
+    code: { react: `// Ribbon cursor`, vanilla: `// Pending` },
+  },
+  {
+    id: "plasma",
+    name: "Plasma",
+    description: "Tesla orb with arcing tendrils",
+    tags: ["effect", "energy", "premium"],
+    component: PlasmaCursor,
+    code: { react: `// Plasma cursor`, vanilla: `// Pending` },
+  },
+  {
+    id: "sakura",
+    name: "Sakura",
+    description: "Drifting cherry-blossom petals",
+    tags: ["effect", "nature", "particles"],
+    component: SakuraCursor,
+    featured: true,
+    code: { react: `// Sakura cursor`, vanilla: `// Pending` },
   },
 
   // === SHAPE CATEGORY ===
@@ -476,6 +614,63 @@ export const CURSORS: CursorDefinition[] = [
     featured: true,
     code: { react: `// Ghost cursor`, vanilla: `// Pending` },
   },
+  {
+    id: "paper-plane",
+    name: "Paper Plane",
+    description: "Banks and steers toward your movement",
+    tags: ["animated", "playful"],
+    component: PaperPlaneCursor,
+    code: { react: `// Paper Plane cursor`, vanilla: `// Pending` },
+  },
+  {
+    id: "ufo",
+    name: "UFO",
+    description: "Hovering saucer with tractor beam",
+    tags: ["animated", "fun", "space"],
+    component: UfoCursor,
+    code: { react: `// UFO cursor`, vanilla: `// Pending` },
+  },
+  {
+    id: "butterfly",
+    name: "Butterfly",
+    description: "Gentle wing-flapping morpho",
+    tags: ["animated", "nature"],
+    component: ButterflyCursor,
+    code: { react: `// Butterfly cursor`, vanilla: `// Pending` },
+  },
+  {
+    id: "saber",
+    name: "Saber",
+    description: "Glowing energy blade that follows your aim",
+    tags: ["animated", "fun", "glow"],
+    component: SaberCursor,
+    code: { react: `// Saber cursor`, vanilla: `// Pending` },
+  },
+  {
+    id: "vinyl",
+    name: "Vinyl",
+    description: "Spinning record with glossy grooves",
+    tags: ["animated", "music", "retro"],
+    component: VinylCursor,
+    code: { react: `// Vinyl cursor`, vanilla: `// Pending` },
+  },
+  {
+    id: "lantern",
+    name: "Lantern",
+    description: "Floating paper lantern with warm glow",
+    tags: ["animated", "calm", "warm"],
+    component: LanternCursor,
+    featured: true,
+    code: { react: `// Lantern cursor`, vanilla: `// Pending` },
+  },
+  {
+    id: "potion",
+    name: "Potion",
+    description: "Bubbling arcane elixir flask",
+    tags: ["animated", "magical", "fun"],
+    component: PotionCursor,
+    code: { react: `// Potion cursor`, vanilla: `// Pending` },
+  },
 
   // === CREATIVE CATEGORY ===
   {
@@ -542,6 +737,72 @@ export const CURSORS: CursorDefinition[] = [
     component: WandCursor,
     code: { react: `// Wand cursor`, vanilla: `// Pending` },
   },
+  {
+    id: "chromatic",
+    name: "Chromatic",
+    description: "RGB split ghosts with spring lag",
+    tags: ["creative", "premium", "colorful"],
+    component: ChromaticCursor,
+    featured: true,
+    code: { react: `// Chromatic cursor`, vanilla: `// Pending` },
+  },
+  {
+    id: "laser",
+    name: "Laser",
+    description: "Presentation-grade red laser pointer",
+    tags: ["creative", "precision"],
+    component: LaserCursor,
+    code: { react: `// Laser cursor`, vanilla: `// Pending` },
+  },
+  {
+    id: "terminal",
+    name: "Terminal",
+    description: "Blinking block caret for dev tools",
+    tags: ["creative", "dev", "typography"],
+    component: TerminalCursor,
+    code: { react: `// Terminal cursor`, vanilla: `// Pending` },
+  },
+  {
+    id: "goo",
+    name: "Goo",
+    description: "Elastic blob that stretches with velocity",
+    tags: ["creative", "playful", "fluid"],
+    component: GooCursor,
+    code: { react: `// Goo cursor`, vanilla: `// Pending` },
+  },
+  {
+    id: "aperture",
+    name: "Aperture",
+    description: "Mechanical camera iris blades",
+    tags: ["creative", "media"],
+    component: ApertureCursor,
+    code: { react: `// Aperture cursor`, vanilla: `// Pending` },
+  },
+  {
+    id: "matrix",
+    name: "Matrix",
+    description: "Falling glyphs from the machine world",
+    tags: ["creative", "cyberpunk", "dev"],
+    component: MatrixCursor,
+    code: { react: `// Matrix cursor`, vanilla: `// Pending` },
+  },
+  {
+    id: "prism",
+    name: "Prism",
+    description: "Light split into a rainbow fan",
+    tags: ["creative", "premium", "colorful"],
+    component: PrismCursor,
+    featured: true,
+    code: { react: `// Prism cursor`, vanilla: `// Pending` },
+  },
+  {
+    id: "ink",
+    name: "Ink",
+    description: "Calligraphy brush with tapered strokes",
+    tags: ["creative", "art", "minimal"],
+    component: InkCursor,
+    code: { react: `// Ink cursor`, vanilla: `// Pending` },
+  },
 
   // === SCIENCE CATEGORY ===
   {
@@ -582,7 +843,7 @@ export const CURSORS: CursorDefinition[] = [
   {
     id: "coffee",
     name: "Coffee",
-    description: "Steaming hot coffee",
+    description: "Steaming to-go cup with sleeve",
     tags: ["animated", "food"],
     component: CoffeeCursor,
     code: { react: `// Coffee cursor`, vanilla: `// Pending` },
@@ -616,7 +877,7 @@ export const CURSORS: CursorDefinition[] = [
   {
     id: "skull",
     name: "Skull",
-    description: "Glowing eyes skull",
+    description: "Obsidian skull with ember gaze",
     tags: ["animated", "dark"],
     component: SkullCursor,
     code: { react: `// Skull cursor`, vanilla: `// Pending` },
@@ -687,7 +948,7 @@ export const CURSORS: CursorDefinition[] = [
   {
     id: "key",
     name: "Key",
-    description: "Shimmering golden key",
+    description: "Ornate brass skeleton key",
     tags: ["animated", "security"],
     component: KeyCursor,
     code: { react: `// Key cursor`, vanilla: `// Pending` },
@@ -727,7 +988,7 @@ export const CURSORS: CursorDefinition[] = [
   {
     id: "flame",
     name: "Flame",
-    description: "Animated fire particles",
+    description: "Layered living fire with rising embers",
     tags: ["animated", "fire"],
     component: FlameCursor,
     code: { react: `// Flame cursor`, vanilla: `// Pending` },

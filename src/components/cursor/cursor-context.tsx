@@ -7,47 +7,56 @@ import React, {
   useEffect,
   useCallback,
   useMemo,
+  useRef,
 } from "react";
 
 type CursorStyle = string;
 
-interface CursorContextType {
+interface CursorStateContextType {
   cursorStyle: CursorStyle;
+  isCursorVisible: boolean;
+}
+
+interface CursorActionsContextType {
   setCursor: (style: CursorStyle) => void;
   resetCursor: () => void;
   lockCursor: (style: CursorStyle) => void;
   unlockCursor: () => void;
-  isCursorVisible: boolean;
 }
 
-const CursorContext = createContext<CursorContextType | undefined>(undefined);
+// Split into two contexts so components that only *dispatch* cursor changes
+// (e.g. every gallery card) never re-render when the active cursor changes.
+const CursorStateContext = createContext<CursorStateContextType | undefined>(
+  undefined
+);
+const CursorActionsContext = createContext<
+  CursorActionsContextType | undefined
+>(undefined);
 
 export function CursorProvider({ children }: { children: React.ReactNode }) {
   const [cursorStyle, setCursorStyle] = useState<CursorStyle>("default");
-  const [isLocked, setIsLocked] = useState(false);
   const [isCursorVisible] = useState(true);
+  // Ref-based lock keeps all action callbacks referentially stable forever,
+  // so the actions context value never changes identity.
+  const isLockedRef = useRef(false);
 
-  // Memoize callbacks to prevent re-renders in children
-  const setCursor = useCallback(
-    (style: CursorStyle) => {
-      if (isLocked) return;
-      setCursorStyle(style);
-    },
-    [isLocked]
-  );
+  const setCursor = useCallback((style: CursorStyle) => {
+    if (isLockedRef.current) return;
+    setCursorStyle(style);
+  }, []);
 
   const resetCursor = useCallback(() => {
-    if (isLocked) return;
+    if (isLockedRef.current) return;
     setCursorStyle("default");
-  }, [isLocked]);
+  }, []);
 
   const lockCursor = useCallback((style: CursorStyle) => {
+    isLockedRef.current = true;
     setCursorStyle(style);
-    setIsLocked(true);
   }, []);
 
   const unlockCursor = useCallback(() => {
-    setIsLocked(false);
+    isLockedRef.current = false;
     setCursorStyle("default");
   }, []);
 
@@ -83,62 +92,41 @@ export function CursorProvider({ children }: { children: React.ReactNode }) {
     };
   }, []);
 
-  // Memoize context value to prevent re-renders when cursorStyle changes
-  // Only CursorEngine needs to react to cursorStyle changes
-  const contextValue = useMemo(
-    () => ({
-      cursorStyle,
-      setCursor,
-      resetCursor,
-      lockCursor,
-      unlockCursor,
-      isCursorVisible,
-    }),
-    [
-      cursorStyle,
-      setCursor,
-      resetCursor,
-      lockCursor,
-      unlockCursor,
-      isCursorVisible,
-    ]
+  const stateValue = useMemo(
+    () => ({ cursorStyle, isCursorVisible }),
+    [cursorStyle, isCursorVisible]
+  );
+
+  const actionsValue = useMemo(
+    () => ({ setCursor, resetCursor, lockCursor, unlockCursor }),
+    [setCursor, resetCursor, lockCursor, unlockCursor]
   );
 
   return (
-    <CursorContext.Provider value={contextValue}>
-      {children}
-    </CursorContext.Provider>
+    <CursorActionsContext.Provider value={actionsValue}>
+      <CursorStateContext.Provider value={stateValue}>
+        {children}
+      </CursorStateContext.Provider>
+    </CursorActionsContext.Provider>
   );
 }
 
+// For components that need to READ the active cursor (e.g. CursorEngine)
 export function useCursor() {
-  const context = useContext(CursorContext);
-  if (context === undefined) {
+  const state = useContext(CursorStateContext);
+  const actions = useContext(CursorActionsContext);
+  if (state === undefined || actions === undefined) {
     throw new Error("useCursor must be used within a CursorProvider");
   }
-  return context;
+  return { ...state, ...actions };
 }
 
-// Separate hook for components that only need to SET cursor (not read cursorStyle)
-// This prevents re-renders when cursorStyle changes
+// For components that only SET the cursor. Subscribing to the actions
+// context alone means zero re-renders when the active cursor style changes.
 export function useCursorActions() {
-  const context = useContext(CursorContext);
+  const context = useContext(CursorActionsContext);
   if (context === undefined) {
     throw new Error("useCursorActions must be used within a CursorProvider");
   }
-  // Return only the stable, memoized functions
-  return useMemo(
-    () => ({
-      setCursor: context.setCursor,
-      resetCursor: context.resetCursor,
-      lockCursor: context.lockCursor,
-      unlockCursor: context.unlockCursor,
-    }),
-    [
-      context.setCursor,
-      context.resetCursor,
-      context.lockCursor,
-      context.unlockCursor,
-    ]
-  );
+  return context;
 }

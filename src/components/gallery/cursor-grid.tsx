@@ -9,7 +9,15 @@ import { motion } from "framer-motion";
 import { Search } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const CATEGORIES = ["All", "Minimal", "Effect", "Shape", "Dark Mode"];
+const CATEGORIES = [
+  "All",
+  "Minimal",
+  "Effect",
+  "Shape",
+  "Animated",
+  "Creative",
+  "Dark Mode",
+];
 
 export function CursorGrid({
   onlyFeatured = false,

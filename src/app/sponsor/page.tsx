@@ -3,7 +3,15 @@
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { Button } from "@/components/ui/button";
-import { Heart, Github, Twitter, Coffee, Star } from "lucide-react";
+import {
+  Heart,
+  Github,
+  Twitter,
+  Coffee,
+  Star,
+  Sparkles,
+  ArrowUpRight,
+} from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
@@ -109,6 +117,55 @@ export default function SponsorPage() {
                 </Button>
               </motion.div>
             </div>
+
+            {/* About the Maker */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.35 }}
+              className="mb-16 p-8 md:p-10 rounded-[2rem] border bg-card/50 backdrop-blur-sm relative overflow-hidden"
+            >
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
+              <div className="flex flex-col md:flex-row items-start md:items-center gap-8">
+                <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
+                  <Sparkles className="w-7 h-7 text-primary" />
+                </div>
+                <div className="flex-1">
+                  <p className="text-[10px] font-black uppercase tracking-[0.2em] text-primary mb-3">
+                    Meet the Maker
+                  </p>
+                  <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-3">
+                    Hi, I&apos;m Aadi — a design engineer.
+                  </h2>
+                  <p className="text-muted-foreground leading-relaxed mb-2">
+                    I&apos;ve designed and engineered products for brands like{" "}
+                    <span className="text-foreground font-semibold">
+                      Philips
+                    </span>{" "}
+                    and{" "}
+                    <span className="text-foreground font-semibold">
+                      Hero MotoCorp
+                    </span>
+                    , and helped early-stage startups ship interfaces that feel
+                    as good as they look.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Cursor Gallery is my love letter to the tiny details — the
+                    micro-interactions most people feel but never notice.
+                  </p>
+                  <Button
+                    asChild
+                    variant="link"
+                    className="px-0 mt-4 h-auto font-bold text-primary hover:text-primary/80"
+                  >
+                    <Link href="https://heyaadi.com" target="_blank">
+                      More about me
+                      <ArrowUpRight className="w-4 h-4 ml-1" />
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+            </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}

@@ -1,53 +1,130 @@
 "use client";
+
 import { motion } from "framer-motion";
 
-export default function KeyCursor({ x, y }: { x: number; y: number }) {
+export default function KeyCursor({
+  x,
+  y,
+  isHovering,
+  isStatic,
+}: {
+  x: number;
+  y: number;
+  isHovering?: boolean;
+  isStatic?: boolean;
+}) {
   return (
     <motion.div
-      className="fixed top-0 left-0 pointer-events-none z-50 flex items-center justify-center"
+      className="fixed top-0 left-0 pointer-events-none z-50"
       style={{ x, y, translateX: "-50%", translateY: "-50%" }}
     >
       <motion.div
-        className="relative"
-        animate={{ rotate: [-5, 5, -5] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        animate={{
+          rotate: isHovering ? -25 : -45,
+          scale: isHovering ? 1.12 : 1,
+        }}
+        transition={{ type: "spring", stiffness: 260, damping: 18 }}
+        style={{
+          filter: "drop-shadow(0 0 8px rgba(251,191,36,0.45))",
+        }}
       >
-        <svg
-          width="40"
-          height="40"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+        <svg width="38" height="38" viewBox="0 0 36 36">
           <defs>
-            <linearGradient id="gold-gradient" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stopColor="#fcd34d" />
-              <stop offset="50%" stopColor="#d97706" />
-              <stop offset="100%" stopColor="#fcd34d" />
+            <linearGradient id="keyGold" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#fef3c7" />
+              <stop offset="45%" stopColor="#fbbf24" />
+              <stop offset="100%" stopColor="#b45309" />
             </linearGradient>
           </defs>
+
+          {/* Ornate bow (ring) */}
           <path
-            d="M21 2L11 12M11 12C11 14.2091 9.20914 16 7 16C4.79086 16 3 14.2091 3 12C3 9.79086 4.79086 8 7 8C8.34969 8 9.5312 8.667 10.2543 9.682M11 12L13 14L15 12L17 14L21 10V2H17L11 12Z"
-            stroke="url(#gold-gradient)"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            fill="rgba(251, 191, 36, 0.1)"
+            d="M9 11.5 A6 6 0 1 0 9 23.5 A6 6 0 1 0 9 11.5 Z M9 14.5 A3 3 0 1 1 9 20.5 A3 3 0 1 1 9 14.5 Z"
+            fill="url(#keyGold)"
+            fillRule="evenodd"
+            stroke="#92400e"
+            strokeWidth="0.5"
           />
-          <motion.circle
-            cx="7"
-            cy="12"
-            r="1.5"
-            fill="#fff"
-            animate={{ opacity: [0, 1, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
+          {/* Clover dots on the bow */}
+          <circle cx="9" cy="12.6" r="0.7" fill="#92400e" opacity="0.55" />
+          <circle cx="13.4" cy="17.5" r="0.7" fill="#92400e" opacity="0.55" />
+          <circle cx="9" cy="22.4" r="0.7" fill="#92400e" opacity="0.55" />
+          <circle cx="4.6" cy="17.5" r="0.7" fill="#92400e" opacity="0.55" />
+
+          {/* Shank */}
+          <rect
+            x="14.4"
+            y="16.6"
+            width="13.6"
+            height="2.2"
+            rx="1.1"
+            fill="url(#keyGold)"
+            stroke="#92400e"
+            strokeWidth="0.4"
           />
+          {/* Collars */}
+          <rect
+            x="16.4"
+            y="15.6"
+            width="1.5"
+            height="4.2"
+            rx="0.7"
+            fill="url(#keyGold)"
+            stroke="#92400e"
+            strokeWidth="0.4"
+          />
+          <rect
+            x="19.2"
+            y="16.1"
+            width="1"
+            height="3.2"
+            rx="0.5"
+            fill="url(#keyGold)"
+            stroke="#92400e"
+            strokeWidth="0.35"
+          />
+
+          {/* Bit teeth */}
+          <rect
+            x="25.6"
+            y="18.8"
+            width="2.6"
+            height="4.6"
+            rx="0.5"
+            fill="url(#keyGold)"
+            stroke="#92400e"
+            strokeWidth="0.4"
+          />
+          <rect
+            x="22.9"
+            y="18.8"
+            width="1.7"
+            height="3.1"
+            rx="0.5"
+            fill="url(#keyGold)"
+            stroke="#92400e"
+            strokeWidth="0.4"
+          />
+
+          {/* Traveling glint */}
+          {!isStatic && (
+            <motion.circle
+              r="1.1"
+              fill="#fffbeb"
+              style={{ filter: "drop-shadow(0 0 3px #fde68a)" }}
+              animate={{
+                cx: [16, 27, 16],
+                cy: [17.7, 17.7, 17.7],
+                opacity: [0, 1, 0],
+              }}
+              transition={{
+                duration: 2.4,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+          )}
         </svg>
-        <motion.div
-          className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-200 rounded-full blur-[2px]"
-          animate={{ scale: [1, 1.5, 1], opacity: [0.5, 0.8, 0.5] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-        />
       </motion.div>
     </motion.div>
   );

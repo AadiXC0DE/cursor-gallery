@@ -7,10 +7,46 @@ import { Button } from "@/components/ui/button";
 import { CLISection } from "@/components/layout/cli-section";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { CURSORS } from "@/registry/cursors";
+
+const JSON_LD = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      name: "Cursor Gallery",
+      url: "https://cursor-gallery.vercel.app",
+      description:
+        "A curated collection of high-end animated cursors for React, Next.js, and Vanilla JS.",
+    },
+    {
+      "@type": "SoftwareApplication",
+      name: "Cursor Gallery",
+      applicationCategory: "DeveloperApplication",
+      operatingSystem: "Web",
+      url: "https://cursor-gallery.vercel.app",
+      description: `A curated collection of ${CURSORS.length}+ premium animated cursors. Copy-paste ready for React, Next.js, and Vanilla JS via the Shadcn CLI.`,
+      offers: {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "USD",
+      },
+      author: {
+        "@type": "Person",
+        name: "Aadi Chowdhury",
+        url: "https://heyaadi.com",
+      },
+    },
+  ],
+};
 
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
+      />
       <Header />
 
       <main className="flex-1">

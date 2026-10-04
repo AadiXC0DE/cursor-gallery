@@ -1,98 +1,56 @@
 # Cursor Gallery
 
+A cursor is the thing your pointer does all day, and almost nobody designs it. This is a registry of 100+ animated ones for shadcn/ui.
+
 [![CI](https://github.com/AadiXC0DE/cursor-gallery/actions/workflows/ci.yml/badge.svg)](https://github.com/AadiXC0DE/cursor-gallery/actions/workflows/ci.yml)
 
-> **The ultimate cursor registry for Shadcn/UI** — A curated collection of 100+ high-end animated cursors. Engineered with Motion, designed for impact.
+![Cursor Gallery](https://cursor-gallery.vercel.app/opengraph-image)
 
-![Project Preview](https://cursor-gallery.vercel.app/opengraph-image)
-
-## 🚀 Quick Install (Shadcn CLI)
-
-You can now install any cursor directly into your project using the Shadcn CLI:
+## Install one
 
 ```bash
-# Browse and install any cursor
-npx shadcn@latest add https://cursor-gallery.vercel.app/registry
-
-# Or install a specific cursor (e.g., dot-ring)
 npx shadcn@latest add https://cursor-gallery.vercel.app/registry/dot-ring
 ```
 
-## Features
+Swap `dot-ring` for whatever you picked on the site. It lands in your project as a normal shadcn component, so you own the file and can edit it.
 
-- **Visual-First Browsing**: 100+ High-quality cursor styles.
-- **Shadcn CLI Support**: Install components directly into your codebase.
-- **Copy-Paste Ready**: Get React (Motion) or Vanilla JS code instantly.
-- **Theme Aware**: Built for Dark and Light modes out of the box.
-- **Open Source**: Free to use and contribute. MIT Licensed.
+Not on the CLI? Every cursor also has a copy button with the React (Motion) version and a plain JS one.
 
-## Getting Started
+## What you get
 
-1. **Clone the repository**
+- 100+ cursors, from a dot ring that reacts to your click to a trail that lags behind the pointer
+- React with Motion, or vanilla JS, same visual
+- Reads fine in light and dark
+- Nothing to install at runtime and no config to write
 
-   ```bash
-   git clone https://github.com/AadiXC0DE/cursor-gallery.git
-   cd cursor-gallery
-   ```
-
-2. **Install dependencies**
-
-   ```bash
-   npm install
-   ```
-
-3. **Run the development server**
-
-   ```bash
-   npm run dev
-   ```
-
-4. **Open [http://localhost:3000](http://localhost:3000)** to view the gallery.
-
-## Tech Stack
-
-- **Framework**: Next.js 16 (App Router)
-- **Styling**: Tailwind CSS v4, Shadcn/UI
-- **Animation**: Motion (Framer Motion)
-- **Code Highlighting**: Shiki
-
-## Contributing
-
-We welcome contributions! Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
-
-### Development Workflow
-
-This project uses automated CI checks for all pull requests:
-
-- ✅ **ESLint** - Code quality and best practices
-- ✅ **Prettier** - Code formatting
-- ✅ **TypeScript** - Type safety
-- ✅ **Build Check** - Ensures code compiles
-
-All checks must pass before a PR can be merged. See [Branch Protection Guide](./.github/BRANCH_PROTECTION.md) for setup instructions.
-
-### Running Checks Locally
+## Run it locally
 
 ```bash
-# Run linting
+git clone https://github.com/AadiXC0DE/cursor-gallery.git
+cd cursor-gallery
+npm install
+npm run dev
+```
+
+Then open http://localhost:3000.
+
+## Adding a cursor
+
+Fork it, drop your component in, open a PR. CI runs ESLint, Prettier, tsc and a build, so clear these first:
+
+```bash
 npm run lint
-
-# Fix auto-fixable issues
-npm run lint:fix
-
-# Check formatting
-npm run format:check
-
-# Format code
 npm run format
-
-# Type check
 npx tsc --noEmit
-
-# Build
 npm run build
 ```
 
+Details in [CONTRIBUTING.md](./CONTRIBUTING.md).
+
+## Stack
+
+Next.js 16 on the app router, Tailwind v4, shadcn/ui, Motion for the animation, Shiki for the code panels.
+
 ## License
 
-MIT © [Aadi Chowdhury](https://x.com/AadiChowdhury7)
+MIT. See [LICENSE](./LICENSE).

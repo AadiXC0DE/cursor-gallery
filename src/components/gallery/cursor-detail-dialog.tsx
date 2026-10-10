@@ -1,6 +1,11 @@
 "use client";
 
-import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CursorDefinition } from "@/registry/cursors";
 import { useCursorActions } from "@/components/cursor/cursor-context";
@@ -106,9 +111,9 @@ export function CursorDetailDialog({
                     {cursor.tags[0]}
                   </span>
                 </div>
-                <p className="text-muted-foreground text-xs md:text-sm font-medium leading-relaxed max-w-xl">
+                <DialogDescription className="text-muted-foreground text-xs md:text-sm font-medium leading-relaxed max-w-xl">
                   {cursor.description}
-                </p>
+                </DialogDescription>
                 <div className="hidden md:flex flex-wrap gap-2 mt-4">
                   {cursor.tags.map((tag) => (
                     <span

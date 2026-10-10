@@ -1,7 +1,15 @@
 "use client";
 import { motion } from "framer-motion";
 
-export default function AtomCursor({ x, y }: { x: number; y: number }) {
+export default function AtomCursor({
+  x,
+  y,
+  isStatic,
+}: {
+  x: number;
+  y: number;
+  isStatic?: boolean;
+}) {
   return (
     <motion.div
       className="fixed top-0 left-0 pointer-events-none z-50 flex items-center justify-center translate-x-[-50%] translate-y-[-50%]"
@@ -33,20 +41,31 @@ export default function AtomCursor({ x, y }: { x: number; y: number }) {
 
               {/* Moving Electron */}
               <motion.circle
+                cx="95"
+                cy="50"
                 r="3"
                 fill="#a78bfa"
-                animate={{
-                  cx: [50 + 45, 50, 50 - 45, 50, 50 + 45],
-                  cy: [50, 50 + 15, 50, 50 - 15, 50],
-                  scale: [1, 1.2, 1, 0.8, 1],
-                  opacity: [1, 1, 1, 0.6, 1],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: i * 0.6,
-                }}
+                initial={false}
+                animate={
+                  isStatic
+                    ? { cx: 95, cy: 50, scale: 1, opacity: 1 }
+                    : {
+                        cx: [95, 50, 5, 50, 95],
+                        cy: [50, 65, 50, 35, 50],
+                        scale: [1, 1.2, 1, 0.8, 1],
+                        opacity: [1, 1, 1, 0.6, 1],
+                      }
+                }
+                transition={
+                  isStatic
+                    ? { duration: 0 }
+                    : {
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: i * 0.6,
+                      }
+                }
               />
             </svg>
           </div>

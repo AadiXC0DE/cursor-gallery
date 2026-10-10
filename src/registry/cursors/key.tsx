@@ -109,6 +109,8 @@ export default function KeyCursor({
           {/* Traveling glint */}
           {!isStatic && (
             <motion.circle
+              cx="16"
+              cy="17.7"
               r="1.1"
               fill="#fffbeb"
               style={{ filter: "drop-shadow(0 0 3px #fde68a)" }}

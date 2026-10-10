@@ -122,12 +122,44 @@ import ZapCursor from "./zap";
 import FlameCursor from "./flame";
 import TreeCursor from "./tree";
 
+// Written-spec collection
+import JellyfishCursor from "./jellyfish";
+import KoiCursor from "./koi";
+import SnailCursor from "./snail";
+import DragonflyCursor from "./dragonfly";
+import DandelionCursor from "./dandelion";
+import MoonPhaseCursor from "./moon-phase";
+import CassetteCursor from "./cassette";
+import DominoCursor from "./domino";
+import NewtonsCradleCursor from "./newtons-cradle";
+import PinballCursor from "./pinball";
+import YoyoCursor from "./yoyo";
+import TypewriterCursor from "./typewriter";
+import DialCursor from "./dial";
+import GearTrainCursor from "./gear-train";
+import CaliperCursor from "./caliper";
+import DraftingCompassCursor from "./drafting-compass";
+import OscilloscopeCursor from "./oscilloscope";
+import PacketCursor from "./packet";
+import SeismographCursor from "./seismograph";
+import KaleidoscopeCursor from "./kaleidoscope";
+import ZenCursor from "./zen";
+import LabyrinthCursor from "./labyrinth";
+import SlinkyCursor from "./slinky";
+import GyroscopeCursor from "./gyroscope";
+import ArcadeCoinCursor from "./arcade-coin";
+
 export interface CursorDefinition {
   id: string;
   name: string;
   description: string;
   tags: string[];
-  component: ComponentType<{ x: number; y: number; isStatic?: boolean }>;
+  component: ComponentType<{
+    x: number;
+    y: number;
+    isHovering?: boolean;
+    isStatic?: boolean;
+  }>;
   featured?: boolean;
   code: {
     react: string;
@@ -1019,5 +1051,323 @@ export const CURSORS: CursorDefinition[] = [
     tags: ["animated", "fire"],
     component: FlameCursor,
     code: { react: `// Flame cursor`, vanilla: `// Pending` },
+  },
+
+  // === WRITTEN-SPEC COLLECTION ===
+  {
+    id: "jellyfish",
+    name: "Jellyfish",
+    description: "A pulsing bell with three bold trailing tentacles",
+    tags: ["animated", "nature", "water"],
+    component: JellyfishCursor,
+    featured: true,
+    code: {
+      react: `// Jellyfish cursor`,
+      vanilla: `// Generated via /api/cursor-code?id=jellyfish`,
+    },
+  },
+  {
+    id: "koi",
+    name: "Koi",
+    description:
+      "A broad amber fish with a flicking forked tail and bright eye",
+    tags: ["animated", "nature", "water"],
+    component: KoiCursor,
+    featured: true,
+    code: {
+      react: `// Koi cursor`,
+      vanilla: `// Generated via /api/cursor-code?id=koi`,
+    },
+  },
+  {
+    id: "snail",
+    name: "Snail",
+    description: "A bold spiral shell with eye stalks that reach out on hover",
+    tags: ["animated", "nature", "calm"],
+    component: SnailCursor,
+    featured: true,
+    code: {
+      react: `// Snail cursor`,
+      vanilla: `// Generated via /api/cursor-code?id=snail`,
+    },
+  },
+  {
+    id: "dragonfly",
+    name: "Dragonfly",
+    description: "Two clear wing pairs beating around a long slender body",
+    tags: ["animated", "nature"],
+    component: DragonflyCursor,
+    featured: true,
+    code: {
+      react: `// Dragonfly cursor`,
+      vanilla: `// Generated via /api/cursor-code?id=dragonfly`,
+    },
+  },
+  {
+    id: "dandelion",
+    name: "Dandelion",
+    description:
+      "A round forked dandelion clock on a straight stem with one drifting seed",
+    tags: ["animated", "nature", "calm"],
+    component: DandelionCursor,
+    featured: true,
+    code: {
+      react: `// Dandelion cursor`,
+      vanilla: `// Generated via /api/cursor-code?id=dandelion`,
+    },
+  },
+  {
+    id: "moon-phase",
+    name: "Moon Phase",
+    description: "A bright crescent cycling through quarter and full moon",
+    tags: ["animated", "space", "calm"],
+    component: MoonPhaseCursor,
+    featured: true,
+    code: {
+      react: `// Moon Phase cursor`,
+      vanilla: `// Generated via /api/cursor-code?id=moon-phase`,
+    },
+  },
+  {
+    id: "cassette",
+    name: "Cassette",
+    description: "Two spinning reels in a bold tape housing",
+    tags: ["animated", "retro", "mechanical"],
+    component: CassetteCursor,
+    featured: true,
+    code: {
+      react: `// Cassette cursor`,
+      vanilla: `// Generated via /api/cursor-code?id=cassette`,
+    },
+  },
+  {
+    id: "domino",
+    name: "Domino",
+    description: "A one-two domino tipping further on hover",
+    tags: ["animated", "playful", "mechanical"],
+    component: DominoCursor,
+    featured: true,
+    code: {
+      react: `// Domino cursor`,
+      vanilla: `// Generated via /api/cursor-code?id=domino`,
+    },
+  },
+  {
+    id: "newtons-cradle",
+    name: "Newton's Cradle",
+    description:
+      "Five distinct suspended balls transferring a swing between the ends",
+    tags: ["animated", "physics", "mechanical"],
+    component: NewtonsCradleCursor,
+    featured: true,
+    code: {
+      react: `// Newton's Cradle cursor`,
+      vanilla: `// Generated via /api/cursor-code?id=newtons-cradle`,
+    },
+  },
+  {
+    id: "pinball",
+    name: "Pinball",
+    description:
+      "A pinball cabinet with two flicking flippers, a ball and a side launcher",
+    tags: ["animated", "playful", "retro"],
+    component: PinballCursor,
+    featured: true,
+    code: {
+      react: `// Pinball cursor`,
+      vanilla: `// Generated via /api/cursor-code?id=pinball`,
+    },
+  },
+  {
+    id: "yoyo",
+    name: "Yoyo",
+    description:
+      "A close double-disc spool unwinding from a string tied to its axle",
+    tags: ["animated", "playful"],
+    component: YoyoCursor,
+    featured: true,
+    code: {
+      react: `// Yoyo cursor`,
+      vanilla: `// Generated via /api/cursor-code?id=yoyo`,
+    },
+  },
+  {
+    id: "typewriter",
+    name: "Typewriter",
+    description:
+      "A paper sheet in a moving roller above three typing keys on a broad key bar",
+    tags: ["animated", "retro", "mechanical"],
+    component: TypewriterCursor,
+    featured: true,
+    code: {
+      react: `// Typewriter cursor`,
+      vanilla: `// Generated via /api/cursor-code?id=typewriter`,
+    },
+  },
+  {
+    id: "dial",
+    name: "Dial",
+    description:
+      "An eight-hole telephone dial winding against a protruding finger stop",
+    tags: ["animated", "retro", "mechanical"],
+    component: DialCursor,
+    featured: true,
+    code: {
+      react: `// Dial cursor`,
+      vanilla: `// Generated via /api/cursor-code?id=dial`,
+    },
+  },
+  {
+    id: "gear-train",
+    name: "Gear Train",
+    description: "Two bold meshing gears speeding up in opposite directions",
+    tags: ["animated", "mechanical"],
+    component: GearTrainCursor,
+    featured: true,
+    code: {
+      react: `// Gear Train cursor`,
+      vanilla: `// Generated via /api/cursor-code?id=gear-train`,
+    },
+  },
+  {
+    id: "caliper",
+    name: "Caliper",
+    description:
+      "Long thin caliper jaws closing along a beam with a distinct sliding block",
+    tags: ["animated", "precision", "mechanical"],
+    component: CaliperCursor,
+    featured: true,
+    code: {
+      react: `// Caliper cursor`,
+      vanilla: `// Generated via /api/cursor-code?id=caliper`,
+    },
+  },
+  {
+    id: "drafting-compass",
+    name: "Drafting Compass",
+    description: "A drafting compass spreading its hinged legs wider on hover",
+    tags: ["animated", "precision", "drafting", "creative"],
+    component: DraftingCompassCursor,
+    featured: true,
+    code: {
+      react: `// Drafting Compass cursor`,
+      vanilla: `// Generated via /api/cursor-code?id=drafting-compass`,
+    },
+  },
+  {
+    id: "oscilloscope",
+    name: "Oscilloscope",
+    description:
+      "A bright sine waveform growing taller inside an instrument screen",
+    tags: ["animated", "tech"],
+    component: OscilloscopeCursor,
+    featured: true,
+    code: {
+      react: `// Oscilloscope cursor`,
+      vanilla: `// Generated via /api/cursor-code?id=oscilloscope`,
+    },
+  },
+  {
+    id: "packet",
+    name: "Packet",
+    description:
+      "A notched data frame with a short trail hopping between two network ports",
+    tags: ["animated", "tech"],
+    component: PacketCursor,
+    featured: true,
+    code: {
+      react: `// Packet cursor`,
+      vanilla: `// Generated via /api/cursor-code?id=packet`,
+    },
+  },
+  {
+    id: "seismograph",
+    name: "Seismograph",
+    description:
+      "A pivoted stylus recording a shaking trace on a cylindrical paper drum",
+    tags: ["animated", "tech"],
+    component: SeismographCursor,
+    featured: true,
+    code: {
+      react: `// Seismograph cursor`,
+      vanilla: `// Generated via /api/cursor-code?id=seismograph`,
+    },
+  },
+  {
+    id: "kaleidoscope",
+    name: "Kaleidoscope",
+    description:
+      "Mirrored crystal wedges with hard radial color bands and a bright diamond core",
+    tags: ["animated", "geometry", "abstract"],
+    component: KaleidoscopeCursor,
+    featured: true,
+    code: {
+      react: `// Kaleidoscope cursor`,
+      vanilla: `// Generated via /api/cursor-code?id=kaleidoscope`,
+    },
+  },
+  {
+    id: "zen",
+    name: "Zen",
+    description:
+      "An irregular tapered brush circle that expands with a slow breath",
+    tags: ["animated", "calm", "minimal"],
+    component: ZenCursor,
+    featured: true,
+    code: {
+      react: `// Zen cursor`,
+      vanilla: `// Generated via /api/cursor-code?id=zen`,
+    },
+  },
+  {
+    id: "labyrinth",
+    name: "Labyrinth",
+    description: "A small bright traveller pacing a centred bold square spiral",
+    tags: ["animated", "geometry", "calm"],
+    component: LabyrinthCursor,
+    featured: true,
+    code: {
+      react: `// Labyrinth cursor`,
+      vanilla: `// Generated via /api/cursor-code?id=labyrinth`,
+    },
+  },
+  {
+    id: "slinky",
+    name: "Slinky",
+    description:
+      "Five closed spring loops stretching apart and compressing together",
+    tags: ["animated", "playful", "mechanical"],
+    component: SlinkyCursor,
+    featured: true,
+    code: {
+      react: `// Slinky cursor`,
+      vanilla: `// Generated via /api/cursor-code?id=slinky`,
+    },
+  },
+  {
+    id: "gyroscope",
+    name: "Gyroscope",
+    description:
+      "Two thick precessing rings with separated crossings inside a fixed gimbal frame",
+    tags: ["animated", "geometry", "mechanical"],
+    component: GyroscopeCursor,
+    featured: true,
+    code: {
+      react: `// Gyroscope cursor`,
+      vanilla: `// Generated via /api/cursor-code?id=gyroscope`,
+    },
+  },
+  {
+    id: "arcade-coin",
+    name: "Arcade Coin",
+    description:
+      "An arcade cabinet with an angled control deck, coin slot and flashing credit lights",
+    tags: ["animated", "retro", "playful"],
+    component: ArcadeCoinCursor,
+    featured: true,
+    code: {
+      react: `// Arcade Coin cursor`,
+      vanilla: `// Generated via /api/cursor-code?id=arcade-coin`,
+    },
   },
 ];

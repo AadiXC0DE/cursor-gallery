@@ -2,6 +2,7 @@
 import { NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
+import { generateVanillaCursor } from "@/lib/generate-vanilla-cursor";
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -42,6 +43,9 @@ export async function GET(request: Request) {
 }
 
 function generateVanillaHTML(cursorId: string): string {
+  const artworkSnippet = generateVanillaCursor(cursorId);
+  if (artworkSnippet) return artworkSnippet;
+
   const cursorName = cursorId
     .replace(/-/g, " ")
     .replace(/\b\w/g, (l) => l.toUpperCase());
@@ -51,7 +55,7 @@ function generateVanillaHTML(cursorId: string): string {
  * ${cursorName} Cursor - Vanilla Implementation
  * ============================================
  * 
- * 🚧 COMING SOON!
+ * COMING SOON!
  * 
  * We're working on creating pixel-perfect vanilla HTML/CSS/JS 
  * implementations for all cursors.

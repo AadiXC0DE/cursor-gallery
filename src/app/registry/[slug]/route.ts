@@ -1,20 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
-import { cursorItem, findCursor, hostItem, HOST_NAME } from "../items";
+import { REGISTRY_HEADERS, resolveRegistry } from "@/lib/registry";
 
 export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ slug: string }> }
 ) {
   const { slug } = await params;
+  const item = resolveRegistry(slug, new URL(request.url).origin, "/registry");
 
-  if (slug.replace(/\.json$/, "") === HOST_NAME) {
-    return NextResponse.json(hostItem());
-  }
-
-  const cursor = findCursor(slug);
-  if (!cursor) {
+  if (!item) {
     return NextResponse.json({ error: "Cursor not found" }, { status: 404 });
   }
-
-  return NextResponse.json(cursorItem(cursor, new URL(request.url).origin));
+  return NextResponse.json(item, { headers: REGISTRY_HEADERS });
 }

@@ -47,7 +47,7 @@ export function hostItem(withContent = true) {
 
 export function cursorItem(
   cursor: CursorDefinition,
-  origin: string,
+  hostUrl: string,
   withContent = true
 ) {
   const source = readSource("cursors", `${cursor.id}.tsx`);
@@ -59,7 +59,7 @@ export function cursorItem(
     title: cursor.name,
     description: cursor.description,
     dependencies: ["framer-motion"],
-    registryDependencies: [`${origin}/registry/${HOST_NAME}`],
+    registryDependencies: [hostUrl],
     files: [file(`cursors/${cursor.id}.tsx`, `${cursor.id}.tsx`, content)],
     categories: cursor.tags,
     docs: usage(cursor, source),
@@ -73,4 +73,46 @@ export function findCursor(slug: string) {
     CURSORS.find((cursor) => cursor.id === id) ??
     CURSORS.find((cursor) => `cursor-${cursor.id}` === id)
   );
+}
+
+/**
+ * The shadcn registry index. Item contents are left out to keep it small;
+ * each item is served in full at its own URL.
+ */
+export function registryIndex(hostUrl: string) {
+  return {
+    $schema: "https://ui.shadcn.com/schema/registry.json",
+    name: "cursor-gallery",
+    homepage: "https://cursor-gallery.vercel.app",
+    items: [
+      hostItem(false),
+      ...CURSORS.map((cursor) => cursorItem(cursor, hostUrl, false)),
+    ].map((item) => {
+      const { $schema, ...rest } = item;
+      void $schema;
+      return rest;
+    }),
+  };
+}
+
+// Registry clients poll these, so let the CDN answer most requests.
+export const REGISTRY_HEADERS = {
+  "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=86400",
+  "Access-Control-Allow-Origin": "*",
+};
+
+/**
+ * Resolves one registry request. `base` is the path the request came in on
+ * (`/registry` or `/r`), so dependencies point back at the same scheme.
+ * `registry` is the index, which `shadcn search` and `shadcn list` ask for.
+ */
+export function resolveRegistry(slug: string, origin: string, base: string) {
+  const name = slug.replace(/\.json$/, "");
+  const ext = base === "/r" ? ".json" : "";
+  const hostUrl = `${origin}${base}/${HOST_NAME}${ext}`;
+
+  if (name === "registry") return registryIndex(hostUrl);
+  if (name === HOST_NAME) return hostItem();
+  const cursor = findCursor(name);
+  return cursor ? cursorItem(cursor, hostUrl) : null;
 }

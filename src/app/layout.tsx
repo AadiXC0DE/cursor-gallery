@@ -46,14 +46,14 @@ export const metadata: Metadata = {
     "micro-interactions",
     "web design",
     "frontend",
+    "shadcn mcp",
+    "llms.txt",
   ],
   authors: [{ name: "Aadi Chowdhury", url: "https://heyaadi.com" }],
   creator: "Aadi Chowdhury",
   publisher: "Cursor Gallery",
+  applicationName: "Cursor Gallery",
   category: "technology",
-  alternates: {
-    canonical: "/",
-  },
   robots: {
     index: true,
     follow: true,
@@ -90,6 +90,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Plain-text guides for AI agents, see https://llmstxt.org */}
+        <link
+          rel="alternate"
+          type="text/markdown"
+          href="/llms.txt"
+          title="Cursor Gallery for LLMs"
+        />
+        <link
+          rel="alternate"
+          type="application/json"
+          href="/r/registry.json"
+          title="shadcn registry index"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
       >

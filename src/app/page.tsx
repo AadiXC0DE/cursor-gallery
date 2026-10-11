@@ -7,37 +7,57 @@ import { Features } from "@/components/layout/features";
 import { Footer } from "@/components/layout/footer";
 import { GitHubMark } from "@/components/brand-marks";
 import Link from "next/link";
-import { CURSORS } from "@/registry/cursors";
+import type { Metadata } from "next";
+import { CURSORS, FEATURED_CURSORS } from "@/registry/cursors";
 
-const FEATURED = CURSORS.filter((cursor) => cursor.featured).length;
+const FEATURED = FEATURED_CURSORS.length;
+
+const SITE = "https://cursor-gallery.vercel.app";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 const JSON_LD = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "WebSite",
+      "@id": `${SITE}/#website`,
       name: "Cursor Gallery",
-      url: "https://cursor-gallery.vercel.app",
+      url: SITE,
       description:
         "Animated cursors for React and Next.js, installable with the shadcn CLI.",
+      publisher: { "@id": `${SITE}/#author` },
     },
     {
-      "@type": "SoftwareApplication",
+      "@type": "SoftwareSourceCode",
       name: "Cursor Gallery",
-      applicationCategory: "DeveloperApplication",
-      operatingSystem: "Web",
-      url: "https://cursor-gallery.vercel.app",
-      description: `${CURSORS.length} animated cursors for React and Next.js, built with Motion and installable with the shadcn CLI. Free and MIT licensed.`,
-      offers: {
-        "@type": "Offer",
-        price: "0",
-        priceCurrency: "USD",
-      },
-      author: {
-        "@type": "Person",
-        name: "Aadi Chowdhury",
-        url: "https://heyaadi.com",
-      },
+      url: SITE,
+      codeRepository: "https://github.com/AadiXC0DE/cursor-gallery",
+      programmingLanguage: ["TypeScript", "React"],
+      runtimePlatform: "Next.js",
+      license: "https://opensource.org/licenses/MIT",
+      description: `${CURSORS.length} animated cursors for React and Next.js, built with Motion and published as a shadcn registry. Install one with the shadcn CLI and mount it once in your root layout.`,
+      author: { "@id": `${SITE}/#author` },
+    },
+    {
+      "@type": "ItemList",
+      name: "Featured cursors",
+      numberOfItems: FEATURED_CURSORS.length,
+      itemListElement: FEATURED_CURSORS.map((cursor, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: cursor.name,
+        url: `${SITE}/cursors/${cursor.id}`,
+      })),
+    },
+    {
+      "@type": "Person",
+      "@id": `${SITE}/#author`,
+      name: "Aadi Chowdhury",
+      url: "https://heyaadi.com",
+      sameAs: ["https://github.com/AadiXC0DE", "https://x.com/AadiChowdhury7"],
     },
   ],
 };

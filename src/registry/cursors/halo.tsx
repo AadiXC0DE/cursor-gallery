@@ -26,7 +26,7 @@ export default function HaloCursor({
 
   return (
     <>
-      {/* Lagging halo ring — adapts to light/dark via theme tokens */}
+      {/* Lagging halo ring. Adapts to light/dark via theme tokens */}
       <motion.div
         className="fixed top-0 left-0 rounded-full pointer-events-none z-40 border-[1.5px] border-foreground/70"
         style={{

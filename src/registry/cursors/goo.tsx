@@ -32,7 +32,7 @@ export default function GooCursor({
       className="fixed top-0 left-0 pointer-events-none z-50"
       style={{ x, y, translateX: "-50%", translateY: "-50%" }}
     >
-      {/* Elastic blob — stretches along the direction of travel */}
+      {/* Elastic blob that stretches along the direction of travel */}
       <motion.div
         className="w-6 h-6 rounded-full"
         style={{

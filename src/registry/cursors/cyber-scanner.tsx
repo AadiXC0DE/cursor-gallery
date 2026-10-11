@@ -5,7 +5,7 @@ import { motion, useReducedMotion } from "framer-motion";
 const IDLE = "#06b6d4";
 const LOCKED = "#f43f5e";
 
-// Each corner bracket, with the direction it travels toward the centre.
+// Each corner bracket, with the direction it travels toward the center.
 const BRACKETS = [
   { d: "M7 13 V9 Q7 7 9 7 H13", dx: 1, dy: 1 },
   { d: "M27 7 H31 Q33 7 33 9 V13", dx: -1, dy: 1 },

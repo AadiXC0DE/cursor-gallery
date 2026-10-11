@@ -32,7 +32,7 @@ export default function CometCursor({
 
   return (
     <>
-      {/* Tail — rotates around its right tip which sits on the cursor point */}
+      {/* Tail rotates around its right tip which sits on the cursor point */}
       <motion.div
         className="fixed top-0 left-0 h-[7px] w-14 rounded-full pointer-events-none z-40"
         style={{

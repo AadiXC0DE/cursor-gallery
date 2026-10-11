@@ -36,7 +36,7 @@ describe("cursor registry", () => {
       const filePath = path.join(__dirname, `${cursor.id}.tsx`);
       expect(
         fs.existsSync(filePath),
-        `missing source file for "${cursor.id}" — expected src/registry/cursors/${cursor.id}.tsx`
+        `missing source file for "${cursor.id}", expected src/registry/cursors/${cursor.id}.tsx`
       ).toBe(true);
     }
   });

@@ -12,6 +12,7 @@ import { useCursorActions } from "@/components/cursor/cursor-context";
 import { CursorPreview } from "@/components/gallery/cursor-preview";
 import { CodeBlock } from "@/components/code/code-block";
 import { Skeleton } from "@/components/ui/skeleton";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Check, Copy } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -243,6 +244,12 @@ import ${name} from "@/components/cursor/${cursor.id}";
                 label="Copy command"
                 className="self-start"
               />
+              <Link
+                href={`/cursors/${cursor.id}`}
+                className="mt-2 self-start text-[10px] font-black uppercase tracking-[0.2em] text-muted-foreground underline underline-offset-4 decoration-border hover:text-foreground hover:decoration-foreground transition-colors"
+              >
+                Open page
+              </Link>
             </div>
           </aside>
 

@@ -3,7 +3,14 @@
 import { useCursorActions } from "@/components/cursor/cursor-context";
 import { CursorPreview } from "@/components/gallery/cursor-preview";
 import { cn } from "@/lib/utils";
-import { useState, useRef, useEffect, memo, useCallback } from "react";
+import {
+  useState,
+  useRef,
+  useEffect,
+  memo,
+  useCallback,
+  type MouseEvent,
+} from "react";
 
 interface CursorCardProps {
   id: string;
@@ -25,7 +32,7 @@ export const CursorCard = memo(function CursorCard({
   const { setCursor, resetCursor } = useCursorActions();
   const [isHovered, setIsHovered] = useState(false);
   const [isInViewport, setIsInViewport] = useState(false);
-  const cardRef = useRef<HTMLButtonElement>(null);
+  const cardRef = useRef<HTMLAnchorElement>(null);
 
   const handleMouseEnter = useCallback(() => {
     setCursor(id);
@@ -37,6 +44,25 @@ export const CursorCard = memo(function CursorCard({
     setIsHovered(false);
   }, [resetCursor]);
 
+  // A real link, so crawlers and new-tab clicks reach the cursor's page.
+  // A plain click opens the dialog in place instead.
+  const handleClick = useCallback(
+    (event: MouseEvent<HTMLAnchorElement>) => {
+      if (
+        !onClick ||
+        event.button !== 0 ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.shiftKey ||
+        event.altKey
+      )
+        return;
+      event.preventDefault();
+      onClick();
+    },
+    [onClick]
+  );
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => setIsInViewport(entry.isIntersecting),
@@ -47,16 +73,16 @@ export const CursorCard = memo(function CursorCard({
   }, []);
 
   return (
-    <button
+    <a
       ref={cardRef}
-      type="button"
+      href={`/cursors/${id}`}
       data-cursor-preview
       className={cn(
         "group relative block w-full aspect-[4/5] sm:aspect-square text-left overflow-hidden cursor-none",
         "bg-background transition-colors duration-300 hover:bg-muted/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset",
         className
       )}
-      onClick={onClick}
+      onClick={handleClick}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       aria-label={`${name}: ${description ?? "view cursor"}`}
@@ -97,6 +123,6 @@ export const CursorCard = memo(function CursorCard({
           </p>
         )}
       </div>
-    </button>
+    </a>
   );
 });

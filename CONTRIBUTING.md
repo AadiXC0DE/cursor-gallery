@@ -25,95 +25,90 @@ git checkout -b my-feature
 
 ## Adding a New Cursor
 
-### 1. Create the Component
+### 1. Create the component
 
-Add a new file in:
+Add a file in `src/registry/cursors/`, for example `my-cursor.tsx`. The file name becomes the cursor id, and the CLI serves this file as-is, so keep it self-contained: `react` and `framer-motion` are the only imports it can rely on.
 
-```
-src/registry/cursors/
-```
+The default export receives the pointer position and two flags:
 
-Example: `my-cursor.tsx`
-
-Your component must accept `x` and `y` props (cursor coordinates).
+- `x`, `y`: the pointer position in viewport pixels
+- `isHovering`: true while the pointer is over a link, button or form control. Give it a response that suits the cursor.
+- `isStatic`: true in gallery cards. Render a single good-looking frozen pose and skip loops. Treat `useReducedMotion()` the same way.
 
 ```tsx
 "use client";
-import { motion } from "framer-motion";
 
-export default function MyCursor({ x, y }: { x: number; y: number }) {
+import { motion, useReducedMotion } from "framer-motion";
+
+export default function MyCursor({
+  x,
+  y,
+  isHovering,
+  isStatic,
+}: {
+  x: number;
+  y: number;
+  isHovering?: boolean;
+  isStatic?: boolean;
+}) {
+  const reducedMotion = useReducedMotion();
+  const frozen = isStatic || reducedMotion;
   return (
     <motion.div
-      style={{ x, y, translateX: "-50%", translateY: "-50%" }}
       className="fixed top-0 left-0 pointer-events-none z-50"
+      style={{ x, y, translateX: "-50%", translateY: "-50%" }}
     >
-      {/* Your cursor content */}
+      <motion.div
+        className="w-4 h-4 rounded-full bg-sky-400"
+        animate={{ scale: !frozen && isHovering ? 1.6 : 1 }}
+      />
     </motion.div>
   );
 }
 ```
 
----
+Keep the cursor centered on the pointer and roughly 40px or smaller, and check it on both light and dark backgrounds.
 
-### 2. Register the Cursor
+### 2. Register it
 
-Open:
-
-```
-src/registry/cursors/index.ts
-```
-
-Add a new entry to the `CURSORS` array:
+Open `src/registry/cursors/index.ts`, import the component, and add an entry to `CURSORS`:
 
 ```ts
 {
-  id: "my-cursor",
-  name: "My Cool Cursor",
-  description: "Short description of the cursor",
-  tags: ["cool", "fun"],
+  id: "my-cursor", // must match the file name
+  name: "My Cursor",
+  description: "One short line about what it does",
+  tags: ["animated", "playful"],
   component: MyCursor,
-  code: {
-    react: `... component code ...`,
-    vanilla: `... optional / pending ...`
-  }
-}
+  code: { react: `// My cursor`, vanilla: `// Pending` },
+},
 ```
 
-Make sure:
+The site and the CLI read the real source from the file, so `code` only holds placeholders.
 
-- `id` is unique
-- `name` is readable
-- `description` is short and clear
-- `tags` are relevant
-
----
-
-### 3. Test Your Cursor
-
-Run the project:
+### 3. Test it
 
 ```bash
 npm run dev
 ```
 
-Check that:
-
-- Your cursor appears in the gallery
-- It follows the mouse correctly
-- No console errors occur
+- Hover its card on http://localhost:3000/cursors and check the live cursor, its hover state, and the frozen card preview.
+- Check the CLI install from a scratch shadcn project: `npx shadcn@latest add http://localhost:3000/registry/my-cursor`, then mount it with `<CustomCursor cursor={MyCursor} />` as shown in the README.
 
 ---
 
 ## Code Style
 
 - We use **ESLint** and **Prettier**
-- Before committing, run:
+- Before committing, run the same checks CI does:
 
 ```bash
 npm run lint
+npm run format
+npx tsc --noEmit
+npm test
+npm run build
 ```
-
-Fix any lint or formatting issues.
 
 ---
 

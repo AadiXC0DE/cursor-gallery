@@ -1,6 +1,6 @@
 # Cursor Gallery
 
-A cursor is the thing your pointer does all day, and almost nobody designs it. This is a registry of 100+ animated ones for shadcn/ui.
+A cursor is the thing your pointer does all day, and almost nobody designs it. This is a registry of 150+ animated ones for shadcn/ui.
 
 [![CI](https://github.com/AadiXC0DE/cursor-gallery/actions/workflows/ci.yml/badge.svg)](https://github.com/AadiXC0DE/cursor-gallery/actions/workflows/ci.yml)
 
@@ -12,16 +12,43 @@ A cursor is the thing your pointer does all day, and almost nobody designs it. T
 npx shadcn@latest add https://cursor-gallery.vercel.app/registry/dot-ring
 ```
 
-Swap `dot-ring` for whatever you picked on the site. It lands in your project as a normal shadcn component, so you own the file and can edit it.
+Swap `dot-ring` for whatever you picked on the site. The CLI installs `framer-motion` and adds two files to your components folder:
 
-Not on the CLI? Every cursor also has a copy button with the React (Motion) version and a plain JS one.
+- `components/cursor/dot-ring.tsx`, the cursor itself
+- `components/cursor/custom-cursor.tsx`, a small host that follows the pointer and hides the system cursor. Every cursor shares it, so it only lands once.
+
+Then mount it once in your root layout, inside `<body>`:
+
+```tsx
+import { CustomCursor } from "@/components/cursor/custom-cursor";
+import DotRingCursor from "@/components/cursor/dot-ring";
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body>
+        {children}
+        <CustomCursor cursor={DotRingCursor} />
+      </body>
+    </html>
+  );
+}
+```
+
+That's it. The host stays out of the way until the mouse first moves, does nothing on touch screens, and tells the cursor when it's over a link or button so it can react. Trying a different cursor later is one more `add` and a changed import. Both files are yours to edit.
+
+Not on the CLI? Every cursor has a copy button on the site with its React source, and many also come as a plain HTML snippet with no dependencies.
 
 ## What you get
 
-- 100+ cursors, from a dot ring that reacts to your click to a trail that lags behind the pointer
-- React with Motion, or vanilla JS, same visual
+- 150+ cursors, from a dot ring that reacts to your click to a trail that lags behind the pointer
+- React components built on Motion, with a hover state for links and buttons
 - Reads fine in light and dark
-- Nothing to install at runtime and no config to write
+- The illustrated ones hold still when reduced motion is on
 
 ## Run it locally
 

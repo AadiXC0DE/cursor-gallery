@@ -117,8 +117,7 @@
   --radius-4xl: calc(var(--radius) + 16px);
 }
 
-/* Custom cursor class - force hiding default cursor on all elements */
-/* Custom cursor class - force hiding default cursor on all elements */
+/* While a custom cursor is active, hide the system one everywhere */
 html.custom-cursor,
 html.custom-cursor body,
 html.custom-cursor * {
@@ -146,22 +145,32 @@ html.custom-cursor * {
   }
 }
 
-/* Premium Card Style */
-.premium-card {
-  @apply bg-card border border-border/50 transition-all duration-300;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+/* Landing page cursor strip: each track holds its row twice and slides half */
+@keyframes cursor-strip {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
-.premium-card:hover {
-  @apply border-primary/20 bg-accent/50;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.cursor-strip-track {
+  animation: cursor-strip 70s linear infinite;
 }
 
-/* Glass effect for dark mode */
-.dark .glass {
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+.cursor-strip-track[data-reverse="true"] {
+  animation-direction: reverse;
+}
+
+.cursor-strip:hover .cursor-strip-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor-strip-track {
+    animation: none;
+  }
 }
 
 /* Hide scrollbar but keep functionality */

@@ -86,7 +86,7 @@ export default async function Image() {
       </div>
 
       <p style={{ fontSize: 30, color: "#888", margin: 0 }}>
-        Animated cursors for your next project
+        Animated cursors for React. Hover to try, install with shadcn.
       </p>
     </div>,
     {

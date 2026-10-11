@@ -21,12 +21,10 @@ export function CodeBlock({ code, language, className }: CodeBlockProps) {
     async function highlight() {
       setIsHighlighting(true);
       try {
+        // Code panels are always dark, in both site themes.
         const out = await codeToHtml(code, {
           lang: language,
-          themes: {
-            light: "github-light",
-            dark: "github-dark",
-          },
+          theme: "github-dark",
         });
         if (!cancelled) {
           setHtml(out);
@@ -35,7 +33,11 @@ export function CodeBlock({ code, language, className }: CodeBlockProps) {
       } catch (e) {
         console.error("Shiki highlight error", e);
         if (!cancelled) {
-          setHtml(`<pre><code>${code}</code></pre>`);
+          const escaped = code
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;");
+          setHtml(`<pre><code>${escaped}</code></pre>`);
           setIsHighlighting(false);
         }
       }

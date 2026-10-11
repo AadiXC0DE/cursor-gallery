@@ -12,7 +12,7 @@ import { useCursor } from "@/components/cursor/cursor-context";
 import { CURSORS } from "@/registry/cursors";
 
 // Memoized cursor renderer. Re-renders only when the component, hover state,
-// or actual position changes — no dead-zone, so precise slow movements stay
+// or actual position changes. No dead-zone, so precise slow movements stay
 // pixel-perfect and never feel "stuck".
 const CursorRenderer = memo(
   ({
@@ -68,7 +68,7 @@ export function CursorEngine() {
     );
   }, [cursorStyle, CURSOR_MAP]);
 
-  // Stable mouse move handler. Schedules at most ONE state update per frame —
+  // Stable mouse move handler. Schedules at most ONE state update per frame,
   // never cancels/reschedules, so high-polling-rate mice (120Hz+) can't starve
   // the animation frame and freeze the cursor mid-movement.
   const handleMouseMove = useCallback((e: MouseEvent) => {
@@ -82,9 +82,12 @@ export function CursorEngine() {
 
     // Interactive-element detection (only set state on actual change)
     const target = e.target as HTMLElement;
-    const interactive = !!target.closest(
-      'button, a, input, [role="button"], label, select, textarea, .cursor-pointer'
-    );
+    // Gallery cards are buttons, but over its own card a cursor should show
+    // its idle pose, so they opt out of the hover state.
+    const interactive =
+      !!target.closest(
+        'button, a, input, [role="button"], label, select, textarea, .cursor-pointer'
+      ) && !target.closest("[data-cursor-preview]");
     if (isHoveringRef.current !== interactive) {
       isHoveringRef.current = interactive;
       setIsHovering(interactive);

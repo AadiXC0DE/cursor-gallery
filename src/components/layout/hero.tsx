@@ -2,9 +2,11 @@
 
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { ArrowRight, Github, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { CURSORS } from "@/registry/cursors";
+import { CursorPreview } from "@/components/gallery/cursor-preview";
+import { GitHubMark } from "@/components/brand-marks";
 
 export function Hero() {
   return (
@@ -45,9 +47,13 @@ export function Hero() {
                     repeatDelay: 1.4,
                   }}
                 />
-                <Sparkles className="relative w-3 h-3 text-primary" />
+                <CursorPreview
+                  id="arcade-coin"
+                  scale={0.42}
+                  className="relative w-3.5 h-3.5"
+                />
                 <span className="relative text-[10px] font-black uppercase tracking-[0.2em] text-muted-foreground transition-colors group-hover:text-foreground">
-                  31 New Cursors Just Dropped
+                  50 New Cursors Just Dropped
                 </span>
                 <ArrowRight className="relative w-3 h-3 text-primary transition-transform group-hover:translate-x-0.5" />
               </motion.div>
@@ -73,16 +79,16 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto font-medium leading-relaxed"
           >
-            The ultimate collection of 70+ premium animated cursors for the
-            modern web. Engineered with{" "}
+            {CURSORS.length} animated cursors for React, built with{" "}
             <Link
               href="https://motion.dev"
               target="_blank"
               className="text-foreground hover:text-primary underline decoration-primary/30 underline-offset-4 transition-colors"
             >
               Motion
-            </Link>
-            , optimized for performance.{" "}
+            </Link>{" "}
+            and installed with the shadcn CLI. Your pointer is on screen all
+            day, so give it something to do.{" "}
             <span className="text-foreground">Copy, paste, and ship.</span>
           </motion.p>
 
@@ -112,7 +118,7 @@ export function Hero() {
                 size="lg"
                 className="h-14 px-10 text-xs font-black uppercase tracking-[0.2em] rounded-none border-2 hover:bg-muted transition-all"
               >
-                <Github className="mr-3 w-4 h-4" />
+                <GitHubMark className="mr-3 w-4 h-4" />
                 Star on GitHub
               </Button>
             </Link>
@@ -126,7 +132,7 @@ export function Hero() {
             className="mt-24 pt-12 border-t border-border flex flex-wrap justify-center items-center gap-12"
           >
             {[
-              { label: "CURSORS", value: `${CURSORS.length}+` },
+              { label: "CURSORS", value: `${CURSORS.length}` },
               { label: "ENGINE", value: "MOTION" },
               { label: "LIBRARY", value: "SHADCN" },
               { label: "LICENSE", value: "MIT" },

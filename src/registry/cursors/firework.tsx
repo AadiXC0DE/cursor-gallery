@@ -9,6 +9,17 @@ interface Spark {
   color: string;
 }
 
+const STATIC_BURST = [
+  "#f43f5e",
+  "#f59e0b",
+  "#facc15",
+  "#22c55e",
+  "#22d3ee",
+  "#3b82f6",
+  "#a855f7",
+  "#ec4899",
+];
+
 export default function FireworkCursor({
   x,
   y,
@@ -53,6 +64,22 @@ export default function FireworkCursor({
       className="fixed top-0 left-0 pointer-events-none z-50 px-10"
       style={{ x, y, translateX: "-50%", translateY: "-50%" }}
     >
+      {/* Gallery cards render frozen, so show a burst mid-explosion there */}
+      {isStatic &&
+        STATIC_BURST.map((color, i) => {
+          const angle = (i * Math.PI) / 4;
+          return (
+            <div
+              key={i}
+              className="absolute w-1 h-1 rounded-full shadow-[0_0_4px_currentColor]"
+              style={{
+                color,
+                backgroundColor: "currentColor",
+                transform: `translate(${Math.cos(angle) * 14}px, ${Math.sin(angle) * 14}px)`,
+              }}
+            />
+          );
+        })}
       <AnimatePresence>
         {sparks.map((s) => (
           <motion.div

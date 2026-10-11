@@ -5,7 +5,7 @@ import { CURSOR_ARTWORK } from "@/lib/cursor-artwork";
 import { generateVanillaCursor } from "@/lib/generate-vanilla-cursor";
 import { CURSORS } from "./index";
 
-describe("written-spec collection", () => {
+describe("illustrated collection", () => {
   const ids = Object.keys(CURSOR_ARTWORK);
 
   it("exposes all 25 cursors in the featured gallery", () => {
@@ -32,22 +32,31 @@ describe("written-spec collection", () => {
     ).toBe(false);
   });
 
-  it("keeps the small silhouettes within twelve bold visible shapes", () => {
+  const SHAPES = /<(path|circle|ellipse|rect|line|polygon|polyline)\b/g;
+  const renderFrozen = (id: string) =>
+    renderToStaticMarkup(
+      createElement(CURSORS.find((cursor) => cursor.id === id)!.component, {
+        x: 17,
+        y: 17,
+        isStatic: true,
+      })
+    );
+
+  it("draws shaded illustrations rather than flat outlines", () => {
     for (const id of ids) {
-      const Component = CURSORS.find((cursor) => cursor.id === id)!.component;
-      const markup = renderToStaticMarkup(
-        createElement(Component, { x: 17, y: 17, isStatic: true })
-      );
-      const visible = markup.replace(/<defs>.*?<\/defs>/g, "");
-      const shapes =
-        visible.match(/<(path|circle|ellipse|rect|line|polygon|polyline)\b/g) ||
-        [];
-      expect(shapes.length, id).toBeGreaterThan(0);
-      expect(shapes.length, id).toBeLessThanOrEqual(12);
-      expect(visible, id).not.toContain("<text");
-      for (const [, width] of visible.matchAll(/stroke-width="([\d.]+)"/g)) {
-        expect(Number(width), `${id} stroke`).toBeGreaterThanOrEqual(1.75);
-      }
+      const markup = renderFrozen(id);
+      expect(markup, id).toMatch(/<(linearGradient|radialGradient)\b/);
+      expect(markup, id).toMatch(/(fill|stroke)="url\(#/);
+      expect(markup, id).not.toContain("<text");
+    }
+  });
+
+  it("exports the same shapes in the vanilla snippet as the React component", () => {
+    for (const id of ids) {
+      const react = renderFrozen(id).match(SHAPES)?.length;
+      const vanilla = generateVanillaCursor(id)!.match(SHAPES)?.length;
+      expect(react, id).toBeGreaterThan(0);
+      expect(vanilla, id).toBe(react);
     }
   });
 

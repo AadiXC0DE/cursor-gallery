@@ -122,7 +122,7 @@ import ZapCursor from "./zap";
 import FlameCursor from "./flame";
 import TreeCursor from "./tree";
 
-// Written-spec collection
+// Illustrated collection
 import JellyfishCursor from "./jellyfish";
 import KoiCursor from "./koi";
 import SnailCursor from "./snail";
@@ -343,7 +343,8 @@ export const CURSORS: CursorDefinition[] = [
   {
     id: "glitch",
     name: "Cyber Glitch",
-    description: "Digital interference effect",
+    description:
+      "RGB-split block caret with slice jitter that goes haywire on hover",
     tags: ["effect", "cyberpunk"],
     component: GlitchCursor,
     featured: true,
@@ -370,7 +371,8 @@ export const CURSORS: CursorDefinition[] = [
   {
     id: "cyber-scanner",
     name: "Cyber Scanner",
-    description: "Futuristic tech interface",
+    description:
+      "HUD reticle with a sweeping scan beam that locks on to targets",
     tags: ["effect", "cyberpunk", "premium"],
     component: CyberScannerCursor,
     featured: true,
@@ -659,7 +661,8 @@ export const CURSORS: CursorDefinition[] = [
   {
     id: "ghost",
     name: "Ghost",
-    description: "Floating spooky ghost",
+    description:
+      "Glossy floating ghost that throws up its arms and says boo on hover",
     tags: ["animated", "fun"],
     component: GhostCursor,
     featured: true,
@@ -884,7 +887,7 @@ export const CURSORS: CursorDefinition[] = [
   {
     id: "dna",
     name: "DNA",
-    description: "Rotating helix strand",
+    description: "Spinning double helix with glowing base pairs",
     tags: ["science", "biology"],
     component: DnaCursor,
     code: { react: `// DNA cursor`, vanilla: `// Pending` },
@@ -1023,7 +1026,8 @@ export const CURSORS: CursorDefinition[] = [
   {
     id: "idea",
     name: "Idea",
-    description: "Glowing inspiration",
+    description:
+      "Glowing glass bulb with a flickering filament that bursts with light on hover",
     tags: ["animated", "creative"],
     component: IdeaCursor,
     code: { react: `// Idea cursor`, vanilla: `// Pending` },
@@ -1039,7 +1043,8 @@ export const CURSORS: CursorDefinition[] = [
   {
     id: "zap",
     name: "Zap",
-    description: "Electric energy bolt",
+    description:
+      "Glossy electric bolt with crackling sparks that charges up on hover",
     tags: ["animated", "energy"],
     component: ZapCursor,
     code: { react: `// Zap cursor`, vanilla: `// Pending` },
@@ -1057,7 +1062,8 @@ export const CURSORS: CursorDefinition[] = [
   {
     id: "jellyfish",
     name: "Jellyfish",
-    description: "A pulsing bell with three bold trailing tentacles",
+    description:
+      "Glowing bell that pulses through the dark trailing soft tentacles",
     tags: ["animated", "nature", "water"],
     component: JellyfishCursor,
     featured: true,
@@ -1069,8 +1075,7 @@ export const CURSORS: CursorDefinition[] = [
   {
     id: "koi",
     name: "Koi",
-    description:
-      "A broad amber fish with a flicking forked tail and bright eye",
+    description: "Kohaku koi gliding through pond ripples with a flicking tail",
     tags: ["animated", "nature", "water"],
     component: KoiCursor,
     featured: true,
@@ -1082,7 +1087,8 @@ export const CURSORS: CursorDefinition[] = [
   {
     id: "snail",
     name: "Snail",
-    description: "A bold spiral shell with eye stalks that reach out on hover",
+    description:
+      "Glossy spiral shell with curious eye stalks that perk up on hover",
     tags: ["animated", "nature", "calm"],
     component: SnailCursor,
     featured: true,
@@ -1094,7 +1100,7 @@ export const CURSORS: CursorDefinition[] = [
   {
     id: "dragonfly",
     name: "Dragonfly",
-    description: "Two clear wing pairs beating around a long slender body",
+    description: "Iridescent wings beating around a jewel-toned body",
     tags: ["animated", "nature"],
     component: DragonflyCursor,
     featured: true,
@@ -1106,8 +1112,7 @@ export const CURSORS: CursorDefinition[] = [
   {
     id: "dandelion",
     name: "Dandelion",
-    description:
-      "A round forked dandelion clock on a straight stem with one drifting seed",
+    description: "Seed clock swaying in golden light as seeds drift away",
     tags: ["animated", "nature", "calm"],
     component: DandelionCursor,
     featured: true,
@@ -1119,7 +1124,7 @@ export const CURSORS: CursorDefinition[] = [
   {
     id: "moon-phase",
     name: "Moon Phase",
-    description: "A bright crescent cycling through quarter and full moon",
+    description: "Cratered silver moon cycling through its phases",
     tags: ["animated", "space", "calm"],
     component: MoonPhaseCursor,
     featured: true,
@@ -1131,7 +1136,7 @@ export const CURSORS: CursorDefinition[] = [
   {
     id: "cassette",
     name: "Cassette",
-    description: "Two spinning reels in a bold tape housing",
+    description: "Synthwave mixtape with spinning reels and floating notes",
     tags: ["animated", "retro", "mechanical"],
     component: CassetteCursor,
     featured: true,
@@ -1143,7 +1148,7 @@ export const CURSORS: CursorDefinition[] = [
   {
     id: "domino",
     name: "Domino",
-    description: "A one-two domino tipping further on hover",
+    description: "Ivory tiles knocking into each other, harder on hover",
     tags: ["animated", "playful", "mechanical"],
     component: DominoCursor,
     featured: true,
@@ -1155,8 +1160,7 @@ export const CURSORS: CursorDefinition[] = [
   {
     id: "newtons-cradle",
     name: "Newton's Cradle",
-    description:
-      "Five distinct suspended balls transferring a swing between the ends",
+    description: "Chrome balls trading a swing across a polished frame",
     tags: ["animated", "physics", "mechanical"],
     component: NewtonsCradleCursor,
     featured: true,
@@ -1169,7 +1173,7 @@ export const CURSORS: CursorDefinition[] = [
     id: "pinball",
     name: "Pinball",
     description:
-      "A pinball cabinet with two flicking flippers, a ball and a side launcher",
+      "Chrome ball bouncing between flicking flippers and a lit bumper",
     tags: ["animated", "playful", "retro"],
     component: PinballCursor,
     featured: true,
@@ -1181,8 +1185,7 @@ export const CURSORS: CursorDefinition[] = [
   {
     id: "yoyo",
     name: "Yoyo",
-    description:
-      "A close double-disc spool unwinding from a string tied to its axle",
+    description: "Spinning yoyo that drops and climbs its string",
     tags: ["animated", "playful"],
     component: YoyoCursor,
     featured: true,
@@ -1194,8 +1197,7 @@ export const CURSORS: CursorDefinition[] = [
   {
     id: "typewriter",
     name: "Typewriter",
-    description:
-      "A paper sheet in a moving roller above three typing keys on a broad key bar",
+    description: "Mint typewriter tapping keys as the carriage slides",
     tags: ["animated", "retro", "mechanical"],
     component: TypewriterCursor,
     featured: true,
@@ -1207,8 +1209,7 @@ export const CURSORS: CursorDefinition[] = [
   {
     id: "dial",
     name: "Dial",
-    description:
-      "An eight-hole telephone dial winding against a protruding finger stop",
+    description: "Cherry rotary dial that winds up and springs back",
     tags: ["animated", "retro", "mechanical"],
     component: DialCursor,
     featured: true,
@@ -1220,7 +1221,7 @@ export const CURSORS: CursorDefinition[] = [
   {
     id: "gear-train",
     name: "Gear Train",
-    description: "Two bold meshing gears speeding up in opposite directions",
+    description: "Brass and copper gears meshing tooth for tooth",
     tags: ["animated", "mechanical"],
     component: GearTrainCursor,
     featured: true,
@@ -1232,8 +1233,7 @@ export const CURSORS: CursorDefinition[] = [
   {
     id: "caliper",
     name: "Caliper",
-    description:
-      "Long thin caliper jaws closing along a beam with a distinct sliding block",
+    description: "Steel calipers clamping down on a glossy bead",
     tags: ["animated", "precision", "mechanical"],
     component: CaliperCursor,
     featured: true,
@@ -1245,7 +1245,7 @@ export const CURSORS: CursorDefinition[] = [
   {
     id: "drafting-compass",
     name: "Drafting Compass",
-    description: "A drafting compass spreading its hinged legs wider on hover",
+    description: "Brass-hinged compass sweeping a glowing arc",
     tags: ["animated", "precision", "drafting", "creative"],
     component: DraftingCompassCursor,
     featured: true,
@@ -1257,8 +1257,7 @@ export const CURSORS: CursorDefinition[] = [
   {
     id: "oscilloscope",
     name: "Oscilloscope",
-    description:
-      "A bright sine waveform growing taller inside an instrument screen",
+    description: "Phosphor-green waveform scrolling across a CRT",
     tags: ["animated", "tech"],
     component: OscilloscopeCursor,
     featured: true,
@@ -1270,8 +1269,7 @@ export const CURSORS: CursorDefinition[] = [
   {
     id: "packet",
     name: "Packet",
-    description:
-      "A notched data frame with a short trail hopping between two network ports",
+    description: "Data cube hopping a fiber link between two glowing ports",
     tags: ["animated", "tech"],
     component: PacketCursor,
     featured: true,
@@ -1283,8 +1281,7 @@ export const CURSORS: CursorDefinition[] = [
   {
     id: "seismograph",
     name: "Seismograph",
-    description:
-      "A pivoted stylus recording a shaking trace on a cylindrical paper drum",
+    description: "Pen arm tracing tremors on a turning paper drum",
     tags: ["animated", "tech"],
     component: SeismographCursor,
     featured: true,
@@ -1296,8 +1293,7 @@ export const CURSORS: CursorDefinition[] = [
   {
     id: "kaleidoscope",
     name: "Kaleidoscope",
-    description:
-      "Mirrored crystal wedges with hard radial color bands and a bright diamond core",
+    description: "Jewel-toned mandala turning in counter-rotating rings",
     tags: ["animated", "geometry", "abstract"],
     component: KaleidoscopeCursor,
     featured: true,
@@ -1309,8 +1305,7 @@ export const CURSORS: CursorDefinition[] = [
   {
     id: "zen",
     name: "Zen",
-    description:
-      "An irregular tapered brush circle that expands with a slow breath",
+    description: "Balanced river-stone cairn swaying over still water",
     tags: ["animated", "calm", "minimal"],
     component: ZenCursor,
     featured: true,
@@ -1322,7 +1317,7 @@ export const CURSORS: CursorDefinition[] = [
   {
     id: "labyrinth",
     name: "Labyrinth",
-    description: "A small bright traveller pacing a centred bold square spiral",
+    description: "A spark finding its way through a golden maze to the gem",
     tags: ["animated", "geometry", "calm"],
     component: LabyrinthCursor,
     featured: true,
@@ -1334,8 +1329,7 @@ export const CURSORS: CursorDefinition[] = [
   {
     id: "slinky",
     name: "Slinky",
-    description:
-      "Five closed spring loops stretching apart and compressing together",
+    description: "Rainbow coil stretching and springing back",
     tags: ["animated", "playful", "mechanical"],
     component: SlinkyCursor,
     featured: true,
@@ -1347,8 +1341,7 @@ export const CURSORS: CursorDefinition[] = [
   {
     id: "gyroscope",
     name: "Gyroscope",
-    description:
-      "Two thick precessing rings with separated crossings inside a fixed gimbal frame",
+    description: "Spinning rotor precessing inside a golden gimbal",
     tags: ["animated", "geometry", "mechanical"],
     component: GyroscopeCursor,
     featured: true,
@@ -1360,8 +1353,7 @@ export const CURSORS: CursorDefinition[] = [
   {
     id: "arcade-coin",
     name: "Arcade Coin",
-    description:
-      "An arcade cabinet with an angled control deck, coin slot and flashing credit lights",
+    description: "Spinning gold coin that drops into a glowing slot on hover",
     tags: ["animated", "retro", "playful"],
     component: ArcadeCoinCursor,
     featured: true,

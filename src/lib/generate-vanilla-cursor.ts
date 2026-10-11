@@ -26,6 +26,8 @@ export function generateVanillaCursor(cursorId: string): string | undefined {
           "pathLength",
           "maskUnits",
           "gradientUnits",
+          "gradientTransform",
+          "clipPathUnits",
         ].includes(name)
           ? name
           : attributeName(name);
@@ -56,9 +58,8 @@ export function generateVanillaCursor(cursorId: string): string | undefined {
   }
 </style>
 <div data-gallery-cursor="${cursorId}">
-  <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"
-    fill="none" stroke="${artwork.accent}" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round"${artwork.glow ? ` style="filter:drop-shadow(0 0 6px ${artwork.accent}66)"` : ""}>
+  <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true" fill="none"
+    style="overflow:visible${artwork.filter ? `;filter:${artwork.filter}` : ""}">
     ${svg}
   </svg>
 </div>
@@ -91,13 +92,17 @@ export function generateVanillaCursor(cursorId: string): string | undefined {
       }
     }
   });
+  // Same order Motion composes transforms in: translate, scale, rotate.
   const transform = value =>
     'translate(' + (value.x || 0) + 'px,' + (value.y || 0) + 'px) ' +
-    'rotate(' + (value.rotate || 0) + 'deg) ' +
-    'rotateX(' + (value.rotateX || 0) + 'deg) rotateY(' + (value.rotateY || 0) + 'deg) ' +
     'scale(' + (value.scale === undefined ? 1 : value.scale) + ') ' +
     'scaleX(' + (value.scaleX === undefined ? 1 : value.scaleX) + ') ' +
-    'scaleY(' + (value.scaleY === undefined ? 1 : value.scaleY) + ')';
+    'scaleY(' + (value.scaleY === undefined ? 1 : value.scaleY) + ') ' +
+    'rotate(' + (value.rotate || 0) + 'deg)';
+  const easings = {
+    linear: 'linear', easeIn: 'cubic-bezier(0.42,0,1,1)',
+    easeOut: 'cubic-bezier(0,0,0.58,1)', easeInOut: 'cubic-bezier(0.42,0,0.58,1)'
+  };
   const frame = value => {
     const result = { transform: transform(value) };
     if (value.opacity !== undefined) result.opacity = value.opacity;
@@ -117,23 +122,11 @@ export function generateVanillaCursor(cursorId: string): string | undefined {
       if (reduced.matches) return;
       const values = hovering && loop.hoverValues ? loop.hoverValues : loop.values;
       const length = Math.max(...Object.values(values).map(values => values.length));
-      const turnDuration = loop.duration - 0.7;
       const keyframes = Array.from({ length }, (_, i) => {
         const value = Object.fromEntries(Object.entries(values).map(([key, frames]) => [key, frames[i]]));
-        const offset = loop.times ? loop.times[i] : i / (length - 1);
-        return { ...frame(value), offset: loop.springReturn ? offset * turnDuration / loop.duration : offset,
-          easing: loop.ease === 'linear' ? 'linear' : 'cubic-bezier(0.42,0,0.58,1)' };
+        const ease = Array.isArray(loop.ease) ? loop.ease[Math.min(i, loop.ease.length - 1)] : loop.ease;
+        return { ...frame(value), offset: loop.times ? loop.times[i] : i / (length - 1), easing: easings[ease] };
       });
-      if (loop.springReturn) {
-        const angle = loop.values.rotate.at(-1);
-        const frequency = Math.sqrt(320 - 100);
-        for (let i = 1; i <= 42; i++) {
-          const t = i / 60;
-          const rotate = i === 42 ? 0 : angle * Math.exp(-10 * t) *
-            (Math.cos(frequency * t) + 10 / frequency * Math.sin(frequency * t));
-          keyframes.push({ ...frame({ rotate }), offset: (turnDuration + t) / loop.duration, easing: 'linear' });
-        }
-      }
       const animation = elements[index].animate(keyframes, {
         duration: loop.duration * 1000, iterations: Infinity, delay: (loop.delay || 0) * 1000
       });

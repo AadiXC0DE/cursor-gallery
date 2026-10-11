@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { useState, useEffect } from "react";
 
 export default function RocketCursor({
@@ -12,22 +12,30 @@ export default function RocketCursor({
   isStatic?: boolean;
 }) {
   const [flameId, setFlameId] = useState(0);
+  const reducedMotion = useReducedMotion();
+  const frozen = isStatic || reducedMotion;
 
   useEffect(() => {
-    if (isStatic) return;
+    if (frozen) return;
     const interval = setInterval(() => {
       setFlameId((prev) => (prev + 1) % 5);
     }, 80); // Increased from 50ms to 80ms
     return () => clearInterval(interval);
-  }, [isStatic]);
+  }, [frozen]);
 
   return (
-    <div className="fixed top-0 left-0 pointer-events-none z-50">
+    <motion.div
+      className="fixed top-0 left-0 pointer-events-none z-50"
+      style={{ x, y, translateX: "-50%", translateY: "-50%", rotate: -45 }}
+    >
+      {/* Engine rumble lives on an inner layer so pointer moves never restart it */}
       <motion.div
-        style={{ x, y, rotate: -45 }}
-        animate={{ y: [y, y - 1, y] }}
-        transition={{ duration: 0.1, repeat: Infinity }}
-        className="relative flex items-center justify-center translate-x-[-50%] translate-y-[-50%]"
+        initial={{ y: 0 }}
+        animate={frozen ? { y: 0 } : { y: [0, -1, 0] }}
+        transition={
+          frozen ? { duration: 0 } : { duration: 0.1, repeat: Infinity }
+        }
+        className="relative flex items-center justify-center"
       >
         {/* Exhaust Flames - Positioned relative to the rocket engine */}
         <div className="absolute top-[30px] left-1/2 -translate-x-1/2 flex flex-col items-center">
@@ -79,6 +87,6 @@ export default function RocketCursor({
           <path d="M15 10 Q20 2 25 10" fill="#ef4444" />
         </svg>
       </motion.div>
-    </div>
+    </motion.div>
   );
 }

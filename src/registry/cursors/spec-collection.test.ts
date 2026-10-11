@@ -3,19 +3,29 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
 import { CURSOR_ARTWORK } from "@/lib/cursor-artwork";
 import { generateVanillaCursor } from "@/lib/generate-vanilla-cursor";
-import { CURSORS } from "./index";
+import { CURSORS, FEATURED_CURSORS, FEATURED_IDS } from "./index";
 
 describe("illustrated collection", () => {
   const ids = Object.keys(CURSOR_ARTWORK);
 
-  it("exposes all 25 cursors in the featured gallery", () => {
-    expect(ids).toHaveLength(25);
-    const featuredIds = CURSORS.filter((cursor) => cursor.featured)
-      .slice(0, 100)
-      .map((cursor) => cursor.id);
+  it("registers every illustrated cursor", () => {
+    expect(ids).toHaveLength(50);
     for (const id of ids) {
-      expect(featuredIds, id).toContain(id);
+      expect(
+        CURSORS.some((cursor) => cursor.id === id),
+        id
+      ).toBe(true);
     }
+  });
+
+  it("keeps the featured selection ordered, flagged and unique", () => {
+    expect(new Set(FEATURED_IDS).size).toBe(FEATURED_IDS.length);
+    expect(FEATURED_CURSORS.map((cursor) => cursor.id)).toEqual(FEATURED_IDS);
+    expect(
+      CURSORS.filter((cursor) => cursor.featured)
+        .map((cursor) => cursor.id)
+        .sort()
+    ).toEqual([...FEATURED_IDS].sort());
   });
 
   it("registers the object names and source ids after the two renames", () => {

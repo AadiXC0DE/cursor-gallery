@@ -6047,4 +6047,7669 @@ export const CURSOR_ARTWORK: Record<string, CursorArtwork> = {
       },
     ],
   },
+  "hot-air-balloon": {
+    accent: "#ef4444",
+    filter:
+      "drop-shadow(0 1px 1.5px rgba(15,23,42,0.35)) drop-shadow(0 0 6px rgba(239,68,68,0.35))",
+    nodes: [
+      {
+        tag: "defs",
+        attrs: {},
+        children: [
+          {
+            tag: "radialGradient",
+            attrs: { id: "envelope", cx: "35%", cy: "30%", r: "75%" },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#fecaca" } },
+              { tag: "stop", attrs: { offset: 0.4, stopColor: "#f87171" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#b91c1c" } },
+            ],
+          },
+          {
+            tag: "linearGradient",
+            attrs: { id: "gore", x1: 0, y1: 0, x2: 1, y2: 0 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#fde68a" } },
+              { tag: "stop", attrs: { offset: 0.5, stopColor: "#fffbeb" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#fbbf24" } },
+            ],
+          },
+          {
+            tag: "linearGradient",
+            attrs: { id: "basket", x1: 0, y1: 0, x2: 0, y2: 1 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#d97706" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#78350f" } },
+            ],
+          },
+          {
+            tag: "radialGradient",
+            attrs: { id: "flame", cx: "50%", cy: "70%", r: "60%" },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#fef9c3" } },
+              { tag: "stop", attrs: { offset: 0.5, stopColor: "#fbbf24" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#f97316" } },
+            ],
+          },
+          {
+            tag: "clipPath",
+            attrs: { id: "env" },
+            children: [
+              {
+                tag: "path",
+                attrs: {
+                  d: "M17 2.2 C23.6 2.2 27.6 6.8 27.6 12 C27.6 16.4 23.6 19.4 20.2 22.4 L13.8 22.4 C10.4 19.4 6.4 16.4 6.4 12 C6.4 6.8 10.4 2.2 17 2.2 Z",
+                },
+              },
+            ],
+          },
+        ],
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M2 26.4 C2 25 3.4 24.2 4.6 24.6 C5.2 23.4 7.4 23.4 8 24.8 C9.2 24.6 10 25.4 9.8 26.4 Z",
+          fill: "#f1f5f9",
+          stroke: "#cbd5e1",
+          strokeWidth: 0.4,
+        },
+        loop: {
+          values: { x: [4, -2, 4], opacity: [0.9, 1, 0.9] },
+          duration: 7,
+          ease: "easeInOut",
+          hoverDuration: 3.5,
+        },
+      },
+      {
+        tag: "g",
+        attrs: {},
+        children: [
+          {
+            tag: "g",
+            attrs: {},
+            children: [
+              {
+                tag: "line",
+                attrs: {
+                  x1: 13.8,
+                  y1: 22.4,
+                  x2: 14.6,
+                  y2: 25.8,
+                  stroke: "#78350f",
+                  strokeWidth: 0.5,
+                },
+              },
+              {
+                tag: "line",
+                attrs: {
+                  x1: 20.2,
+                  y1: 22.4,
+                  x2: 19.4,
+                  y2: 25.8,
+                  stroke: "#78350f",
+                  strokeWidth: 0.5,
+                },
+              },
+              {
+                tag: "line",
+                attrs: {
+                  x1: 16.2,
+                  y1: 22.4,
+                  x2: 16.4,
+                  y2: 25.8,
+                  stroke: "#78350f",
+                  strokeWidth: 0.4,
+                },
+              },
+              {
+                tag: "line",
+                attrs: {
+                  x1: 17.8,
+                  y1: 22.4,
+                  x2: 17.6,
+                  y2: 25.8,
+                  stroke: "#78350f",
+                  strokeWidth: 0.4,
+                },
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M17 21.6 C18.4 23 18.2 24.6 17 25.4 C15.8 24.6 15.6 23 17 21.6 Z",
+                  fill: "url(#flame)",
+                },
+                loop: {
+                  values: { scale: [0.8, 1.1, 0.85, 1, 0.8] },
+                  duration: 0.6,
+                  ease: "easeInOut",
+                  hoverValues: { scale: [1.2, 1.7, 1.3, 1.6, 1.2] },
+                  hoverDuration: 0.4,
+                },
+                origin: "17px 25px",
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M17 2.2 C23.6 2.2 27.6 6.8 27.6 12 C27.6 16.4 23.6 19.4 20.2 22.4 L13.8 22.4 C10.4 19.4 6.4 16.4 6.4 12 C6.4 6.8 10.4 2.2 17 2.2 Z",
+                  fill: "url(#envelope)",
+                  stroke: "#7f1d1d",
+                  strokeWidth: 0.7,
+                },
+              },
+              {
+                tag: "g",
+                attrs: { clipPath: "url(#env)" },
+                children: [
+                  {
+                    tag: "path",
+                    attrs: {
+                      d: "M17 2.2 C20.2 2.6 21.6 7 21.6 12 C21.6 16.2 20 19.8 18.8 22.4 L15.2 22.4 C14 19.8 12.4 16.2 12.4 12 C12.4 7 13.8 2.6 17 2.2 Z",
+                      fill: "url(#gore)",
+                    },
+                  },
+                  {
+                    tag: "path",
+                    attrs: {
+                      d: "M4 13 L5.2 11 L6.4 13 L7.6 11 L8.8 13 L10 11 L11.2 13 L12.4 11 L13.6 13 L14.8 11 L16 13 L17.2 11 L18.4 13 L19.6 11 L20.8 13 L22 11 L23.2 13 L24.4 11 L25.6 13 L26.8 11 L28 13 L29.2 11 L30.4 13 L30 15.4 L4 15.4 Z",
+                      fill: "#2563eb",
+                      opacity: 0.9,
+                    },
+                  },
+                  {
+                    tag: "path",
+                    attrs: {
+                      d: "M9 3 C7 6 6.6 18 12 23 M25 3 C27 6 27.4 18 22 23",
+                      stroke: "#7f1d1d",
+                      strokeWidth: 0.4,
+                      opacity: 0.5,
+                    },
+                  },
+                ],
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M9.4 8.4 C10.4 5.8 12.6 4.2 15 3.8",
+                  stroke: "#ffffff",
+                  strokeWidth: 1.3,
+                  strokeLinecap: "round",
+                  opacity: 0.7,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 14.2,
+                  y: 25.6,
+                  width: 5.6,
+                  height: 4.2,
+                  rx: 1,
+                  fill: "url(#basket)",
+                  stroke: "#451a03",
+                  strokeWidth: 0.5,
+                },
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M14.4 27 H19.6 M14.4 28.4 H19.6 M16 25.8 V29.6 M18 25.8 V29.6",
+                  stroke: "#fbbf24",
+                  strokeWidth: 0.3,
+                  opacity: 0.6,
+                },
+              },
+            ],
+            loop: {
+              values: { rotate: [-2.5, 2.5, -2.5] },
+              duration: 4,
+              ease: "easeInOut",
+              hoverDuration: 2,
+            },
+            origin: "17px 2px",
+          },
+        ],
+        loop: {
+          values: { y: [0, -1.8, 0] },
+          duration: 3.2,
+          ease: "easeInOut",
+          hoverValues: { y: [0, -3.6, 0] },
+          hoverDuration: 1.6,
+        },
+      },
+    ],
+  },
+  lighthouse: {
+    accent: "#facc15",
+    filter:
+      "drop-shadow(0 1px 1.5px rgba(15,23,42,0.35)) drop-shadow(0 0 6px rgba(250,204,21,0.4))",
+    nodes: [
+      {
+        tag: "defs",
+        attrs: {},
+        children: [
+          {
+            tag: "linearGradient",
+            attrs: { id: "tower", x1: 0, y1: 0, x2: 1, y2: 0 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#f8fafc" } },
+              { tag: "stop", attrs: { offset: 0.6, stopColor: "#e2e8f0" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#94a3b8" } },
+            ],
+          },
+          {
+            tag: "linearGradient",
+            attrs: { id: "stripe", x1: 0, y1: 0, x2: 1, y2: 0 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#f87171" } },
+              { tag: "stop", attrs: { offset: 0.6, stopColor: "#dc2626" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#991b1b" } },
+            ],
+          },
+          {
+            tag: "linearGradient",
+            attrs: {
+              id: "beam",
+              x1: 17,
+              y1: 0,
+              x2: 34,
+              y2: 0,
+              gradientUnits: "userSpaceOnUse",
+            },
+            children: [
+              {
+                tag: "stop",
+                attrs: { offset: 0, stopColor: "#fef9c3", stopOpacity: 0.9 },
+              },
+              {
+                tag: "stop",
+                attrs: { offset: 1, stopColor: "#fde047", stopOpacity: 0 },
+              },
+            ],
+          },
+          {
+            tag: "radialGradient",
+            attrs: { id: "lamp", cx: "50%", cy: "50%", r: "50%" },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#ffffff" } },
+              { tag: "stop", attrs: { offset: 0.5, stopColor: "#fef08a" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#facc15" } },
+            ],
+          },
+          {
+            tag: "radialGradient",
+            attrs: { id: "halo", cx: "50%", cy: "50%", r: "50%" },
+            children: [
+              {
+                tag: "stop",
+                attrs: { offset: 0, stopColor: "#fef08a", stopOpacity: 0.7 },
+              },
+              {
+                tag: "stop",
+                attrs: { offset: 1, stopColor: "#fef08a", stopOpacity: 0 },
+              },
+            ],
+          },
+          {
+            tag: "linearGradient",
+            attrs: { id: "sea", x1: 0, y1: 0, x2: 0, y2: 1 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#38bdf8" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#1d4ed8" } },
+            ],
+          },
+          {
+            tag: "clipPath",
+            attrs: { id: "towerClip" },
+            children: [
+              {
+                tag: "path",
+                attrs: { d: "M13.4 28 L14.6 11.8 H19.4 L20.6 28 Z" },
+              },
+            ],
+          },
+          {
+            tag: "clipPath",
+            attrs: { id: "bay" },
+            children: [
+              {
+                tag: "ellipse",
+                attrs: { cx: 17, cy: 30.2, rx: 14.6, ry: 3.6 },
+              },
+            ],
+          },
+        ],
+      },
+      {
+        tag: "path",
+        attrs: { d: "M17 7.6 L34 3.4 L34 12.6 L17 9.6 Z", fill: "url(#beam)" },
+        loop: {
+          values: { scaleX: [1, -1, 1] },
+          duration: 4,
+          ease: "easeInOut",
+          static: { scaleX: 1 },
+          hoverDuration: 1.6,
+        },
+        origin: "17px 8.6px",
+      },
+      {
+        tag: "circle",
+        attrs: { cx: 17, cy: 8.6, r: 5, fill: "url(#halo)" },
+        loop: {
+          values: { scale: [0.9, 1.15, 0.9], opacity: [0.7, 1, 0.7] },
+          duration: 2,
+          ease: "easeInOut",
+          hoverDuration: 0.8,
+        },
+        origin: "17px 8.6px",
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M13.4 28 L14.6 11.8 H19.4 L20.6 28 Z",
+          fill: "url(#tower)",
+          stroke: "#334155",
+          strokeWidth: 0.6,
+          strokeLinejoin: "round",
+        },
+      },
+      {
+        tag: "g",
+        attrs: { clipPath: "url(#towerClip)" },
+        children: [
+          {
+            tag: "rect",
+            attrs: {
+              x: 10,
+              y: 14.4,
+              width: 14,
+              height: 3,
+              fill: "url(#stripe)",
+            },
+          },
+          {
+            tag: "rect",
+            attrs: {
+              x: 10,
+              y: 20.2,
+              width: 14,
+              height: 3,
+              fill: "url(#stripe)",
+            },
+          },
+        ],
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M16 28 V25.6 C16 24.6 18 24.6 18 25.6 V28 Z",
+          fill: "#1e293b",
+        },
+      },
+      {
+        tag: "rect",
+        attrs: {
+          x: 16.4,
+          y: 18,
+          width: 1.2,
+          height: 1.6,
+          rx: 0.3,
+          fill: "#fde68a",
+          stroke: "#1e293b",
+          strokeWidth: 0.3,
+        },
+      },
+      {
+        tag: "rect",
+        attrs: {
+          x: 13,
+          y: 10.8,
+          width: 8,
+          height: 1.4,
+          rx: 0.5,
+          fill: "#334155",
+        },
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M13.4 10.8 V9.6 M15 10.8 V9.6 M19 10.8 V9.6 M20.6 10.8 V9.6",
+          stroke: "#334155",
+          strokeWidth: 0.4,
+        },
+      },
+      {
+        tag: "rect",
+        attrs: {
+          x: 14.6,
+          y: 6.6,
+          width: 4.8,
+          height: 4.2,
+          rx: 0.6,
+          fill: "url(#lamp)",
+          stroke: "#334155",
+          strokeWidth: 0.5,
+        },
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M16.2 6.6 V10.8 M17.8 6.6 V10.8",
+          stroke: "#334155",
+          strokeWidth: 0.35,
+        },
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M14 6.9 L17 3.6 L20 6.9 Z",
+          fill: "url(#stripe)",
+          stroke: "#7f1d1d",
+          strokeWidth: 0.5,
+          strokeLinejoin: "round",
+        },
+      },
+      { tag: "circle", attrs: { cx: 17, cy: 3.2, r: 0.7, fill: "#334155" } },
+      {
+        tag: "ellipse",
+        attrs: {
+          cx: 17,
+          cy: 29,
+          rx: 8.6,
+          ry: 2,
+          fill: "#475569",
+          stroke: "#1e293b",
+          strokeWidth: 0.4,
+        },
+      },
+      {
+        tag: "g",
+        attrs: { clipPath: "url(#bay)" },
+        children: [
+          {
+            tag: "path",
+            attrs: {
+              d: "M-8 29.6 q2 -1.4 4 0 t4 0 t4 0 t4 0 t4 0 t4 0 t4 0 t4 0 t4 0 t4 0 t4 0 t4 0 t4 0 t4 0 V34 H-8 Z",
+              fill: "url(#sea)",
+              opacity: 0.92,
+            },
+            loop: {
+              values: { x: [0, -8] },
+              duration: 2.4,
+              ease: "linear",
+              hoverDuration: 1.2,
+            },
+          },
+        ],
+      },
+    ],
+  },
+  hourglass: {
+    accent: "#f59e0b",
+    filter:
+      "drop-shadow(0 1px 1.5px rgba(15,23,42,0.35)) drop-shadow(0 0 6px rgba(245,158,11,0.4))",
+    nodes: [
+      {
+        tag: "defs",
+        attrs: {},
+        children: [
+          {
+            tag: "linearGradient",
+            attrs: { id: "wood", x1: 0, y1: 0, x2: 0, y2: 1 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#d97706" } },
+              { tag: "stop", attrs: { offset: 0.5, stopColor: "#92400e" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#451a03" } },
+            ],
+          },
+          {
+            tag: "linearGradient",
+            attrs: { id: "glass", x1: 0, y1: 0, x2: 1, y2: 0 },
+            children: [
+              {
+                tag: "stop",
+                attrs: { offset: 0, stopColor: "#e0f2fe", stopOpacity: 0.55 },
+              },
+              {
+                tag: "stop",
+                attrs: { offset: 0.5, stopColor: "#bae6fd", stopOpacity: 0.2 },
+              },
+              {
+                tag: "stop",
+                attrs: { offset: 1, stopColor: "#7dd3fc", stopOpacity: 0.4 },
+              },
+            ],
+          },
+          {
+            tag: "linearGradient",
+            attrs: { id: "sand", x1: 0, y1: 0, x2: 0, y2: 1 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#fde68a" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#f59e0b" } },
+            ],
+          },
+          {
+            tag: "clipPath",
+            attrs: { id: "glassClip" },
+            children: [
+              {
+                tag: "path",
+                attrs: {
+                  d: "M10.4 6.2 C10.4 11 15.4 13.6 16.2 17 C15.4 20.4 10.4 23 10.4 27.8 H23.6 C23.6 23 18.6 20.4 17.8 17 C18.6 13.6 23.6 11 23.6 6.2 Z",
+                },
+              },
+            ],
+          },
+        ],
+      },
+      {
+        tag: "g",
+        attrs: {},
+        children: [
+          {
+            tag: "path",
+            attrs: {
+              d: "M10.4 6.2 C10.4 11 15.4 13.6 16.2 17 C15.4 20.4 10.4 23 10.4 27.8 H23.6 C23.6 23 18.6 20.4 17.8 17 C18.6 13.6 23.6 11 23.6 6.2 Z",
+              fill: "url(#glass)",
+            },
+          },
+          {
+            tag: "g",
+            attrs: { clipPath: "url(#glassClip)" },
+            children: [
+              {
+                tag: "rect",
+                attrs: {
+                  x: 9,
+                  y: 9.4,
+                  width: 16,
+                  height: 7.8,
+                  fill: "url(#sand)",
+                },
+                loop: {
+                  values: { scaleY: [1, 0, 0] },
+                  duration: 4,
+                  ease: "easeInOut",
+                  times: [0, 0.8, 1],
+                  static: { scaleY: 0.55 },
+                  hoverDuration: 2,
+                },
+                origin: "17px 17.2px",
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M8 28 C11 22.6 14.6 20.6 17 20.6 C19.4 20.6 23 22.6 26 28 Z",
+                  fill: "url(#sand)",
+                },
+                loop: {
+                  values: { scaleY: [0, 1, 1] },
+                  duration: 4,
+                  ease: "easeInOut",
+                  times: [0, 0.8, 1],
+                  static: { scaleY: 0.5 },
+                  hoverDuration: 2,
+                },
+                origin: "17px 28px",
+              },
+              {
+                tag: "line",
+                attrs: {
+                  x1: 17,
+                  y1: 16.6,
+                  x2: 17,
+                  y2: 28,
+                  stroke: "#fbbf24",
+                  strokeWidth: 0.7,
+                },
+                loop: {
+                  values: { opacity: [1, 1, 0, 0] },
+                  duration: 4,
+                  ease: "easeInOut",
+                  times: [0, 0.78, 0.8, 1],
+                  hoverDuration: 2,
+                },
+              },
+            ],
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M10.4 6.2 C10.4 11 15.4 13.6 16.2 17 C15.4 20.4 10.4 23 10.4 27.8 H23.6 C23.6 23 18.6 20.4 17.8 17 C18.6 13.6 23.6 11 23.6 6.2 Z",
+              stroke: "#7dd3fc",
+              strokeWidth: 0.6,
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M12 8 C12.2 10.6 14 12.6 15 13.8",
+              stroke: "#ffffff",
+              strokeWidth: 0.8,
+              strokeLinecap: "round",
+              opacity: 0.8,
+            },
+          },
+          {
+            tag: "rect",
+            attrs: {
+              x: 8.4,
+              y: 5.8,
+              width: 1.4,
+              height: 22.4,
+              rx: 0.6,
+              fill: "url(#wood)",
+            },
+          },
+          {
+            tag: "rect",
+            attrs: {
+              x: 24.2,
+              y: 5.8,
+              width: 1.4,
+              height: 22.4,
+              rx: 0.6,
+              fill: "url(#wood)",
+            },
+          },
+          {
+            tag: "rect",
+            attrs: {
+              x: 7.2,
+              y: 3.4,
+              width: 19.6,
+              height: 2.8,
+              rx: 1.2,
+              fill: "url(#wood)",
+              stroke: "#292524",
+              strokeWidth: 0.5,
+            },
+          },
+          {
+            tag: "rect",
+            attrs: {
+              x: 7.2,
+              y: 27.8,
+              width: 19.6,
+              height: 2.8,
+              rx: 1.2,
+              fill: "url(#wood)",
+              stroke: "#292524",
+              strokeWidth: 0.5,
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M8.6 4.3 H25.4 M8.6 28.7 H25.4",
+              stroke: "#fde68a",
+              strokeWidth: 0.4,
+              strokeLinecap: "round",
+              opacity: 0.5,
+            },
+          },
+        ],
+        loop: {
+          values: { rotate: [0, 0, 180] },
+          duration: 4,
+          ease: ["linear", "easeInOut"],
+          times: [0, 0.8, 1],
+          static: { rotate: 0 },
+          hoverDuration: 2,
+        },
+      },
+    ],
+  },
+  "snow-globe": {
+    accent: "#93c5fd",
+    filter:
+      "drop-shadow(0 1px 1.5px rgba(15,23,42,0.35)) drop-shadow(0 0 6px rgba(147,197,253,0.45))",
+    nodes: [
+      {
+        tag: "defs",
+        attrs: {},
+        children: [
+          {
+            tag: "radialGradient",
+            attrs: { id: "sky", cx: "50%", cy: "35%", r: "70%" },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#60a5fa" } },
+              { tag: "stop", attrs: { offset: 0.7, stopColor: "#1e3a8a" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#172554" } },
+            ],
+          },
+          {
+            tag: "linearGradient",
+            attrs: { id: "base", x1: 0, y1: 0, x2: 0, y2: 1 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#f87171" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#991b1b" } },
+            ],
+          },
+          {
+            tag: "linearGradient",
+            attrs: { id: "gold", x1: 0, y1: 0, x2: 1, y2: 0 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#fde68a" } },
+              { tag: "stop", attrs: { offset: 0.5, stopColor: "#f59e0b" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#b45309" } },
+            ],
+          },
+          {
+            tag: "linearGradient",
+            attrs: { id: "tree", x1: 0, y1: 0, x2: 1, y2: 1 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#4ade80" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#166534" } },
+            ],
+          },
+          {
+            tag: "linearGradient",
+            attrs: { id: "snow", x1: 0, y1: 0, x2: 0, y2: 1 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#ffffff" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#cbd5e1" } },
+            ],
+          },
+          {
+            tag: "clipPath",
+            attrs: { id: "globe" },
+            children: [{ tag: "circle", attrs: { cx: 17, cy: 14, r: 10.6 } }],
+          },
+        ],
+      },
+      {
+        tag: "g",
+        attrs: {},
+        children: [
+          {
+            tag: "path",
+            attrs: {
+              d: "M8.6 24 H25.4 L27 30 C27.1 30.6 26.7 31 26.1 31 H7.9 C7.3 31 6.9 30.6 7 30 Z",
+              fill: "url(#base)",
+              stroke: "#7f1d1d",
+              strokeWidth: 0.6,
+              strokeLinejoin: "round",
+            },
+          },
+          {
+            tag: "rect",
+            attrs: {
+              x: 8.2,
+              y: 25.4,
+              width: 17.6,
+              height: 1.6,
+              rx: 0.4,
+              fill: "url(#gold)",
+            },
+          },
+          {
+            tag: "circle",
+            attrs: { cx: 17, cy: 14, r: 10.6, fill: "url(#sky)" },
+          },
+          {
+            tag: "g",
+            attrs: { clipPath: "url(#globe)" },
+            children: [
+              {
+                tag: "ellipse",
+                attrs: {
+                  cx: 17,
+                  cy: 23.6,
+                  rx: 12,
+                  ry: 4.4,
+                  fill: "url(#snow)",
+                },
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M17 8.4 L20.6 14 H18.8 L21.6 18.4 H19.4 L22 22 H12 L14.6 18.4 H12.4 L15.2 14 H13.4 Z",
+                  fill: "url(#tree)",
+                  stroke: "#14532d",
+                  strokeWidth: 0.4,
+                  strokeLinejoin: "round",
+                },
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M15.2 14 H18.8 M14.6 18.4 H19.4",
+                  stroke: "#ffffff",
+                  strokeWidth: 0.6,
+                  strokeLinecap: "round",
+                  opacity: 0.85,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 16.3,
+                  y: 22,
+                  width: 1.4,
+                  height: 1.6,
+                  fill: "#78350f",
+                },
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M17 6.7 L17.38 7.67 L18.43 7.74 L17.62 8.4 L17.88 9.41 L17 8.85 L16.12 9.41 L16.38 8.4 L15.57 7.74 L16.62 7.67 Z",
+                  fill: "#fde047",
+                },
+              },
+              {
+                tag: "circle",
+                attrs: { cx: 15.6, cy: 16.2, r: 0.45, fill: "#f87171" },
+              },
+              {
+                tag: "circle",
+                attrs: { cx: 18.6, cy: 20.4, r: 0.45, fill: "#fde047" },
+              },
+              {
+                tag: "circle",
+                attrs: { cx: 18.2, cy: 12.4, r: 0.4, fill: "#60a5fa" },
+              },
+              {
+                tag: "circle",
+                attrs: { cx: 11, cy: 4, r: 0.6, fill: "#ffffff" },
+                loop: {
+                  values: {
+                    x: [0, 1.2, -0.8],
+                    y: [0, 9, 18],
+                    opacity: [0, 1, 0],
+                  },
+                  duration: 3.1,
+                  ease: "linear",
+                  static: { x: 0.4, y: 15, opacity: 1 },
+                  hoverDuration: 1.1923076923076923,
+                },
+              },
+              {
+                tag: "circle",
+                attrs: { cx: 15, cy: 4, r: 0.5, fill: "#ffffff" },
+                loop: {
+                  values: {
+                    x: [0, 1.2, -0.8],
+                    y: [0, 9, 18],
+                    opacity: [0, 1, 0],
+                  },
+                  duration: 3.5,
+                  ease: "linear",
+                  delay: 1.1,
+                  static: { x: 0.4, y: 4, opacity: 1 },
+                  hoverDuration: 1.346153846153846,
+                },
+              },
+              {
+                tag: "circle",
+                attrs: { cx: 19.5, cy: 4, r: 0.65, fill: "#ffffff" },
+                loop: {
+                  values: {
+                    x: [0, 1.2, -0.8],
+                    y: [0, 9, 18],
+                    opacity: [0, 1, 0],
+                  },
+                  duration: 2.9,
+                  ease: "linear",
+                  delay: 0.4,
+                  static: { x: 0.4, y: 9.5, opacity: 1 },
+                  hoverDuration: 1.1153846153846154,
+                },
+              },
+              {
+                tag: "circle",
+                attrs: { cx: 23, cy: 4, r: 0.5, fill: "#ffffff" },
+                loop: {
+                  values: {
+                    x: [0, 1.2, -0.8],
+                    y: [0, 9, 18],
+                    opacity: [0, 1, 0],
+                  },
+                  duration: 3.3,
+                  ease: "linear",
+                  delay: 1.8,
+                  static: { x: 0.4, y: 8, opacity: 1 },
+                  hoverDuration: 1.2692307692307692,
+                },
+              },
+              {
+                tag: "circle",
+                attrs: { cx: 13.4, cy: 4, r: 0.55, fill: "#ffffff" },
+                loop: {
+                  values: {
+                    x: [0, 1.2, -0.8],
+                    y: [0, 9, 18],
+                    opacity: [0, 1, 0],
+                  },
+                  duration: 3.7,
+                  ease: "linear",
+                  delay: 2.4,
+                  static: { x: 0.4, y: 5.799999999999997, opacity: 1 },
+                  hoverDuration: 1.4230769230769231,
+                },
+              },
+              {
+                tag: "circle",
+                attrs: { cx: 21, cy: 4, r: 0.6, fill: "#ffffff" },
+                loop: {
+                  values: {
+                    x: [0, 1.2, -0.8],
+                    y: [0, 9, 18],
+                    opacity: [0, 1, 0],
+                  },
+                  duration: 3.2,
+                  ease: "linear",
+                  delay: 2.9,
+                  static: { x: 0.4, y: 7, opacity: 1 },
+                  hoverDuration: 1.2307692307692308,
+                },
+              },
+              {
+                tag: "circle",
+                attrs: { cx: 17, cy: 4, r: 0.45, fill: "#ffffff" },
+                loop: {
+                  values: {
+                    x: [0, 1.2, -0.8],
+                    y: [0, 9, 18],
+                    opacity: [0, 1, 0],
+                  },
+                  duration: 4,
+                  ease: "linear",
+                  delay: 0.8,
+                  static: { x: 0.4, y: 5, opacity: 1 },
+                  hoverDuration: 1.5384615384615383,
+                },
+              },
+            ],
+          },
+          {
+            tag: "circle",
+            attrs: {
+              cx: 17,
+              cy: 14,
+              r: 10.6,
+              stroke: "#bfdbfe",
+              strokeWidth: 0.7,
+              opacity: 0.8,
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M9.4 10 C10.4 7 12.8 5 15.6 4.4",
+              stroke: "#ffffff",
+              strokeWidth: 1.3,
+              strokeLinecap: "round",
+              opacity: 0.75,
+            },
+          },
+          {
+            tag: "circle",
+            attrs: { cx: 24, cy: 19.4, r: 0.8, fill: "#ffffff", opacity: 0.5 },
+          },
+        ],
+        loop: {
+          values: { rotate: [0, 0, 0, 0, 0] },
+          duration: 1,
+          ease: "easeInOut",
+          hoverValues: { rotate: [0, -9, 8, -6, 0] },
+          hoverDuration: 0.45,
+        },
+        origin: "17px 30px",
+      },
+    ],
+  },
+  compass: {
+    accent: "#f59e0b",
+    filter:
+      "drop-shadow(0 1px 1.5px rgba(15,23,42,0.35)) drop-shadow(0 0 6px rgba(245,158,11,0.35))",
+    nodes: [
+      {
+        tag: "defs",
+        attrs: {},
+        children: [
+          {
+            tag: "linearGradient",
+            attrs: { id: "brass", x1: 0, y1: 0, x2: 1, y2: 1 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#fef3c7" } },
+              { tag: "stop", attrs: { offset: 0.4, stopColor: "#f59e0b" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#78350f" } },
+            ],
+          },
+          {
+            tag: "radialGradient",
+            attrs: { id: "face", cx: "45%", cy: "40%", r: "70%" },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#fffbeb" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#fde68a" } },
+            ],
+          },
+          {
+            tag: "linearGradient",
+            attrs: { id: "north", x1: 0, y1: 0, x2: 1, y2: 0 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#f87171" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#b91c1c" } },
+            ],
+          },
+          {
+            tag: "linearGradient",
+            attrs: { id: "south", x1: 0, y1: 0, x2: 1, y2: 0 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#f8fafc" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#94a3b8" } },
+            ],
+          },
+        ],
+      },
+      {
+        tag: "circle",
+        attrs: {
+          cx: 17,
+          cy: 3.4,
+          r: 1.7,
+          stroke: "url(#brass)",
+          strokeWidth: 1.1,
+        },
+      },
+      {
+        tag: "circle",
+        attrs: {
+          cx: 17,
+          cy: 17,
+          r: 12.4,
+          fill: "url(#brass)",
+          stroke: "#78350f",
+          strokeWidth: 0.6,
+        },
+      },
+      {
+        tag: "circle",
+        attrs: {
+          cx: 17,
+          cy: 17,
+          r: 10.2,
+          fill: "url(#face)",
+          stroke: "#92400e",
+          strokeWidth: 0.5,
+        },
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M26 17 L24.4 17 M24.79 21.5 L23.93 21 M21.5 24.79 L21 23.93 M17 26 L17 24.4 M12.5 24.79 L13 23.93 M9.21 21.5 L10.07 21 M8 17 L9.6 17 M9.21 12.5 L10.07 13 M12.5 9.21 L13 10.07 M17 8 L17 9.6 M21.5 9.21 L21 10.07 M24.79 12.5 L23.93 13",
+          stroke: "#78350f",
+          strokeWidth: 0.55,
+          strokeLinecap: "round",
+        },
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M17 10.4 Q17 17 23.6 17 Q17 17 17 23.6 Q17 17 10.4 17 Q17 17 17 10.4 Z",
+          fill: "#d6d3d1",
+          opacity: 0.5,
+        },
+      },
+      {
+        tag: "path",
+        attrs: { d: "M17 7.4 L18.2 9.6 H15.8 Z", fill: "#dc2626" },
+      },
+      {
+        tag: "g",
+        attrs: {},
+        children: [
+          {
+            tag: "path",
+            attrs: {
+              d: "M17 7.6 L19 17 H15 Z",
+              fill: "url(#north)",
+              stroke: "#7f1d1d",
+              strokeWidth: 0.35,
+              strokeLinejoin: "round",
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M17 26.4 L19 17 H15 Z",
+              fill: "url(#south)",
+              stroke: "#475569",
+              strokeWidth: 0.35,
+              strokeLinejoin: "round",
+            },
+          },
+        ],
+        loop: {
+          values: { rotate: [-14, 9, -5, 3, -1, 0, -14] },
+          duration: 4,
+          ease: "easeInOut",
+          times: [0, 0.15, 0.3, 0.45, 0.6, 0.75, 1],
+          static: { rotate: -8 },
+          hoverValues: { rotate: [0, 120, 300, 390, 350, 365, 360] },
+          hoverDuration: 2,
+        },
+      },
+      {
+        tag: "circle",
+        attrs: {
+          cx: 17,
+          cy: 17,
+          r: 1.4,
+          fill: "url(#brass)",
+          stroke: "#78350f",
+          strokeWidth: 0.4,
+        },
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M9.4 12 A9 9 0 0 1 15 7.8",
+          stroke: "#ffffff",
+          strokeWidth: 1.2,
+          strokeLinecap: "round",
+          opacity: 0.6,
+        },
+      },
+    ],
+  },
+  metronome: {
+    accent: "#d97706",
+    filter:
+      "drop-shadow(0 1px 1.5px rgba(15,23,42,0.35)) drop-shadow(0 0 6px rgba(217,119,6,0.35))",
+    nodes: [
+      {
+        tag: "defs",
+        attrs: {},
+        children: [
+          {
+            tag: "linearGradient",
+            attrs: { id: "wood", x1: 0, y1: 0, x2: 1, y2: 0 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#c2410c" } },
+              { tag: "stop", attrs: { offset: 0.5, stopColor: "#9a3412" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#431407" } },
+            ],
+          },
+          {
+            tag: "linearGradient",
+            attrs: { id: "panel", x1: 0, y1: 0, x2: 0, y2: 1 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#fef3c7" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#fcd34d" } },
+            ],
+          },
+          {
+            tag: "linearGradient",
+            attrs: { id: "steel", x1: 0, y1: 0, x2: 1, y2: 0 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#f8fafc" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#64748b" } },
+            ],
+          },
+          {
+            tag: "linearGradient",
+            attrs: { id: "gold", x1: 0, y1: 0, x2: 1, y2: 1 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#fef08a" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#b45309" } },
+            ],
+          },
+        ],
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M6.8 5.6 L5.4 4.4 M6.8 7 L5 7 M6.8 8.4 L5.4 9.6",
+          stroke: "#fbbf24",
+          strokeWidth: 0.7,
+          strokeLinecap: "round",
+        },
+        loop: {
+          values: { opacity: [1, 0, 0, 0, 1] },
+          duration: 1.2,
+          ease: "easeInOut",
+          times: [0, 0.12, 0.5, 0.88, 1],
+          static: { opacity: 1 },
+          hoverDuration: 0.6,
+        },
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M27.2 5.6 L28.6 4.4 M27.2 7 L29 7 M27.2 8.4 L28.6 9.6",
+          stroke: "#fbbf24",
+          strokeWidth: 0.7,
+          strokeLinecap: "round",
+        },
+        loop: {
+          values: { opacity: [0, 0, 1, 0, 0] },
+          duration: 1.2,
+          ease: "easeInOut",
+          times: [0, 0.38, 0.5, 0.62, 1],
+          static: { opacity: 0 },
+          hoverDuration: 0.6,
+        },
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M12.6 4.4 H21.4 L27.2 29 H6.8 Z",
+          fill: "url(#wood)",
+          stroke: "#292524",
+          strokeWidth: 0.7,
+          strokeLinejoin: "round",
+        },
+      },
+      {
+        tag: "rect",
+        attrs: {
+          x: 12,
+          y: 3,
+          width: 10,
+          height: 1.8,
+          rx: 0.9,
+          fill: "#7c2d12",
+          stroke: "#292524",
+          strokeWidth: 0.4,
+        },
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M14.4 6.8 H19.6 L22.6 25 H11.4 Z",
+          fill: "url(#panel)",
+          stroke: "#78350f",
+          strokeWidth: 0.4,
+          strokeLinejoin: "round",
+        },
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M15.4 9 H18.6 M16.1 10.75 H17.9 M15.4 12.5 H18.6 M16.1 14.25 H17.9 M15.4 16 H18.6 M16.1 17.75 H17.9 M15.4 19.5 H18.6 M16.1 21.25 H17.9 M15.4 23 H18.6",
+          stroke: "#78350f",
+          strokeWidth: 0.4,
+          opacity: 0.7,
+        },
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M13.2 5.4 L8 28",
+          stroke: "#ffffff",
+          strokeWidth: 0.6,
+          strokeLinecap: "round",
+          opacity: 0.3,
+        },
+      },
+      {
+        tag: "g",
+        attrs: {},
+        children: [
+          {
+            tag: "line",
+            attrs: {
+              x1: 17,
+              y1: 25,
+              x2: 17,
+              y2: 6.4,
+              stroke: "url(#steel)",
+              strokeWidth: 1,
+              strokeLinecap: "round",
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M15.3 11 H18.7 L18.2 14 H15.8 Z",
+              fill: "url(#gold)",
+              stroke: "#78350f",
+              strokeWidth: 0.4,
+              strokeLinejoin: "round",
+            },
+          },
+        ],
+        loop: {
+          values: { rotate: [-24, 24, -24] },
+          duration: 1.2,
+          ease: "easeInOut",
+          static: { rotate: -16 },
+          hoverDuration: 0.6,
+        },
+        origin: "17px 25px",
+      },
+      {
+        tag: "circle",
+        attrs: {
+          cx: 17,
+          cy: 25,
+          r: 1.2,
+          fill: "url(#gold)",
+          stroke: "#78350f",
+          strokeWidth: 0.4,
+        },
+      },
+      {
+        tag: "rect",
+        attrs: {
+          x: 5,
+          y: 28.6,
+          width: 24,
+          height: 2.8,
+          rx: 1.2,
+          fill: "#431407",
+          stroke: "#1c1917",
+          strokeWidth: 0.5,
+        },
+      },
+    ],
+  },
+  cactus: {
+    accent: "#22c55e",
+    filter:
+      "drop-shadow(0 1px 1.5px rgba(15,23,42,0.35)) drop-shadow(0 0 6px rgba(34,197,94,0.35))",
+    nodes: [
+      {
+        tag: "defs",
+        attrs: {},
+        children: [
+          {
+            tag: "linearGradient",
+            attrs: { id: "cactus", x1: 0, y1: 0, x2: 1, y2: 0 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#86efac" } },
+              { tag: "stop", attrs: { offset: 0.45, stopColor: "#22c55e" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#166534" } },
+            ],
+          },
+          {
+            tag: "linearGradient",
+            attrs: { id: "pot", x1: 0, y1: 0, x2: 1, y2: 0 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#fdba74" } },
+              { tag: "stop", attrs: { offset: 0.5, stopColor: "#ea580c" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#9a3412" } },
+            ],
+          },
+          {
+            tag: "linearGradient",
+            attrs: { id: "rim", x1: 0, y1: 0, x2: 0, y2: 1 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#fed7aa" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#f97316" } },
+            ],
+          },
+          {
+            tag: "radialGradient",
+            attrs: { id: "petal", cx: "40%", cy: "35%", r: "70%" },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#fdf2f8" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#ec4899" } },
+            ],
+          },
+        ],
+      },
+      {
+        tag: "g",
+        attrs: {},
+        children: [
+          {
+            tag: "path",
+            attrs: {
+              d: "M13.8 17.6 H10.8 C9.6 17.6 8.8 16.8 8.8 15.6 V12.4 C8.8 11.4 9.6 10.8 10.4 10.8 C11.2 10.8 12 11.4 12 12.4 V14.6 H13.8 Z",
+              fill: "url(#cactus)",
+              stroke: "#14532d",
+              strokeWidth: 0.6,
+              strokeLinejoin: "round",
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M20.2 15 H23.2 C24.4 15 25.2 14.2 25.2 13 V10.2 C25.2 9.2 24.4 8.6 23.6 8.6 C22.8 8.6 22 9.2 22 10.2 V12 H20.2 Z",
+              fill: "url(#cactus)",
+              stroke: "#14532d",
+              strokeWidth: 0.6,
+              strokeLinejoin: "round",
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M13.6 22.4 V9.8 C13.6 7.6 15.2 6.2 17 6.2 C18.8 6.2 20.4 7.6 20.4 9.8 V22.4 Z",
+              fill: "url(#cactus)",
+              stroke: "#14532d",
+              strokeWidth: 0.6,
+              strokeLinejoin: "round",
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M15.4 8.4 V21.6 M18.6 8.4 V21.6",
+              stroke: "#bbf7d0",
+              strokeWidth: 0.5,
+              strokeLinecap: "round",
+              opacity: 0.55,
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M14.2 10 l-0.8 -0.5 M19.8 10.6 l0.8 -0.5 M14.2 19.4 l-0.8 -0.5 M19.8 18.8 l0.8 -0.5 M9.4 13 l-0.8 -0.4 M24.6 11 l0.8 -0.4 M16.9 7 l0 -0.8",
+              stroke: "#f0fdf4",
+              strokeWidth: 0.4,
+              strokeLinecap: "round",
+            },
+          },
+          {
+            tag: "circle",
+            attrs: { cx: 15.6, cy: 13.8, r: 0.75, fill: "#14532d" },
+          },
+          {
+            tag: "circle",
+            attrs: { cx: 18.4, cy: 13.8, r: 0.75, fill: "#14532d" },
+          },
+          {
+            tag: "circle",
+            attrs: { cx: 15.85, cy: 13.55, r: 0.25, fill: "#ffffff" },
+          },
+          {
+            tag: "circle",
+            attrs: { cx: 18.65, cy: 13.55, r: 0.25, fill: "#ffffff" },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M16.2 15.5 Q17 16.2 17.8 15.5",
+              stroke: "#14532d",
+              strokeWidth: 0.5,
+              strokeLinecap: "round",
+            },
+          },
+          {
+            tag: "ellipse",
+            attrs: {
+              cx: 14.7,
+              cy: 15.3,
+              rx: 0.7,
+              ry: 0.45,
+              fill: "#fda4af",
+              opacity: 0.8,
+            },
+          },
+          {
+            tag: "ellipse",
+            attrs: {
+              cx: 19.3,
+              cy: 15.3,
+              rx: 0.7,
+              ry: 0.45,
+              fill: "#fda4af",
+              opacity: 0.8,
+            },
+          },
+          {
+            tag: "g",
+            attrs: {},
+            children: [
+              {
+                tag: "circle",
+                attrs: { cx: 17, cy: 4.45, r: 1.15, fill: "url(#petal)" },
+              },
+              {
+                tag: "circle",
+                attrs: { cx: 18.28, cy: 5.38, r: 1.15, fill: "url(#petal)" },
+              },
+              {
+                tag: "circle",
+                attrs: { cx: 17.79, cy: 6.89, r: 1.15, fill: "url(#petal)" },
+              },
+              {
+                tag: "circle",
+                attrs: { cx: 16.21, cy: 6.89, r: 1.15, fill: "url(#petal)" },
+              },
+              {
+                tag: "circle",
+                attrs: { cx: 15.72, cy: 5.38, r: 1.15, fill: "url(#petal)" },
+              },
+              {
+                tag: "circle",
+                attrs: {
+                  cx: 17,
+                  cy: 5.8,
+                  r: 0.85,
+                  fill: "#fde047",
+                  stroke: "#ca8a04",
+                  strokeWidth: 0.3,
+                },
+              },
+            ],
+            hover: { scale: 1.6, rotate: 36 },
+            origin: "17px 5.8px",
+          },
+        ],
+        loop: {
+          values: { scaleY: [1, 1.035, 1], scaleX: [1, 0.985, 1] },
+          duration: 2.4,
+          ease: "easeInOut",
+          hoverDuration: 1,
+        },
+        origin: "17px 22.4px",
+      },
+      {
+        tag: "rect",
+        attrs: {
+          x: 9.2,
+          y: 21.4,
+          width: 15.6,
+          height: 2.6,
+          rx: 1,
+          fill: "url(#rim)",
+          stroke: "#7c2d12",
+          strokeWidth: 0.5,
+        },
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M10.2 24 H23.8 L22.6 31 H11.4 Z",
+          fill: "url(#pot)",
+          stroke: "#7c2d12",
+          strokeWidth: 0.6,
+          strokeLinejoin: "round",
+        },
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M12 26 C14 27 20 27 22 26",
+          stroke: "#fed7aa",
+          strokeWidth: 0.5,
+          strokeLinecap: "round",
+          opacity: 0.6,
+        },
+      },
+    ],
+  },
+  octopus: {
+    accent: "#c084fc",
+    filter:
+      "drop-shadow(0 1px 1.5px rgba(15,23,42,0.35)) drop-shadow(0 0 6px rgba(192,132,252,0.45))",
+    nodes: [
+      {
+        tag: "defs",
+        attrs: {},
+        children: [
+          {
+            tag: "radialGradient",
+            attrs: { id: "head", cx: "38%", cy: "30%", r: "75%" },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#fae8ff" } },
+              { tag: "stop", attrs: { offset: 0.45, stopColor: "#d8b4fe" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#7e22ce" } },
+            ],
+          },
+          {
+            tag: "linearGradient",
+            attrs: {
+              id: "arm",
+              x1: 0,
+              y1: 18,
+              x2: 0,
+              y2: 31,
+              gradientUnits: "userSpaceOnUse",
+            },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#c084fc" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#9333ea" } },
+            ],
+          },
+          {
+            tag: "radialGradient",
+            attrs: { id: "eye", cx: "45%", cy: "40%", r: "60%" },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#ffffff" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#e2e8f0" } },
+            ],
+          },
+        ],
+      },
+      {
+        tag: "circle",
+        attrs: { cx: 28, cy: 8, r: 0.9, stroke: "#a5f3fc", strokeWidth: 0.5 },
+        loop: {
+          values: { y: [0, -4, -8], opacity: [0, 0.9, 0] },
+          duration: 2.6,
+          ease: "linear",
+          static: { y: -3, opacity: 0.9 },
+        },
+        origin: "28px 8px",
+      },
+      {
+        tag: "circle",
+        attrs: { cx: 5.6, cy: 10, r: 0.7, stroke: "#a5f3fc", strokeWidth: 0.5 },
+        loop: {
+          values: { y: [0, -4, -8], opacity: [0, 0.9, 0] },
+          duration: 2.6,
+          ease: "linear",
+          delay: 1.3,
+          static: { y: -3, opacity: 0.9 },
+        },
+        origin: "5.6px 10px",
+      },
+      {
+        tag: "g",
+        attrs: {},
+        children: [
+          {
+            tag: "g",
+            attrs: {},
+            children: [
+              {
+                tag: "path",
+                attrs: {
+                  d: "M10 18.6 C8.6 21.6 9.8 24.4 8 26.6 C7 27.8 7.6 29.4 9 29",
+                  stroke: "#581c87",
+                  strokeWidth: 3,
+                  strokeLinecap: "round",
+                },
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M10 18.6 C8.6 21.6 9.8 24.4 8 26.6 C7 27.8 7.6 29.4 9 29",
+                  stroke: "url(#arm)",
+                  strokeWidth: 2.2,
+                  strokeLinecap: "round",
+                },
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M10 18.6 C8.6 21.6 9.8 24.4 8 26.6 C7 27.8 7.6 29.4 9 29",
+                  stroke: "#f5d0fe",
+                  strokeWidth: 0.6,
+                  strokeLinecap: "round",
+                  strokeDasharray: "0.1 1.6",
+                  opacity: 0.9,
+                },
+              },
+            ],
+            loop: {
+              values: { rotate: [-8, 8, -8] },
+              duration: 1.8,
+              ease: "easeInOut",
+              hoverValues: { rotate: [-18, 18, -18] },
+              hoverDuration: 0.7,
+            },
+            origin: "10px 18.6px",
+          },
+          {
+            tag: "g",
+            attrs: {},
+            children: [
+              {
+                tag: "path",
+                attrs: {
+                  d: "M12.8 19.4 C12 22.6 13.4 25.4 12 28 C11.4 29.4 12.6 30.6 13.6 29.6",
+                  stroke: "#581c87",
+                  strokeWidth: 3,
+                  strokeLinecap: "round",
+                },
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M12.8 19.4 C12 22.6 13.4 25.4 12 28 C11.4 29.4 12.6 30.6 13.6 29.6",
+                  stroke: "url(#arm)",
+                  strokeWidth: 2.2,
+                  strokeLinecap: "round",
+                },
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M12.8 19.4 C12 22.6 13.4 25.4 12 28 C11.4 29.4 12.6 30.6 13.6 29.6",
+                  stroke: "#f5d0fe",
+                  strokeWidth: 0.6,
+                  strokeLinecap: "round",
+                  strokeDasharray: "0.1 1.6",
+                  opacity: 0.9,
+                },
+              },
+            ],
+            loop: {
+              values: { rotate: [8, -8, 8] },
+              duration: 1.8,
+              ease: "easeInOut",
+              delay: 0.12,
+              hoverValues: { rotate: [18, -18, 18] },
+              hoverDuration: 0.7,
+            },
+            origin: "12.8px 19.4px",
+          },
+          {
+            tag: "g",
+            attrs: {},
+            children: [
+              {
+                tag: "path",
+                attrs: {
+                  d: "M15.8 19.8 C15.6 23 16.6 26 15.8 29.2 C15.6 30.4 16.8 31 17.4 30",
+                  stroke: "#581c87",
+                  strokeWidth: 3,
+                  strokeLinecap: "round",
+                },
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M15.8 19.8 C15.6 23 16.6 26 15.8 29.2 C15.6 30.4 16.8 31 17.4 30",
+                  stroke: "url(#arm)",
+                  strokeWidth: 2.2,
+                  strokeLinecap: "round",
+                },
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M15.8 19.8 C15.6 23 16.6 26 15.8 29.2 C15.6 30.4 16.8 31 17.4 30",
+                  stroke: "#f5d0fe",
+                  strokeWidth: 0.6,
+                  strokeLinecap: "round",
+                  strokeDasharray: "0.1 1.6",
+                  opacity: 0.9,
+                },
+              },
+            ],
+            loop: {
+              values: { rotate: [-8, 8, -8] },
+              duration: 1.8,
+              ease: "easeInOut",
+              delay: 0.24,
+              hoverValues: { rotate: [-18, 18, -18] },
+              hoverDuration: 0.7,
+            },
+            origin: "15.8px 19.8px",
+          },
+          {
+            tag: "g",
+            attrs: {},
+            children: [
+              {
+                tag: "path",
+                attrs: {
+                  d: "M18.2 19.8 C18.4 23 17.4 26 18.2 29.2 C18.4 30.4 17.2 31 16.6 30",
+                  stroke: "#581c87",
+                  strokeWidth: 3,
+                  strokeLinecap: "round",
+                },
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M18.2 19.8 C18.4 23 17.4 26 18.2 29.2 C18.4 30.4 17.2 31 16.6 30",
+                  stroke: "url(#arm)",
+                  strokeWidth: 2.2,
+                  strokeLinecap: "round",
+                },
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M18.2 19.8 C18.4 23 17.4 26 18.2 29.2 C18.4 30.4 17.2 31 16.6 30",
+                  stroke: "#f5d0fe",
+                  strokeWidth: 0.6,
+                  strokeLinecap: "round",
+                  strokeDasharray: "0.1 1.6",
+                  opacity: 0.9,
+                },
+              },
+            ],
+            loop: {
+              values: { rotate: [8, -8, 8] },
+              duration: 1.8,
+              ease: "easeInOut",
+              delay: 0.36,
+              hoverValues: { rotate: [18, -18, 18] },
+              hoverDuration: 0.7,
+            },
+            origin: "18.2px 19.8px",
+          },
+          {
+            tag: "g",
+            attrs: {},
+            children: [
+              {
+                tag: "path",
+                attrs: {
+                  d: "M21.2 19.4 C22 22.6 20.6 25.4 22 28 C22.6 29.4 21.4 30.6 20.4 29.6",
+                  stroke: "#581c87",
+                  strokeWidth: 3,
+                  strokeLinecap: "round",
+                },
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M21.2 19.4 C22 22.6 20.6 25.4 22 28 C22.6 29.4 21.4 30.6 20.4 29.6",
+                  stroke: "url(#arm)",
+                  strokeWidth: 2.2,
+                  strokeLinecap: "round",
+                },
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M21.2 19.4 C22 22.6 20.6 25.4 22 28 C22.6 29.4 21.4 30.6 20.4 29.6",
+                  stroke: "#f5d0fe",
+                  strokeWidth: 0.6,
+                  strokeLinecap: "round",
+                  strokeDasharray: "0.1 1.6",
+                  opacity: 0.9,
+                },
+              },
+            ],
+            loop: {
+              values: { rotate: [-8, 8, -8] },
+              duration: 1.8,
+              ease: "easeInOut",
+              delay: 0.48,
+              hoverValues: { rotate: [-18, 18, -18] },
+              hoverDuration: 0.7,
+            },
+            origin: "21.2px 19.4px",
+          },
+          {
+            tag: "g",
+            attrs: {},
+            children: [
+              {
+                tag: "path",
+                attrs: {
+                  d: "M24 18.6 C25.4 21.6 24.2 24.4 26 26.6 C27 27.8 26.4 29.4 25 29",
+                  stroke: "#581c87",
+                  strokeWidth: 3,
+                  strokeLinecap: "round",
+                },
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M24 18.6 C25.4 21.6 24.2 24.4 26 26.6 C27 27.8 26.4 29.4 25 29",
+                  stroke: "url(#arm)",
+                  strokeWidth: 2.2,
+                  strokeLinecap: "round",
+                },
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M24 18.6 C25.4 21.6 24.2 24.4 26 26.6 C27 27.8 26.4 29.4 25 29",
+                  stroke: "#f5d0fe",
+                  strokeWidth: 0.6,
+                  strokeLinecap: "round",
+                  strokeDasharray: "0.1 1.6",
+                  opacity: 0.9,
+                },
+              },
+            ],
+            loop: {
+              values: { rotate: [8, -8, 8] },
+              duration: 1.8,
+              ease: "easeInOut",
+              delay: 0.6,
+              hoverValues: { rotate: [18, -18, 18] },
+              hoverDuration: 0.7,
+            },
+            origin: "24px 18.6px",
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M8 16 C8 9.6 12 5 17 5 C22 5 26 9.6 26 16 C26 18.6 24.6 20.2 22.6 20.4 C19 20.8 15 20.8 11.4 20.4 C9.4 20.2 8 18.6 8 16 Z",
+              fill: "url(#head)",
+              stroke: "#581c87",
+              strokeWidth: 0.7,
+            },
+          },
+          {
+            tag: "circle",
+            attrs: { cx: 14.2, cy: 8.4, r: 0.8, fill: "#f5d0fe", opacity: 0.8 },
+          },
+          {
+            tag: "circle",
+            attrs: { cx: 19.8, cy: 7.6, r: 0.6, fill: "#f5d0fe", opacity: 0.8 },
+          },
+          {
+            tag: "circle",
+            attrs: {
+              cx: 21.8,
+              cy: 10.2,
+              r: 0.5,
+              fill: "#f5d0fe",
+              opacity: 0.7,
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M10.4 11.8 C11 8.8 13 6.8 15.4 6.2",
+              stroke: "#ffffff",
+              strokeWidth: 1.2,
+              strokeLinecap: "round",
+              opacity: 0.7,
+            },
+          },
+          {
+            tag: "g",
+            attrs: {},
+            children: [
+              {
+                tag: "ellipse",
+                attrs: {
+                  cx: 13.6,
+                  cy: 14.2,
+                  rx: 1.9,
+                  ry: 2.2,
+                  fill: "url(#eye)",
+                  stroke: "#581c87",
+                  strokeWidth: 0.4,
+                },
+              },
+              {
+                tag: "ellipse",
+                attrs: {
+                  cx: 20.4,
+                  cy: 14.2,
+                  rx: 1.9,
+                  ry: 2.2,
+                  fill: "url(#eye)",
+                  stroke: "#581c87",
+                  strokeWidth: 0.4,
+                },
+              },
+              {
+                tag: "circle",
+                attrs: { cx: 14, cy: 14.6, r: 1.05, fill: "#1e1b4b" },
+              },
+              {
+                tag: "circle",
+                attrs: { cx: 20.8, cy: 14.6, r: 1.05, fill: "#1e1b4b" },
+              },
+              {
+                tag: "circle",
+                attrs: { cx: 14.4, cy: 14.1, r: 0.38, fill: "#ffffff" },
+              },
+              {
+                tag: "circle",
+                attrs: { cx: 21.2, cy: 14.1, r: 0.38, fill: "#ffffff" },
+              },
+            ],
+            loop: {
+              values: { scaleY: [1, 1, 0.1, 1, 1] },
+              duration: 4,
+              ease: "easeInOut",
+              times: [0, 0.9, 0.93, 0.96, 1],
+            },
+            origin: "17px 14.2px",
+          },
+          {
+            tag: "ellipse",
+            attrs: {
+              cx: 11.6,
+              cy: 17,
+              rx: 1,
+              ry: 0.6,
+              fill: "#f472b6",
+              opacity: 0.6,
+            },
+          },
+          {
+            tag: "ellipse",
+            attrs: {
+              cx: 22.4,
+              cy: 17,
+              rx: 1,
+              ry: 0.6,
+              fill: "#f472b6",
+              opacity: 0.6,
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M16 17.4 Q17 18.4 18 17.4",
+              stroke: "#581c87",
+              strokeWidth: 0.6,
+              strokeLinecap: "round",
+            },
+          },
+        ],
+        loop: {
+          values: { y: [0, -1.4, 0] },
+          duration: 2.4,
+          ease: "easeInOut",
+          hoverDuration: 1,
+        },
+      },
+    ],
+  },
+  penguin: {
+    accent: "#38bdf8",
+    filter:
+      "drop-shadow(0 1px 1.5px rgba(15,23,42,0.35)) drop-shadow(0 0 6px rgba(56,189,248,0.35))",
+    nodes: [
+      {
+        tag: "defs",
+        attrs: {},
+        children: [
+          {
+            tag: "linearGradient",
+            attrs: { id: "body", x1: 0, y1: 0, x2: 1, y2: 1 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#475569" } },
+              { tag: "stop", attrs: { offset: 0.5, stopColor: "#1e293b" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#020617" } },
+            ],
+          },
+          {
+            tag: "linearGradient",
+            attrs: { id: "belly", x1: 0, y1: 0, x2: 0, y2: 1 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#ffffff" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#e2e8f0" } },
+            ],
+          },
+          {
+            tag: "linearGradient",
+            attrs: { id: "beak", x1: 0, y1: 0, x2: 0, y2: 1 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#fdba74" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#ea580c" } },
+            ],
+          },
+          {
+            tag: "linearGradient",
+            attrs: { id: "scarf", x1: 0, y1: 0, x2: 1, y2: 0 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#f87171" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#b91c1c" } },
+            ],
+          },
+        ],
+      },
+      {
+        tag: "ellipse",
+        attrs: {
+          cx: 17,
+          cy: 30.4,
+          rx: 7.4,
+          ry: 1.2,
+          fill: "#0f172a",
+          opacity: 0.25,
+        },
+      },
+      {
+        tag: "g",
+        attrs: {},
+        children: [
+          {
+            tag: "ellipse",
+            attrs: {
+              cx: 14,
+              cy: 28.8,
+              rx: 2.3,
+              ry: 0.95,
+              fill: "url(#beak)",
+              stroke: "#9a3412",
+              strokeWidth: 0.35,
+            },
+          },
+          {
+            tag: "ellipse",
+            attrs: {
+              cx: 20,
+              cy: 28.8,
+              rx: 2.3,
+              ry: 0.95,
+              fill: "url(#beak)",
+              stroke: "#9a3412",
+              strokeWidth: 0.35,
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M9.2 15 C6.8 16.8 5.6 20.2 5.8 23 C7.8 22.2 9.2 20.2 9.8 18 Z",
+              fill: "url(#body)",
+              stroke: "#020617",
+              strokeWidth: 0.5,
+            },
+            loop: {
+              values: { rotate: [0, 8, 0] },
+              duration: 1.2,
+              ease: "easeInOut",
+              hoverValues: { rotate: [0, 34, 0] },
+              hoverDuration: 0.35,
+            },
+            origin: "9.4px 15.4px",
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M24.8 15C27.2 16.8 28.4 20.2 28.2 23C26.2 22.2 24.8 20.2 24.2 18Z",
+              fill: "url(#body)",
+              stroke: "#020617",
+              strokeWidth: 0.5,
+            },
+            loop: {
+              values: { rotate: [0, -8, 0] },
+              duration: 1.2,
+              ease: "easeInOut",
+              hoverValues: { rotate: [0, -34, 0] },
+              hoverDuration: 0.35,
+            },
+            origin: "24.6px 15.4px",
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M17 3.6 C22.4 3.6 25.4 9 25.4 16.4 C25.4 24 22 28.6 17 28.6 C12 28.6 8.6 24 8.6 16.4 C8.6 9 11.6 3.6 17 3.6 Z",
+              fill: "url(#body)",
+              stroke: "#020617",
+              strokeWidth: 0.6,
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M17 10 C20.6 10 22.6 14 22.6 19 C22.6 24 20.4 27.4 17 27.4 C13.6 27.4 11.4 24 11.4 19 C11.4 14 13.4 10 17 10 Z",
+              fill: "url(#belly)",
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M17 7.6 C18.8 6.2 21.6 7 21.8 9.6 C22 12 19.6 13.6 17 14.6 C14.4 13.6 12 12 12.2 9.6 C12.4 7 15.2 6.2 17 7.6 Z",
+              fill: "url(#belly)",
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M12.6 6.6 C13.6 5.2 15 4.6 16.2 4.5",
+              stroke: "#94a3b8",
+              strokeWidth: 0.8,
+              strokeLinecap: "round",
+              opacity: 0.7,
+            },
+          },
+          {
+            tag: "circle",
+            attrs: { cx: 15, cy: 9.8, r: 0.95, fill: "#0f172a" },
+          },
+          {
+            tag: "circle",
+            attrs: { cx: 19, cy: 9.8, r: 0.95, fill: "#0f172a" },
+          },
+          {
+            tag: "circle",
+            attrs: { cx: 15.3, cy: 9.5, r: 0.32, fill: "#ffffff" },
+          },
+          {
+            tag: "circle",
+            attrs: { cx: 19.3, cy: 9.5, r: 0.32, fill: "#ffffff" },
+          },
+          {
+            tag: "ellipse",
+            attrs: {
+              cx: 13.6,
+              cy: 11.9,
+              rx: 0.8,
+              ry: 0.5,
+              fill: "#fda4af",
+              opacity: 0.85,
+            },
+          },
+          {
+            tag: "ellipse",
+            attrs: {
+              cx: 20.4,
+              cy: 11.9,
+              rx: 0.8,
+              ry: 0.5,
+              fill: "#fda4af",
+              opacity: 0.85,
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M15.6 11.2 H18.4 L17 13.2 Z",
+              fill: "url(#beak)",
+              stroke: "#9a3412",
+              strokeWidth: 0.3,
+              strokeLinejoin: "round",
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M10.8 15.2 C13 16.4 21 16.4 23.2 15.2 L23.4 17.2 C21 18.4 13 18.4 10.6 17.2 Z",
+              fill: "url(#scarf)",
+              stroke: "#7f1d1d",
+              strokeWidth: 0.35,
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M20.4 17.4 L22.2 22 L20 21.6 L19.2 17.6 Z",
+              fill: "url(#scarf)",
+              stroke: "#7f1d1d",
+              strokeWidth: 0.35,
+              strokeLinejoin: "round",
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M13 16.2 V17.6 M15.4 16.6 V18 M18 16.6 V18 M20.6 16.3 V17.7",
+              stroke: "#fecaca",
+              strokeWidth: 0.5,
+              opacity: 0.8,
+            },
+          },
+        ],
+        loop: {
+          values: { rotate: [-6, 6, -6] },
+          duration: 1.2,
+          ease: "easeInOut",
+          hoverDuration: 0.6,
+        },
+        origin: "17px 29.4px",
+      },
+    ],
+  },
+  bee: {
+    accent: "#facc15",
+    filter:
+      "drop-shadow(0 1px 1.5px rgba(15,23,42,0.35)) drop-shadow(0 0 6px rgba(250,204,21,0.45))",
+    nodes: [
+      {
+        tag: "defs",
+        attrs: {},
+        children: [
+          {
+            tag: "radialGradient",
+            attrs: { id: "fuzz", cx: "40%", cy: "35%", r: "70%" },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#fef9c3" } },
+              { tag: "stop", attrs: { offset: 0.5, stopColor: "#facc15" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#ca8a04" } },
+            ],
+          },
+          {
+            tag: "linearGradient",
+            attrs: { id: "head", x1: 0, y1: 0, x2: 1, y2: 1 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#57534e" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#0c0a09" } },
+            ],
+          },
+          {
+            tag: "clipPath",
+            attrs: { id: "beeBody" },
+            children: [
+              {
+                tag: "path",
+                attrs: {
+                  d: "M8.6 18.4 C8.6 14.6 11.8 12.2 16 12.2 C20.2 12.2 23.2 14.6 23.2 18.4 C23.2 22.2 20.2 24.6 16 24.6 C11.8 24.6 8.6 22.2 8.6 18.4 Z",
+                },
+              },
+            ],
+          },
+        ],
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M2 20 q1.4 -1 2.8 0 t2.8 0",
+          stroke: "#fde68a",
+          strokeWidth: 0.6,
+          strokeLinecap: "round",
+          strokeDasharray: "0.6 1.2",
+        },
+        loop: {
+          values: { opacity: [0.2, 0.9, 0.2] },
+          duration: 1.2,
+          ease: "easeInOut",
+        },
+      },
+      {
+        tag: "g",
+        attrs: {},
+        children: [
+          {
+            tag: "path",
+            attrs: {
+              d: "M15.6 13 C12.6 11.6 11.2 7.4 13 5.8 C14.8 4.2 17.6 7.6 17 12.2 Z",
+              fill: "#f0f9ff",
+              fillOpacity: 0.7,
+              stroke: "#7dd3fc",
+              strokeWidth: 0.45,
+              strokeLinejoin: "round",
+            },
+            loop: {
+              values: { scaleY: [1, 0.35, 1] },
+              duration: 0.14,
+              ease: "easeInOut",
+              hoverDuration: 0.08,
+            },
+            origin: "16.6px 12.8px",
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M8.8 18.2 L5.2 19 L8.8 19.8 Z",
+              fill: "#1c1917",
+              stroke: "#1c1917",
+              strokeWidth: 0.3,
+              strokeLinejoin: "round",
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M8.6 18.4 C8.6 14.6 11.8 12.2 16 12.2 C20.2 12.2 23.2 14.6 23.2 18.4 C23.2 22.2 20.2 24.6 16 24.6 C11.8 24.6 8.6 22.2 8.6 18.4 Z",
+              fill: "url(#fuzz)",
+              stroke: "#713f12",
+              strokeWidth: 0.6,
+            },
+          },
+          {
+            tag: "g",
+            attrs: { clipPath: "url(#beeBody)" },
+            children: [
+              {
+                tag: "path",
+                attrs: {
+                  d: "M11.6 11 C10.6 14 10.6 22 11.6 25 H14 C13 22 13 14 14 11 Z",
+                  fill: "#1c1917",
+                },
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M16.4 11 C15.4 14 15.4 22 16.4 25 H18.8 C17.8 22 17.8 14 18.8 11 Z",
+                  fill: "#1c1917",
+                },
+              },
+            ],
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M10.6 15.6 C11.6 13.8 13.6 13 15.6 13",
+              stroke: "#ffffff",
+              strokeWidth: 0.9,
+              strokeLinecap: "round",
+              opacity: 0.6,
+            },
+          },
+          {
+            tag: "circle",
+            attrs: {
+              cx: 23.6,
+              cy: 16.8,
+              r: 3.6,
+              fill: "url(#head)",
+              stroke: "#0c0a09",
+              strokeWidth: 0.4,
+            },
+          },
+          {
+            tag: "circle",
+            attrs: { cx: 24.8, cy: 16, r: 1.25, fill: "#ffffff" },
+          },
+          {
+            tag: "circle",
+            attrs: { cx: 25.1, cy: 16.1, r: 0.65, fill: "#0c0a09" },
+          },
+          {
+            tag: "circle",
+            attrs: { cx: 25.35, cy: 15.8, r: 0.25, fill: "#ffffff" },
+          },
+          {
+            tag: "ellipse",
+            attrs: {
+              cx: 25.2,
+              cy: 18.4,
+              rx: 0.8,
+              ry: 0.5,
+              fill: "#fb7185",
+              opacity: 0.8,
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M23.4 13.4 C23.4 11.2 24.4 9.8 25.8 9.4 M22.2 13.6 C21.6 11.6 21.8 10 22.6 9",
+              stroke: "#1c1917",
+              strokeWidth: 0.6,
+              strokeLinecap: "round",
+            },
+          },
+          {
+            tag: "circle",
+            attrs: {
+              cx: 26,
+              cy: 9.3,
+              r: 0.7,
+              fill: "#facc15",
+              stroke: "#1c1917",
+              strokeWidth: 0.3,
+            },
+          },
+          {
+            tag: "circle",
+            attrs: {
+              cx: 22.6,
+              cy: 8.9,
+              r: 0.6,
+              fill: "#facc15",
+              stroke: "#1c1917",
+              strokeWidth: 0.3,
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M17.4 12.6 C17.2 9 19.4 5.2 21.4 6 C23.2 6.8 21.6 11 18.6 13 Z",
+              fill: "#f0f9ff",
+              fillOpacity: 0.7,
+              stroke: "#7dd3fc",
+              strokeWidth: 0.45,
+              strokeLinejoin: "round",
+            },
+            loop: {
+              values: { scaleY: [1, 0.35, 1] },
+              duration: 0.14,
+              ease: "easeInOut",
+              delay: 0.07,
+              hoverDuration: 0.08,
+            },
+            origin: "16.6px 12.8px",
+          },
+        ],
+        loop: {
+          values: {
+            x: [0, 1.2, 0, -1.2, 0],
+            y: [0, -1.4, 0, -0.8, 0],
+            rotate: [0, -4, 0, 3, 0],
+          },
+          duration: 2.4,
+          ease: "easeInOut",
+          hoverValues: {
+            x: [0, 2.2, 0, -2.2, 0],
+            y: [0, -2.4, 0, -1.6, 0],
+            rotate: [0, -8, 0, 6, 0],
+          },
+          hoverDuration: 1,
+        },
+      },
+    ],
+  },
+  ladybug: {
+    accent: "#ef4444",
+    filter:
+      "drop-shadow(0 1px 1.5px rgba(15,23,42,0.35)) drop-shadow(0 0 6px rgba(239,68,68,0.4))",
+    nodes: [
+      {
+        tag: "defs",
+        attrs: {},
+        children: [
+          {
+            tag: "radialGradient",
+            attrs: { id: "shell", cx: "35%", cy: "30%", r: "75%" },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#fecaca" } },
+              { tag: "stop", attrs: { offset: 0.35, stopColor: "#ef4444" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#7f1d1d" } },
+            ],
+          },
+          {
+            tag: "linearGradient",
+            attrs: { id: "wing", x1: 0, y1: 0, x2: 0, y2: 1 },
+            children: [
+              {
+                tag: "stop",
+                attrs: { offset: 0, stopColor: "#f0f9ff", stopOpacity: 0.85 },
+              },
+              {
+                tag: "stop",
+                attrs: { offset: 1, stopColor: "#bae6fd", stopOpacity: 0.5 },
+              },
+            ],
+          },
+        ],
+      },
+      {
+        tag: "g",
+        attrs: {},
+        children: [
+          {
+            tag: "path",
+            attrs: {
+              d: "M9 14 L5.6 12.6 M25 14 L28.4 12.6 M9 19 L5.6 17.6 M25 19 L28.4 17.6 M9 24 L5.6 22.6 M25 24 L28.4 22.6",
+              stroke: "#1c1917",
+              strokeWidth: 0.8,
+              strokeLinecap: "round",
+            },
+            loop: {
+              values: { scaleY: [1, 0.9, 1] },
+              duration: 0.5,
+              ease: "easeInOut",
+            },
+            origin: "17px 19px",
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M16 11 C11 12 6 18 6.6 26 C9 26.6 13 22 16 13 Z",
+              fill: "url(#wing)",
+              stroke: "#7dd3fc",
+              strokeWidth: 0.4,
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M18 11C23 12 28 18 27.4 26C25 26.6 21 22 18 13Z",
+              fill: "url(#wing)",
+              stroke: "#7dd3fc",
+              strokeWidth: 0.4,
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M12.6 9.8 C12.6 6.8 14.6 4.8 17 4.8 C19.4 4.8 21.4 6.8 21.4 9.8 Z",
+              fill: "#1c1917",
+            },
+          },
+          {
+            tag: "circle",
+            attrs: { cx: 15, cy: 7.4, r: 0.8, fill: "#ffffff" },
+          },
+          {
+            tag: "circle",
+            attrs: { cx: 19, cy: 7.4, r: 0.8, fill: "#ffffff" },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M15.4 5.2 C14.6 3.4 13 2.6 11.6 2.8 M18.6 5.2 C19.4 3.4 21 2.6 22.4 2.8",
+              stroke: "#1c1917",
+              strokeWidth: 0.6,
+              strokeLinecap: "round",
+            },
+          },
+          {
+            tag: "g",
+            attrs: {},
+            children: [
+              {
+                tag: "path",
+                attrs: {
+                  d: "M17 9.4 C12 9.4 8.4 13.6 8.4 19.4 C8.4 25.4 12.4 29.4 17 29.4 Z",
+                  fill: "url(#shell)",
+                  stroke: "#450a0a",
+                  strokeWidth: 0.6,
+                },
+              },
+              {
+                tag: "circle",
+                attrs: { cx: 13.2, cy: 14.4, r: 1.5, fill: "#1c1917" },
+              },
+              {
+                tag: "circle",
+                attrs: { cx: 11.4, cy: 20.4, r: 1.4, fill: "#1c1917" },
+              },
+              {
+                tag: "circle",
+                attrs: { cx: 14.4, cy: 24.8, r: 1.3, fill: "#1c1917" },
+              },
+              {
+                tag: "circle",
+                attrs: { cx: 15.4, cy: 19.2, r: 0.9, fill: "#1c1917" },
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M10.4 15 C10.8 12.6 12.4 10.8 14.4 10.2",
+                  stroke: "#ffffff",
+                  strokeWidth: 0.9,
+                  strokeLinecap: "round",
+                  opacity: 0.7,
+                },
+              },
+            ],
+            hover: { rotate: -24 },
+            origin: "17px 10.4px",
+          },
+          {
+            tag: "g",
+            attrs: {},
+            children: [
+              {
+                tag: "path",
+                attrs: {
+                  d: "M17 9.4C22 9.4 25.6 13.6 25.6 19.4C25.6 25.4 21.6 29.4 17 29.4Z",
+                  fill: "url(#shell)",
+                  stroke: "#450a0a",
+                  strokeWidth: 0.6,
+                },
+              },
+              {
+                tag: "circle",
+                attrs: { cx: 20.8, cy: 14.4, r: 1.5, fill: "#1c1917" },
+              },
+              {
+                tag: "circle",
+                attrs: { cx: 22.6, cy: 20.4, r: 1.4, fill: "#1c1917" },
+              },
+              {
+                tag: "circle",
+                attrs: { cx: 19.6, cy: 24.8, r: 1.3, fill: "#1c1917" },
+              },
+              {
+                tag: "circle",
+                attrs: { cx: 18.6, cy: 19.2, r: 0.9, fill: "#1c1917" },
+              },
+            ],
+            hover: { rotate: 24 },
+            origin: "17px 10.4px",
+          },
+        ],
+        loop: {
+          values: { rotate: [-4, 4, -4] },
+          duration: 1,
+          ease: "easeInOut",
+          hoverDuration: 0.5,
+        },
+        origin: "17px 19px",
+      },
+    ],
+  },
+  "origami-crane": {
+    accent: "#fb7185",
+    filter:
+      "drop-shadow(0 1px 1.5px rgba(15,23,42,0.35)) drop-shadow(0 0 6px rgba(251,113,133,0.4))",
+    nodes: [
+      {
+        tag: "defs",
+        attrs: {},
+        children: [
+          {
+            tag: "linearGradient",
+            attrs: { id: "light", x1: 0, y1: 0, x2: 1, y2: 1 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#ffffff" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#fecdd3" } },
+            ],
+          },
+          {
+            tag: "linearGradient",
+            attrs: { id: "deep", x1: 0, y1: 0, x2: 1, y2: 1 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#fda4af" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#e11d48" } },
+            ],
+          },
+        ],
+      },
+      {
+        tag: "g",
+        attrs: {},
+        children: [
+          {
+            tag: "g",
+            attrs: {},
+            children: [
+              {
+                tag: "path",
+                attrs: {
+                  d: "M14.6 18 L8.6 4.4 L16.6 15.6 Z",
+                  fill: "url(#light)",
+                  stroke: "#be123c",
+                  strokeWidth: 0.35,
+                  strokeLinejoin: "round",
+                },
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M16.6 15.6 L8.6 4.4 L19 17.4 Z",
+                  fill: "#fda4af",
+                  stroke: "#be123c",
+                  strokeWidth: 0.35,
+                  strokeLinejoin: "round",
+                },
+              },
+            ],
+            loop: {
+              values: { scaleY: [1, 0.35, 1] },
+              duration: 1.4,
+              ease: "easeInOut",
+              hoverValues: { scaleY: [1, -0.5, 1] },
+              hoverDuration: 0.6,
+            },
+            origin: "17px 18px",
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M13 19 L3.4 12 L11.4 20.6 Z",
+              fill: "#fecdd3",
+              stroke: "#be123c",
+              strokeWidth: 0.35,
+              strokeLinejoin: "round",
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M13 19 L3.4 12 L8.2 19.4 Z",
+              fill: "#fda4af",
+              stroke: "#be123c",
+              strokeWidth: 0.35,
+              strokeLinejoin: "round",
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M11 20 L17 16.4 L23 20 Z",
+              fill: "#fecdd3",
+              stroke: "#be123c",
+              strokeWidth: 0.35,
+              strokeLinejoin: "round",
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M11 20 L23 20 L17 23.6 Z",
+              fill: "url(#deep)",
+              stroke: "#be123c",
+              strokeWidth: 0.35,
+              strokeLinejoin: "round",
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M21 19 L29.4 8.6 L23.6 20.4 Z",
+              fill: "#fda4af",
+              stroke: "#be123c",
+              strokeWidth: 0.35,
+              strokeLinejoin: "round",
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M21 19 L29.4 8.6 L22 19.6 Z",
+              fill: "#ffe4e6",
+              stroke: "#be123c",
+              strokeWidth: 0.35,
+              strokeLinejoin: "round",
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M29.4 8.6 L32.2 9.6 L28.8 10.6 Z",
+              fill: "#f43f5e",
+              stroke: "#be123c",
+              strokeWidth: 0.35,
+              strokeLinejoin: "round",
+            },
+          },
+          {
+            tag: "g",
+            attrs: {},
+            children: [
+              {
+                tag: "path",
+                attrs: {
+                  d: "M16 18.4 L24.8 4 L18.4 17 Z",
+                  fill: "url(#light)",
+                  stroke: "#be123c",
+                  strokeWidth: 0.35,
+                  strokeLinejoin: "round",
+                },
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M18.4 17 L24.8 4 L20.6 18.2 Z",
+                  fill: "url(#deep)",
+                  stroke: "#be123c",
+                  strokeWidth: 0.35,
+                  strokeLinejoin: "round",
+                },
+              },
+            ],
+            loop: {
+              values: { scaleY: [1, 0.35, 1] },
+              duration: 1.4,
+              ease: "easeInOut",
+              hoverValues: { scaleY: [1, -0.5, 1] },
+              hoverDuration: 0.6,
+            },
+            origin: "17px 18px",
+          },
+        ],
+        loop: {
+          values: { y: [0, -1.6, 0], rotate: [0, -3, 0] },
+          duration: 1.4,
+          ease: "easeInOut",
+          hoverDuration: 0.6,
+        },
+        origin: "17px 20px",
+      },
+    ],
+  },
+  "lava-lamp": {
+    accent: "#db2777",
+    filter:
+      "drop-shadow(0 1px 1.5px rgba(15,23,42,0.35)) drop-shadow(0 0 6px rgba(219,39,119,0.5))",
+    nodes: [
+      {
+        tag: "defs",
+        attrs: {},
+        children: [
+          {
+            tag: "linearGradient",
+            attrs: { id: "chrome", x1: 0, y1: 0, x2: 1, y2: 0 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#f8fafc" } },
+              { tag: "stop", attrs: { offset: 0.35, stopColor: "#cbd5e1" } },
+              { tag: "stop", attrs: { offset: 0.7, stopColor: "#64748b" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#334155" } },
+            ],
+          },
+          {
+            tag: "linearGradient",
+            attrs: { id: "liquid", x1: 0, y1: 0, x2: 0, y2: 1 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#7c3aed" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#db2777" } },
+            ],
+          },
+          {
+            tag: "radialGradient",
+            attrs: { id: "wax", cx: "40%", cy: "35%", r: "70%" },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#fef9c3" } },
+              { tag: "stop", attrs: { offset: 0.45, stopColor: "#fb923c" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#ea580c" } },
+            ],
+          },
+          {
+            tag: "clipPath",
+            attrs: { id: "vessel" },
+            children: [
+              { tag: "path", attrs: { d: "M12.8 8 H21.2 L23.4 24 H10.6 Z" } },
+            ],
+          },
+        ],
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M12.8 8 H21.2 L23.4 24 H10.6 Z",
+          fill: "url(#liquid)",
+          stroke: "#4c1d95",
+          strokeWidth: 0.5,
+        },
+      },
+      {
+        tag: "g",
+        attrs: { clipPath: "url(#vessel)" },
+        children: [
+          {
+            tag: "ellipse",
+            attrs: { cx: 17, cy: 24, rx: 6.6, ry: 1.8, fill: "url(#wax)" },
+          },
+          {
+            tag: "ellipse",
+            attrs: { cx: 15.6, cy: 20.4, rx: 3, ry: 2.4, fill: "url(#wax)" },
+            loop: {
+              values: {
+                y: [0, -10, 0],
+                scaleX: [1, 0.8, 1],
+                scaleY: [1, 1.25, 1],
+              },
+              duration: 5,
+              ease: "easeInOut",
+              static: { y: -3, scaleX: 0.95, scaleY: 1.1 },
+              hoverDuration: 2.2727272727272725,
+            },
+            origin: "15.6px 20.4px",
+          },
+          {
+            tag: "ellipse",
+            attrs: { cx: 19, cy: 12.4, rx: 2.2, ry: 1.9, fill: "url(#wax)" },
+            loop: {
+              values: {
+                y: [0, 8, 0],
+                scaleX: [1, 1.2, 1],
+                scaleY: [1, 0.85, 1],
+              },
+              duration: 6,
+              ease: "easeInOut",
+              delay: 0.8,
+              static: { y: 0, scaleX: 1, scaleY: 1 },
+              hoverDuration: 2.727272727272727,
+            },
+            origin: "19px 12.4px",
+          },
+          {
+            tag: "ellipse",
+            attrs: { cx: 15, cy: 15.6, rx: 1.4, ry: 1.2, fill: "url(#wax)" },
+            loop: {
+              values: { y: [3, -5, 3], scale: [1, 1.2, 1] },
+              duration: 4,
+              ease: "easeInOut",
+              delay: 0.4,
+              static: { y: 0, scale: 1 },
+              hoverDuration: 1.8181818181818181,
+            },
+            origin: "15px 15.6px",
+          },
+        ],
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M13.6 9.2 L11.9 22.6",
+          stroke: "#ffffff",
+          strokeWidth: 0.8,
+          strokeLinecap: "round",
+          opacity: 0.35,
+        },
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M14 3 H20 L21.2 8 H12.8 Z",
+          fill: "url(#chrome)",
+          stroke: "#1e293b",
+          strokeWidth: 0.5,
+          strokeLinejoin: "round",
+        },
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M12.2 24 H21.8 L24.4 31 H9.6 Z",
+          fill: "url(#chrome)",
+          stroke: "#1e293b",
+          strokeWidth: 0.5,
+          strokeLinejoin: "round",
+        },
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M11.6 27 H22.4",
+          stroke: "#1e293b",
+          strokeWidth: 0.4,
+          opacity: 0.5,
+        },
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M10.6 30 H23.4",
+          stroke: "#ffffff",
+          strokeWidth: 0.4,
+          opacity: 0.4,
+        },
+      },
+    ],
+  },
+  "disco-ball": {
+    accent: "#e879f9",
+    filter:
+      "drop-shadow(0 1px 1.5px rgba(15,23,42,0.35)) drop-shadow(0 0 6px rgba(232,121,249,0.5))",
+    nodes: [
+      {
+        tag: "defs",
+        attrs: {},
+        children: [
+          {
+            tag: "radialGradient",
+            attrs: { id: "ball", cx: "38%", cy: "32%", r: "75%" },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#ffffff" } },
+              { tag: "stop", attrs: { offset: 0.4, stopColor: "#cbd5e1" } },
+              { tag: "stop", attrs: { offset: 0.8, stopColor: "#64748b" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#1e293b" } },
+            ],
+          },
+          {
+            tag: "radialGradient",
+            attrs: { id: "shade", cx: "38%", cy: "32%", r: "72%" },
+            children: [
+              {
+                tag: "stop",
+                attrs: { offset: 0, stopColor: "#ffffff", stopOpacity: 0.35 },
+              },
+              {
+                tag: "stop",
+                attrs: { offset: 0.55, stopColor: "#0f172a", stopOpacity: 0 },
+              },
+              {
+                tag: "stop",
+                attrs: { offset: 1, stopColor: "#0f172a", stopOpacity: 0.65 },
+              },
+            ],
+          },
+          {
+            tag: "clipPath",
+            attrs: { id: "ballClip" },
+            children: [{ tag: "circle", attrs: { cx: 17, cy: 17, r: 11 } }],
+          },
+        ],
+      },
+      {
+        tag: "g",
+        attrs: {},
+        children: [
+          {
+            tag: "circle",
+            attrs: { cx: 31.88, cy: 20.99, r: 0.9, fill: "#f472b6" },
+          },
+          {
+            tag: "circle",
+            attrs: { cx: 20.99, cy: 31.88, r: 0.9, fill: "#22d3ee" },
+          },
+          {
+            tag: "circle",
+            attrs: { cx: 6.11, cy: 27.89, r: 0.9, fill: "#fde047" },
+          },
+          {
+            tag: "circle",
+            attrs: { cx: 2.12, cy: 13.01, r: 0.9, fill: "#a78bfa" },
+          },
+          {
+            tag: "circle",
+            attrs: { cx: 13.01, cy: 2.12, r: 0.9, fill: "#4ade80" },
+          },
+          {
+            tag: "circle",
+            attrs: { cx: 27.89, cy: 6.11, r: 0.9, fill: "#fb923c" },
+          },
+        ],
+        loop: {
+          values: { rotate: [0, 360] },
+          duration: 10,
+          ease: "linear",
+          hoverDuration: 3,
+        },
+      },
+      {
+        tag: "line",
+        attrs: {
+          x1: 17,
+          y1: 0,
+          x2: 17,
+          y2: 5.4,
+          stroke: "#94a3b8",
+          strokeWidth: 0.6,
+        },
+      },
+      {
+        tag: "rect",
+        attrs: {
+          x: 15.6,
+          y: 4.6,
+          width: 2.8,
+          height: 1.8,
+          rx: 0.4,
+          fill: "#94a3b8",
+          stroke: "#334155",
+          strokeWidth: 0.3,
+        },
+      },
+      { tag: "circle", attrs: { cx: 17, cy: 17, r: 11, fill: "url(#ball)" } },
+      {
+        tag: "g",
+        attrs: { clipPath: "url(#ballClip)" },
+        children: [
+          {
+            tag: "g",
+            attrs: {},
+            children: [
+              {
+                tag: "rect",
+                attrs: {
+                  x: 4.15,
+                  y: 5.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#f9a8d4",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 4.15,
+                  y: 8.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#67e8f9",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 4.15,
+                  y: 10.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#ffffff",
+                  opacity: 0.79,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 4.15,
+                  y: 13.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#c4b5fd",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 4.15,
+                  y: 15.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#f9a8d4",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 4.15,
+                  y: 18.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#67e8f9",
+                  opacity: 0.79,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 4.15,
+                  y: 20.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#ffffff",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 4.15,
+                  y: 23.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#c4b5fd",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 4.15,
+                  y: 25.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#f9a8d4",
+                  opacity: 0.79,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 4.15,
+                  y: 28.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#67e8f9",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 6.75,
+                  y: 5.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#67e8f9",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 6.75,
+                  y: 8.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#ffffff",
+                  opacity: 0.79,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 6.75,
+                  y: 10.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#c4b5fd",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 6.75,
+                  y: 13.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#f9a8d4",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 6.75,
+                  y: 15.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#67e8f9",
+                  opacity: 0.79,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 6.75,
+                  y: 18.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#ffffff",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 6.75,
+                  y: 20.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#c4b5fd",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 6.75,
+                  y: 23.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#f9a8d4",
+                  opacity: 0.79,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 6.75,
+                  y: 25.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#67e8f9",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 6.75,
+                  y: 28.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#ffffff",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 9.35,
+                  y: 5.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#f9a8d4",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 9.35,
+                  y: 8.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#67e8f9",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 9.35,
+                  y: 10.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#ffffff",
+                  opacity: 0.79,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 9.35,
+                  y: 13.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#c4b5fd",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 9.35,
+                  y: 15.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#f9a8d4",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 9.35,
+                  y: 18.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#67e8f9",
+                  opacity: 0.79,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 9.35,
+                  y: 20.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#ffffff",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 9.35,
+                  y: 23.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#c4b5fd",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 9.35,
+                  y: 25.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#f9a8d4",
+                  opacity: 0.79,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 9.35,
+                  y: 28.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#67e8f9",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 11.95,
+                  y: 5.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#67e8f9",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 11.95,
+                  y: 8.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#ffffff",
+                  opacity: 0.79,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 11.95,
+                  y: 10.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#c4b5fd",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 11.95,
+                  y: 13.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#f9a8d4",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 11.95,
+                  y: 15.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#67e8f9",
+                  opacity: 0.79,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 11.95,
+                  y: 18.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#ffffff",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 11.95,
+                  y: 20.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#c4b5fd",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 11.95,
+                  y: 23.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#f9a8d4",
+                  opacity: 0.79,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 11.95,
+                  y: 25.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#67e8f9",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 11.95,
+                  y: 28.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#ffffff",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 14.55,
+                  y: 5.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#f9a8d4",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 14.55,
+                  y: 8.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#67e8f9",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 14.55,
+                  y: 10.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#ffffff",
+                  opacity: 0.79,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 14.55,
+                  y: 13.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#c4b5fd",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 14.55,
+                  y: 15.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#f9a8d4",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 14.55,
+                  y: 18.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#67e8f9",
+                  opacity: 0.79,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 14.55,
+                  y: 20.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#ffffff",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 14.55,
+                  y: 23.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#c4b5fd",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 14.55,
+                  y: 25.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#f9a8d4",
+                  opacity: 0.79,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 14.55,
+                  y: 28.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#67e8f9",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 17.15,
+                  y: 5.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#67e8f9",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 17.15,
+                  y: 8.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#ffffff",
+                  opacity: 0.79,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 17.15,
+                  y: 10.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#c4b5fd",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 17.15,
+                  y: 13.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#f9a8d4",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 17.15,
+                  y: 15.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#67e8f9",
+                  opacity: 0.79,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 17.15,
+                  y: 18.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#ffffff",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 17.15,
+                  y: 20.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#c4b5fd",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 17.15,
+                  y: 23.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#f9a8d4",
+                  opacity: 0.79,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 17.15,
+                  y: 25.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#67e8f9",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 17.15,
+                  y: 28.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#ffffff",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 19.75,
+                  y: 5.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#f9a8d4",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 19.75,
+                  y: 8.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#67e8f9",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 19.75,
+                  y: 10.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#ffffff",
+                  opacity: 0.79,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 19.75,
+                  y: 13.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#c4b5fd",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 19.75,
+                  y: 15.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#f9a8d4",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 19.75,
+                  y: 18.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#67e8f9",
+                  opacity: 0.79,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 19.75,
+                  y: 20.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#ffffff",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 19.75,
+                  y: 23.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#c4b5fd",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 19.75,
+                  y: 25.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#f9a8d4",
+                  opacity: 0.79,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 19.75,
+                  y: 28.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#67e8f9",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 22.35,
+                  y: 5.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#67e8f9",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 22.35,
+                  y: 8.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#ffffff",
+                  opacity: 0.79,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 22.35,
+                  y: 10.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#c4b5fd",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 22.35,
+                  y: 13.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#f9a8d4",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 22.35,
+                  y: 15.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#67e8f9",
+                  opacity: 0.79,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 22.35,
+                  y: 18.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#ffffff",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 22.35,
+                  y: 20.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#c4b5fd",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 22.35,
+                  y: 23.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#f9a8d4",
+                  opacity: 0.79,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 22.35,
+                  y: 25.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#67e8f9",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 22.35,
+                  y: 28.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#ffffff",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 24.95,
+                  y: 5.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#f9a8d4",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 24.95,
+                  y: 8.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#67e8f9",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 24.95,
+                  y: 10.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#ffffff",
+                  opacity: 0.79,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 24.95,
+                  y: 13.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#c4b5fd",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 24.95,
+                  y: 15.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#f9a8d4",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 24.95,
+                  y: 18.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#67e8f9",
+                  opacity: 0.79,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 24.95,
+                  y: 20.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#ffffff",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 24.95,
+                  y: 23.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#c4b5fd",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 24.95,
+                  y: 25.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#f9a8d4",
+                  opacity: 0.79,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 24.95,
+                  y: 28.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#67e8f9",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 27.55,
+                  y: 5.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#67e8f9",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 27.55,
+                  y: 8.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#ffffff",
+                  opacity: 0.79,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 27.55,
+                  y: 10.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#c4b5fd",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 27.55,
+                  y: 13.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#f9a8d4",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 27.55,
+                  y: 15.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#67e8f9",
+                  opacity: 0.79,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 27.55,
+                  y: 18.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#ffffff",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 27.55,
+                  y: 20.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#c4b5fd",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 27.55,
+                  y: 23.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#f9a8d4",
+                  opacity: 0.79,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 27.55,
+                  y: 25.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#67e8f9",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 27.55,
+                  y: 28.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#ffffff",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 30.15,
+                  y: 5.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#f9a8d4",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 30.15,
+                  y: 8.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#67e8f9",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 30.15,
+                  y: 10.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#ffffff",
+                  opacity: 0.79,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 30.15,
+                  y: 13.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#c4b5fd",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 30.15,
+                  y: 15.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#f9a8d4",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 30.15,
+                  y: 18.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#67e8f9",
+                  opacity: 0.79,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 30.15,
+                  y: 20.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#ffffff",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 30.15,
+                  y: 23.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#c4b5fd",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 30.15,
+                  y: 25.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#f9a8d4",
+                  opacity: 0.79,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 30.15,
+                  y: 28.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#67e8f9",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 32.75,
+                  y: 5.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#67e8f9",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 32.75,
+                  y: 8.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#ffffff",
+                  opacity: 0.79,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 32.75,
+                  y: 10.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#c4b5fd",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 32.75,
+                  y: 13.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#f9a8d4",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 32.75,
+                  y: 15.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#67e8f9",
+                  opacity: 0.79,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 32.75,
+                  y: 18.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#ffffff",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 32.75,
+                  y: 20.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#c4b5fd",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 32.75,
+                  y: 23.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#f9a8d4",
+                  opacity: 0.79,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 32.75,
+                  y: 25.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#67e8f9",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 32.75,
+                  y: 28.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#ffffff",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 35.35,
+                  y: 5.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#f9a8d4",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 35.35,
+                  y: 8.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#67e8f9",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 35.35,
+                  y: 10.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#ffffff",
+                  opacity: 0.79,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 35.35,
+                  y: 13.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#c4b5fd",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 35.35,
+                  y: 15.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#f9a8d4",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 35.35,
+                  y: 18.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#67e8f9",
+                  opacity: 0.79,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 35.35,
+                  y: 20.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#ffffff",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 35.35,
+                  y: 23.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#c4b5fd",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 35.35,
+                  y: 25.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#f9a8d4",
+                  opacity: 0.79,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 35.35,
+                  y: 28.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#67e8f9",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 37.95,
+                  y: 5.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#67e8f9",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 37.95,
+                  y: 8.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#ffffff",
+                  opacity: 0.79,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 37.95,
+                  y: 10.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#c4b5fd",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 37.95,
+                  y: 13.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#f9a8d4",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 37.95,
+                  y: 15.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#67e8f9",
+                  opacity: 0.79,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 37.95,
+                  y: 18.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#ffffff",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 37.95,
+                  y: 20.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#c4b5fd",
+                  opacity: 0.67,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 37.95,
+                  y: 23.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#f9a8d4",
+                  opacity: 0.79,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 37.95,
+                  y: 25.75,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#67e8f9",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "rect",
+                attrs: {
+                  x: 37.95,
+                  y: 28.25,
+                  width: 2.3,
+                  height: 2.2,
+                  rx: 0.3,
+                  fill: "#ffffff",
+                  opacity: 0.67,
+                },
+              },
+            ],
+            loop: {
+              values: { x: [0, -5.2] },
+              duration: 1.6,
+              ease: "linear",
+              hoverDuration: 0.6,
+            },
+          },
+          {
+            tag: "ellipse",
+            attrs: {
+              cx: 17,
+              cy: 17,
+              rx: 3.6,
+              ry: 11,
+              stroke: "#334155",
+              strokeWidth: 0.3,
+              opacity: 0.5,
+            },
+          },
+          {
+            tag: "ellipse",
+            attrs: {
+              cx: 17,
+              cy: 17,
+              rx: 7.4,
+              ry: 11,
+              stroke: "#334155",
+              strokeWidth: 0.3,
+              opacity: 0.5,
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M6 9.4 H28 M6 12 H28 M6 14.6 H28 M6 17.2 H28 M6 19.8 H28 M6 22.4 H28 M6 25 H28",
+              stroke: "#334155",
+              strokeWidth: 0.3,
+              opacity: 0.5,
+            },
+          },
+          {
+            tag: "circle",
+            attrs: { cx: 17, cy: 17, r: 11, fill: "url(#shade)" },
+          },
+        ],
+      },
+      {
+        tag: "circle",
+        attrs: { cx: 17, cy: 17, r: 11, stroke: "#334155", strokeWidth: 0.5 },
+      },
+      {
+        tag: "ellipse",
+        attrs: {
+          cx: 13,
+          cy: 11.6,
+          rx: 2.6,
+          ry: 1.6,
+          fill: "#ffffff",
+          opacity: 0.55,
+        },
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M12.4 8.8 Q12.4 11 14.6 11 Q12.4 11 12.4 13.2 Q12.4 11 10.2 11 Q12.4 11 12.4 8.8 Z",
+          fill: "#ffffff",
+        },
+        loop: {
+          values: { opacity: [0.15, 1, 0.15], scale: [0.6, 1, 0.6] },
+          duration: 1.4,
+          ease: "easeInOut",
+          static: { opacity: 1, scale: 1 },
+        },
+        origin: "12.4px 11px",
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M22.4 18.6 Q22.4 20.4 24.2 20.4 Q22.4 20.4 22.4 22.2 Q22.4 20.4 20.6 20.4 Q22.4 20.4 22.4 18.6 Z",
+          fill: "#ffffff",
+        },
+        loop: {
+          values: { opacity: [0.15, 1, 0.15], scale: [0.6, 1, 0.6] },
+          duration: 1.6,
+          ease: "easeInOut",
+          delay: 0.6,
+          static: { opacity: 1, scale: 1 },
+        },
+        origin: "22.4px 20.4px",
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M19.6 8 Q19.6 9.4 21 9.4 Q19.6 9.4 19.6 10.8 Q19.6 9.4 18.2 9.4 Q19.6 9.4 19.6 8 Z",
+          fill: "#fdf4ff",
+        },
+        loop: {
+          values: { opacity: [0.15, 1, 0.15], scale: [0.6, 1, 0.6] },
+          duration: 1.2,
+          ease: "easeInOut",
+          delay: 1.1,
+          static: { opacity: 1, scale: 1 },
+        },
+        origin: "19.6px 9.4px",
+      },
+    ],
+  },
+  "rubber-duck": {
+    accent: "#facc15",
+    filter:
+      "drop-shadow(0 1px 1.5px rgba(15,23,42,0.35)) drop-shadow(0 0 6px rgba(250,204,21,0.4))",
+    nodes: [
+      {
+        tag: "defs",
+        attrs: {},
+        children: [
+          {
+            tag: "radialGradient",
+            attrs: { id: "duck", cx: "38%", cy: "30%", r: "75%" },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#fef9c3" } },
+              { tag: "stop", attrs: { offset: 0.45, stopColor: "#fde047" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#ca8a04" } },
+            ],
+          },
+          {
+            tag: "linearGradient",
+            attrs: { id: "beak", x1: 0, y1: 0, x2: 0, y2: 1 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#fdba74" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#ea580c" } },
+            ],
+          },
+          {
+            tag: "linearGradient",
+            attrs: { id: "wing", x1: 0, y1: 0, x2: 1, y2: 1 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#fde047" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#eab308" } },
+            ],
+          },
+          {
+            tag: "linearGradient",
+            attrs: { id: "water", x1: 0, y1: 0, x2: 0, y2: 1 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#7dd3fc" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#2563eb" } },
+            ],
+          },
+          {
+            tag: "clipPath",
+            attrs: { id: "pond" },
+            children: [
+              { tag: "ellipse", attrs: { cx: 17, cy: 29, rx: 15, ry: 4.6 } },
+            ],
+          },
+        ],
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M29.6 8.6 q1 1 0 2 M31 7.6 q1.8 2 0 4",
+          stroke: "#fbbf24",
+          strokeWidth: 0.7,
+          strokeLinecap: "round",
+        },
+        loop: {
+          values: { opacity: [0, 0, 0] },
+          duration: 0.5,
+          ease: "easeInOut",
+          hoverValues: { opacity: [0, 1, 0] },
+          hoverDuration: 0.5,
+        },
+      },
+      {
+        tag: "g",
+        attrs: {},
+        children: [
+          {
+            tag: "g",
+            attrs: {},
+            children: [
+              {
+                tag: "path",
+                attrs: {
+                  d: "M5 18.4 C6.6 19.6 8 19.8 9.4 19.2 C11.2 18.4 13 18.2 15.6 18.6 L24.4 18.6 C27.4 18.6 29 20.6 28.6 23.4 C28.2 26.6 24.6 28.4 17.4 28.4 C10 28.4 5.6 26.2 5 21.4 Z",
+                  fill: "url(#duck)",
+                  stroke: "#a16207",
+                  strokeWidth: 0.6,
+                  strokeLinejoin: "round",
+                },
+              },
+              {
+                tag: "circle",
+                attrs: {
+                  cx: 22.4,
+                  cy: 12.6,
+                  r: 5.4,
+                  fill: "url(#duck)",
+                  stroke: "#a16207",
+                  strokeWidth: 0.6,
+                },
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M26.8 12.8 C29 12.2 31.4 12.6 31.8 13.8 C31.2 15.2 29 15.6 26.8 15 Z",
+                  fill: "url(#beak)",
+                  stroke: "#9a3412",
+                  strokeWidth: 0.4,
+                  strokeLinejoin: "round",
+                },
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M27 14 H31.4",
+                  stroke: "#9a3412",
+                  strokeWidth: 0.35,
+                  opacity: 0.7,
+                },
+              },
+              {
+                tag: "circle",
+                attrs: { cx: 23.8, cy: 11, r: 0.95, fill: "#1c1917" },
+              },
+              {
+                tag: "circle",
+                attrs: { cx: 24.1, cy: 10.7, r: 0.32, fill: "#ffffff" },
+              },
+              {
+                tag: "ellipse",
+                attrs: {
+                  cx: 24.8,
+                  cy: 14.2,
+                  rx: 1,
+                  ry: 0.6,
+                  fill: "#fb923c",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M11.6 21.4 C14.4 19.8 18.8 20.2 20.6 22.4 C18.6 24.8 14 24.8 11.6 21.4 Z",
+                  fill: "url(#wing)",
+                  stroke: "#a16207",
+                  strokeWidth: 0.4,
+                },
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M18.6 9.4 C19.4 8 21 7.2 22.6 7.2 M7.6 21 C8.4 20.2 9.6 19.8 10.8 19.8",
+                  stroke: "#ffffff",
+                  strokeWidth: 0.9,
+                  strokeLinecap: "round",
+                  opacity: 0.75,
+                },
+              },
+            ],
+            hover: { scaleY: 0.9, scaleX: 1.06 },
+            origin: "17px 28px",
+          },
+        ],
+        loop: {
+          values: { rotate: [-4, 4, -4], y: [0, 0.8, 0] },
+          duration: 2.2,
+          ease: "easeInOut",
+          hoverDuration: 1,
+        },
+        origin: "17px 26px",
+      },
+      {
+        tag: "g",
+        attrs: { clipPath: "url(#pond)" },
+        children: [
+          {
+            tag: "path",
+            attrs: {
+              d: "M-8 27 q2 -1.4 4 0 t4 0 t4 0 t4 0 t4 0 t4 0 t4 0 t4 0 t4 0 t4 0 t4 0 t4 0 t4 0 V34 H-8 Z",
+              fill: "url(#water)",
+              opacity: 0.88,
+            },
+            loop: {
+              values: { x: [0, -8] },
+              duration: 2,
+              ease: "linear",
+              hoverDuration: 1,
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M-8 27.1 q2 -1.4 4 0 t4 0 t4 0 t4 0 t4 0 t4 0 t4 0 t4 0 t4 0 t4 0 t4 0 t4 0 t4 0",
+              stroke: "#e0f2fe",
+              strokeWidth: 0.5,
+              opacity: 0.8,
+            },
+            loop: {
+              values: { x: [0, -8] },
+              duration: 2,
+              ease: "linear",
+              hoverDuration: 1,
+            },
+          },
+        ],
+      },
+    ],
+  },
+  owl: {
+    accent: "#f59e0b",
+    filter:
+      "drop-shadow(0 1px 1.5px rgba(15,23,42,0.35)) drop-shadow(0 0 6px rgba(245,158,11,0.35))",
+    nodes: [
+      {
+        tag: "defs",
+        attrs: {},
+        children: [
+          {
+            tag: "radialGradient",
+            attrs: { id: "feathers", cx: "40%", cy: "30%", r: "75%" },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#d6a77a" } },
+              { tag: "stop", attrs: { offset: 0.5, stopColor: "#a16207" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#713f12" } },
+            ],
+          },
+          {
+            tag: "linearGradient",
+            attrs: { id: "belly", x1: 0, y1: 0, x2: 0, y2: 1 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#fef3c7" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#fcd34d" } },
+            ],
+          },
+          {
+            tag: "radialGradient",
+            attrs: { id: "iris", cx: "40%", cy: "35%", r: "65%" },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#fef08a" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#f59e0b" } },
+            ],
+          },
+          {
+            tag: "linearGradient",
+            attrs: { id: "branch", x1: 0, y1: 0, x2: 0, y2: 1 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#a16207" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#57340d" } },
+            ],
+          },
+        ],
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M1.6 29.6 C10 28.6 24 28.6 32.4 29.8",
+          stroke: "url(#branch)",
+          strokeWidth: 2.2,
+          strokeLinecap: "round",
+        },
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M27 29.2 C28.4 27 30.6 26.4 32 27 C31 28.6 29 29.4 27 29.2 Z",
+          fill: "#4ade80",
+          stroke: "#15803d",
+          strokeWidth: 0.35,
+        },
+      },
+      {
+        tag: "g",
+        attrs: {},
+        children: [
+          {
+            tag: "path",
+            attrs: {
+              d: "M9.8 9.2 L8.4 3.8 L12.8 7 Z",
+              fill: "url(#feathers)",
+              stroke: "#451a03",
+              strokeWidth: 0.5,
+              strokeLinejoin: "round",
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M24.2 9.2 L25.6 3.8 L21.2 7 Z",
+              fill: "url(#feathers)",
+              stroke: "#451a03",
+              strokeWidth: 0.5,
+              strokeLinejoin: "round",
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M17 5.6 C23.6 5.6 26.6 10.6 26.6 17 C26.6 23.6 23 28.4 17 28.4 C11 28.4 7.4 23.6 7.4 17 C7.4 10.6 10.4 5.6 17 5.6 Z",
+              fill: "url(#feathers)",
+              stroke: "#451a03",
+              strokeWidth: 0.6,
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M8 15 C6.6 19 7.6 24 10.6 26.6 C10 22 10 18 11 15.4 Z",
+              fill: "#78350f",
+              opacity: 0.8,
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M26 15C27.4 19 26.4 24 23.4 26.6C24 22 24 18 23 15.4Z",
+              fill: "#78350f",
+              opacity: 0.8,
+            },
+          },
+          {
+            tag: "ellipse",
+            attrs: { cx: 17, cy: 21.6, rx: 5.6, ry: 6, fill: "url(#belly)" },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M14.2 19.6 l0.9 0.8 l0.9 -0.8 M18 19.6 l0.9 0.8 l0.9 -0.8 M16.1 22.4 l0.9 0.8 l0.9 -0.8 M14.2 25 l0.9 0.8 l0.9 -0.8 M18 25 l0.9 0.8 l0.9 -0.8",
+              stroke: "#b45309",
+              strokeWidth: 0.45,
+              strokeLinecap: "round",
+              strokeLinejoin: "round",
+            },
+          },
+          {
+            tag: "circle",
+            attrs: {
+              cx: 13.4,
+              cy: 12.6,
+              r: 3.9,
+              fill: "#fef3c7",
+              stroke: "#92400e",
+              strokeWidth: 0.4,
+            },
+          },
+          {
+            tag: "circle",
+            attrs: {
+              cx: 20.6,
+              cy: 12.6,
+              r: 3.9,
+              fill: "#fef3c7",
+              stroke: "#92400e",
+              strokeWidth: 0.4,
+            },
+          },
+          {
+            tag: "g",
+            attrs: {},
+            children: [
+              {
+                tag: "g",
+                attrs: {},
+                children: [
+                  {
+                    tag: "circle",
+                    attrs: { cx: 13.4, cy: 12.6, r: 2.5, fill: "url(#iris)" },
+                  },
+                  {
+                    tag: "circle",
+                    attrs: { cx: 20.6, cy: 12.6, r: 2.5, fill: "url(#iris)" },
+                  },
+                  {
+                    tag: "circle",
+                    attrs: { cx: 13.6, cy: 12.8, r: 1.35, fill: "#1c1917" },
+                  },
+                  {
+                    tag: "circle",
+                    attrs: { cx: 20.8, cy: 12.8, r: 1.35, fill: "#1c1917" },
+                  },
+                  {
+                    tag: "circle",
+                    attrs: { cx: 14.1, cy: 12.2, r: 0.45, fill: "#ffffff" },
+                  },
+                  {
+                    tag: "circle",
+                    attrs: { cx: 21.3, cy: 12.2, r: 0.45, fill: "#ffffff" },
+                  },
+                ],
+                loop: {
+                  values: { scaleY: [1, 1, 0.1, 1, 1] },
+                  duration: 4.5,
+                  ease: "easeInOut",
+                  times: [0, 0.9, 0.93, 0.96, 1],
+                },
+                origin: "17px 12.6px",
+              },
+            ],
+            hover: { scale: 1.15 },
+            origin: "17px 12.6px",
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M16 14.6 H18 L17 17 Z",
+              fill: "#f97316",
+              stroke: "#9a3412",
+              strokeWidth: 0.3,
+              strokeLinejoin: "round",
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M14.4 28.6 v1.4 M15.6 28.6 v1.4 M18.4 28.6 v1.4 M19.6 28.6 v1.4",
+              stroke: "#f97316",
+              strokeWidth: 0.7,
+              strokeLinecap: "round",
+            },
+          },
+        ],
+        loop: {
+          values: { rotate: [-4, 4, -4] },
+          duration: 3.2,
+          ease: "easeInOut",
+          hoverDuration: 1.4,
+        },
+        origin: "17px 28px",
+      },
+    ],
+  },
+  donut: {
+    accent: "#f472b6",
+    filter:
+      "drop-shadow(0 1px 1.5px rgba(15,23,42,0.35)) drop-shadow(0 0 6px rgba(244,114,182,0.4))",
+    nodes: [
+      {
+        tag: "defs",
+        attrs: {},
+        children: [
+          {
+            tag: "radialGradient",
+            attrs: { id: "dough", cx: "50%", cy: "50%", r: "50%" },
+            children: [
+              { tag: "stop", attrs: { offset: 0.3, stopColor: "#92400e" } },
+              { tag: "stop", attrs: { offset: 0.45, stopColor: "#fcd34d" } },
+              { tag: "stop", attrs: { offset: 0.8, stopColor: "#d97706" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#92400e" } },
+            ],
+          },
+          {
+            tag: "radialGradient",
+            attrs: { id: "icing", cx: "42%", cy: "38%", r: "65%" },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#fdf2f8" } },
+              { tag: "stop", attrs: { offset: 0.5, stopColor: "#f9a8d4" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#db2777" } },
+            ],
+          },
+        ],
+      },
+      {
+        tag: "g",
+        attrs: {},
+        children: [
+          {
+            tag: "g",
+            attrs: {},
+            children: [
+              {
+                tag: "path",
+                attrs: {
+                  d: "M4 17 a13 13 0 1 0 26 0 a13 13 0 1 0 -26 0 Z M12.6 17 a4.4 4.4 0 1 0 8.8 0 a4.4 4.4 0 1 0 -8.8 0 Z",
+                  fill: "url(#dough)",
+                  fillRule: "evenodd",
+                  stroke: "#78350f",
+                  strokeWidth: 0.6,
+                },
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M27.6 17 L27.78 17.42 L27.92 17.86 L27.99 18.3 L27.96 18.74 L27.85 19.16 L27.65 19.56 L27.39 19.93 L27.08 20.28 L26.77 20.6 L26.47 20.92 L26.21 21.24 L26 21.59 L25.85 21.95 L25.74 22.35 L25.65 22.78 L25.58 23.23 L25.48 23.68 L25.34 24.13 L25.17 24.56 L24.99 24.99 L24.81 25.45 L24.64 25.94 L24.43 26.42 L24.09 26.76 L23.59 26.86 L22.96 26.73 L22.33 26.51 L21.77 26.36 L21.32 26.37 L20.94 26.52 L20.61 26.78 L20.28 27.09 L19.93 27.39 L19.56 27.65 L19.16 27.85 L18.74 27.96 L18.3 27.99 L17.86 27.92 L17.42 27.78 L17 27.6 L16.59 27.4 L16.2 27.21 L15.81 27.07 L15.42 26.98 L15.02 26.94 L14.61 26.96 L14.17 27.02 L13.72 27.09 L13.26 27.14 L12.78 27.18 L12.3 27.21 L11.78 27.25 L11.22 27.32 L10.67 27.34 L10.2 27.18 L9.91 26.76 L9.81 26.12 L9.82 25.41 L9.82 24.77 L9.72 24.28 L9.5 23.93 L9.19 23.67 L8.82 23.45 L8.42 23.23 L8.03 23 L7.66 22.72 L7.35 22.41 L7.11 22.04 L6.95 21.63 L6.88 21.19 L6.88 20.74 L6.92 20.28 L6.98 19.83 L7.04 19.39 L7.06 18.98 L7.02 18.58 L6.93 18.19 L6.79 17.8 L6.6 17.41 L6.4 17 L6.21 16.58 L6.07 16.14 L5.97 15.69 L5.91 15.24 L5.84 14.78 L5.73 14.3 L5.62 13.79 L5.6 13.3 L5.83 12.88 L6.31 12.57 L6.93 12.36 L7.51 12.16 L7.93 11.92 L8.18 11.59 L8.32 11.2 L8.42 10.76 L8.52 10.32 L8.67 9.89 L8.88 9.49 L9.15 9.15 L9.49 8.88 L9.89 8.67 L10.32 8.53 L10.77 8.42 L11.22 8.35 L11.65 8.26 L12.05 8.15 L12.41 8 L12.76 7.79 L13.08 7.53 L13.4 7.23 L13.72 6.92 L14.07 6.61 L14.44 6.35 L14.84 6.15 L15.26 6.04 L15.7 6.01 L16.14 6.08 L16.58 6.22 L17 6.4 L17.41 6.6 L17.8 6.79 L18.19 6.93 L18.58 7.02 L18.98 7.06 L19.39 7.03 L19.83 6.96 L20.3 6.84 L20.81 6.67 L21.37 6.44 L21.99 6.18 L22.61 6 L23.13 6.05 L23.47 6.44 L23.62 7.09 L23.65 7.84 L23.68 8.53 L23.76 9.09 L23.92 9.52 L24.15 9.85 L24.45 10.12 L24.79 10.35 L25.17 10.56 L25.58 10.77 L25.97 11 L26.34 11.28 L26.65 11.59 L26.89 11.96 L27.05 12.37 L27.12 12.81 L27.12 13.26 L27.08 13.72 L27.02 14.17 L26.96 14.61 L26.94 15.02 L26.98 15.42 L27.07 15.81 L27.21 16.2 L27.4 16.59 Z M11.8 17 a5.2 5.2 0 1 0 10.4 0 a5.2 5.2 0 1 0 -10.4 0 Z",
+                  fill: "url(#icing)",
+                  fillRule: "evenodd",
+                  stroke: "#be185d",
+                  strokeWidth: 0.5,
+                  strokeLinejoin: "round",
+                },
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M24.74 16.29 L25.68 17.71 M19.11 25.25 L18.63 26.87 M25.31 14.77 L23.69 15.29 M25.78 13.39 L26.54 14.91",
+                  stroke: "#fde047",
+                  strokeWidth: 0.75,
+                  strokeLinecap: "round",
+                },
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M26.07 18.89 L26.55 20.53 M8.53 13.64 L9.79 14.78 M26.82 17.6 L25.42 18.56 M22.07 11.57 L21.23 13.05",
+                  stroke: "#22d3ee",
+                  strokeWidth: 0.75,
+                  strokeLinecap: "round",
+                },
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M8.7 15.24 L8.84 16.94 M12.79 25.82 L14.49 25.88 M23.51 14.18 L24.99 15.04 M25.63 13.69 L24.73 15.13",
+                  stroke: "#a3e635",
+                  strokeWidth: 0.75,
+                  strokeLinecap: "round",
+                },
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M16.07 23.57 L15.01 24.91 M20.56 24.46 L19.5 25.8 M20.64 6.84 L19.5 8.1 M7.17 15.6 L7.53 17.26",
+                  stroke: "#ffffff",
+                  strokeWidth: 0.75,
+                  strokeLinecap: "round",
+                },
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M22.29 22.34 L21.83 23.98 M25.75 17.38 L24.15 17.98 M26.3 16.16 L26.66 17.82",
+                  stroke: "#a78bfa",
+                  strokeWidth: 0.75,
+                  strokeLinecap: "round",
+                },
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M19.88 9.71 L21.52 10.15 M10.41 15.24 L9.83 16.84 M15.87 25.75 L17.57 25.87",
+                  stroke: "#fb923c",
+                  strokeWidth: 0.75,
+                  strokeLinecap: "round",
+                },
+              },
+            ],
+            loop: {
+              values: { rotate: [0, 360] },
+              duration: 14,
+              ease: "linear",
+              hoverDuration: 3,
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M8.8 12.4 A9.6 9.6 0 0 1 14.6 7.6",
+              stroke: "#ffffff",
+              strokeWidth: 1.3,
+              strokeLinecap: "round",
+              opacity: 0.7,
+            },
+          },
+          {
+            tag: "circle",
+            attrs: {
+              cx: 17,
+              cy: 17,
+              r: 4.4,
+              stroke: "#78350f",
+              strokeWidth: 0.6,
+              opacity: 0.6,
+            },
+          },
+        ],
+        hover: { scale: 1.08 },
+        origin: "17px 17px",
+      },
+    ],
+  },
+  boba: {
+    accent: "#f472b6",
+    filter:
+      "drop-shadow(0 1px 1.5px rgba(15,23,42,0.35)) drop-shadow(0 0 6px rgba(244,114,182,0.35))",
+    nodes: [
+      {
+        tag: "defs",
+        attrs: {},
+        children: [
+          {
+            tag: "linearGradient",
+            attrs: { id: "tea", x1: 0, y1: 0, x2: 0, y2: 1 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#fde7c8" } },
+              { tag: "stop", attrs: { offset: 0.5, stopColor: "#e7b98a" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#c08552" } },
+            ],
+          },
+          {
+            tag: "radialGradient",
+            attrs: { id: "pearl", cx: "40%", cy: "35%", r: "70%" },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#78716c" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#1c1917" } },
+            ],
+          },
+          {
+            tag: "linearGradient",
+            attrs: { id: "lid", x1: 0, y1: 0, x2: 0, y2: 1 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#ffffff" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#cbd5e1" } },
+            ],
+          },
+          {
+            tag: "clipPath",
+            attrs: { id: "cup" },
+            children: [
+              {
+                tag: "path",
+                attrs: {
+                  d: "M8.6 9.8 H25.4 L23.4 30 C23.3 30.8 22.7 31.4 21.9 31.4 H12.1 C11.3 31.4 10.7 30.8 10.6 30 Z",
+                },
+              },
+            ],
+          },
+        ],
+      },
+      {
+        tag: "line",
+        attrs: {
+          x1: 22.6,
+          y1: 1.6,
+          x2: 18.4,
+          y2: 27,
+          stroke: "#be185d",
+          strokeWidth: 3,
+          strokeLinecap: "round",
+        },
+      },
+      {
+        tag: "line",
+        attrs: {
+          x1: 22.6,
+          y1: 1.6,
+          x2: 18.4,
+          y2: 27,
+          stroke: "#f472b6",
+          strokeWidth: 2.2,
+          strokeLinecap: "round",
+        },
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M8.6 9.8 H25.4 L23.4 30 C23.3 30.8 22.7 31.4 21.9 31.4 H12.1 C11.3 31.4 10.7 30.8 10.6 30 Z",
+          fill: "url(#tea)",
+          opacity: 0.94,
+        },
+      },
+      {
+        tag: "g",
+        attrs: { clipPath: "url(#cup)" },
+        children: [
+          {
+            tag: "g",
+            attrs: {},
+            children: [
+              {
+                tag: "circle",
+                attrs: { cx: 13.4, cy: 29.4, r: 1.25, fill: "url(#pearl)" },
+              },
+              {
+                tag: "circle",
+                attrs: {
+                  cx: 13,
+                  cy: 28.95,
+                  r: 0.32,
+                  fill: "#ffffff",
+                  opacity: 0.8,
+                },
+              },
+            ],
+            loop: {
+              values: { y: [0, -0.7, 0] },
+              duration: 1.6,
+              ease: "easeInOut",
+              hoverValues: { y: [0, -2.4, 0] },
+              hoverDuration: 0.6,
+            },
+          },
+          {
+            tag: "g",
+            attrs: {},
+            children: [
+              {
+                tag: "circle",
+                attrs: { cx: 16, cy: 29.4, r: 1.25, fill: "url(#pearl)" },
+              },
+              {
+                tag: "circle",
+                attrs: {
+                  cx: 15.6,
+                  cy: 28.95,
+                  r: 0.32,
+                  fill: "#ffffff",
+                  opacity: 0.8,
+                },
+              },
+            ],
+            loop: {
+              values: { y: [0, -0.7, 0] },
+              duration: 1.6,
+              ease: "easeInOut",
+              delay: 0.1,
+              hoverValues: { y: [0, -2.4, 0] },
+              hoverDuration: 0.6,
+            },
+          },
+          {
+            tag: "g",
+            attrs: {},
+            children: [
+              {
+                tag: "circle",
+                attrs: { cx: 18.6, cy: 29.4, r: 1.25, fill: "url(#pearl)" },
+              },
+              {
+                tag: "circle",
+                attrs: {
+                  cx: 18.2,
+                  cy: 28.95,
+                  r: 0.32,
+                  fill: "#ffffff",
+                  opacity: 0.8,
+                },
+              },
+            ],
+            loop: {
+              values: { y: [0, -0.7, 0] },
+              duration: 1.6,
+              ease: "easeInOut",
+              delay: 0.2,
+              hoverValues: { y: [0, -2.4, 0] },
+              hoverDuration: 0.6,
+            },
+          },
+          {
+            tag: "g",
+            attrs: {},
+            children: [
+              {
+                tag: "circle",
+                attrs: { cx: 21.2, cy: 29.4, r: 1.25, fill: "url(#pearl)" },
+              },
+              {
+                tag: "circle",
+                attrs: {
+                  cx: 20.8,
+                  cy: 28.95,
+                  r: 0.32,
+                  fill: "#ffffff",
+                  opacity: 0.8,
+                },
+              },
+            ],
+            loop: {
+              values: { y: [0, -0.7, 0] },
+              duration: 1.6,
+              ease: "easeInOut",
+              delay: 0.3,
+              hoverValues: { y: [0, -2.4, 0] },
+              hoverDuration: 0.6,
+            },
+          },
+          {
+            tag: "g",
+            attrs: {},
+            children: [
+              {
+                tag: "circle",
+                attrs: { cx: 12.8, cy: 27, r: 1.25, fill: "url(#pearl)" },
+              },
+              {
+                tag: "circle",
+                attrs: {
+                  cx: 12.4,
+                  cy: 26.55,
+                  r: 0.32,
+                  fill: "#ffffff",
+                  opacity: 0.8,
+                },
+              },
+            ],
+            loop: {
+              values: { y: [0, -0.7, 0] },
+              duration: 1.6,
+              ease: "easeInOut",
+              delay: 0.2,
+              hoverValues: { y: [0, -2.4, 0] },
+              hoverDuration: 0.6,
+            },
+          },
+          {
+            tag: "g",
+            attrs: {},
+            children: [
+              {
+                tag: "circle",
+                attrs: { cx: 15.4, cy: 27, r: 1.25, fill: "url(#pearl)" },
+              },
+              {
+                tag: "circle",
+                attrs: {
+                  cx: 15,
+                  cy: 26.55,
+                  r: 0.32,
+                  fill: "#ffffff",
+                  opacity: 0.8,
+                },
+              },
+            ],
+            loop: {
+              values: { y: [0, -0.7, 0] },
+              duration: 1.6,
+              ease: "easeInOut",
+              delay: 0.3,
+              hoverValues: { y: [0, -2.4, 0] },
+              hoverDuration: 0.6,
+            },
+          },
+          {
+            tag: "g",
+            attrs: {},
+            children: [
+              {
+                tag: "circle",
+                attrs: { cx: 18, cy: 27, r: 1.25, fill: "url(#pearl)" },
+              },
+              {
+                tag: "circle",
+                attrs: {
+                  cx: 17.6,
+                  cy: 26.55,
+                  r: 0.32,
+                  fill: "#ffffff",
+                  opacity: 0.8,
+                },
+              },
+            ],
+            loop: {
+              values: { y: [0, -0.7, 0] },
+              duration: 1.6,
+              ease: "easeInOut",
+              delay: 0.4,
+              hoverValues: { y: [0, -2.4, 0] },
+              hoverDuration: 0.6,
+            },
+          },
+          {
+            tag: "g",
+            attrs: {},
+            children: [
+              {
+                tag: "circle",
+                attrs: { cx: 20.6, cy: 27, r: 1.25, fill: "url(#pearl)" },
+              },
+              {
+                tag: "circle",
+                attrs: {
+                  cx: 20.2,
+                  cy: 26.55,
+                  r: 0.32,
+                  fill: "#ffffff",
+                  opacity: 0.8,
+                },
+              },
+            ],
+            loop: {
+              values: { y: [0, -0.7, 0] },
+              duration: 1.6,
+              ease: "easeInOut",
+              delay: 0.5,
+              hoverValues: { y: [0, -2.4, 0] },
+              hoverDuration: 0.6,
+            },
+          },
+          {
+            tag: "g",
+            attrs: {},
+            children: [
+              {
+                tag: "circle",
+                attrs: { cx: 14.2, cy: 24.8, r: 1.25, fill: "url(#pearl)" },
+              },
+              {
+                tag: "circle",
+                attrs: {
+                  cx: 13.8,
+                  cy: 24.35,
+                  r: 0.32,
+                  fill: "#ffffff",
+                  opacity: 0.8,
+                },
+              },
+            ],
+            loop: {
+              values: { y: [0, -0.7, 0] },
+              duration: 1.6,
+              ease: "easeInOut",
+              delay: 0.4,
+              hoverValues: { y: [0, -2.4, 0] },
+              hoverDuration: 0.6,
+            },
+          },
+          {
+            tag: "g",
+            attrs: {},
+            children: [
+              {
+                tag: "circle",
+                attrs: { cx: 16.8, cy: 24.8, r: 1.25, fill: "url(#pearl)" },
+              },
+              {
+                tag: "circle",
+                attrs: {
+                  cx: 16.4,
+                  cy: 24.35,
+                  r: 0.32,
+                  fill: "#ffffff",
+                  opacity: 0.8,
+                },
+              },
+            ],
+            loop: {
+              values: { y: [0, -0.7, 0] },
+              duration: 1.6,
+              ease: "easeInOut",
+              delay: 0.5,
+              hoverValues: { y: [0, -2.4, 0] },
+              hoverDuration: 0.6,
+            },
+          },
+          {
+            tag: "g",
+            attrs: {},
+            children: [
+              {
+                tag: "circle",
+                attrs: { cx: 19.4, cy: 24.8, r: 1.25, fill: "url(#pearl)" },
+              },
+              {
+                tag: "circle",
+                attrs: {
+                  cx: 19,
+                  cy: 24.35,
+                  r: 0.32,
+                  fill: "#ffffff",
+                  opacity: 0.8,
+                },
+              },
+            ],
+            loop: {
+              values: { y: [0, -0.7, 0] },
+              duration: 1.6,
+              ease: "easeInOut",
+              delay: 0.6,
+              hoverValues: { y: [0, -2.4, 0] },
+              hoverDuration: 0.6,
+            },
+          },
+          {
+            tag: "circle",
+            attrs: { cx: 18.6, cy: 25.4, r: 1.2, fill: "url(#pearl)" },
+            loop: {
+              values: { x: [0, 0, 0], y: [0, 0, 0], opacity: [0, 0, 0] },
+              duration: 0.9,
+              ease: "linear",
+              hoverValues: {
+                x: [0, 2.6, 3.4],
+                y: [0, -15, -20],
+                opacity: [1, 1, 0],
+              },
+              hoverDuration: 0.9,
+            },
+          },
+        ],
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M8.6 9.8 H25.4 L23.4 30 C23.3 30.8 22.7 31.4 21.9 31.4 H12.1 C11.3 31.4 10.7 30.8 10.6 30 Z",
+          stroke: "#94a3b8",
+          strokeWidth: 0.6,
+          strokeLinejoin: "round",
+        },
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M10.6 12 L12.1 28.6",
+          stroke: "#ffffff",
+          strokeWidth: 0.8,
+          strokeLinecap: "round",
+          opacity: 0.55,
+        },
+      },
+      {
+        tag: "circle",
+        attrs: { cx: 14.6, cy: 17.4, r: 0.75, fill: "#451a03" },
+      },
+      {
+        tag: "circle",
+        attrs: { cx: 19.4, cy: 17.4, r: 0.75, fill: "#451a03" },
+      },
+      {
+        tag: "circle",
+        attrs: { cx: 14.85, cy: 17.15, r: 0.25, fill: "#ffffff" },
+      },
+      {
+        tag: "circle",
+        attrs: { cx: 19.65, cy: 17.15, r: 0.25, fill: "#ffffff" },
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M16.2 18.6 Q17 19.4 17.8 18.6",
+          stroke: "#451a03",
+          strokeWidth: 0.5,
+          strokeLinecap: "round",
+        },
+      },
+      {
+        tag: "ellipse",
+        attrs: {
+          cx: 13.4,
+          cy: 18.8,
+          rx: 0.9,
+          ry: 0.5,
+          fill: "#fb7185",
+          opacity: 0.7,
+        },
+      },
+      {
+        tag: "ellipse",
+        attrs: {
+          cx: 20.6,
+          cy: 18.8,
+          rx: 0.9,
+          ry: 0.5,
+          fill: "#fb7185",
+          opacity: 0.7,
+        },
+      },
+      {
+        tag: "rect",
+        attrs: {
+          x: 7.8,
+          y: 8.4,
+          width: 18.4,
+          height: 2.2,
+          rx: 1.1,
+          fill: "url(#lid)",
+          stroke: "#64748b",
+          strokeWidth: 0.5,
+        },
+      },
+      {
+        tag: "line",
+        attrs: {
+          x1: 22.6,
+          y1: 1.6,
+          x2: 21.3,
+          y2: 9.4,
+          stroke: "#be185d",
+          strokeWidth: 3,
+          strokeLinecap: "round",
+        },
+      },
+      {
+        tag: "line",
+        attrs: {
+          x1: 22.6,
+          y1: 1.6,
+          x2: 21.3,
+          y2: 9.4,
+          stroke: "#f472b6",
+          strokeWidth: 2.2,
+          strokeLinecap: "round",
+        },
+      },
+      {
+        tag: "line",
+        attrs: {
+          x1: 22.3,
+          y1: 2.4,
+          x2: 21.4,
+          y2: 7.8,
+          stroke: "#fbcfe8",
+          strokeWidth: 0.6,
+          strokeLinecap: "round",
+        },
+      },
+    ],
+  },
+  astronaut: {
+    accent: "#818cf8",
+    filter:
+      "drop-shadow(0 1px 1.5px rgba(15,23,42,0.35)) drop-shadow(0 0 6px rgba(129,140,248,0.45))",
+    nodes: [
+      {
+        tag: "defs",
+        attrs: {},
+        children: [
+          {
+            tag: "linearGradient",
+            attrs: { id: "suit", x1: 0, y1: 0, x2: 1, y2: 1 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#ffffff" } },
+              { tag: "stop", attrs: { offset: 0.6, stopColor: "#e2e8f0" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#94a3b8" } },
+            ],
+          },
+          {
+            tag: "linearGradient",
+            attrs: { id: "visor", x1: 0, y1: 0, x2: 1, y2: 1 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#4338ca" } },
+              { tag: "stop", attrs: { offset: 0.5, stopColor: "#1e1b4b" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#7c3aed" } },
+            ],
+          },
+        ],
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M4.4 4.4 Q4.4 6 6 6 Q4.4 6 4.4 7.6 Q4.4 6 2.8 6 Q4.4 6 4.4 4.4 Z",
+          fill: "#fde68a",
+        },
+        loop: {
+          values: { opacity: [0.15, 1, 0.15], scale: [0.6, 1, 0.6] },
+          duration: 2,
+          ease: "easeInOut",
+          static: { opacity: 1, scale: 1 },
+        },
+        origin: "4.4px 6px",
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M29.6 23.7 Q29.6 25 30.9 25 Q29.6 25 29.6 26.3 Q29.6 25 28.3 25 Q29.6 25 29.6 23.7 Z",
+          fill: "#fde68a",
+        },
+        loop: {
+          values: { opacity: [0.15, 1, 0.15], scale: [0.6, 1, 0.6] },
+          duration: 2,
+          ease: "easeInOut",
+          delay: 0.9,
+          static: { opacity: 1, scale: 1 },
+        },
+        origin: "29.6px 25px",
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M28.8 4.2 Q28.8 5.2 29.8 5.2 Q28.8 5.2 28.8 6.2 Q28.8 5.2 27.8 5.2 Q28.8 5.2 28.8 4.2 Z",
+          fill: "#c7d2fe",
+        },
+        loop: {
+          values: { opacity: [0.15, 1, 0.15], scale: [0.6, 1, 0.6] },
+          duration: 2,
+          ease: "easeInOut",
+          delay: 1.5,
+          static: { opacity: 1, scale: 1 },
+        },
+        origin: "28.8px 5.2px",
+      },
+      {
+        tag: "g",
+        attrs: {},
+        children: [
+          {
+            tag: "rect",
+            attrs: {
+              x: 10.4,
+              y: 16.4,
+              width: 13.2,
+              height: 9.6,
+              rx: 2.4,
+              fill: "#cbd5e1",
+              stroke: "#475569",
+              strokeWidth: 0.5,
+            },
+          },
+          {
+            tag: "rect",
+            attrs: {
+              x: 12.6,
+              y: 24.4,
+              width: 3.6,
+              height: 5.4,
+              rx: 1.6,
+              fill: "url(#suit)",
+              stroke: "#475569",
+              strokeWidth: 0.5,
+            },
+          },
+          {
+            tag: "rect",
+            attrs: {
+              x: 17.8,
+              y: 24.4,
+              width: 3.6,
+              height: 5.4,
+              rx: 1.6,
+              fill: "url(#suit)",
+              stroke: "#475569",
+              strokeWidth: 0.5,
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M12.6 28.4 H16.2 M17.8 28.4 H21.4",
+              stroke: "#818cf8",
+              strokeWidth: 0.9,
+            },
+          },
+          {
+            tag: "rect",
+            attrs: {
+              x: 11.4,
+              y: 17.4,
+              width: 11.2,
+              height: 8.4,
+              rx: 3.6,
+              fill: "url(#suit)",
+              stroke: "#475569",
+              strokeWidth: 0.5,
+            },
+          },
+          {
+            tag: "rect",
+            attrs: {
+              x: 14.6,
+              y: 19.8,
+              width: 4.8,
+              height: 3,
+              rx: 0.6,
+              fill: "#e2e8f0",
+              stroke: "#64748b",
+              strokeWidth: 0.35,
+            },
+          },
+          {
+            tag: "circle",
+            attrs: { cx: 15.6, cy: 21.3, r: 0.5, fill: "#ef4444" },
+          },
+          {
+            tag: "circle",
+            attrs: { cx: 17, cy: 21.3, r: 0.5, fill: "#22c55e" },
+          },
+          {
+            tag: "circle",
+            attrs: { cx: 18.4, cy: 21.3, r: 0.5, fill: "#3b82f6" },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M11.6 19 C9.4 19.6 8 21.4 8.2 23.4",
+              stroke: "#475569",
+              strokeWidth: 3.2,
+              strokeLinecap: "round",
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M11.6 19 C9.4 19.6 8 21.4 8.2 23.4",
+              stroke: "url(#suit)",
+              strokeWidth: 2.4,
+              strokeLinecap: "round",
+            },
+          },
+          {
+            tag: "g",
+            attrs: {},
+            children: [
+              {
+                tag: "path",
+                attrs: {
+                  d: "M22.4 19 C24.6 18.4 25.8 16.6 25.8 14.4",
+                  stroke: "#475569",
+                  strokeWidth: 3.2,
+                  strokeLinecap: "round",
+                },
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M22.4 19 C24.6 18.4 25.8 16.6 25.8 14.4",
+                  stroke: "url(#suit)",
+                  strokeWidth: 2.4,
+                  strokeLinecap: "round",
+                },
+              },
+              {
+                tag: "circle",
+                attrs: {
+                  cx: 25.8,
+                  cy: 13.8,
+                  r: 1.3,
+                  fill: "#818cf8",
+                  stroke: "#3730a3",
+                  strokeWidth: 0.4,
+                },
+              },
+            ],
+            loop: {
+              values: { rotate: [0, 0, 0] },
+              duration: 0.5,
+              ease: "easeInOut",
+              hoverValues: { rotate: [0, -24, 0] },
+              hoverDuration: 0.5,
+            },
+            origin: "22.4px 19px",
+          },
+          {
+            tag: "circle",
+            attrs: {
+              cx: 17,
+              cy: 11.8,
+              r: 7.6,
+              fill: "url(#suit)",
+              stroke: "#475569",
+              strokeWidth: 0.6,
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M11.8 12.2 C11.8 9 14 7.2 17 7.2 C20 7.2 22.2 9 22.2 12.2 C22.2 15 20.2 16.4 17 16.4 C13.8 16.4 11.8 15 11.8 12.2 Z",
+              fill: "url(#visor)",
+              stroke: "#1e1b4b",
+              strokeWidth: 0.5,
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M13.6 10.6 C14.2 9 15.6 8.4 17 8.4",
+              stroke: "#ffffff",
+              strokeWidth: 1,
+              strokeLinecap: "round",
+              opacity: 0.75,
+            },
+          },
+          {
+            tag: "circle",
+            attrs: {
+              cx: 19.6,
+              cy: 13.8,
+              r: 0.4,
+              fill: "#ffffff",
+              opacity: 0.8,
+            },
+          },
+          {
+            tag: "circle",
+            attrs: {
+              cx: 20.8,
+              cy: 12.4,
+              r: 0.25,
+              fill: "#ffffff",
+              opacity: 0.7,
+            },
+          },
+          {
+            tag: "line",
+            attrs: {
+              x1: 21.8,
+              y1: 6.4,
+              x2: 23.6,
+              y2: 3.4,
+              stroke: "#64748b",
+              strokeWidth: 0.6,
+              strokeLinecap: "round",
+            },
+          },
+          {
+            tag: "circle",
+            attrs: { cx: 23.8, cy: 3, r: 0.9, fill: "#f43f5e" },
+            loop: {
+              values: { opacity: [1, 0.25, 1] },
+              duration: 1.2,
+              ease: "easeInOut",
+              hoverDuration: 0.5,
+            },
+          },
+        ],
+        loop: {
+          values: { rotate: [-8, 8, -8], y: [0, -1.4, 0] },
+          duration: 4,
+          ease: "easeInOut",
+          hoverDuration: 2,
+        },
+        origin: "17px 17px",
+      },
+    ],
+  },
+  "soap-bubble": {
+    accent: "#22d3ee",
+    filter:
+      "drop-shadow(0 0 0.6px rgba(15,23,42,0.45)) drop-shadow(0 0 6px rgba(34,211,238,0.4))",
+    nodes: [
+      {
+        tag: "defs",
+        attrs: {},
+        children: [
+          {
+            tag: "radialGradient",
+            attrs: { id: "film", cx: "45%", cy: "40%", r: "60%" },
+            children: [
+              {
+                tag: "stop",
+                attrs: { offset: 0, stopColor: "#ffffff", stopOpacity: 0.04 },
+              },
+              {
+                tag: "stop",
+                attrs: {
+                  offset: 0.75,
+                  stopColor: "#e0f2fe",
+                  stopOpacity: 0.12,
+                },
+              },
+              {
+                tag: "stop",
+                attrs: { offset: 1, stopColor: "#bae6fd", stopOpacity: 0.45 },
+              },
+            ],
+          },
+        ],
+      },
+      {
+        tag: "g",
+        attrs: {},
+        children: [
+          {
+            tag: "circle",
+            attrs: {
+              cx: 28.4,
+              cy: 26,
+              r: 2,
+              fill: "#e0f2fe",
+              fillOpacity: 0.15,
+              stroke: "#7dd3fc",
+              strokeWidth: 0.45,
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M27.27 25.59 A1.2 1.2 0 0 1 27.99 24.87",
+              stroke: "#ffffff",
+              strokeWidth: 0.4,
+              strokeLinecap: "round",
+            },
+          },
+        ],
+        loop: {
+          values: { y: [0, -5, -10], opacity: [0, 1, 0] },
+          duration: 3,
+          ease: "linear",
+          delay: 0.6,
+          static: { y: -3, opacity: 1 },
+          hoverDuration: 1.6,
+        },
+        origin: "28.4px 26px",
+      },
+      {
+        tag: "g",
+        attrs: {},
+        children: [
+          {
+            tag: "circle",
+            attrs: {
+              cx: 6.4,
+              cy: 25,
+              r: 1.3,
+              fill: "#e0f2fe",
+              fillOpacity: 0.15,
+              stroke: "#7dd3fc",
+              strokeWidth: 0.45,
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M5.67 24.73 A0.78 0.78 0 0 1 6.13 24.27",
+              stroke: "#ffffff",
+              strokeWidth: 0.4,
+              strokeLinecap: "round",
+            },
+          },
+        ],
+        loop: {
+          values: { y: [0, -5, -10], opacity: [0, 1, 0] },
+          duration: 3,
+          ease: "linear",
+          delay: 1.8,
+          static: { y: -3, opacity: 1 },
+          hoverDuration: 1.6,
+        },
+        origin: "6.4px 25px",
+      },
+      {
+        tag: "g",
+        attrs: {},
+        children: [
+          {
+            tag: "circle",
+            attrs: { cx: 17, cy: 16, r: 11, fill: "url(#film)" },
+          },
+          {
+            tag: "g",
+            attrs: {},
+            children: [
+              {
+                tag: "path",
+                attrs: {
+                  d: "M7.51 12.55 A10.1 10.1 0 0 1 17.88 5.94",
+                  stroke: "#f472b6",
+                  strokeWidth: 2.2,
+                  strokeLinecap: "round",
+                  opacity: 0.4,
+                },
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M7.64 11.02 A10.6 10.6 0 0 1 16.45 5.41",
+                  stroke: "#f472b6",
+                  strokeWidth: 0.8,
+                  strokeLinecap: "round",
+                  opacity: 0.85,
+                },
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M19.61 6.24 A10.1 10.1 0 0 1 27.06 15.12",
+                  stroke: "#22d3ee",
+                  strokeWidth: 2.2,
+                  strokeLinecap: "round",
+                  opacity: 0.4,
+                },
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M21.14 6.24 A10.6 10.6 0 0 1 27.33 13.62",
+                  stroke: "#22d3ee",
+                  strokeWidth: 0.8,
+                  strokeLinecap: "round",
+                  opacity: 0.85,
+                },
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M26.95 17.75 A10.1 10.1 0 0 1 18.75 25.95",
+                  stroke: "#fde047",
+                  strokeWidth: 2.2,
+                  strokeLinecap: "round",
+                  opacity: 0.4,
+                },
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M27.08 19.28 A10.6 10.6 0 0 1 20.28 26.08",
+                  stroke: "#fde047",
+                  strokeWidth: 0.8,
+                  strokeLinecap: "round",
+                  opacity: 0.85,
+                },
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M16.12 26.06 A10.1 10.1 0 0 1 6.94 16.88",
+                  stroke: "#a78bfa",
+                  strokeWidth: 2.2,
+                  strokeLinecap: "round",
+                  opacity: 0.4,
+                },
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M14.62 26.33 A10.6 10.6 0 0 1 6.67 18.38",
+                  stroke: "#a78bfa",
+                  strokeWidth: 0.8,
+                  strokeLinecap: "round",
+                  opacity: 0.85,
+                },
+              },
+            ],
+            loop: {
+              values: { rotate: [0, 360] },
+              duration: 6,
+              ease: "linear",
+              hoverDuration: 1.8,
+            },
+            origin: "17px 16px",
+          },
+          {
+            tag: "circle",
+            attrs: {
+              cx: 17,
+              cy: 16,
+              r: 11,
+              stroke: "#bae6fd",
+              strokeWidth: 0.6,
+              opacity: 0.9,
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M10.4 11.6 C11.2 9.2 13.2 7.6 15.6 7.2",
+              stroke: "#ffffff",
+              strokeWidth: 1.6,
+              strokeLinecap: "round",
+              opacity: 0.95,
+            },
+          },
+          {
+            tag: "circle",
+            attrs: {
+              cx: 10.2,
+              cy: 13.8,
+              r: 0.6,
+              fill: "#ffffff",
+              opacity: 0.9,
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M24.89 18.87 A8.4 8.4 0 0 1 19.87 23.89",
+              stroke: "#ffffff",
+              strokeWidth: 0.8,
+              strokeLinecap: "round",
+              opacity: 0.55,
+            },
+          },
+        ],
+        loop: {
+          values: { scaleX: [1, 1.05, 0.97, 1], scaleY: [1, 0.95, 1.03, 1] },
+          duration: 2.4,
+          ease: "easeInOut",
+          hoverValues: { scaleX: [1, 1.1, 0.93, 1], scaleY: [1, 0.9, 1.07, 1] },
+          hoverDuration: 0.8,
+        },
+        origin: "17px 16px",
+      },
+    ],
+  },
+  "crystal-ball": {
+    accent: "#a855f7",
+    filter:
+      "drop-shadow(0 1px 1.5px rgba(15,23,42,0.35)) drop-shadow(0 0 6px rgba(168,85,247,0.55))",
+    nodes: [
+      {
+        tag: "defs",
+        attrs: {},
+        children: [
+          {
+            tag: "radialGradient",
+            attrs: { id: "orb", cx: "40%", cy: "35%", r: "70%" },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#ede9fe" } },
+              { tag: "stop", attrs: { offset: 0.45, stopColor: "#7c3aed" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#1e1b4b" } },
+            ],
+          },
+          {
+            tag: "radialGradient",
+            attrs: { id: "aura", cx: "50%", cy: "50%", r: "50%" },
+            children: [
+              {
+                tag: "stop",
+                attrs: { offset: 0.6, stopColor: "#c084fc", stopOpacity: 0.45 },
+              },
+              {
+                tag: "stop",
+                attrs: { offset: 1, stopColor: "#c084fc", stopOpacity: 0 },
+              },
+            ],
+          },
+          {
+            tag: "linearGradient",
+            attrs: { id: "gold", x1: 0, y1: 0, x2: 1, y2: 1 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#fef3c7" } },
+              { tag: "stop", attrs: { offset: 0.45, stopColor: "#f59e0b" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#78350f" } },
+            ],
+          },
+          {
+            tag: "clipPath",
+            attrs: { id: "orbClip" },
+            children: [{ tag: "circle", attrs: { cx: 17, cy: 14, r: 10 } }],
+          },
+        ],
+      },
+      {
+        tag: "circle",
+        attrs: { cx: 17, cy: 14, r: 13, fill: "url(#aura)" },
+        loop: {
+          values: { scale: [0.92, 1.06, 0.92], opacity: [0.6, 1, 0.6] },
+          duration: 2.6,
+          ease: "easeInOut",
+          hoverDuration: 1,
+        },
+        origin: "17px 14px",
+      },
+      { tag: "circle", attrs: { cx: 17, cy: 14, r: 10, fill: "url(#orb)" } },
+      {
+        tag: "g",
+        attrs: { clipPath: "url(#orbClip)" },
+        children: [
+          {
+            tag: "g",
+            attrs: {},
+            children: [
+              {
+                tag: "ellipse",
+                attrs: {
+                  cx: 13,
+                  cy: 11.6,
+                  rx: 6,
+                  ry: 3.2,
+                  fill: "#c084fc",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "ellipse",
+                attrs: {
+                  cx: 21.4,
+                  cy: 17,
+                  rx: 5,
+                  ry: 2.6,
+                  fill: "#22d3ee",
+                  opacity: 0.4,
+                },
+              },
+              {
+                tag: "ellipse",
+                attrs: {
+                  cx: 15.4,
+                  cy: 19,
+                  rx: 4,
+                  ry: 2,
+                  fill: "#f0abfc",
+                  opacity: 0.45,
+                },
+              },
+            ],
+            loop: {
+              values: { rotate: [0, 360] },
+              duration: 8,
+              ease: "linear",
+              hoverDuration: 2.4,
+            },
+            origin: "17px 14px",
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M17.5 14 L17.59 14.09 L17.67 14.22 L17.72 14.37 L17.73 14.53 L17.71 14.71 L17.65 14.9 L17.55 15.08 L17.41 15.25 L17.22 15.4 L17 15.52 L16.75 15.6 L16.47 15.63 L16.17 15.62 L15.87 15.55 L15.57 15.43 L15.28 15.25 L15.02 15.01 L14.79 14.72 L14.6 14.38 L14.47 14 L14.4 13.59 L14.4 13.16 L14.47 12.71 L14.62 12.27 L14.85 11.85 L15.15 11.46 L15.53 11.11 L15.97 10.82 L16.46 10.6 L17 10.45 L17.57 10.4 L18.16 10.43 L18.75 10.57 L19.32 10.8 L19.87 11.13 L20.36 11.56 L20.79 12.07 L21.15 12.65 L21.41 13.3 L21.56 14 L21.61 14.73 L21.53 15.47 L21.34 16.21 L21.02 16.92 L20.59 17.59 L20.04 18.18 L19.39 18.7 L18.66 19.11 L17.86 19.41 L17 19.58 L16.11 19.61 L15.21 19.5 L14.33 19.24 L13.48 18.84 L12.7 18.3 L11.99 17.64 L11.4 16.86 L10.92 15.97 L10.59 15.02 L10.41 14 L10.39 12.95 L10.54 11.9 L10.85 10.87 L11.34 9.89",
+              stroke: "#ffffff",
+              strokeWidth: 0.6,
+              strokeLinecap: "round",
+              opacity: 0.35,
+            },
+            loop: {
+              values: { rotate: [0, -360] },
+              duration: 5,
+              ease: "linear",
+              hoverDuration: 1.5,
+            },
+            origin: "17px 14px",
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M13.4 14.4 Q13.4 15.6 14.6 15.6 Q13.4 15.6 13.4 16.8 Q13.4 15.6 12.2 15.6 Q13.4 15.6 13.4 14.4 Z",
+              fill: "#ffffff",
+            },
+            loop: {
+              values: { opacity: [0.15, 1, 0.15], scale: [0.6, 1, 0.6] },
+              duration: 1.6,
+              ease: "easeInOut",
+              static: { opacity: 1, scale: 1 },
+            },
+            origin: "13.4px 15.6px",
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M20.4 9.4 Q20.4 10.4 21.4 10.4 Q20.4 10.4 20.4 11.4 Q20.4 10.4 19.4 10.4 Q20.4 10.4 20.4 9.4 Z",
+              fill: "#ffffff",
+            },
+            loop: {
+              values: { opacity: [0.15, 1, 0.15], scale: [0.6, 1, 0.6] },
+              duration: 1.4,
+              ease: "easeInOut",
+              delay: 0.7,
+              static: { opacity: 1, scale: 1 },
+            },
+            origin: "20.4px 10.4px",
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M17 9.6 Q17 14 21.4 14 Q17 14 17 18.4 Q17 14 12.6 14 Q17 14 17 9.6 Z",
+              fill: "#ffffff",
+            },
+            hover: { opacity: 1, scale: 1.1 },
+            origin: "17px 14px",
+          },
+        ],
+      },
+      {
+        tag: "circle",
+        attrs: {
+          cx: 17,
+          cy: 14,
+          r: 10,
+          stroke: "#ddd6fe",
+          strokeWidth: 0.6,
+          opacity: 0.8,
+        },
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M9.6 10.4 C10.6 7.6 13 5.6 15.8 5.2",
+          stroke: "#ffffff",
+          strokeWidth: 1.4,
+          strokeLinecap: "round",
+          opacity: 0.8,
+        },
+      },
+      {
+        tag: "ellipse",
+        attrs: { cx: 17, cy: 23.8, rx: 6.4, ry: 1.6, fill: "#92400e" },
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M10.4 23.6 C12.6 25.4 21.4 25.4 23.6 23.6 L25.2 28.8 C25.4 29.8 24.8 30.6 23.8 30.6 H10.2 C9.2 30.6 8.6 29.8 8.8 28.8 Z",
+          fill: "url(#gold)",
+          stroke: "#78350f",
+          strokeWidth: 0.6,
+          strokeLinejoin: "round",
+        },
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M10 28.2 H24",
+          stroke: "#fef3c7",
+          strokeWidth: 0.5,
+          opacity: 0.6,
+        },
+      },
+      {
+        tag: "circle",
+        attrs: {
+          cx: 17,
+          cy: 27.2,
+          r: 0.9,
+          fill: "#a855f7",
+          stroke: "#581c87",
+          strokeWidth: 0.3,
+        },
+      },
+    ],
+  },
+  magnifier: {
+    accent: "#38bdf8",
+    filter:
+      "drop-shadow(0 1px 1.5px rgba(15,23,42,0.35)) drop-shadow(0 0 6px rgba(56,189,248,0.35))",
+    nodes: [
+      {
+        tag: "defs",
+        attrs: {},
+        children: [
+          {
+            tag: "linearGradient",
+            attrs: { id: "brass", x1: 0, y1: 0, x2: 1, y2: 1 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#fef3c7" } },
+              { tag: "stop", attrs: { offset: 0.45, stopColor: "#f59e0b" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#78350f" } },
+            ],
+          },
+          {
+            tag: "linearGradient",
+            attrs: { id: "handle", x1: 0, y1: 0, x2: 1, y2: 1 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#9a3412" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#431407" } },
+            ],
+          },
+          {
+            tag: "radialGradient",
+            attrs: { id: "lens", cx: "40%", cy: "35%", r: "70%" },
+            children: [
+              {
+                tag: "stop",
+                attrs: { offset: 0, stopColor: "#f0f9ff", stopOpacity: 0.85 },
+              },
+              {
+                tag: "stop",
+                attrs: { offset: 1, stopColor: "#7dd3fc", stopOpacity: 0.55 },
+              },
+            ],
+          },
+          {
+            tag: "clipPath",
+            attrs: { id: "lensClip" },
+            children: [{ tag: "circle", attrs: { cx: 14, cy: 14, r: 7.6 } }],
+          },
+        ],
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M19.2 21.6 L27.59 30.41 L30.41 27.59 L21.6 19.2 Z",
+          fill: "url(#handle)",
+          stroke: "#1c1917",
+          strokeWidth: 0.5,
+          strokeLinejoin: "round",
+        },
+      },
+      {
+        tag: "circle",
+        attrs: {
+          cx: 29,
+          cy: 29,
+          r: 2,
+          fill: "url(#handle)",
+          stroke: "#1c1917",
+          strokeWidth: 0.5,
+        },
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M18.27 20.53 L20.4 22.8 L22.8 20.4 L20.53 18.27 Z",
+          fill: "url(#brass)",
+          stroke: "#78350f",
+          strokeWidth: 0.4,
+        },
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M22.6 23.8 L27.4 28.6",
+          stroke: "#fdba74",
+          strokeWidth: 0.6,
+          strokeLinecap: "round",
+          opacity: 0.5,
+        },
+      },
+      { tag: "circle", attrs: { cx: 14, cy: 14, r: 7.6, fill: "url(#lens)" } },
+      {
+        tag: "g",
+        attrs: { clipPath: "url(#lensClip)" },
+        children: [
+          {
+            tag: "g",
+            attrs: {},
+            children: [
+              {
+                tag: "g",
+                attrs: {},
+                children: [
+                  {
+                    tag: "path",
+                    attrs: {
+                      d: "M0.68 1 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M0.68 3.2 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M0.68 5.4 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M0.68 7.6 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M0.68 9.8 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M0.68 12 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M0.68 14.2 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M0.68 16.4 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M0.68 18.6 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M0.68 20.8 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M0.68 23 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M0.68 25.2 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M0.68 27.4 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M0.68 29.6 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M2.88 1 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M2.88 3.2 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M2.88 5.4 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M2.88 7.6 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M2.88 9.8 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M2.88 12 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M2.88 14.2 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M2.88 16.4 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M2.88 18.6 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M2.88 20.8 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M2.88 23 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M2.88 25.2 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M2.88 27.4 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M2.88 29.6 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M5.08 1 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M5.08 3.2 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M5.08 5.4 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M5.08 7.6 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M5.08 9.8 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M5.08 12 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M5.08 14.2 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M5.08 16.4 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M5.08 18.6 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M5.08 20.8 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M5.08 23 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M5.08 25.2 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M5.08 27.4 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M5.08 29.6 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M7.28 1 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M7.28 3.2 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M7.28 5.4 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M7.28 7.6 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M7.28 9.8 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M7.28 12 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M7.28 14.2 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M7.28 16.4 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M7.28 18.6 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M7.28 20.8 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M7.28 23 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M7.28 25.2 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M7.28 27.4 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M7.28 29.6 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M9.48 1 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M9.48 3.2 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M9.48 5.4 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M9.48 7.6 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M9.48 9.8 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M9.48 12 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M9.48 14.2 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M9.48 16.4 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M9.48 18.6 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M9.48 20.8 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M9.48 23 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M9.48 25.2 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M9.48 27.4 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M9.48 29.6 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M11.68 1 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M11.68 3.2 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M11.68 5.4 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M11.68 7.6 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M11.68 9.8 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M11.68 12 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M11.68 14.2 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M11.68 16.4 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M11.68 18.6 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M11.68 20.8 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M11.68 23 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M11.68 25.2 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M11.68 27.4 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M11.68 29.6 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M13.88 1 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M13.88 3.2 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M13.88 5.4 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M13.88 7.6 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M13.88 9.8 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M13.88 12 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M13.88 14.2 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M13.88 16.4 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M13.88 18.6 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M13.88 20.8 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M13.88 23 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M13.88 25.2 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M13.88 27.4 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M13.88 29.6 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M16.08 1 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M16.08 3.2 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M16.08 5.4 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M16.08 7.6 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M16.08 9.8 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M16.08 12 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M16.08 14.2 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M16.08 16.4 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M16.08 18.6 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M16.08 20.8 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M16.08 23 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M16.08 25.2 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M16.08 27.4 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M16.08 29.6 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M18.28 1 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M18.28 3.2 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M18.28 5.4 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M18.28 7.6 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M18.28 9.8 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M18.28 12 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M18.28 14.2 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M18.28 16.4 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M18.28 18.6 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M18.28 20.8 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M18.28 23 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M18.28 25.2 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M18.28 27.4 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M18.28 29.6 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M20.48 1 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M20.48 3.2 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M20.48 5.4 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M20.48 7.6 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M20.48 9.8 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M20.48 12 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M20.48 14.2 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M20.48 16.4 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M20.48 18.6 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M20.48 20.8 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M20.48 23 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M20.48 25.2 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M20.48 27.4 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M20.48 29.6 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M22.68 1 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M22.68 3.2 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M22.68 5.4 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M22.68 7.6 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M22.68 9.8 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M22.68 12 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M22.68 14.2 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M22.68 16.4 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M22.68 18.6 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M22.68 20.8 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M22.68 23 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M22.68 25.2 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M22.68 27.4 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M22.68 29.6 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M24.88 1 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M24.88 3.2 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M24.88 5.4 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M24.88 7.6 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M24.88 9.8 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M24.88 12 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M24.88 14.2 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M24.88 16.4 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M24.88 18.6 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M24.88 20.8 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M24.88 23 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M24.88 25.2 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M24.88 27.4 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M24.88 29.6 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M27.08 1 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M27.08 3.2 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M27.08 5.4 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M27.08 7.6 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M27.08 9.8 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M27.08 12 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M27.08 14.2 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M27.08 16.4 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M27.08 18.6 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M27.08 20.8 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M27.08 23 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M27.08 25.2 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M27.08 27.4 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M27.08 29.6 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M29.28 1 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M29.28 3.2 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M29.28 5.4 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M29.28 7.6 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M29.28 9.8 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M29.28 12 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M29.28 14.2 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M29.28 16.4 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M29.28 18.6 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M29.28 20.8 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M29.28 23 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M29.28 25.2 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M29.28 27.4 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z M29.28 29.6 a0.32 0.32 0 1 0 0.64 0 a0.32 0.32 0 1 0 -0.64 0 Z",
+                      fill: "#0ea5e9",
+                      opacity: 0.35,
+                    },
+                  },
+                  {
+                    tag: "path",
+                    attrs: {
+                      d: "M13 10.2 L13.71 12.03 L15.66 12.13 L14.14 13.37 L14.65 15.27 L13 14.2 L11.35 15.27 L11.86 13.37 L10.34 12.13 L12.29 12.03 Z",
+                      fill: "#facc15",
+                      stroke: "#a16207",
+                      strokeWidth: 0.35,
+                    },
+                  },
+                  {
+                    tag: "circle",
+                    attrs: { cx: 18.6, cy: 17.4, r: 1.3, fill: "#f472b6" },
+                  },
+                  {
+                    tag: "circle",
+                    attrs: { cx: 9.4, cy: 18.4, r: 0.9, fill: "#4ade80" },
+                  },
+                ],
+                loop: {
+                  values: { x: [-2, 2, -2], y: [1.2, -1.2, 1.2] },
+                  duration: 4,
+                  ease: "easeInOut",
+                  hoverDuration: 2,
+                },
+              },
+            ],
+            hover: { scale: 1.4 },
+            origin: "14px 14px",
+          },
+        ],
+      },
+      {
+        tag: "circle",
+        attrs: { cx: 14, cy: 14, r: 8.3, stroke: "#78350f", strokeWidth: 2.6 },
+      },
+      {
+        tag: "circle",
+        attrs: {
+          cx: 14,
+          cy: 14,
+          r: 8.3,
+          stroke: "url(#brass)",
+          strokeWidth: 1.8,
+        },
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M8.6 11 A6 6 0 0 1 12 7.6",
+          stroke: "#ffffff",
+          strokeWidth: 1.2,
+          strokeLinecap: "round",
+          opacity: 0.85,
+        },
+      },
+    ],
+  },
+  pufferfish: {
+    accent: "#22d3ee",
+    filter:
+      "drop-shadow(0 1px 1.5px rgba(15,23,42,0.35)) drop-shadow(0 0 6px rgba(34,211,238,0.4))",
+    nodes: [
+      {
+        tag: "defs",
+        attrs: {},
+        children: [
+          {
+            tag: "radialGradient",
+            attrs: { id: "puffer", cx: "40%", cy: "30%", r: "75%" },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#ecfeff" } },
+              { tag: "stop", attrs: { offset: 0.45, stopColor: "#67e8f9" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#0e7490" } },
+            ],
+          },
+          {
+            tag: "linearGradient",
+            attrs: { id: "belly", x1: 0, y1: 0, x2: 0, y2: 1 },
+            children: [
+              {
+                tag: "stop",
+                attrs: { offset: 0, stopColor: "#ffffff", stopOpacity: 0 },
+              },
+              {
+                tag: "stop",
+                attrs: { offset: 1, stopColor: "#ffffff", stopOpacity: 0.9 },
+              },
+            ],
+          },
+          {
+            tag: "linearGradient",
+            attrs: { id: "fin", x1: 0, y1: 0, x2: 1, y2: 0 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#fde68a" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#f59e0b" } },
+            ],
+          },
+        ],
+      },
+      {
+        tag: "g",
+        attrs: {},
+        children: [
+          {
+            tag: "g",
+            attrs: {},
+            children: [
+              {
+                tag: "g",
+                attrs: {},
+                children: [
+                  {
+                    tag: "path",
+                    attrs: {
+                      d: "M25.14 16 L28 17 L25.14 18 Z M24.99 18.84 L27.34 20.76 L24.31 20.72 Z M23.88 21.47 L25.43 24.07 L22.59 23 Z M21.93 23.55 L22.5 26.53 L20.2 24.55 Z M19.4 24.84 L18.91 27.83 L17.43 25.19 Z M16.57 25.19 L15.09 27.83 L14.6 24.84 Z M13.8 24.55 L11.5 26.53 L12.07 23.55 Z M11.41 23 L8.57 24.07 L10.12 21.47 Z M9.69 20.72 L6.66 20.76 L9.01 18.84 Z M8.86 18 L6 17 L8.86 16 Z M9.01 15.16 L6.66 13.24 L9.69 13.28 Z M10.12 12.53 L8.57 9.93 L11.41 11 Z M12.07 10.45 L11.5 7.47 L13.8 9.45 Z M14.6 9.16 L15.09 6.17 L16.57 8.81 Z M17.43 8.81 L18.91 6.17 L19.4 9.16 Z M20.2 9.45 L22.5 7.47 L21.93 10.45 Z M22.59 11 L25.43 9.93 L23.88 12.53 Z M24.31 13.28 L27.34 13.24 L24.99 15.16 Z",
+                      fill: "#cffafe",
+                      stroke: "#0e7490",
+                      strokeWidth: 0.4,
+                      strokeLinejoin: "round",
+                    },
+                  },
+                ],
+                hover: { scale: 1.14 },
+                origin: "17px 17px",
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M8.6 17 C6.4 14.6 4.4 14.4 3.2 15 C3.8 16.4 3.8 17.6 3.2 19 C4.4 19.6 6.4 19.4 8.6 17 Z",
+                  fill: "url(#fin)",
+                  stroke: "#b45309",
+                  strokeWidth: 0.4,
+                },
+                loop: {
+                  values: { rotate: [-10, 10, -10] },
+                  duration: 0.8,
+                  ease: "easeInOut",
+                  hoverDuration: 0.3,
+                },
+                origin: "8.6px 17px",
+              },
+              {
+                tag: "circle",
+                attrs: {
+                  cx: 17,
+                  cy: 17,
+                  r: 8.6,
+                  fill: "url(#puffer)",
+                  stroke: "#155e75",
+                  strokeWidth: 0.6,
+                },
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M9 18.4 C10.4 23.6 23.6 23.6 25 18.4 C24 24.8 10 24.8 9 18.4 Z",
+                  fill: "#ffffff",
+                  opacity: 0.55,
+                },
+              },
+              {
+                tag: "circle",
+                attrs: {
+                  cx: 13,
+                  cy: 11.6,
+                  r: 0.7,
+                  fill: "#155e75",
+                  opacity: 0.6,
+                },
+              },
+              {
+                tag: "circle",
+                attrs: {
+                  cx: 16.4,
+                  cy: 10,
+                  r: 0.55,
+                  fill: "#155e75",
+                  opacity: 0.6,
+                },
+              },
+              {
+                tag: "circle",
+                attrs: {
+                  cx: 20.2,
+                  cy: 10.8,
+                  r: 0.65,
+                  fill: "#155e75",
+                  opacity: 0.6,
+                },
+              },
+              {
+                tag: "circle",
+                attrs: {
+                  cx: 22.6,
+                  cy: 13.4,
+                  r: 0.5,
+                  fill: "#155e75",
+                  opacity: 0.6,
+                },
+              },
+              {
+                tag: "circle",
+                attrs: {
+                  cx: 14.2,
+                  cy: 15.2,
+                  r: 2.3,
+                  fill: "#ffffff",
+                  stroke: "#155e75",
+                  strokeWidth: 0.4,
+                },
+              },
+              {
+                tag: "circle",
+                attrs: {
+                  cx: 20.2,
+                  cy: 15.2,
+                  r: 2.3,
+                  fill: "#ffffff",
+                  stroke: "#155e75",
+                  strokeWidth: 0.4,
+                },
+              },
+              {
+                tag: "circle",
+                attrs: { cx: 14.6, cy: 15.5, r: 1.2, fill: "#0f172a" },
+              },
+              {
+                tag: "circle",
+                attrs: { cx: 20.6, cy: 15.5, r: 1.2, fill: "#0f172a" },
+              },
+              {
+                tag: "circle",
+                attrs: { cx: 15, cy: 15, r: 0.4, fill: "#ffffff" },
+              },
+              {
+                tag: "circle",
+                attrs: { cx: 21, cy: 15, r: 0.4, fill: "#ffffff" },
+              },
+              {
+                tag: "ellipse",
+                attrs: {
+                  cx: 17.2,
+                  cy: 19.6,
+                  rx: 1,
+                  ry: 0.85,
+                  fill: "#fb7185",
+                  stroke: "#be123c",
+                  strokeWidth: 0.4,
+                },
+              },
+              {
+                tag: "ellipse",
+                attrs: {
+                  cx: 12,
+                  cy: 18.4,
+                  rx: 0.9,
+                  ry: 0.55,
+                  fill: "#fda4af",
+                  opacity: 0.8,
+                },
+              },
+              {
+                tag: "ellipse",
+                attrs: {
+                  cx: 22.4,
+                  cy: 18.4,
+                  rx: 0.9,
+                  ry: 0.55,
+                  fill: "#fda4af",
+                  opacity: 0.8,
+                },
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M11 11.4 C12 9.6 13.8 8.6 15.6 8.4",
+                  stroke: "#ffffff",
+                  strokeWidth: 1.1,
+                  strokeLinecap: "round",
+                  opacity: 0.75,
+                },
+              },
+              {
+                tag: "path",
+                attrs: {
+                  d: "M23.6 21 C25.6 21.6 27 23 27.2 24.6 C25.6 24.6 24.2 23.6 23.2 22 Z",
+                  fill: "url(#fin)",
+                  stroke: "#b45309",
+                  strokeWidth: 0.35,
+                },
+                loop: {
+                  values: { rotate: [-14, 14, -14] },
+                  duration: 0.6,
+                  ease: "easeInOut",
+                  hoverDuration: 0.25,
+                },
+                origin: "23.6px 21.4px",
+              },
+            ],
+            hover: { scale: 1.3 },
+            origin: "17px 17px",
+          },
+        ],
+        loop: {
+          values: { y: [0, -1.2, 0], rotate: [-3, 3, -3] },
+          duration: 2.6,
+          ease: "easeInOut",
+          hoverDuration: 1.2,
+        },
+        origin: "17px 17px",
+      },
+    ],
+  },
+  pinwheel: {
+    accent: "#f472b6",
+    filter:
+      "drop-shadow(0 1px 1.5px rgba(15,23,42,0.35)) drop-shadow(0 0 6px rgba(244,114,182,0.35))",
+    nodes: [
+      {
+        tag: "defs",
+        attrs: {},
+        children: [
+          {
+            tag: "linearGradient",
+            attrs: { id: "stick", x1: 0, y1: 0, x2: 1, y2: 0 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#fde68a" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#b45309" } },
+            ],
+          },
+        ],
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M2.4 9 q2 -1 4 0 M1.6 13 q2.4 -1 4.8 0 M2.4 17 q2 -1 4 0",
+          stroke: "#7dd3fc",
+          strokeWidth: 0.7,
+          strokeLinecap: "round",
+        },
+        loop: {
+          values: { x: [-1.5, 1.5], opacity: [0, 1] },
+          duration: 1,
+          ease: "linear",
+          static: { x: 0, opacity: 0.8 },
+          hoverDuration: 0.4,
+        },
+      },
+      {
+        tag: "line",
+        attrs: {
+          x1: 17,
+          y1: 13,
+          x2: 17,
+          y2: 32,
+          stroke: "#78350f",
+          strokeWidth: 2,
+          strokeLinecap: "round",
+        },
+      },
+      {
+        tag: "line",
+        attrs: {
+          x1: 17,
+          y1: 13,
+          x2: 17,
+          y2: 32,
+          stroke: "url(#stick)",
+          strokeWidth: 1.3,
+          strokeLinecap: "round",
+        },
+      },
+      {
+        tag: "g",
+        attrs: {},
+        children: [
+          {
+            tag: "path",
+            attrs: {
+              d: "M17 13 L17 3 C21.6 3 25.4 6 26.2 10.6 Z",
+              fill: "#f472b6",
+              stroke: "#be185d",
+              strokeWidth: 0.4,
+              strokeLinejoin: "round",
+              transform: "rotate(0 17 13)",
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M17 13 L21 4.2 C23.6 5.4 25.6 7.8 26.2 10.6 Z",
+              fill: "#be185d",
+              opacity: 0.55,
+              transform: "rotate(0 17 13)",
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M17 13 L17 3 C21.6 3 25.4 6 26.2 10.6 Z",
+              fill: "#fde047",
+              stroke: "#ca8a04",
+              strokeWidth: 0.4,
+              strokeLinejoin: "round",
+              transform: "rotate(90 17 13)",
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M17 13 L21 4.2 C23.6 5.4 25.6 7.8 26.2 10.6 Z",
+              fill: "#ca8a04",
+              opacity: 0.55,
+              transform: "rotate(90 17 13)",
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M17 13 L17 3 C21.6 3 25.4 6 26.2 10.6 Z",
+              fill: "#22d3ee",
+              stroke: "#0e7490",
+              strokeWidth: 0.4,
+              strokeLinejoin: "round",
+              transform: "rotate(180 17 13)",
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M17 13 L21 4.2 C23.6 5.4 25.6 7.8 26.2 10.6 Z",
+              fill: "#0e7490",
+              opacity: 0.55,
+              transform: "rotate(180 17 13)",
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M17 13 L17 3 C21.6 3 25.4 6 26.2 10.6 Z",
+              fill: "#a78bfa",
+              stroke: "#6d28d9",
+              strokeWidth: 0.4,
+              strokeLinejoin: "round",
+              transform: "rotate(270 17 13)",
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M17 13 L21 4.2 C23.6 5.4 25.6 7.8 26.2 10.6 Z",
+              fill: "#6d28d9",
+              opacity: 0.55,
+              transform: "rotate(270 17 13)",
+            },
+          },
+        ],
+        loop: {
+          values: { rotate: [0, 360] },
+          duration: 2.4,
+          ease: "linear",
+          hoverDuration: 0.5,
+        },
+        origin: "17px 13px",
+      },
+      {
+        tag: "circle",
+        attrs: {
+          cx: 17,
+          cy: 13,
+          r: 1.6,
+          fill: "#ffffff",
+          stroke: "#64748b",
+          strokeWidth: 0.4,
+        },
+      },
+      { tag: "circle", attrs: { cx: 17, cy: 13, r: 0.6, fill: "#64748b" } },
+    ],
+  },
+  "alarm-clock": {
+    accent: "#ef4444",
+    filter:
+      "drop-shadow(0 1px 1.5px rgba(15,23,42,0.35)) drop-shadow(0 0 6px rgba(239,68,68,0.4))",
+    nodes: [
+      {
+        tag: "defs",
+        attrs: {},
+        children: [
+          {
+            tag: "radialGradient",
+            attrs: { id: "body", cx: "38%", cy: "30%", r: "75%" },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#fecaca" } },
+              { tag: "stop", attrs: { offset: 0.4, stopColor: "#ef4444" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#7f1d1d" } },
+            ],
+          },
+          {
+            tag: "linearGradient",
+            attrs: { id: "bell", x1: 0, y1: 0, x2: 1, y2: 1 },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#ffffff" } },
+              { tag: "stop", attrs: { offset: 0.5, stopColor: "#cbd5e1" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#475569" } },
+            ],
+          },
+          {
+            tag: "radialGradient",
+            attrs: { id: "face", cx: "45%", cy: "40%", r: "70%" },
+            children: [
+              { tag: "stop", attrs: { offset: 0, stopColor: "#ffffff" } },
+              { tag: "stop", attrs: { offset: 1, stopColor: "#e2e8f0" } },
+            ],
+          },
+        ],
+      },
+      {
+        tag: "path",
+        attrs: {
+          d: "M3.4 9 q-1.6 2.6 0 5.2 M1.6 7.6 q-2.4 4 0 8 M30.6 9 q1.6 2.6 0 5.2 M32.4 7.6 q2.4 4 0 8",
+          stroke: "#fbbf24",
+          strokeWidth: 0.8,
+          strokeLinecap: "round",
+        },
+        loop: {
+          values: { opacity: [0, 0, 0] },
+          duration: 0.4,
+          ease: "easeInOut",
+          hoverValues: { opacity: [0.2, 1, 0.2] },
+          hoverDuration: 0.3,
+        },
+      },
+      {
+        tag: "g",
+        attrs: {},
+        children: [
+          {
+            tag: "path",
+            attrs: {
+              d: "M10.6 26.6 L8.6 30.6 M23.4 26.6 L25.4 30.6",
+              stroke: "#334155",
+              strokeWidth: 1.6,
+              strokeLinecap: "round",
+            },
+          },
+          {
+            tag: "ellipse",
+            attrs: {
+              cx: 9.4,
+              cy: 8.4,
+              rx: 4.2,
+              ry: 3.6,
+              fill: "url(#bell)",
+              stroke: "#334155",
+              strokeWidth: 0.5,
+              transform: "rotate(-38 9.4 8.4)",
+            },
+          },
+          {
+            tag: "ellipse",
+            attrs: {
+              cx: 24.6,
+              cy: 8.4,
+              rx: 4.2,
+              ry: 3.6,
+              fill: "url(#bell)",
+              stroke: "#334155",
+              strokeWidth: 0.5,
+              transform: "rotate(38 24.6 8.4)",
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M10 6.6 C12.6 3.6 21.4 3.6 24 6.6",
+              stroke: "#64748b",
+              strokeWidth: 0.9,
+              strokeLinecap: "round",
+            },
+          },
+          {
+            tag: "g",
+            attrs: {},
+            children: [
+              {
+                tag: "line",
+                attrs: {
+                  x1: 17,
+                  y1: 4.6,
+                  x2: 17,
+                  y2: 2,
+                  stroke: "#64748b",
+                  strokeWidth: 0.8,
+                },
+              },
+              {
+                tag: "circle",
+                attrs: {
+                  cx: 17,
+                  cy: 1.8,
+                  r: 0.9,
+                  fill: "url(#bell)",
+                  stroke: "#334155",
+                  strokeWidth: 0.3,
+                },
+              },
+            ],
+            loop: {
+              values: { rotate: [0, 0, 0] },
+              duration: 0.12,
+              ease: "easeInOut",
+              hoverValues: { rotate: [-26, 26, -26] },
+              hoverDuration: 0.12,
+            },
+            origin: "17px 4.6px",
+          },
+          {
+            tag: "circle",
+            attrs: {
+              cx: 17,
+              cy: 18,
+              r: 10.4,
+              fill: "url(#body)",
+              stroke: "#7f1d1d",
+              strokeWidth: 0.7,
+            },
+          },
+          {
+            tag: "circle",
+            attrs: {
+              cx: 17,
+              cy: 18,
+              r: 8,
+              fill: "url(#face)",
+              stroke: "#b91c1c",
+              strokeWidth: 0.5,
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M24.2 18 L23 18 M23.24 21.6 L22.63 21.25 M20.6 24.24 L20.25 23.63 M17 25.2 L17 24 M13.4 24.24 L13.75 23.63 M10.76 21.6 L11.37 21.25 M9.8 18 L11 18 M10.76 14.4 L11.37 14.75 M13.4 11.76 L13.75 12.37 M17 10.8 L17 12 M20.6 11.76 L20.25 12.37 M23.24 14.4 L22.63 14.75",
+              stroke: "#334155",
+              strokeWidth: 0.5,
+              strokeLinecap: "round",
+            },
+          },
+          {
+            tag: "line",
+            attrs: {
+              x1: 17,
+              y1: 18,
+              x2: 13.71,
+              y2: 16.1,
+              stroke: "#1e293b",
+              strokeWidth: 1,
+              strokeLinecap: "round",
+            },
+          },
+          {
+            tag: "line",
+            attrs: {
+              x1: 17,
+              y1: 18,
+              x2: 17,
+              y2: 12,
+              stroke: "#1e293b",
+              strokeWidth: 0.7,
+              strokeLinecap: "round",
+            },
+            loop: {
+              values: { rotate: [0, 360] },
+              duration: 12,
+              ease: "linear",
+              hoverDuration: 2,
+            },
+            origin: "17px 18px",
+          },
+          {
+            tag: "line",
+            attrs: {
+              x1: 17,
+              y1: 19.4,
+              x2: 17,
+              y2: 11.4,
+              stroke: "#ef4444",
+              strokeWidth: 0.4,
+              strokeLinecap: "round",
+            },
+            loop: {
+              values: { rotate: [0, 360] },
+              duration: 3,
+              ease: "linear",
+              hoverDuration: 0.6,
+            },
+            origin: "17px 18px",
+          },
+          {
+            tag: "circle",
+            attrs: {
+              cx: 17,
+              cy: 18,
+              r: 0.8,
+              fill: "#ef4444",
+              stroke: "#7f1d1d",
+              strokeWidth: 0.3,
+            },
+          },
+          {
+            tag: "path",
+            attrs: {
+              d: "M9.6 13.4 C10.8 10.8 13.2 9 16 8.6",
+              stroke: "#ffffff",
+              strokeWidth: 1.1,
+              strokeLinecap: "round",
+              opacity: 0.6,
+            },
+          },
+        ],
+        loop: {
+          values: { rotate: [0, 1.2, 0, -1.2, 0] },
+          duration: 1,
+          ease: "easeInOut",
+          hoverValues: { rotate: [0, 8, -8, 6, 0] },
+          hoverDuration: 0.2,
+        },
+        origin: "17px 29px",
+      },
+    ],
+  },
 };

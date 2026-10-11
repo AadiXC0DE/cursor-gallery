@@ -36,7 +36,7 @@ export default function LockCursor({
             </linearGradient>
           </defs>
 
-          {/* Shackle — lifts teasingly on hover */}
+          {/* Shackle: lifts teasingly on hover */}
           <motion.path
             d="M7 11V7C7 4.23858 9.23858 2 12 2C14.7614 2 17 4.23858 17 7V11"
             stroke="url(#lockShackle)"

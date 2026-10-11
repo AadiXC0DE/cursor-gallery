@@ -31,7 +31,7 @@ export default function SaberCursor({
       className="fixed top-0 left-0 pointer-events-none z-50"
       style={{ x, y }}
     >
-      {/* Blade assembly — hilt sits on the cursor point, blade extends out */}
+      {/* Blade assembly: the hilt sits on the cursor point, blade extends out */}
       <motion.div
         className="absolute left-0 top-0 flex items-center"
         animate={{ rotate: angle }}

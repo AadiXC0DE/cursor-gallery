@@ -33,7 +33,7 @@ export default function InkCursor({
 
   return (
     <>
-      {/* Calligraphy stroke — tapered segments between recent points */}
+      {/* Calligraphy stroke, tapered segments between recent points */}
       <svg className="fixed top-0 left-0 w-full h-full pointer-events-none z-40 overflow-visible">
         {points.slice(1).map((p, i) => {
           const prev = points[i];

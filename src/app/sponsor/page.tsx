@@ -1,201 +1,193 @@
 "use client";
 
+import Link from "next/link";
+import { useState } from "react";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
-import { Button } from "@/components/ui/button";
-import {
-  Heart,
-  Github,
-  Twitter,
-  Coffee,
-  Star,
-  Sparkles,
-  ArrowUpRight,
-} from "lucide-react";
-import Link from "next/link";
-import { motion } from "framer-motion";
+import { GitHubMark, XMark } from "@/components/brand-marks";
+import { CursorPreview } from "@/components/gallery/cursor-preview";
+import { useCursorActions } from "@/components/cursor/cursor-context";
+import { cn } from "@/lib/utils";
+
+const button =
+  "inline-flex items-center justify-center h-14 px-8 text-xs font-black uppercase tracking-[0.2em] transition-all";
+
+function Way({
+  cursor,
+  title,
+  body,
+  children,
+}: {
+  cursor: string;
+  title: string;
+  body: string;
+  children: React.ReactNode;
+}) {
+  const { setCursor, resetCursor } = useCursorActions();
+  const [hover, setHover] = useState(false);
+  return (
+    <div
+      className="bg-background flex flex-col"
+      onMouseEnter={() => {
+        setHover(true);
+        setCursor(cursor);
+      }}
+      onMouseLeave={() => {
+        setHover(false);
+        resetCursor();
+      }}
+    >
+      <div data-cursor-preview className="relative h-56 md:h-64 cursor-none">
+        <CursorPreview
+          id={cursor}
+          live
+          hovering={hover}
+          scale={3}
+          className="absolute inset-0"
+        />
+      </div>
+      <div className="p-6 md:p-10 pt-0 md:pt-0 flex flex-col gap-4 flex-1">
+        <h2 className="font-black text-3xl uppercase italic tracking-tighter text-foreground leading-none">
+          {title}
+        </h2>
+        <p className="text-muted-foreground leading-relaxed max-w-sm flex-1">
+          {body}
+        </p>
+        <div className="pt-2">{children}</div>
+      </div>
+    </div>
+  );
+}
 
 export default function SponsorPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/5 via-background to-background">
+    <div className="min-h-screen flex flex-col bg-background">
       <Header />
 
-      <main className="flex-1 pt-32 pb-20 relative overflow-hidden">
-        {/* Background Decorative Elements */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
-          className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] pointer-events-none"
-        />
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.5, ease: "easeOut", delay: 0.2 }}
-          className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none"
-        />
-
-        <div className="container mx-auto px-4 relative">
-          <div className="max-w-3xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-16"
-            >
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-6 border border-primary/20">
-                <Heart className="w-3 h-3 fill-current" />
-                Support Open Source
-              </div>
-              <h1 className="text-5xl md:text-6xl font-black tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/70">
-                Sponsor Cursor Gallery
-              </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed">
-                Cursor Gallery is a free, open-source project dedicated to
-                bringing premium, high-performance animated cursors to everyone.
-                Your support helps keep the project alive and allows us to
-                create even more amazing assets.
+      <main className="flex-1 pt-32 md:pt-40">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-14 md:mb-20">
+            <div className="lg:col-span-7">
+              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-muted-foreground mb-6">
+                Sponsor
               </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 gap-6 mb-16">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="group p-8 rounded-3xl border bg-card/50 backdrop-blur-sm hover:border-primary/50 transition-all duration-300"
-              >
-                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Coffee className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-xl font-bold mb-3">Buy me a coffee</h3>
-                <p className="text-muted-foreground mb-8">
-                  Support the creator directly with a small donation. Every
-                  coffee fuels more hours of engineering and design.
-                </p>
-                <Button
-                  asChild
-                  className="w-full h-12 rounded-xl text-base font-bold shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-shadow"
-                  variant="default"
-                >
-                  <Link
-                    href="https://www.buymeacoffee.com/AadiChowdhury7"
-                    target="_blank"
-                  >
-                    <Coffee className="w-4 h-4 mr-2" />
-                    Buy me a coffee
-                  </Link>
-                </Button>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="group p-8 rounded-3xl border bg-card/50 backdrop-blur-sm hover:border-primary/50 transition-all duration-300"
-              >
-                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Star className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-xl font-bold mb-3">Star on GitHub</h3>
-                <p className="text-muted-foreground mb-8">
-                  Help us grow by starring the repository. It&apos;s free and
-                  helps more developers discover the project.
-                </p>
-                <Button
-                  asChild
-                  className="w-full h-12 rounded-xl text-base font-bold"
-                  variant="outline"
-                >
-                  <Link
-                    href="https://github.com/AadiXC0DE/cursor-gallery"
-                    target="_blank"
-                  >
-                    <Github className="w-4 h-4 mr-2" />
-                    Star Repository
-                  </Link>
-                </Button>
-              </motion.div>
+              <h1 className="text-5xl md:text-8xl font-black tracking-tighter uppercase italic text-foreground leading-[0.9]">
+                Keep the
+                <br />
+                <span className="text-foreground/40">cursors coming.</span>
+              </h1>
             </div>
+            <p className="lg:col-span-5 text-muted-foreground text-base md:text-lg leading-relaxed">
+              Cursor Gallery is free and MIT licensed. There&apos;s no paid tier
+              and no newsletter. If it made your site a little nicer, here are
+              two ways to say thanks.
+            </p>
+          </div>
 
-            {/* About the Maker */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.35 }}
-              className="mb-16 p-8 md:p-10 rounded-[2rem] border bg-card/50 backdrop-blur-sm relative overflow-hidden"
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border border border-border">
+            <Way
+              cursor="coffee"
+              title="Buy a coffee"
+              body="One-off, any amount, takes a minute. It goes straight to the person who makes these and helps pay for the hours the next batch takes."
             >
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
-              <div className="flex flex-col md:flex-row items-start md:items-center gap-8">
-                <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
-                  <Sparkles className="w-7 h-7 text-primary" />
-                </div>
-                <div className="flex-1">
-                  <p className="text-[10px] font-black uppercase tracking-[0.2em] text-primary mb-3">
-                    Meet the Maker
-                  </p>
-                  <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-3">
-                    Hi, I&apos;m Aadi — a design engineer.
-                  </h2>
-                  <p className="text-muted-foreground leading-relaxed mb-2">
-                    I&apos;ve designed and engineered products for brands like{" "}
-                    <span className="text-foreground font-semibold">
-                      Philips
-                    </span>{" "}
-                    and{" "}
-                    <span className="text-foreground font-semibold">
-                      Hero MotoCorp
-                    </span>
-                    , and helped early-stage startups ship interfaces that feel
-                    as good as they look.
-                  </p>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Cursor Gallery is my love letter to the tiny details — the
-                    micro-interactions most people feel but never notice.
-                  </p>
-                  <Button
-                    asChild
-                    variant="link"
-                    className="px-0 mt-4 h-auto font-bold text-primary hover:text-primary/80"
-                  >
-                    <Link href="https://heyaadi.com" target="_blank">
-                      More about me
-                      <ArrowUpRight className="w-4 h-4 ml-1" />
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="p-8 md:p-12 rounded-[2rem] border bg-card/50 backdrop-blur-sm relative overflow-hidden text-center"
+              <Link
+                href="https://www.buymeacoffee.com/AadiChowdhury7"
+                target="_blank"
+                className={cn(
+                  button,
+                  "bg-foreground text-background hover:bg-foreground/90 w-full sm:w-auto"
+                )}
+              >
+                Buy me a coffee
+              </Link>
+            </Way>
+            <Way
+              cursor="star"
+              title="Star the repo"
+              body="Free, takes one click, and it's how other developers find the project."
             >
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent" />
-              <div className="relative z-10">
-                <h2 className="text-3xl font-bold mb-4">Have Feedback?</h2>
-                <p className="text-muted-foreground mb-8 text-lg max-w-xl mx-auto">
-                  I&apos;m always looking for ways to improve the gallery. If
-                  you have any ideas, found a bug, or just want to say hi, reach
-                  out to me on X/Twitter!
-                </p>
-                <Button
-                  asChild
-                  variant="outline"
-                  size="lg"
-                  className="rounded-full h-14 px-8 text-base font-bold border-2 hover:bg-primary/5 hover:border-primary/50 transition-all"
-                >
-                  <Link href="https://x.com/AadiChowdhury7" target="_blank">
-                    <Twitter className="w-5 h-5 mr-3" />
-                    Leave Feedback on X
-                  </Link>
-                </Button>
-              </div>
-            </motion.div>
+              <Link
+                href="https://github.com/AadiXC0DE/cursor-gallery"
+                target="_blank"
+                className={cn(
+                  button,
+                  "border-2 border-border hover:border-foreground text-foreground w-full sm:w-auto"
+                )}
+              >
+                <GitHubMark className="mr-3 w-4 h-4" />
+                Star on GitHub
+              </Link>
+            </Way>
           </div>
         </div>
+
+        <section className="mt-24 md:mt-32 border-t border-border">
+          <div className="container mx-auto px-4 max-w-7xl py-24 md:py-32 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+            <div className="lg:col-span-5">
+              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-muted-foreground mb-6">
+                Who makes this
+              </p>
+              <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase italic text-foreground leading-[0.9]">
+                Hi, I&apos;m
+                <br />
+                <span className="text-foreground/40">Aadi.</span>
+              </h2>
+            </div>
+            <div className="lg:col-span-7 flex flex-col gap-5 text-base md:text-lg leading-relaxed text-muted-foreground">
+              <p>
+                I&apos;m a design engineer. I&apos;ve designed and built
+                products for{" "}
+                <span className="text-foreground font-semibold">Philips</span>{" "}
+                and{" "}
+                <span className="text-foreground font-semibold">
+                  Hero MotoCorp
+                </span>
+                , and helped early-stage startups ship interfaces that feel as
+                good as they look.
+              </p>
+              <p>
+                Cursor Gallery is my love letter to the small stuff: the
+                micro-interactions people feel without ever quite noticing them.
+              </p>
+              <Link
+                href="https://heyaadi.com"
+                target="_blank"
+                className="self-start mt-2 text-xs font-black uppercase tracking-[0.2em] text-foreground underline underline-offset-8 decoration-border hover:decoration-foreground transition-colors"
+              >
+                More about me at heyaadi.com
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-foreground text-background">
+          <div className="container mx-auto px-4 max-w-7xl py-24 md:py-32 grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
+            <div className="lg:col-span-7">
+              <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase italic leading-[0.9]">
+                Found a bug?
+                <br />
+                <span className="text-background/40">Want a cursor?</span>
+              </h2>
+            </div>
+            <div className="lg:col-span-5 flex flex-col gap-8">
+              <p className="text-background/70 text-base md:text-lg leading-relaxed">
+                Tell me on X. Bug reports, requests and &ldquo;this one would be
+                great as a&hellip;&rdquo; messages all welcome.
+              </p>
+              <Link
+                href="https://x.com/AadiChowdhury7"
+                target="_blank"
+                className={cn(
+                  button,
+                  "self-start bg-background text-foreground hover:bg-background/90"
+                )}
+              >
+                <XMark className="mr-3 w-4 h-4" />
+                Message @AadiChowdhury7
+              </Link>
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />

@@ -1,7 +1,10 @@
 export const metadata = {
-  title: "Sponsor | Cursor Gallery",
+  title: "Sponsor",
   description:
-    "Support the development of Cursor Gallery and help us build more premium assets.",
+    "Cursor Gallery is free and MIT licensed. Buy Aadi a coffee or star the repo to keep new cursors coming.",
+  alternates: {
+    canonical: "/sponsor",
+  },
 };
 
 export default function SponsorLayout({

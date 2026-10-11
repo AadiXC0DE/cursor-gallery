@@ -12,7 +12,7 @@ export default function ChromaticCursor({ x, y }: { x: number; y: number }) {
     my.set(y);
   }, [x, y, mx, my]);
 
-  // Two color ghosts trail at different speeds — chromatic aberration
+  // Two color ghosts trail at different speeds (chromatic aberration)
   const cyanX = useSpring(mx, { stiffness: 320, damping: 24, mass: 0.5 });
   const cyanY = useSpring(my, { stiffness: 320, damping: 24, mass: 0.5 });
   const pinkX = useSpring(mx, { stiffness: 130, damping: 16, mass: 0.8 });

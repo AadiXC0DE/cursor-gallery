@@ -1,44 +1,69 @@
 import { Header } from "@/components/layout/header";
 import { Hero } from "@/components/layout/hero";
+import { CursorStrip } from "@/components/layout/cursor-strip";
 import { CursorGrid } from "@/components/gallery/cursor-grid";
+import { Install } from "@/components/layout/install";
 import { Features } from "@/components/layout/features";
 import { Footer } from "@/components/layout/footer";
-import { Button } from "@/components/ui/button";
-import { CLISection } from "@/components/layout/cli-section";
+import { GitHubMark } from "@/components/brand-marks";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import { CURSORS } from "@/registry/cursors";
+import type { Metadata } from "next";
+import { CURSORS, FEATURED_CURSORS } from "@/registry/cursors";
+
+const FEATURED = FEATURED_CURSORS.length;
+
+const SITE = "https://cursor-gallery.vercel.app";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 const JSON_LD = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "WebSite",
+      "@id": `${SITE}/#website`,
       name: "Cursor Gallery",
-      url: "https://cursor-gallery.vercel.app",
+      url: SITE,
       description:
-        "A curated collection of high-end animated cursors for React, Next.js, and Vanilla JS.",
+        "Animated cursors for React and Next.js, installable with the shadcn CLI.",
+      publisher: { "@id": `${SITE}/#author` },
     },
     {
-      "@type": "SoftwareApplication",
+      "@type": "SoftwareSourceCode",
       name: "Cursor Gallery",
-      applicationCategory: "DeveloperApplication",
-      operatingSystem: "Web",
-      url: "https://cursor-gallery.vercel.app",
-      description: `A curated collection of ${CURSORS.length}+ premium animated cursors. Copy-paste ready for React, Next.js, and Vanilla JS via the Shadcn CLI.`,
-      offers: {
-        "@type": "Offer",
-        price: "0",
-        priceCurrency: "USD",
-      },
-      author: {
-        "@type": "Person",
-        name: "Aadi Chowdhury",
-        url: "https://heyaadi.com",
-      },
+      url: SITE,
+      codeRepository: "https://github.com/AadiXC0DE/cursor-gallery",
+      programmingLanguage: ["TypeScript", "React"],
+      runtimePlatform: "Next.js",
+      license: "https://opensource.org/licenses/MIT",
+      description: `${CURSORS.length} animated cursors for React and Next.js, built with Motion and published as a shadcn registry. Install one with the shadcn CLI and mount it once in your root layout.`,
+      author: { "@id": `${SITE}/#author` },
+    },
+    {
+      "@type": "ItemList",
+      name: "Featured cursors",
+      numberOfItems: FEATURED_CURSORS.length,
+      itemListElement: FEATURED_CURSORS.map((cursor, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: cursor.name,
+        url: `${SITE}/cursors/${cursor.id}`,
+      })),
+    },
+    {
+      "@type": "Person",
+      "@id": `${SITE}/#author`,
+      name: "Aadi Chowdhury",
+      url: "https://heyaadi.com",
+      sameAs: ["https://github.com/AadiXC0DE", "https://x.com/AadiChowdhury7"],
     },
   ],
 };
+
+const sectionButton =
+  "inline-flex items-center justify-center h-14 px-10 text-xs font-black uppercase tracking-[0.2em] transition-all";
 
 export default function Home() {
   return (
@@ -52,70 +77,82 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
 
+        <CursorStrip />
+
         <section
           id="gallery"
-          className="py-24 relative overflow-hidden bg-muted/20"
+          className="py-24 md:py-32 bg-background scroll-mt-16"
         >
-          <div className="container mx-auto px-4 mb-16 text-center max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-muted border border-border mb-6">
-              <span className="text-[10px] font-black uppercase tracking-[0.2em] text-muted-foreground">
-                Featured Gallery
-              </span>
+          <div className="container mx-auto px-4 max-w-7xl mb-14 md:mb-20">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+              <div className="lg:col-span-7">
+                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-muted-foreground mb-6">
+                  The gallery
+                </p>
+                <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase italic text-foreground leading-[0.9]">
+                  Hover to try.
+                  <br />
+                  <span className="text-foreground/40">Click to take.</span>
+                </h2>
+              </div>
+              <p className="lg:col-span-5 text-muted-foreground text-base md:text-lg leading-relaxed">
+                {FEATURED} favorites out of {CURSORS.length}. Put your pointer
+                on any card and it turns into that cursor. Click one for the
+                source and the install command.
+              </p>
             </div>
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter mb-6 uppercase italic text-foreground leading-none">
-              Premium Selections
-            </h2>
-            <p className="text-muted-foreground text-lg md:text-xl font-medium max-w-2xl mx-auto leading-relaxed">
-              Experience a selection of this library&apos;s finest animated
-              cursors. Built with precision and high-end performance in mind.
-            </p>
           </div>
 
-          <CursorGrid onlyFeatured={true} />
+          <CursorGrid onlyFeatured />
 
-          <div className="mt-16 text-center">
-            <Link href="/cursors">
-              <Button
-                size="lg"
-                className="h-14 px-10 text-xs font-black uppercase tracking-[0.2em] bg-foreground text-background hover:bg-foreground/90 rounded-none shadow-xl transition-all hover:scale-[1.02]"
-              >
-                Explore Full Library
-                <ArrowRight className="ml-3 w-4 h-4" />
-              </Button>
+          <div className="mt-14 text-center">
+            <Link
+              href="/cursors"
+              className={`${sectionButton} bg-foreground text-background hover:bg-foreground/90 shadow-xl hover:scale-[1.02]`}
+            >
+              See all {CURSORS.length}
             </Link>
           </div>
         </section>
 
-        <section className="py-24 border-t border-b border-border/50 bg-background overflow-hidden relative">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
-          <div className="container mx-auto px-4">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-12">
-              <div className="max-w-xl">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-6">
-                  <span className="text-[10px] font-black uppercase tracking-[0.2em] text-primary">
-                    CLI Support
-                  </span>
-                </div>
-                <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-6 uppercase italic text-foreground leading-none">
-                  Zero Config <br />
-                  <span className="text-muted-foreground/60">Installation</span>
-                </h2>
-                <p className="text-muted-foreground text-lg font-medium leading-relaxed mb-8">
-                  Our registry is fully compatible with the official Shadcn CLI.
-                  Install any cursor directly into your{" "}
-                  <code className="text-primary font-bold">
-                    components/cursor
-                  </code>{" "}
-                  folder with one command.
-                </p>
-              </div>
+        <Install />
 
-              <CLISection />
+        <Features />
+
+        <section className="py-24 md:py-32 bg-foreground text-background">
+          <div className="container mx-auto px-4 max-w-7xl grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
+            <div className="lg:col-span-7">
+              <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase italic leading-[0.9]">
+                Free.
+                <br />
+                <span className="text-background/40">MIT licensed.</span>
+              </h2>
+            </div>
+            <div className="lg:col-span-5 flex flex-col gap-8">
+              <p className="text-background/70 text-base md:text-lg leading-relaxed">
+                Cursor Gallery is made and maintained by Aadi Chowdhury. If one
+                of these ends up on your site, a star or a coffee is how the
+                next batch gets made.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Link
+                  href="/sponsor"
+                  className={`${sectionButton} bg-background text-foreground hover:bg-background/90`}
+                >
+                  Sponsor
+                </Link>
+                <Link
+                  href="https://github.com/AadiXC0DE/cursor-gallery"
+                  target="_blank"
+                  className={`${sectionButton} border-2 border-background/30 hover:border-background`}
+                >
+                  <GitHubMark className="mr-3 w-4 h-4" />
+                  Star on GitHub
+                </Link>
+              </div>
             </div>
           </div>
         </section>
-
-        <Features />
       </main>
 
       <Footer />

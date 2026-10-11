@@ -21,10 +21,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://cursor-gallery.vercel.app"),
   title: {
-    default: "Cursor Gallery — Premium Animated Cursors for React & Next.js",
+    default: "Cursor Gallery: animated cursors for React and Next.js",
     template: "%s | Cursor Gallery",
   },
-  description: `A curated collection of ${CURSORS.length}+ high-end animated cursors. Engineered for performance, designed for impact. Copy-paste ready for React, Next.js, and Vanilla JS — install in seconds with the Shadcn CLI.`,
+  description: `${CURSORS.length} animated cursors for React and Next.js, built with Motion. Hover to try one, then install it with the shadcn CLI. Free and MIT licensed.`,
   keywords: [
     "animated cursors",
     "custom cursor",
@@ -46,14 +46,14 @@ export const metadata: Metadata = {
     "micro-interactions",
     "web design",
     "frontend",
+    "shadcn mcp",
+    "llms.txt",
   ],
   authors: [{ name: "Aadi Chowdhury", url: "https://heyaadi.com" }],
   creator: "Aadi Chowdhury",
   publisher: "Cursor Gallery",
+  applicationName: "Cursor Gallery",
   category: "technology",
-  alternates: {
-    canonical: "/",
-  },
   robots: {
     index: true,
     follow: true,
@@ -69,16 +69,16 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://cursor-gallery.vercel.app",
-    title: "Cursor Gallery — Premium Animated Cursors for React & Next.js",
+    title: "Cursor Gallery: animated cursors for React and Next.js",
     description:
-      "Elevate your web UX with beautiful animated cursors, copy-paste ready for your next project.",
+      "Your pointer is on screen all day. Give it something to do. Hover to try, then install with the shadcn CLI.",
     siteName: "Cursor Gallery",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cursor Gallery — Premium Animated Cursors",
+    title: "Cursor Gallery: animated cursors for React",
     description:
-      "Elevate your web UX with beautiful animated cursors, copy-paste ready for your next project.",
+      "Your pointer is on screen all day. Give it something to do. Hover to try, then install with the shadcn CLI.",
     creator: "@AadiChowdhury7",
   },
 };
@@ -90,6 +90,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Plain-text guides for AI agents, see https://llmstxt.org */}
+        <link
+          rel="alternate"
+          type="text/markdown"
+          href="/llms.txt"
+          title="Cursor Gallery for LLMs"
+        />
+        <link
+          rel="alternate"
+          type="application/json"
+          href="/r/registry.json"
+          title="shadcn registry index"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
       >
